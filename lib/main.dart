@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:sport_flutter_app/core/router/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,10 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      routerConfig: routerConfig,
     );
   }
 }
@@ -46,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: .center,
           children: [
+            const Text('Environment: $appFlavor}'),
             const Text('You have pushed the button this many times:'),
             Text(
               '$_counter',
