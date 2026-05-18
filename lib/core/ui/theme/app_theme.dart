@@ -20,7 +20,7 @@ class AppTheme {
       scaffoldBackgroundColor: colors.background,
       useMaterial3: true,
 
-      fontFamily: "IranYekanX",
+      fontFamily: "Ravi",
       textTheme: AppTextTheme.textTheme,
 
       colorScheme: colorScheme,

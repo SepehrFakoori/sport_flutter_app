@@ -93,6 +93,36 @@ abstract class AppLocalizations {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('fa')];
+
+  /// No description provided for @profile_appBarTitle.
+  ///
+  /// In fa, this message translates to:
+  /// **'پروفایل'**
+  String get profile_appBarTitle;
+
+  /// No description provided for @profile_button_edit.
+  ///
+  /// In fa, this message translates to:
+  /// **'ویرایش پروفایل'**
+  String get profile_button_edit;
+
+  /// No description provided for @settings_button_logout.
+  ///
+  /// In fa, this message translates to:
+  /// **'خروج'**
+  String get settings_button_logout;
+
+  /// No description provided for @global_button_cancel.
+  ///
+  /// In fa, this message translates to:
+  /// **'انصراف'**
+  String get global_button_cancel;
+
+  /// No description provided for @global_button_save.
+  ///
+  /// In fa, this message translates to:
+  /// **'ذخیره'**
+  String get global_button_save;
 }
 
 class _AppLocalizationsDelegate
