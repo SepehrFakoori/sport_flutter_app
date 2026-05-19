@@ -1,13 +1,10 @@
 class AppRoute {
-  final String name;
   final String path;
+  final String? name;
 
-  const AppRoute({required this.name, required this.path});
+  const AppRoute({required this.path, this.name});
 }
 
 sealed class AppRoutes {
   static const home = AppRoute(name: 'home', path: '/');
-  static const classes = AppRoute(name: 'classes', path: '/classes');
-  static const coaches = AppRoute(name: 'coaches', path: '/coaches');
-  static const user = AppRoute(name: 'user', path: '/user');
 }
