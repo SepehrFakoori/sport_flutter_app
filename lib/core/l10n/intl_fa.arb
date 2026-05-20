@@ -2,6 +2,10 @@
     "profile_appBarTitle": "پروفایل",
     "profile_button_edit": "ویرایش پروفایل",
 
+    "home_categories_title": "دسته\u200Cبندی",
+    "home_popular_title": "پرطرفدارترین\u200Cها",
+    "home_nearby_popular_title": "پرطرفدارترین\u200Cهای اطراف",
+
     "settings_button_logout": "خروج",
 
     "global_button_cancel": "انصراف",

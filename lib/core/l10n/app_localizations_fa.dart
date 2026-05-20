@@ -15,6 +15,15 @@ class AppLocalizationsFa extends AppLocalizations {
   String get profile_button_edit => 'ویرایش پروفایل';
 
   @override
+  String get home_categories_title => 'دسته‌بندی';
+
+  @override
+  String get home_popular_title => 'پرطرفدارترین‌ها';
+
+  @override
+  String get home_nearby_popular_title => 'پرطرفدارترین‌های اطراف';
+
+  @override
   String get settings_button_logout => 'خروج';
 
   @override

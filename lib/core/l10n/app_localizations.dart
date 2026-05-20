@@ -106,6 +106,24 @@ abstract class AppLocalizations {
   /// **'ویرایش پروفایل'**
   String get profile_button_edit;
 
+  /// No description provided for @home_categories_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'دسته‌بندی'**
+  String get home_categories_title;
+
+  /// No description provided for @home_popular_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'پرطرفدارترین‌ها'**
+  String get home_popular_title;
+
+  /// No description provided for @home_nearby_popular_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'پرطرفدارترین‌های اطراف'**
+  String get home_nearby_popular_title;
+
   /// No description provided for @settings_button_logout.
   ///
   /// In fa, this message translates to:

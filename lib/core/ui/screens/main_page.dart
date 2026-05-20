@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/constants/assets_icons.dart';
-import 'package:sport_flutter_app/features/home/presentations/widgets/app_navigation_bar.dart';
-import 'package:sport_flutter_app/features/home/presentations/widgets/app_navigation_destination.dart';
+import 'package:sport_flutter_app/core/ui/widgets/navigation/app_navigation_bar.dart';
+import 'package:sport_flutter_app/core/ui/widgets/navigation/app_navigation_destination.dart';
 
 class MainPage extends StatelessWidget {
   final StatefulNavigationShell navigationShell;
