@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sport_flutter_app/core/constants/assets_icons.dart';
 import 'package:sport_flutter_app/features/home/presentations/widgets/app_navigation_bar.dart';
 import 'package:sport_flutter_app/features/home/presentations/widgets/app_navigation_destination.dart';
 
@@ -17,18 +18,18 @@ class MainPage extends StatelessWidget {
         onTap: (index) => navigationShell.goBranch(index),
         destinations: <AppNavigationDestination>[
           AppNavigationDestination(
-            icon: 'assets/icons/home.svg',
-            selectedIcon: 'assets/icons/home-filled.svg',
+            icon: AssetIcons.home,
+            selectedIcon: AssetIcons.homeFilled,
             label: 'context.l10n.ads',
           ),
           AppNavigationDestination(
-            icon: 'assets/icons/home.svg',
-            selectedIcon: 'assets/icons/home-filled.svg',
+            icon: AssetIcons.home,
+            selectedIcon: AssetIcons.homeFilled,
             label: 'context.l10n.ads1',
           ),
           AppNavigationDestination(
-            icon: 'assets/icons/home.svg',
-            selectedIcon: 'assets/icons/home-filled.svg',
+            icon: AssetIcons.home,
+            selectedIcon: AssetIcons.homeFilled,
             label: 'context.l10n.ads2',
           ),
         ],
