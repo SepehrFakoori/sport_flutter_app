@@ -16,7 +16,14 @@ class HomePage extends StatelessWidget {
             children: [
               FilterBar(
                 title: context.l10n.home_categories_title,
-                onPressed: () {},
+                onTap: () {},
+              ),
+              CategoryListView(itemCount: 8),
+              FilterBar(title: context.l10n.home_popular_title, onTap: () {}),
+              CategoryListView(itemCount: 8),
+              FilterBar(
+                title: context.l10n.home_nearby_popular_title,
+                onTap: () {},
               ),
               CategoryListView(itemCount: 8),
             ],
