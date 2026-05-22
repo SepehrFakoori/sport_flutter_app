@@ -1,4 +1,8 @@
 {
+    "bottom_navigation_home": "خانه",
+    "bottom_navigation_bookmark": "مورد علاقه\u200Cها",
+    "bottom_navigation_profile": "پروفایل",
+
     "profile_appBarTitle": "پروفایل",
     "profile_button_edit": "ویرایش پروفایل",
 
