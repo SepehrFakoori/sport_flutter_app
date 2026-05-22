@@ -9,6 +9,15 @@ class AppLocalizationsFa extends AppLocalizations {
   AppLocalizationsFa([String locale = 'fa']) : super(locale);
 
   @override
+  String get bottom_navigation_home => 'خانه';
+
+  @override
+  String get bottom_navigation_bookmark => 'مورد علاقه‌ها';
+
+  @override
+  String get bottom_navigation_profile => 'پروفایل';
+
+  @override
   String get profile_appBarTitle => 'پروفایل';
 
   @override
