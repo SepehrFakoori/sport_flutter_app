@@ -2,10 +2,10 @@ import 'dart:ui';
 
 class AppPalette {
   // Primary
-  static const Color primary1 = Color(0xff281C9D);
-  static const Color primary2 = Color(0xff5655B9);
-  static const Color primary3 = Color(0xffA8A3D7);
-  static const Color primary4 = Color(0xffF2F1F9);
+  static const Color primary1 = Color(0xff0E9A27);
+  static const Color primary2 = Color(0xff3eae51);
+  static const Color primary3 = Color(0xff90d19b);
+  static const Color primary4 = Color(0xffe7f5e9);
 
   // Neutral
   static const Color neutral8 = Color(0xff181818);
