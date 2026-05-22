@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/features/home/presentations/widgets/category_list.dart';
 import 'package:sport_flutter_app/features/home/presentations/widgets/filter_bar.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,6 +18,7 @@ class HomePage extends StatelessWidget {
                 title: context.l10n.home_categories_title,
                 onPressed: () {},
               ),
+              CategoryListView(itemCount: 8),
             ],
           ),
         ),
