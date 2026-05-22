@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
                 title: context.l10n.home_categories_title,
                 onPressed: () {},
               ),
-              CategoryList(itemCount: 8),
+              CategoryListView(itemCount: 8),
             ],
           ),
         ),
