@@ -13,5 +13,6 @@
     "settings_button_logout": "خروج",
 
     "global_button_cancel": "انصراف",
-    "global_button_save": "ذخیره"
+    "global_button_save": "ذخیره",
+    "global_badge_new_label": "جدید"
 }

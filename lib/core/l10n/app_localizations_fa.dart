@@ -40,4 +40,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get global_button_save => 'ذخیره';
+
+  @override
+  String get global_badge_new_label => 'جدید';
 }
