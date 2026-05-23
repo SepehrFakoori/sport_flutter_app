@@ -210,6 +210,8 @@ class AppTheme {
       badgeTheme: BadgeThemeData(
         backgroundColor: colors.primary,
         textStyle: AppTextTheme.textTheme.labelSmall,
+        alignment: AlignmentDirectional.topEnd,
+        padding: EdgeInsets.symmetric(vertical: 0, horizontal: 2),
       ),
     );
   }
