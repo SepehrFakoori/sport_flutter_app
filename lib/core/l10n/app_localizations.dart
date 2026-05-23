@@ -142,6 +142,18 @@ abstract class AppLocalizations {
   /// **'پرطرفدارترین‌های اطراف'**
   String get home_nearby_popular_title;
 
+  /// No description provided for @gender_men_label.
+  ///
+  /// In fa, this message translates to:
+  /// **'ویژه آقایان'**
+  String get gender_men_label;
+
+  /// No description provided for @gender_women_label.
+  ///
+  /// In fa, this message translates to:
+  /// **'ویژه بانوان'**
+  String get gender_women_label;
+
   /// No description provided for @settings_button_logout.
   ///
   /// In fa, this message translates to:
