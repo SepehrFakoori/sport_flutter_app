@@ -206,6 +206,11 @@ class AppTheme {
       ),
 
       cardTheme: CardThemeData(color: colors.background),
+
+      badgeTheme: BadgeThemeData(
+        backgroundColor: colors.primary,
+        textStyle: AppTextTheme.textTheme.labelSmall,
+      ),
     );
   }
 }

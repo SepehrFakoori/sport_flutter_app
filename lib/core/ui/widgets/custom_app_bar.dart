@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? title;
