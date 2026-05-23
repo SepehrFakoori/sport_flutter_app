@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
 
 class AppBadge extends StatelessWidget {
   final Color? backgroundColor;
@@ -42,6 +43,7 @@ class AppBadge extends StatelessWidget {
       alignment: alignment,
       offset: offset,
       label: Text(labelText!),
+      textStyle: context.textTheme.labelSmall,
       isLabelVisible: isLabelVisible,
       child: child,
     );
