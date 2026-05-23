@@ -159,6 +159,12 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'ذخیره'**
   String get global_button_save;
+
+  /// No description provided for @global_badge_new_label.
+  ///
+  /// In fa, this message translates to:
+  /// **'جدید'**
+  String get global_badge_new_label;
 }
 
 class _AppLocalizationsDelegate
