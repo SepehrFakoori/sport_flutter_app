@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/features/home/presentations/widgets/app_navigation_destination.dart';
+import 'package:sport_flutter_app/core/ui/widgets/navigation/app_navigation_destination.dart';
 
 class AppNavigationBar extends StatelessWidget {
   final int currentIndex;

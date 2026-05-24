@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sport_flutter_app/features/home/presentations/widgets/app_navigation_bar.dart';
-import 'package:sport_flutter_app/features/home/presentations/widgets/app_navigation_destination.dart';
+import 'package:sport_flutter_app/core/constants/assets_icons.dart';
+import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/ui/widgets/navigation/app_navigation_bar.dart';
+import 'package:sport_flutter_app/core/ui/widgets/navigation/app_navigation_destination.dart';
 
 class MainPage extends StatelessWidget {
   final StatefulNavigationShell navigationShell;
@@ -17,19 +19,19 @@ class MainPage extends StatelessWidget {
         onTap: (index) => navigationShell.goBranch(index),
         destinations: <AppNavigationDestination>[
           AppNavigationDestination(
-            icon: 'assets/icons/home.svg',
-            selectedIcon: 'assets/icons/home-filled.svg',
-            label: 'context.l10n.ads',
+            icon: AssetIcons.home,
+            selectedIcon: AssetIcons.homeFilled,
+            label: context.l10n.bottom_navigation_home,
           ),
           AppNavigationDestination(
-            icon: 'assets/icons/home.svg',
-            selectedIcon: 'assets/icons/home-filled.svg',
-            label: 'context.l10n.ads1',
+            icon: AssetIcons.bookmark,
+            selectedIcon: AssetIcons.bookmarkFilled,
+            label: context.l10n.bottom_navigation_bookmark,
           ),
           AppNavigationDestination(
-            icon: 'assets/icons/home.svg',
-            selectedIcon: 'assets/icons/home-filled.svg',
-            label: 'context.l10n.ads2',
+            icon: AssetIcons.profile,
+            selectedIcon: AssetIcons.profileFilled,
+            label: context.l10n.bottom_navigation_profile,
           ),
         ],
       ),

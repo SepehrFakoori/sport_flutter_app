@@ -9,10 +9,34 @@ class AppLocalizationsFa extends AppLocalizations {
   AppLocalizationsFa([String locale = 'fa']) : super(locale);
 
   @override
+  String get bottom_navigation_home => 'خانه';
+
+  @override
+  String get bottom_navigation_bookmark => 'مورد علاقه‌ها';
+
+  @override
+  String get bottom_navigation_profile => 'پروفایل';
+
+  @override
   String get profile_appBarTitle => 'پروفایل';
 
   @override
   String get profile_button_edit => 'ویرایش پروفایل';
+
+  @override
+  String get home_categories_title => 'دسته‌بندی';
+
+  @override
+  String get home_popular_title => 'پرطرفدارترین‌ها';
+
+  @override
+  String get home_nearby_popular_title => 'پرطرفدارترین‌های اطراف';
+
+  @override
+  String get gender_men_label => 'ویژه آقایان';
+
+  @override
+  String get gender_women_label => 'ویژه بانوان';
 
   @override
   String get settings_button_logout => 'خروج';
@@ -22,4 +46,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get global_button_save => 'ذخیره';
+
+  @override
+  String get global_badge_new_label => 'جدید';
 }

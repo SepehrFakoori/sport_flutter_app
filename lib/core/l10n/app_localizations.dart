@@ -94,6 +94,24 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('fa')];
 
+  /// No description provided for @bottom_navigation_home.
+  ///
+  /// In fa, this message translates to:
+  /// **'خانه'**
+  String get bottom_navigation_home;
+
+  /// No description provided for @bottom_navigation_bookmark.
+  ///
+  /// In fa, this message translates to:
+  /// **'مورد علاقه‌ها'**
+  String get bottom_navigation_bookmark;
+
+  /// No description provided for @bottom_navigation_profile.
+  ///
+  /// In fa, this message translates to:
+  /// **'پروفایل'**
+  String get bottom_navigation_profile;
+
   /// No description provided for @profile_appBarTitle.
   ///
   /// In fa, this message translates to:
@@ -105,6 +123,36 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'ویرایش پروفایل'**
   String get profile_button_edit;
+
+  /// No description provided for @home_categories_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'دسته‌بندی'**
+  String get home_categories_title;
+
+  /// No description provided for @home_popular_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'پرطرفدارترین‌ها'**
+  String get home_popular_title;
+
+  /// No description provided for @home_nearby_popular_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'پرطرفدارترین‌های اطراف'**
+  String get home_nearby_popular_title;
+
+  /// No description provided for @gender_men_label.
+  ///
+  /// In fa, this message translates to:
+  /// **'ویژه آقایان'**
+  String get gender_men_label;
+
+  /// No description provided for @gender_women_label.
+  ///
+  /// In fa, this message translates to:
+  /// **'ویژه بانوان'**
+  String get gender_women_label;
 
   /// No description provided for @settings_button_logout.
   ///
@@ -123,6 +171,12 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'ذخیره'**
   String get global_button_save;
+
+  /// No description provided for @global_badge_new_label.
+  ///
+  /// In fa, this message translates to:
+  /// **'جدید'**
+  String get global_badge_new_label;
 }
 
 class _AppLocalizationsDelegate

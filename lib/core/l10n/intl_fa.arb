@@ -1,9 +1,21 @@
 {
+    "bottom_navigation_home": "خانه",
+    "bottom_navigation_bookmark": "مورد علاقه\u200Cها",
+    "bottom_navigation_profile": "پروفایل",
+
     "profile_appBarTitle": "پروفایل",
     "profile_button_edit": "ویرایش پروفایل",
+
+    "home_categories_title": "دسته\u200Cبندی",
+    "home_popular_title": "پرطرفدارترین\u200Cها",
+    "home_nearby_popular_title": "پرطرفدارترین\u200Cهای اطراف",
+
+    "gender_men_label": "ویژه آقایان",
+    "gender_women_label": "ویژه بانوان",
 
     "settings_button_logout": "خروج",
 
     "global_button_cancel": "انصراف",
-    "global_button_save": "ذخیره"
+    "global_button_save": "ذخیره",
+    "global_badge_new_label": "جدید"
 }
