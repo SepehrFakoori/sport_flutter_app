@@ -10,6 +10,9 @@
     "home_popular_title": "پرطرفدارترین\u200Cها",
     "home_nearby_popular_title": "پرطرفدارترین\u200Cهای اطراف",
 
+    "gender_men_label": "ویژه آقایان",
+    "gender_women_label": "ویژه بانوان",
+
     "settings_button_logout": "خروج",
 
     "global_button_cancel": "انصراف",

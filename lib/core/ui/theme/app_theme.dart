@@ -213,6 +213,8 @@ class AppTheme {
         alignment: AlignmentDirectional.topEnd,
         padding: EdgeInsets.symmetric(vertical: 0, horizontal: 2),
       ),
+
+      chipTheme: ChipThemeData(labelStyle: AppTextTheme.textTheme.labelLarge),
     );
   }
 }

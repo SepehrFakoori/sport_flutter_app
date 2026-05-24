@@ -33,6 +33,12 @@ class AppLocalizationsFa extends AppLocalizations {
   String get home_nearby_popular_title => 'پرطرفدارترین‌های اطراف';
 
   @override
+  String get gender_men_label => 'ویژه آقایان';
+
+  @override
+  String get gender_women_label => 'ویژه بانوان';
+
+  @override
   String get settings_button_logout => 'خروج';
 
   @override
