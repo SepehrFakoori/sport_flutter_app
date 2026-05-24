@@ -8,6 +8,7 @@ class AssetIcons {
   static const addSquare = "$_basePath/add-square.svg";
   static const profile = "$_basePath/profile.svg";
   static const profileFilled = "$_basePath/profile-filled.svg";
+  static const profileAdd = "$_basePath/profile-add.svg";
   static const galleryAdd = "$_basePath/gallery-add.svg";
   static const location = "$_basePath/location.svg";
   static const locationFilled = "$_basePath/location-filled.svg";
@@ -29,7 +30,11 @@ class AssetIcons {
   static const setting = "$_basePath/setting.svg";
   static const share = "$_basePath/share.svg";
   static const star = "$_basePath/star.svg";
+  static const starFilled = "$_basePath/star-filled.svg";
   static const tagUser = "$_basePath/tag-user.svg";
   static const trash = "$_basePath/trash.svg";
   static const warning = "$_basePath/warning.svg";
+  static const headphone = "$_basePath/headphone.svg";
+  static const receiptItem = "$_basePath/receipt-item.svg";
+  static const taskSquare = "$_basePath/task-square.svg";
 }
