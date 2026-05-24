@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/screens/main_page.dart';
 import 'package:sport_flutter_app/features/home/presentations/home_page.dart';
+import 'package:sport_flutter_app/features/user/presentations/profile_page.dart';
 
 final GoRouter routerConfig = GoRouter(
   debugLogDiagnostics: appFlavor != 'production',
@@ -25,15 +26,15 @@ final GoRouter routerConfig = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: AppRoutes.page1.path,
-              builder: (context, state) => Container(color: Colors.red,),
+              builder: (context, state) => Container(color: Colors.red),
             ),
           ],
         ),
         StatefulShellBranch(
           routes: <RouteBase>[
             GoRoute(
-              path: AppRoutes.page2.path,
-              builder: (context, state) => Container(color: Colors.blue,),
+              path: AppRoutes.profile.path,
+              builder: (context, state) => ProfilePage(),
             ),
           ],
         ),
