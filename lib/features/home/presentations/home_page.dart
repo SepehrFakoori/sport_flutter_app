@@ -10,24 +10,18 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: .center,
-            children: [
-              FilterTile(
-                title: context.l10n.home_categories_title,
-                onTap: () {},
-              ),
-              CategoryListView(itemCount: 8),
-              FilterTile(title: context.l10n.home_popular_title, onTap: () {}),
-              CategoryListView(itemCount: 8),
-              FilterTile(
-                title: context.l10n.home_nearby_popular_title,
-                onTap: () {},
-              ),
-              CategoryListView(itemCount: 8),
-            ],
-          ),
+        child: Column(
+          children: [
+            FilterTile(title: context.l10n.home_categories_title, onTap: () {}),
+            CategoryListView(itemCount: 8),
+            FilterTile(title: context.l10n.home_popular_title, onTap: () {}),
+            CategoryListView(itemCount: 8),
+            FilterTile(
+              title: context.l10n.home_nearby_popular_title,
+              onTap: () {},
+            ),
+            CategoryListView(itemCount: 8),
+          ],
         ),
       ),
     );
