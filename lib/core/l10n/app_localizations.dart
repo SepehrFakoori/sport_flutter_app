@@ -124,6 +124,36 @@ abstract class AppLocalizations {
   /// **'ویرایش پروفایل'**
   String get profile_button_edit;
 
+  /// No description provided for @profile_enrollments_button.
+  ///
+  /// In fa, this message translates to:
+  /// **'ثبت‌نام‌های من'**
+  String get profile_enrollments_button;
+
+  /// No description provided for @profile_settings_button.
+  ///
+  /// In fa, this message translates to:
+  /// **'تنظیمات'**
+  String get profile_settings_button;
+
+  /// No description provided for @profile_support_button.
+  ///
+  /// In fa, this message translates to:
+  /// **'پشتیبانی'**
+  String get profile_support_button;
+
+  /// No description provided for @profile_invite_friends_button.
+  ///
+  /// In fa, this message translates to:
+  /// **'معرفی به دوستان'**
+  String get profile_invite_friends_button;
+
+  /// No description provided for @profile_policy_button.
+  ///
+  /// In fa, this message translates to:
+  /// **'قوانین و شرایط استفاده'**
+  String get profile_policy_button;
+
   /// No description provided for @home_categories_title.
   ///
   /// In fa, this message translates to:

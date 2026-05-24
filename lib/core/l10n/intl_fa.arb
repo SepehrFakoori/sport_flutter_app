@@ -5,6 +5,11 @@
 
     "profile_appBarTitle": "پروفایل",
     "profile_button_edit": "ویرایش پروفایل",
+    "profile_enrollments_button": "ثبت\u200Cنام\u200Cهای من",
+    "profile_settings_button": "تنظیمات",
+    "profile_support_button": "پشتیبانی",
+    "profile_invite_friends_button": "معرفی به دوستان",
+    "profile_policy_button": "قوانین و شرایط استفاده",
 
     "home_categories_title": "دسته\u200Cبندی",
     "home_popular_title": "پرطرفدارترین\u200Cها",
