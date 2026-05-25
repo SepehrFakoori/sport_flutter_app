@@ -8,5 +8,6 @@ class AppRoute {
 sealed class AppRoutes {
   static const home = AppRoute(name: 'home', path: '/');
   static const page1 = AppRoute(name: 'page-1', path: '/1');
+  static const account = AppRoute(name: 'account', path: '/account');
   static const profile = AppRoute(name: 'profile', path: '/profile');
 }

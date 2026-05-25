@@ -18,25 +18,37 @@ class AppLocalizationsFa extends AppLocalizations {
   String get bottom_navigation_profile => 'پروفایل';
 
   @override
-  String get profile_appBarTitle => 'پروفایل';
+  String get account_appBarTitle => 'پروفایل';
 
   @override
-  String get profile_button_edit => 'ویرایش پروفایل';
+  String get account_button_edit => 'ویرایش پروفایل';
 
   @override
-  String get profile_enrollments_button => 'ثبت‌نام‌های من';
+  String get account_enrollments_button => 'ثبت‌نام‌های من';
 
   @override
-  String get profile_settings_button => 'تنظیمات';
+  String get account_settings_button => 'تنظیمات';
 
   @override
-  String get profile_support_button => 'پشتیبانی';
+  String get account_support_button => 'پشتیبانی';
 
   @override
-  String get profile_invite_friends_button => 'معرفی به دوستان';
+  String get account_invite_friends_button => 'معرفی به دوستان';
 
   @override
-  String get profile_policy_button => 'قوانین و شرایط استفاده';
+  String get account_policy_button => 'قوانین و شرایط استفاده';
+
+  @override
+  String get profile_firstname_title => 'نام';
+
+  @override
+  String get profile_lastname_title => 'نام خانوادگی';
+
+  @override
+  String get profile_phone_number_title => 'شماره همراه';
+
+  @override
+  String get profile_email_title => 'ایمیل';
 
   @override
   String get home_categories_title => 'دسته‌بندی';
