@@ -112,47 +112,71 @@ abstract class AppLocalizations {
   /// **'پروفایل'**
   String get bottom_navigation_profile;
 
-  /// No description provided for @profile_appBarTitle.
+  /// No description provided for @account_appBarTitle.
   ///
   /// In fa, this message translates to:
   /// **'پروفایل'**
-  String get profile_appBarTitle;
+  String get account_appBarTitle;
 
-  /// No description provided for @profile_button_edit.
+  /// No description provided for @account_button_edit.
   ///
   /// In fa, this message translates to:
   /// **'ویرایش پروفایل'**
-  String get profile_button_edit;
+  String get account_button_edit;
 
-  /// No description provided for @profile_enrollments_button.
+  /// No description provided for @account_enrollments_button.
   ///
   /// In fa, this message translates to:
   /// **'ثبت‌نام‌های من'**
-  String get profile_enrollments_button;
+  String get account_enrollments_button;
 
-  /// No description provided for @profile_settings_button.
+  /// No description provided for @account_settings_button.
   ///
   /// In fa, this message translates to:
   /// **'تنظیمات'**
-  String get profile_settings_button;
+  String get account_settings_button;
 
-  /// No description provided for @profile_support_button.
+  /// No description provided for @account_support_button.
   ///
   /// In fa, this message translates to:
   /// **'پشتیبانی'**
-  String get profile_support_button;
+  String get account_support_button;
 
-  /// No description provided for @profile_invite_friends_button.
+  /// No description provided for @account_invite_friends_button.
   ///
   /// In fa, this message translates to:
   /// **'معرفی به دوستان'**
-  String get profile_invite_friends_button;
+  String get account_invite_friends_button;
 
-  /// No description provided for @profile_policy_button.
+  /// No description provided for @account_policy_button.
   ///
   /// In fa, this message translates to:
   /// **'قوانین و شرایط استفاده'**
-  String get profile_policy_button;
+  String get account_policy_button;
+
+  /// No description provided for @profile_firstname_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'نام'**
+  String get profile_firstname_title;
+
+  /// No description provided for @profile_lastname_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'نام خانوادگی'**
+  String get profile_lastname_title;
+
+  /// No description provided for @profile_phone_number_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'شماره همراه'**
+  String get profile_phone_number_title;
+
+  /// No description provided for @profile_email_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'ایمیل'**
+  String get profile_email_title;
 
   /// No description provided for @home_categories_title.
   ///
