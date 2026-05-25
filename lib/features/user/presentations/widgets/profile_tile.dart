@@ -23,10 +23,13 @@ class ProfileTile extends StatelessWidget {
       contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       horizontalTitleGap: 12,
       titleAlignment: ListTileTitleAlignment.center,
-      leading: AppCircleAvatar(
-        username: username,
-        imageUrl: imageUrl,
-        radius: 28,
+      leading: Hero(
+        tag: 'profile',
+        child: AppCircleAvatar(
+          username: username,
+          imageUrl: imageUrl,
+          radius: 28,
+        ),
       ),
       title: Text(username),
       titleTextStyle: context.textTheme.headlineSmall?.copyWith(
@@ -34,7 +37,6 @@ class ProfileTile extends StatelessWidget {
       ),
       subtitle: Text(phoneNumber),
       subtitleTextStyle: context.textTheme.bodyMedium?.copyWith(
-        fontFamily: 'Ravi',
         fontWeight: .w500,
         color: context.colors.textSecondary,
       ),
