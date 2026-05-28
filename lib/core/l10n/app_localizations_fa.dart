@@ -15,6 +15,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get bottom_navigation_bookmark => 'مورد علاقه‌ها';
 
   @override
+  String get bottom_navigation_chat => 'گفتگو';
+
+  @override
   String get bottom_navigation_profile => 'پروفایل';
 
   @override
@@ -58,6 +61,12 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get home_nearby_popular_title => 'پرطرفدارترین‌های اطراف';
+
+  @override
+  String get home_search_icon_tooltip => 'جستوجو';
+
+  @override
+  String get home_notifications_icon_tooltip => 'اعلان‌ها';
 
   @override
   String get gender_men_label => 'ویژه آقایان';
