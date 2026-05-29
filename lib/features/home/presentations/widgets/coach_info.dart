@@ -5,15 +5,16 @@ import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 import 'package:sport_flutter_app/features/home/presentations/widgets/rating_chip.dart';
 
 class CoachInfo extends StatelessWidget {
-  final String coachName;
+  final String firstname;
+  final String lastname;
 
-  const CoachInfo({super.key, required this.coachName});
+  const CoachInfo({super.key, required this.firstname, required this.lastname});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: .start,
-      crossAxisAlignment: .center,
+      crossAxisAlignment: .start,
       spacing: 4,
       children: [
         IconWidget(
@@ -24,7 +25,7 @@ class CoachInfo extends StatelessWidget {
         ),
         Flexible(
           child: Text(
-            coachName,
+            '$firstname $lastname',
             maxLines: 1,
             overflow: .ellipsis,
             style: context.textTheme.bodyMedium?.copyWith(
@@ -32,7 +33,6 @@ class CoachInfo extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(width: 4),
         RatingChip(rate: 4.6),
       ],
     );

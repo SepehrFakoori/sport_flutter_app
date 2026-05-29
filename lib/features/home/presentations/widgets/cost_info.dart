@@ -14,10 +14,13 @@ class CostInfo extends StatelessWidget {
       mainAxisSize: .max,
       spacing: 8,
       children: [
-        Text(cost, style: context.textTheme.titleLarge),
+        Text(
+          '۳۰۰،۰۰۰',
+          style: context.textTheme.titleLarge?.copyWith(height: 1),
+        ),
         Text(
           'تومان/ماهانه',
-          style: context.textTheme.labelMedium?.copyWith(
+          style: context.textTheme.labelLarge?.copyWith(
             color: context.colors.textSecondary,
           ),
         ),

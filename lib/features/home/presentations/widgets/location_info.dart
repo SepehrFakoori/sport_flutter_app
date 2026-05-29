@@ -6,16 +6,13 @@ import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 class LocationInfo extends StatelessWidget {
   final String location;
 
-  const LocationInfo({
-    super.key,
-    required this.location,
-  });
+  const LocationInfo({super.key, required this.location});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: .start,
-      crossAxisAlignment: .center,
+      crossAxisAlignment: .start,
       spacing: 4,
       children: [
         IconWidget(
@@ -24,10 +21,14 @@ class LocationInfo extends StatelessWidget {
           width: 16,
           color: context.colors.textSecondary,
         ),
-        Text(
-          location,
-          style: context.textTheme.bodyMedium?.copyWith(
-            color: context.colors.textSecondary,
+        Flexible(
+          child: Text(
+            location,
+            maxLines: 1,
+            overflow: .ellipsis,
+            style: context.textTheme.bodyMedium?.copyWith(
+              color: context.colors.textSecondary,
+            ),
           ),
         ),
       ],

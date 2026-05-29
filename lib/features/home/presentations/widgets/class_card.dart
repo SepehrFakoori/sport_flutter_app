@@ -9,7 +9,8 @@ import 'package:sport_flutter_app/features/home/presentations/widgets/location_i
 class ClassCard extends StatelessWidget {
   final String imageUrl;
   final String title;
-  final String coachName;
+  final String firstname;
+  final String lastname;
   final String location;
   final int capacity;
   final int remaining;
@@ -19,7 +20,8 @@ class ClassCard extends StatelessWidget {
     super.key,
     required this.imageUrl,
     required this.title,
-    required this.coachName,
+    required this.firstname,
+    required this.lastname,
     required this.location,
     required this.capacity,
     required this.remaining,
@@ -30,7 +32,7 @@ class ClassCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
-      borderRadius: BorderRadius.circular(16),
+      borderRadius: BorderRadius.circular(8),
       child: Card(
         color: Colors.transparent,
         shadowColor: Colors.transparent,
@@ -39,35 +41,34 @@ class ClassCard extends StatelessWidget {
           side: BorderSide(color: context.colors.divider),
         ),
         child: SizedBox(
-          width: 220,
+          width: 224,
           child: Column(
             crossAxisAlignment: .start,
-            spacing: 8,
             children: [
-              ImageLoader(
-                imageUrl: imageUrl,
-                height: 140,
-                width: 220,
-                radius: 16,
+              AspectRatio(
+                aspectRatio: 16 / 9,
+                child: ImageLoader(imageUrl: imageUrl, radius: 16),
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsetsGeometry.symmetric(horizontal: 8),
+                  padding: const EdgeInsets.all(8),
                   child: Column(
                     crossAxisAlignment: .start,
                     children: [
-                      Text(
-                        title,
-                        maxLines: 2,
-                        overflow: .ellipsis,
-                        style: context.textTheme.titleLarge?.copyWith(
-                          height: 1.2,
+                      Expanded(
+                        child: Text(
+                          title,
+                          maxLines: 2,
+                          overflow: .ellipsis,
+                          style: context.textTheme.titleLarge?.copyWith(
+                            height: 1.4,
+                          ),
                         ),
                       ),
-                      Spacer(),
-                      CoachInfo(coachName: coachName),
+                      CoachInfo(firstname: firstname, lastname: lastname),
                       LocationInfo(location: location),
-                      CapacityInfo(capacity: capacity, remaining: remaining),
+                      CapacityInfo(remaining: remaining),
+                      SizedBox(height: 12),
                       CostInfo(cost: cost),
                     ],
                   ),
