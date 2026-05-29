@@ -3,16 +3,14 @@ import 'package:sport_flutter_app/core/constants/assets_icons.dart';
 import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 
-class RatingChip extends StatelessWidget {
-  final double rate;
-  final double? height;
-  final double? width;
+class CapacityInfo extends StatelessWidget {
+  final int capacity;
+  final int remaining;
 
-  const RatingChip({
+  const CapacityInfo({
     super.key,
-    required this.rate,
-    this.height = 12,
-    this.width = 12,
+    required this.capacity,
+    required this.remaining,
   });
 
   @override
@@ -22,20 +20,17 @@ class RatingChip extends StatelessWidget {
       crossAxisAlignment: .center,
       spacing: 4,
       children: [
-        Text(
-          rate.toString(),
-          textScaler: .noScaling,
-          style: context.textTheme.labelSmall?.copyWith(
-            fontSize: 12,
-            color: context.colors.textSecondary,
-            height: 0.1,
-          ),
-        ),
         IconWidget(
-          icon: AssetIcons.starFilled,
-          height: height,
-          width: width,
+          icon: AssetIcons.profile2User,
+          height: 16,
+          width: 16,
           color: context.colors.textSecondary,
+        ),
+        Text(
+          '$remaining/$capacity',
+          style: context.textTheme.bodyMedium?.copyWith(
+            color: context.colors.textSecondary,
+          ),
         ),
       ],
     );
