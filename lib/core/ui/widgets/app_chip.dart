@@ -6,6 +6,8 @@ class AppChip extends StatelessWidget {
   final Color? backgroundColor;
   final BorderSide? side;
   final TextStyle? textStyle;
+  final EdgeInsetsGeometry? labelPadding;
+  final MaterialTapTargetSize? materialTapTargetSize;
 
   const AppChip({
     super.key,
@@ -13,18 +15,24 @@ class AppChip extends StatelessWidget {
     this.backgroundColor,
     this.side,
     this.textStyle,
+    this.labelPadding,
+    this.materialTapTargetSize = .shrinkWrap,
   });
 
   @override
   Widget build(BuildContext context) {
     return Chip(
       side: side,
-      labelPadding: EdgeInsets.symmetric(horizontal: 4, vertical: -4),
+      labelPadding:
+          labelPadding ?? EdgeInsets.symmetric(horizontal: 4, vertical: -4),
       padding: EdgeInsets.zero,
       backgroundColor: backgroundColor,
+      materialTapTargetSize: materialTapTargetSize,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       label: Text(labelText, textAlign: .center),
-      labelStyle: context.textTheme.labelLarge?.copyWith(color: side?.color),
+      labelStyle: context.textTheme.labelLarge
+          ?.copyWith(color: side?.color)
+          .merge(textStyle),
     );
   }
 }

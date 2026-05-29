@@ -267,6 +267,18 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'جدید'**
   String get global_badge_new_label;
+
+  /// No description provided for @global_coach_label.
+  ///
+  /// In fa, this message translates to:
+  /// **'مربی'**
+  String get global_coach_label;
+
+  /// No description provided for @global_support_label.
+  ///
+  /// In fa, this message translates to:
+  /// **'پشتیبانی'**
+  String get global_support_label;
 }
 
 class _AppLocalizationsDelegate
