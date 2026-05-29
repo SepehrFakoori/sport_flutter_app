@@ -5,8 +5,15 @@ import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 
 class RatingChip extends StatelessWidget {
   final double rate;
+  final double? height;
+  final double? width;
 
-  const RatingChip({super.key, required this.rate});
+  const RatingChip({
+    super.key,
+    required this.rate,
+    this.height = 12,
+    this.width = 12,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +24,19 @@ class RatingChip extends StatelessWidget {
       children: [
         Text(
           rate.toString(),
-          style: context.textTheme.bodySmall?.copyWith(height: 1),
+          textScaler: .noScaling,
+          style: context.textTheme.labelSmall?.copyWith(
+            fontSize: 12,
+            color: context.colors.textSecondary,
+            height: 0.1,
+          ),
         ),
-        IconWidget(icon: AssetIcons.starFilled, height: 14, width: 14),
+        IconWidget(
+          icon: AssetIcons.starFilled,
+          height: height,
+          width: width,
+          color: context.colors.textSecondary,
+        ),
       ],
     );
   }
