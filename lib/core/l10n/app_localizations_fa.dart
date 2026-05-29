@@ -69,6 +69,23 @@ class AppLocalizationsFa extends AppLocalizations {
   String get home_notifications_icon_tooltip => 'اعلان‌ها';
 
   @override
+  String get chat_list_appbar_title => 'گفتگوها';
+
+  @override
+  String chat_list_appbar_subtitle(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count گفتگو',
+      zero: 'بدون گفتگو',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get chat_text_field_hint => 'پیام خود را بنویسید...';
+
+  @override
   String get gender_men_label => 'ویژه آقایان';
 
   @override

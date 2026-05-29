@@ -214,6 +214,24 @@ abstract class AppLocalizations {
   /// **'اعلان‌ها'**
   String get home_notifications_icon_tooltip;
 
+  /// No description provided for @chat_list_appbar_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'گفتگوها'**
+  String get chat_list_appbar_title;
+
+  /// No description provided for @chat_list_appbar_subtitle.
+  ///
+  /// In fa, this message translates to:
+  /// **'{count,plural, =0{بدون گفتگو} other{{count} گفتگو}}'**
+  String chat_list_appbar_subtitle(num count);
+
+  /// No description provided for @chat_text_field_hint.
+  ///
+  /// In fa, this message translates to:
+  /// **'پیام خود را بنویسید...'**
+  String get chat_text_field_hint;
+
   /// No description provided for @gender_men_label.
   ///
   /// In fa, this message translates to:
