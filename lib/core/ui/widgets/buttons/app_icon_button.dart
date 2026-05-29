@@ -6,22 +6,25 @@ class AppIconButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final String icon;
   final bool? isSelected;
+  final String? tooltip;
 
   const AppIconButton({
     super.key,
     required this.onPressed,
     required this.icon,
     this.isSelected,
+    this.tooltip,
   });
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: onPressed,
-      padding: EdgeInsets.zero,
-      icon: IconWidget(icon: icon),
+      padding: EdgeInsets.all(10),
+      icon: IconWidget(icon: icon, height: 20, width: 20),
       isSelected: isSelected,
       selectedIcon: IconWidget(icon: icon, color: context.colors.primary),
+      tooltip: tooltip,
     );
   }
 }

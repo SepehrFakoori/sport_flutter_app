@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/screens/main_page.dart';
+import 'package:sport_flutter_app/features/chat/presentations/chat_page.dart';
+import 'package:sport_flutter_app/features/chat/presentations/chats_page.dart';
 import 'package:sport_flutter_app/features/home/presentations/home_page.dart';
 import 'package:sport_flutter_app/features/user/presentations/profile_page.dart';
 import 'package:sport_flutter_app/features/user/presentations/account_page.dart';
@@ -34,6 +36,14 @@ final GoRouter routerConfig = GoRouter(
         StatefulShellBranch(
           routes: <RouteBase>[
             GoRoute(
+              path: AppRoutes.chats.path,
+              builder: (context, state) => ChatsPage(),
+            ),
+          ],
+        ),
+        StatefulShellBranch(
+          routes: <RouteBase>[
+            GoRoute(
               path: AppRoutes.account.path,
               builder: (context, state) => AccountPage(),
             ),
@@ -45,6 +55,11 @@ final GoRouter routerConfig = GoRouter(
       name: AppRoutes.profile.name,
       path: AppRoutes.profile.path,
       builder: (context, state) => ProfilePage(),
+    ),
+    GoRoute(
+      path: AppRoutes.chat.path,
+      name: AppRoutes.chat.name,
+      builder: (context, state) => ChatPage(),
     ),
   ],
 );

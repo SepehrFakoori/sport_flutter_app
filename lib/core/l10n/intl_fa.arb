@@ -1,6 +1,7 @@
 {
     "bottom_navigation_home": "خانه",
     "bottom_navigation_bookmark": "مورد علاقه\u200Cها",
+    "bottom_navigation_chat": "گفتگو",
     "bottom_navigation_profile": "پروفایل",
 
     "account_appBarTitle": "پروفایل",
@@ -19,6 +20,13 @@
     "home_categories_title": "دسته\u200Cبندی",
     "home_popular_title": "پرطرفدارترین\u200Cها",
     "home_nearby_popular_title": "پرطرفدارترین\u200Cهای اطراف",
+    "home_search_icon_tooltip": "جستوجو",
+    "home_notifications_icon_tooltip": "اعلان\u200Cها",
+
+    "chat_list_appbar_title": "گفتگوها",
+    "chat_list_appbar_subtitle": "{count,plural, =0{بدون گفتگو} other{{count} گفتگو}}",
+
+    "chat_text_field_hint": "پیام خود را بنویسید...",
 
     "gender_men_label": "ویژه آقایان",
     "gender_women_label": "ویژه بانوان",

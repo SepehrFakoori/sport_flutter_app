@@ -29,6 +29,11 @@ class MainPage extends StatelessWidget {
             label: context.l10n.bottom_navigation_bookmark,
           ),
           AppNavigationDestination(
+            icon: AssetIcons.message,
+            selectedIcon: AssetIcons.messageFilled,
+            label: context.l10n.bottom_navigation_chat,
+          ),
+          AppNavigationDestination(
             icon: AssetIcons.profile,
             selectedIcon: AssetIcons.profileFilled,
             label: context.l10n.bottom_navigation_profile,
