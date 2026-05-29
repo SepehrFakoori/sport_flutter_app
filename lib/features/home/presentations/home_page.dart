@@ -12,6 +12,51 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Column(
+          crossAxisAlignment: .start,
+          children: [
+            Text(
+              'پلی آن',
+              style: context.textTheme.headlineMedium?.copyWith(
+                color: context.colors.primary,
+                fontWeight: .w700,
+              ),
+            ),
+            Row(
+              mainAxisAlignment: .start,
+              crossAxisAlignment: .start,
+              spacing: 4,
+              children: [
+                IconWidget(
+                  icon: AssetIcons.location,
+                  height: 16,
+                  width: 16,
+                  color: context.colors.primary,
+                ),
+                Text('تهران، سعادت آباد'),
+              ],
+            ),
+          ],
+        ),
+        titleTextStyle: context.textTheme.bodyMedium?.copyWith(
+          color: context.colors.textSecondary,
+        ),
+        actions: [
+          AppIconButton(
+            icon: AssetIcons.search,
+            onPressed: () {},
+            tooltip: context.l10n.home_search_icon_tooltip,
+          ),
+          SizedBox(width: 8),
+          AppIconButton(
+            icon: AssetIcons.notification,
+            onPressed: () {},
+            tooltip: context.l10n.home_notifications_icon_tooltip,
+          ),
+        ],
+        actionsPadding: .symmetric(horizontal: 16),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
