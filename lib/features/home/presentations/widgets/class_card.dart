@@ -41,7 +41,7 @@ class ClassCard extends StatelessWidget {
           side: BorderSide(color: context.colors.divider),
         ),
         child: SizedBox(
-          width: 224,
+          width: 196,
           child: Column(
             crossAxisAlignment: .start,
             children: [
