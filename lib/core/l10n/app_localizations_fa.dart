@@ -102,4 +102,10 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get global_badge_new_label => 'جدید';
+
+  @override
+  String get global_coach_label => 'مربی';
+
+  @override
+  String get global_support_label => 'پشتیبانی';
 }
