@@ -106,6 +106,12 @@ abstract class AppLocalizations {
   /// **'مورد علاقه‌ها'**
   String get bottom_navigation_bookmark;
 
+  /// No description provided for @bottom_navigation_chat.
+  ///
+  /// In fa, this message translates to:
+  /// **'گفتگو'**
+  String get bottom_navigation_chat;
+
   /// No description provided for @bottom_navigation_profile.
   ///
   /// In fa, this message translates to:
@@ -195,6 +201,36 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'پرطرفدارترین‌های اطراف'**
   String get home_nearby_popular_title;
+
+  /// No description provided for @home_search_icon_tooltip.
+  ///
+  /// In fa, this message translates to:
+  /// **'جستوجو'**
+  String get home_search_icon_tooltip;
+
+  /// No description provided for @home_notifications_icon_tooltip.
+  ///
+  /// In fa, this message translates to:
+  /// **'اعلان‌ها'**
+  String get home_notifications_icon_tooltip;
+
+  /// No description provided for @chat_list_appbar_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'گفتگوها'**
+  String get chat_list_appbar_title;
+
+  /// No description provided for @chat_list_appbar_subtitle.
+  ///
+  /// In fa, this message translates to:
+  /// **'{count,plural, =0{بدون گفتگو} other{{count} گفتگو}}'**
+  String chat_list_appbar_subtitle(num count);
+
+  /// No description provided for @chat_text_field_hint.
+  ///
+  /// In fa, this message translates to:
+  /// **'پیام خود را بنویسید...'**
+  String get chat_text_field_hint;
 
   /// No description provided for @gender_men_label.
   ///

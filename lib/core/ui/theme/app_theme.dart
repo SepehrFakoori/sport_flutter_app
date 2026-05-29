@@ -121,6 +121,31 @@ class AppTheme {
         ),
       ),
 
+      iconButtonTheme: IconButtonThemeData(
+        style: ButtonStyle(
+          shape: WidgetStatePropertyAll(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          ),
+          side: WidgetStateBorderSide.resolveWith((states) {
+            if (states.contains(WidgetState.pressed)) {
+              return BorderSide(color: colors.primary);
+            }
+            if (states.contains(WidgetState.hovered)) {
+              return BorderSide(color: colors.primary);
+            }
+            return BorderSide(color: colors.divider);
+          }),
+          backgroundColor: WidgetStateColor.resolveWith((states) {
+            if (states.contains(WidgetState.hovered)) {
+              return colors.surface;
+            }
+            return Colors.transparent;
+          }),
+          tapTargetSize: .shrinkWrap,
+          alignment: .center,
+        ),
+      ),
+
       // inputDecorationTheme: InputDecorationThemeData(
       //   constraints: BoxConstraints(maxHeight: 48),
       //   isDense: true,

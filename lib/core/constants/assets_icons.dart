@@ -37,4 +37,10 @@ class AssetIcons {
   static const headphone = "$_basePath/headphone.svg";
   static const receiptItem = "$_basePath/receipt-item.svg";
   static const taskSquare = "$_basePath/task-square.svg";
+  static const notification = "$_basePath/notification.svg";
+  static const notificationFilled = "$_basePath/notification-filled.svg";
+  static const message = "$_basePath/message.svg";
+  static const messageFilled = "$_basePath/message-filled.svg";
+  static const search = "$_basePath/search.svg";
+  static const searchFilled = "$_basePath/search-filled.svg";
 }
