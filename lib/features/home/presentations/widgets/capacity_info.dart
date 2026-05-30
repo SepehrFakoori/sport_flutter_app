@@ -22,12 +22,12 @@ class CapacityInfo extends StatelessWidget {
           icon: AssetIcons.profile2User,
           height: 16,
           width: 16,
-          color: context.colors.textSecondary,
+          color: context.colors.onBackgroundSecondary,
         ),
         Text(
           '$remaining ظرفیت باقی مانده',
           style: context.textTheme.bodyMedium?.copyWith(
-            color: context.colors.textSecondary,
+            color: context.colors.onBackgroundSecondary,
           ),
         ),
       ],

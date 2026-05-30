@@ -162,7 +162,7 @@ class AppTheme {
         elevation: 1.5,
         indicatorColor: colors.surface,
         backgroundColor: colors.background,
-        shadowColor: colors.textPrimary,
+        shadowColor: colors.onBackground,
         labelPadding: EdgeInsetsGeometry.zero,
         labelTextStyle: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
@@ -173,7 +173,7 @@ class AppTheme {
             );
           }
           return AppTextTheme.textTheme.labelLarge!.copyWith(
-            color: colors.textSecondary,
+            color: colors.onBackgroundSecondary,
             fontWeight: .w600,
             height: 1,
           );
@@ -227,7 +227,7 @@ class AppTheme {
 
       listTileTheme: ListTileThemeData(
         tileColor: colors.background,
-        iconColor: colors.textPrimary,
+        iconColor: colors.onBackground,
       ),
 
       cardTheme: CardThemeData(color: colors.background),

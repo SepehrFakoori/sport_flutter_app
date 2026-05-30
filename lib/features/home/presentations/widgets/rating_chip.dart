@@ -27,7 +27,7 @@ class RatingChip extends StatelessWidget {
           textScaler: .noScaling,
           style: context.textTheme.labelSmall?.copyWith(
             fontSize: 12,
-            color: context.colors.textSecondary,
+            color: context.colors.onBackgroundSecondary,
             height: 0.1,
           ),
         ),
@@ -35,7 +35,7 @@ class RatingChip extends StatelessWidget {
           icon: AssetIcons.starFilled,
           height: height,
           width: width,
-          color: context.colors.textSecondary,
+          color: context.colors.onBackgroundSecondary,
         ),
       ],
     );
