@@ -6,10 +6,7 @@ import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 class CapacityInfo extends StatelessWidget {
   final int remaining;
 
-  const CapacityInfo({
-    super.key,
-    required this.remaining,
-  });
+  const CapacityInfo({super.key, required this.remaining});
 
   @override
   Widget build(BuildContext context) {

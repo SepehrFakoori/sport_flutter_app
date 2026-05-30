@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
-import 'package:sport_flutter_app/core/ui/widgets/app_badge.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/features/chat/presentations/widgets/coach_label.dart';
 
