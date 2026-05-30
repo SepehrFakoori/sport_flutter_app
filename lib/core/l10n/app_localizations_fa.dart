@@ -83,6 +83,20 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
+  String get coach_appbar_title => 'پروفایل مربی';
+
+  @override
+  String coach_reviews_label(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count دیدگاه',
+      zero: 'بدون دیدگاه',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String get chat_text_field_hint => 'پیام خود را بنویسید...';
 
   @override

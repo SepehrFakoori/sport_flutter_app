@@ -26,6 +26,9 @@
     "chat_list_appbar_title": "گفتگوها",
     "chat_list_appbar_subtitle": "{count,plural, =0{بدون گفتگو} other{{count} گفتگو}}",
 
+    "coach_appbar_title": "پروفایل مربی",
+    "coach_reviews_label": "{count, plural, =0{بدون دیدگاه} other{{count} دیدگاه}}",
+
     "chat_text_field_hint": "پیام خود را بنویسید...",
 
     "gender_men_label": "ویژه آقایان",

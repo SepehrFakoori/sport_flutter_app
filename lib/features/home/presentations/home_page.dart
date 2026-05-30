@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/constants/assets_icons.dart';
 import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
@@ -47,7 +49,12 @@ class HomePage extends StatelessWidget {
         actions: [
           AppIconButton(
             icon: AssetIcons.search,
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed(
+                AppRoutes.coach.name!,
+                pathParameters: {'id': '10'},
+              );
+            },
             tooltip: context.l10n.home_search_icon_tooltip,
           ),
           SizedBox(width: 8),
@@ -67,7 +74,7 @@ class HomePage extends StatelessWidget {
                 title: context.l10n.home_categories_title,
                 onTap: () {},
               ),
-              CategoryListView(itemCount: 8),
+              CategoryListView(),
               FilterTile(title: context.l10n.home_popular_title, onTap: () {}),
               ClassListView(),
               SizedBox(height: 16),

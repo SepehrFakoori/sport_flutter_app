@@ -226,6 +226,18 @@ abstract class AppLocalizations {
   /// **'{count,plural, =0{بدون گفتگو} other{{count} گفتگو}}'**
   String chat_list_appbar_subtitle(num count);
 
+  /// No description provided for @coach_appbar_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'پروفایل مربی'**
+  String get coach_appbar_title;
+
+  /// No description provided for @coach_reviews_label.
+  ///
+  /// In fa, this message translates to:
+  /// **'{count, plural, =0{بدون دیدگاه} other{{count} دیدگاه}}'**
+  String coach_reviews_label(num count);
+
   /// No description provided for @chat_text_field_hint.
   ///
   /// In fa, this message translates to:
