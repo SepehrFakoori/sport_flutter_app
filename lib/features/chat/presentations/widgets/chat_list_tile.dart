@@ -56,7 +56,7 @@ class ChatListTile extends StatelessWidget {
       subtitle: Text(lastMessage, maxLines: 1, overflow: .ellipsis),
       subtitleTextStyle: context.textTheme.bodyMedium?.copyWith(
         fontWeight: .w500,
-        color: context.colors.textSecondary,
+        color: context.colors.onBackgroundSecondary,
       ),
     );
   }

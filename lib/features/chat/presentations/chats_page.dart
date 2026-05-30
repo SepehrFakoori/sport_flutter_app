@@ -38,7 +38,7 @@ class ChatsPage extends StatelessWidget {
           ],
         ),
         titleTextStyle: context.textTheme.bodyMedium?.copyWith(
-          color: context.colors.textSecondary,
+          color: context.colors.onBackgroundSecondary,
         ),
         actions: [
           AppIconButton(

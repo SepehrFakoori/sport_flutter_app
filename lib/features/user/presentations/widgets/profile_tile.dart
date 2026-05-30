@@ -38,7 +38,7 @@ class ProfileTile extends StatelessWidget {
       subtitle: Text(phoneNumber),
       subtitleTextStyle: context.textTheme.bodyMedium?.copyWith(
         fontWeight: .w500,
-        color: context.colors.textSecondary,
+        color: context.colors.onBackgroundSecondary,
       ),
     );
   }
