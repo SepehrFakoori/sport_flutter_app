@@ -106,11 +106,11 @@ abstract class AppLocalizations {
   /// **'مورد علاقه‌ها'**
   String get bottom_navigation_bookmark;
 
-  /// No description provided for @bottom_navigation_chat.
+  /// No description provided for @bottom_navigation_inbox.
   ///
   /// In fa, this message translates to:
-  /// **'گفتگو'**
-  String get bottom_navigation_chat;
+  /// **'ورودی‌ها'**
+  String get bottom_navigation_inbox;
 
   /// No description provided for @bottom_navigation_profile.
   ///

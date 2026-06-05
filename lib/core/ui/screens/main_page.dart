@@ -31,7 +31,7 @@ class MainPage extends StatelessWidget {
           AppNavigationDestination(
             icon: AssetIcons.message,
             selectedIcon: AssetIcons.messageFilled,
-            label: context.l10n.bottom_navigation_chat,
+            label: context.l10n.bottom_navigation_inbox,
           ),
           AppNavigationDestination(
             icon: AssetIcons.profile,

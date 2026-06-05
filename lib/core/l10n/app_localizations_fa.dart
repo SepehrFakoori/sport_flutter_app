@@ -15,7 +15,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get bottom_navigation_bookmark => 'مورد علاقه‌ها';
 
   @override
-  String get bottom_navigation_chat => 'گفتگو';
+  String get bottom_navigation_inbox => 'ورودی‌ها';
 
   @override
   String get bottom_navigation_profile => 'پروفایل';
