@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/features/inbox/presentations/widgets/chat_tile.dart';
+import 'package:sport_flutter_app/features/inbox/presentations/widgets/chat_tile_skeleton.dart';
 
 class InboxPage extends StatefulWidget {
   const InboxPage({super.key});
@@ -51,16 +52,14 @@ class _InboxPageState extends State<InboxPage>
             controller: _controller,
             children: [
               ListView.separated(
-                itemBuilder: (context, index) {
-                  return ChatTile(
-                    sender: 'سپهر فکوری',
-                    message: 'سلام بر همه عزیزان گروه چطورین؟',
-                    onTap: () {},
-                  );
-                },
+                itemBuilder: (context, index) => ChatTile(
+                  sender: 'سپهر فکوری',
+                  message: 'سلام بر همه عزیزان گروه چطورین؟',
+                  onTap: () {},
+                ),
                 separatorBuilder: (context, index) =>
                     AppDivider(indent: 24, endIndent: 24),
-                itemCount: 3,
+                itemCount: 25,
               ),
               ListView.builder(
                 itemBuilder: (context, index) =>

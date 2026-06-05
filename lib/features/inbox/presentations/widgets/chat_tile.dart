@@ -25,7 +25,13 @@ class ChatTile extends StatelessWidget {
         color: context.colors.onBackground,
       ),
       horizontalTitleGap: 12,
-      subtitle: Text(message, maxLines: 1, overflow: .ellipsis),
+      subtitle: Row(
+        spacing: 12,
+        children: [
+          Expanded(child: Text(message * 2, maxLines: 1, overflow: .ellipsis)),
+          Text('22:00', maxLines: 1, overflow: .ellipsis),
+        ],
+      ),
       subtitleTextStyle: context.textTheme.titleMedium?.copyWith(
         color: context.colors.onBackgroundSecondary,
         fontWeight: .w400,
