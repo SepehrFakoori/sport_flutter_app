@@ -23,8 +23,8 @@
     "home_search_icon_tooltip": "جستوجو",
     "home_notifications_icon_tooltip": "اعلان\u200Cها",
 
-    "chat_list_appbar_title": "گفتگوها",
-    "chat_list_appbar_subtitle": "{count,plural, =0{بدون گفتگو} other{{count} گفتگو}}",
+    "inbox_message_tab_label": "گفتگو\u200Cها",
+    "inbox_notifications_tab_label": "اعلان\u200Cها",
 
     "coach_appbar_title": "پروفایل مربی",
     "coach_reviews_label": "{count, plural, =0{بدون دیدگاه} other{{count} دیدگاه}}",

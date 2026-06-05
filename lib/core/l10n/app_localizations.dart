@@ -214,17 +214,17 @@ abstract class AppLocalizations {
   /// **'اعلان‌ها'**
   String get home_notifications_icon_tooltip;
 
-  /// No description provided for @chat_list_appbar_title.
+  /// No description provided for @inbox_message_tab_label.
   ///
   /// In fa, this message translates to:
-  /// **'گفتگوها'**
-  String get chat_list_appbar_title;
+  /// **'گفتگو‌ها'**
+  String get inbox_message_tab_label;
 
-  /// No description provided for @chat_list_appbar_subtitle.
+  /// No description provided for @inbox_notifications_tab_label.
   ///
   /// In fa, this message translates to:
-  /// **'{count,plural, =0{بدون گفتگو} other{{count} گفتگو}}'**
-  String chat_list_appbar_subtitle(num count);
+  /// **'اعلان‌ها'**
+  String get inbox_notifications_tab_label;
 
   /// No description provided for @coach_appbar_title.
   ///
