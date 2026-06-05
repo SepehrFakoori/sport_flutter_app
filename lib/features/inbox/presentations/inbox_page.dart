@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
-import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
-import 'package:sport_flutter_app/features/inbox/presentations/widgets/chat_tile.dart';
-import 'package:sport_flutter_app/features/inbox/presentations/widgets/chat_tile_skeleton.dart';
+import 'package:sport_flutter_app/features/inbox/presentations/chats_page.dart';
+import 'package:sport_flutter_app/features/inbox/presentations/notifications_page.dart';
 
 class InboxPage extends StatefulWidget {
   const InboxPage({super.key});
@@ -50,23 +49,7 @@ class _InboxPageState extends State<InboxPage>
           },
           body: TabBarView(
             controller: _controller,
-            children: [
-              ListView.separated(
-                itemBuilder: (context, index) => ChatTile(
-                  sender: 'سپهر فکوری',
-                  message: 'سلام بر همه عزیزان گروه چطورین؟',
-                  onTap: () {},
-                ),
-                separatorBuilder: (context, index) =>
-                    AppDivider(indent: 24, endIndent: 24),
-                itemCount: 25,
-              ),
-              ListView.builder(
-                itemBuilder: (context, index) =>
-                    Container(color: Colors.red, height: 48),
-                itemCount: 25,
-              ),
-            ],
+            children: [ChatsPage(), NotificationsPage()],
           ),
         ),
       ),
