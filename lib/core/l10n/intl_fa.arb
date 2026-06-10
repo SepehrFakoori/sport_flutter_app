@@ -40,5 +40,15 @@
     "global_button_save": "ذخیره",
     "global_badge_new_label": "جدید",
     "global_coach_label": "مربی",
-    "global_support_label": "پشتیبانی"
+    "global_support_label": "پشتیبانی",
+
+    "class_review_title": "نظرات",
+    "class_features": "ویژگی\u200Cهای کلاس",
+    "class_description": "توضیحات",
+    "class_reviews": "نظرات",
+    "class_show_more_reviews_title": "نمایش همه",
+    "class_coach_reviews":  "نظرات کاربران",
+    "class_coach_rate": "امتیاز",
+    "class_coach_title": "آشنایی با مربی",
+    "class_price_title": "قیمت"
 }

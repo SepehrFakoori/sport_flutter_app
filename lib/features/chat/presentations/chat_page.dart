@@ -72,7 +72,8 @@ class ChatPage extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(16, 16, 16, 96),
                 itemBuilder: (context, index) =>
                     ChatBubble(messages: messages, index: index),
-                separatorBuilder: (context, index) => SizedBox(height: 24),
+                separatorBuilder: (context, index) =>
+                    const SizedBox(height: 24),
                 itemCount: 20,
               ),
             ),

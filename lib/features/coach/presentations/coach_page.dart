@@ -49,7 +49,7 @@ class CoachPage extends StatelessWidget {
                           'https://cdn.entekhab.ir/files/fa/news/1401/4/20/1291768_193.jpg',
                       radius: 56,
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Text(
                       coachFullName,
                       textAlign: .center,
@@ -66,7 +66,7 @@ class CoachPage extends StatelessWidget {
                         color: context.colors.onBackgroundSecondary,
                       ),
                     ),
-                    SizedBox(height: 4),
+                    const SizedBox(height: 4),
                     Row(
                       mainAxisAlignment: .center,
                       children: [
@@ -86,7 +86,7 @@ class CoachPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Row(
                       mainAxisAlignment: .center,
                       children: [

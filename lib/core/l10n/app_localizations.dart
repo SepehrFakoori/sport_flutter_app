@@ -291,6 +291,60 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'پشتیبانی'**
   String get global_support_label;
+
+  /// No description provided for @class_review_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'نظرات'**
+  String get class_review_title;
+
+  /// No description provided for @class_features.
+  ///
+  /// In fa, this message translates to:
+  /// **'ویژگی‌های کلاس'**
+  String get class_features;
+
+  /// No description provided for @class_description.
+  ///
+  /// In fa, this message translates to:
+  /// **'توضیحات'**
+  String get class_description;
+
+  /// No description provided for @class_reviews.
+  ///
+  /// In fa, this message translates to:
+  /// **'نظرات'**
+  String get class_reviews;
+
+  /// No description provided for @class_show_more_reviews_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'نمایش همه'**
+  String get class_show_more_reviews_title;
+
+  /// No description provided for @class_coach_reviews.
+  ///
+  /// In fa, this message translates to:
+  /// **'نظرات کاربران'**
+  String get class_coach_reviews;
+
+  /// No description provided for @class_coach_rate.
+  ///
+  /// In fa, this message translates to:
+  /// **'امتیاز'**
+  String get class_coach_rate;
+
+  /// No description provided for @class_coach_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'آشنایی با مربی'**
+  String get class_coach_title;
+
+  /// No description provided for @class_price_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'قیمت'**
+  String get class_price_title;
 }
 
 class _AppLocalizationsDelegate

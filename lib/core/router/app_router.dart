@@ -4,6 +4,7 @@ import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/screens/main_page.dart';
 import 'package:sport_flutter_app/features/chat/presentations/chat_page.dart';
 import 'package:sport_flutter_app/features/chat/presentations/chats_page.dart';
+import 'package:sport_flutter_app/features/class/presentations/class_page.dart';
 import 'package:sport_flutter_app/features/coach/presentations/coach_page.dart';
 import 'package:sport_flutter_app/features/home/presentations/home_page.dart';
 import 'package:sport_flutter_app/features/user/presentations/profile_page.dart';
@@ -69,6 +70,15 @@ final GoRouter routerConfig = GoRouter(
         final coachId = int.tryParse(state.pathParameters['id']!);
 
         return CoachPage(coachId: coachId!);
+      },
+    ),
+    GoRoute(
+      path: AppRoutes.classInfo.path,
+      name: AppRoutes.classInfo.name,
+      builder: (context, state) {
+        final classId = int.tryParse(state.pathParameters['id']!);
+
+        return ClassPage(classId: classId!);
       },
     ),
   ],
