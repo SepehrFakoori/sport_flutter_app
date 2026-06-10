@@ -15,7 +15,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get bottom_navigation_bookmark => 'مورد علاقه‌ها';
 
   @override
-  String get bottom_navigation_chat => 'گفتگو';
+  String get bottom_navigation_inbox => 'ورودی‌ها';
 
   @override
   String get bottom_navigation_profile => 'پروفایل';
@@ -69,18 +69,10 @@ class AppLocalizationsFa extends AppLocalizations {
   String get home_notifications_icon_tooltip => 'اعلان‌ها';
 
   @override
-  String get chat_list_appbar_title => 'گفتگوها';
+  String get inbox_message_tab_label => 'گفتگو‌ها';
 
   @override
-  String chat_list_appbar_subtitle(num count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count گفتگو',
-      zero: 'بدون گفتگو',
-    );
-    return '$_temp0';
-  }
+  String get inbox_notifications_tab_label => 'اعلان‌ها';
 
   @override
   String get coach_appbar_title => 'پروفایل مربی';

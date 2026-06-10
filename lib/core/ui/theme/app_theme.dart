@@ -295,6 +295,25 @@ class AppTheme {
       ),
 
       chipTheme: ChipThemeData(labelStyle: AppTextTheme.textTheme.labelLarge),
+
+      tabBarTheme: TabBarThemeData(
+        dividerColor: colors.surface,
+        indicatorAnimation: .elastic,
+        indicatorColor: colors.secondary,
+        indicatorSize: .tab,
+        tabAlignment: .start,
+        unselectedLabelColor: colors.onTertiary,
+        labelColor: colors.secondary,
+        indicator: UnderlineTabIndicator(
+          borderSide: BorderSide(
+            color: colors.secondary,
+            width: 2,
+            style: .solid,
+          ),
+          borderRadius: .circular(1),
+        ),
+        labelPadding: .symmetric(horizontal: 12),
+      ),
     );
   }
 }

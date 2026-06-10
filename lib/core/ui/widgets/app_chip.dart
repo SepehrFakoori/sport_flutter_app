@@ -8,6 +8,7 @@ class AppChip extends StatelessWidget {
   final TextStyle? textStyle;
   final EdgeInsetsGeometry? labelPadding;
   final MaterialTapTargetSize? materialTapTargetSize;
+  final OutlinedBorder? shape;
 
   const AppChip({
     super.key,
@@ -17,6 +18,7 @@ class AppChip extends StatelessWidget {
     this.textStyle,
     this.labelPadding,
     this.materialTapTargetSize = .shrinkWrap,
+    this.shape,
   });
 
   @override
@@ -28,10 +30,12 @@ class AppChip extends StatelessWidget {
       padding: EdgeInsets.zero,
       backgroundColor: backgroundColor,
       materialTapTargetSize: materialTapTargetSize,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      shape:
+          shape ??
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       label: Text(labelText, textAlign: .center),
       labelStyle: context.textTheme.labelLarge
-          ?.copyWith(color: side?.color)
+          ?.copyWith(color: side?.color, height: 1)
           .merge(textStyle),
     );
   }

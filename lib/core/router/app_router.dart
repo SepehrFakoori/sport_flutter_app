@@ -2,11 +2,11 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/screens/main_page.dart';
-import 'package:sport_flutter_app/features/chat/presentations/chat_page.dart';
-import 'package:sport_flutter_app/features/chat/presentations/chats_page.dart';
 import 'package:sport_flutter_app/features/class/presentations/class_page.dart';
+import 'package:sport_flutter_app/features/inbox/presentations/chat_page.dart';
 import 'package:sport_flutter_app/features/coach/presentations/coach_page.dart';
 import 'package:sport_flutter_app/features/home/presentations/home_page.dart';
+import 'package:sport_flutter_app/features/inbox/presentations/inbox_page.dart';
 import 'package:sport_flutter_app/features/user/presentations/profile_page.dart';
 import 'package:sport_flutter_app/features/user/presentations/account_page.dart';
 import 'package:sport_flutter_app/features/user/presentations/simple_page.dart';
@@ -38,8 +38,8 @@ final GoRouter routerConfig = GoRouter(
         StatefulShellBranch(
           routes: <RouteBase>[
             GoRoute(
-              path: AppRoutes.chats.path,
-              builder: (context, state) => ChatsPage(),
+              path: AppRoutes.inbox.path,
+              builder: (context, state) => InboxPage(),
             ),
           ],
         ),
