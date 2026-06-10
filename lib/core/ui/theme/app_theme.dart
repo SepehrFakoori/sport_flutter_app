@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/ui/theme/app_colors.dart';
 import 'package:sport_flutter_app/core/ui/theme/app_text_theme.dart';
+import 'package:sport_flutter_app/core/ui/theme/palette.dart';
 import 'package:sport_flutter_app/core/ui/theme/theme_colors.dart';
 
 /// Easy access to application theme using `AppTheme.light()`
@@ -20,7 +21,7 @@ class AppTheme {
       scaffoldBackgroundColor: colors.background,
       useMaterial3: true,
 
-      fontFamily: "Ravi",
+      fontFamily: AppTextTheme.fontFamily,
       textTheme: AppTextTheme.textTheme,
 
       colorScheme: colorScheme,
@@ -29,32 +30,59 @@ class AppTheme {
       // Uses Material 3 Design
       filledButtonTheme: FilledButtonThemeData(
         style: ButtonStyle(
-          fixedSize: WidgetStatePropertyAll<Size>(Size.fromHeight(48)),
-          minimumSize: WidgetStatePropertyAll<Size>(Size(96, 48)),
           shape: WidgetStatePropertyAll(
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            RoundedRectangleBorder(
+              borderRadius: BorderRadiusGeometry.circular(8),
+            ),
           ),
           padding: WidgetStatePropertyAll<EdgeInsets>(
-            EdgeInsets.symmetric(horizontal: 8),
+            EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           ),
-          backgroundColor: WidgetStateProperty.resolveWith((states) {
-            if (states.contains(WidgetState.pressed)) {
-              return Colors.red;
-            } else if (states.contains(WidgetState.hovered)) {
-              return Colors.blue;
+          backgroundColor: WidgetStateColor.resolveWith((states) {
+            if (states.contains(WidgetState.hovered)) {
+              return AppPalette.primary70;
+            } else if (states.contains(WidgetState.focused)) {
+              return AppPalette.primary60;
+            } else if (states.contains(WidgetState.pressed)) {
+              return AppPalette.primary80;
+            } else if (states.contains(WidgetState.disabled)) {
+              return colors.tertiary;
             } else {
               return colors.primary;
             }
           }),
-          foregroundColor: WidgetStateProperty.resolveWith((states) {
-            if (states.contains(WidgetState.pressed)) {
-              return Colors.green;
-            } else if (states.contains(WidgetState.hovered)) {
-              return Colors.red;
-            } else {
-              return colors.onPrimary;
+          foregroundColor: WidgetStateColor.resolveWith((states) {
+            if (states.contains(WidgetState.disabled)) {
+              return colors.onTertiary;
             }
+            return colors.onPrimary;
           }),
+          textStyle: WidgetStateTextStyle.resolveWith((states) {
+            return TextStyle(
+              fontFamily: AppTextTheme.fontFamily,
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              height: 1.75,
+            );
+          }),
+          side: WidgetStateBorderSide.resolveWith((states) {
+            if (states.contains(WidgetState.disabled)) {
+              return BorderSide(
+                color: AppPalette.neutral50,
+                width: 1,
+                style: .solid,
+              );
+            }
+            return .none;
+          }),
+          alignment: .center,
+          iconColor: WidgetStateColor.resolveWith((states) {
+            if (states.contains(WidgetState.disabled)) {
+              return colors.onTertiary;
+            }
+            return colors.onPrimary;
+          }),
+          iconSize: WidgetStatePropertyAll(16),
         ),
       ),
 
@@ -92,19 +120,49 @@ class AppTheme {
 
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: ButtonStyle(
-          fixedSize: WidgetStatePropertyAll<Size>(Size.fromHeight(48)),
-          minimumSize: WidgetStatePropertyAll<Size>(Size(96, 48)),
           shape: WidgetStatePropertyAll(
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            RoundedRectangleBorder(
+              borderRadius: BorderRadiusGeometry.circular(8),
+            ),
           ),
-          side: WidgetStatePropertyAll<BorderSide>(
-            BorderSide(color: colors.primary),
-          ),
+          side: WidgetStateBorderSide.resolveWith((states) {
+            final color = switch (states) {
+              _ when states.contains(WidgetState.hovered) =>
+                AppPalette.primary70,
+              _ when states.contains(WidgetState.focused) =>
+                AppPalette.primary60,
+              _ when states.contains(WidgetState.pressed) =>
+                AppPalette.primary80,
+              _ when states.contains(WidgetState.disabled) => colors.onTertiary,
+              _ => colors.primary,
+            };
+            return BorderSide(color: color, width: 1, style: .solid);
+          }),
+          textStyle: WidgetStateTextStyle.resolveWith((states) {
+            return TextStyle(
+              fontFamily: AppTextTheme.fontFamily,
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              height: 1.75,
+            );
+          }),
           padding: WidgetStatePropertyAll<EdgeInsets>(
-            EdgeInsets.symmetric(horizontal: 8),
+            EdgeInsets.symmetric(vertical: 8, horizontal: 16),
           ),
           backgroundColor: WidgetStatePropertyAll<Color>(Colors.transparent),
-          foregroundColor: WidgetStatePropertyAll<Color>(colors.primary),
+          foregroundColor: WidgetStateColor.resolveWith((states) {
+            if (states.contains(WidgetState.hovered)) {
+              return AppPalette.primary70;
+            } else if (states.contains(WidgetState.focused)) {
+              return AppPalette.primary60;
+            } else if (states.contains(WidgetState.pressed)) {
+              return AppPalette.primary80;
+            } else if (states.contains(WidgetState.disabled)) {
+              return colors.onTertiary;
+            } else {
+              return colors.primary;
+            }
+          }),
         ),
       ),
 
@@ -123,23 +181,20 @@ class AppTheme {
 
       iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
-          shape: WidgetStatePropertyAll(
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          ),
-          side: WidgetStateBorderSide.resolveWith((states) {
-            if (states.contains(WidgetState.pressed)) {
-              return BorderSide(color: colors.primary);
-            }
-            if (states.contains(WidgetState.hovered)) {
-              return BorderSide(color: colors.primary);
-            }
-            return BorderSide(color: colors.divider);
-          }),
+          shape: WidgetStatePropertyAll(CircleBorder()),
           backgroundColor: WidgetStateColor.resolveWith((states) {
-            if (states.contains(WidgetState.hovered)) {
-              return colors.surface;
-            }
-            return Colors.transparent;
+            final color = switch (states) {
+              _ when states.contains(WidgetState.hovered) =>
+                AppPalette.primary70,
+              _ when states.contains(WidgetState.focused) =>
+                AppPalette.primary60,
+              _ when states.contains(WidgetState.pressed) =>
+                AppPalette.neutral20,
+              _ when states.contains(WidgetState.disabled) =>
+                AppPalette.neutral50,
+              _ => colors.background,
+            };
+            return color;
           }),
           tapTargetSize: .shrinkWrap,
           alignment: .center,
@@ -162,7 +217,7 @@ class AppTheme {
         elevation: 1.5,
         indicatorColor: colors.surface,
         backgroundColor: colors.background,
-        shadowColor: colors.textPrimary,
+        shadowColor: colors.onBackground,
         labelPadding: EdgeInsetsGeometry.zero,
         labelTextStyle: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.selected)) {
@@ -173,7 +228,7 @@ class AppTheme {
             );
           }
           return AppTextTheme.textTheme.labelLarge!.copyWith(
-            color: colors.textSecondary,
+            color: colors.onBackgroundSecondary,
             fontWeight: .w600,
             height: 1,
           );
@@ -227,7 +282,7 @@ class AppTheme {
 
       listTileTheme: ListTileThemeData(
         tileColor: colors.background,
-        iconColor: colors.textPrimary,
+        iconColor: colors.onBackground,
       ),
 
       cardTheme: CardThemeData(color: colors.background),
@@ -240,6 +295,25 @@ class AppTheme {
       ),
 
       chipTheme: ChipThemeData(labelStyle: AppTextTheme.textTheme.labelLarge),
+
+      tabBarTheme: TabBarThemeData(
+        dividerColor: colors.surface,
+        indicatorAnimation: .elastic,
+        indicatorColor: colors.secondary,
+        indicatorSize: .tab,
+        tabAlignment: .start,
+        unselectedLabelColor: colors.onTertiary,
+        labelColor: colors.secondary,
+        indicator: UnderlineTabIndicator(
+          borderSide: BorderSide(
+            color: colors.secondary,
+            width: 2,
+            style: .solid,
+          ),
+          borderRadius: .circular(1),
+        ),
+        labelPadding: .symmetric(horizontal: 12),
+      ),
     );
   }
 }

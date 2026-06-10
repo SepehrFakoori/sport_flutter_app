@@ -19,7 +19,7 @@ class LocationInfo extends StatelessWidget {
           icon: AssetIcons.location,
           height: 16,
           width: 16,
-          color: context.colors.textSecondary,
+          color: context.colors.onBackgroundSecondary,
         ),
         Flexible(
           child: Text(
@@ -27,7 +27,7 @@ class LocationInfo extends StatelessWidget {
             maxLines: 1,
             overflow: .ellipsis,
             style: context.textTheme.bodyMedium?.copyWith(
-              color: context.colors.textSecondary,
+              color: context.colors.onBackgroundSecondary,
             ),
           ),
         ),

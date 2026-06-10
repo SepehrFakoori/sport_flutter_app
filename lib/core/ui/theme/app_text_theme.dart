@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class AppTextTheme {
   AppTextTheme._();
 
+  static const String fontFamily = 'Ravi';
+
   static final TextTheme _base = ThemeData.light().textTheme;
 
   static final TextTheme textTheme = _base.copyWith(

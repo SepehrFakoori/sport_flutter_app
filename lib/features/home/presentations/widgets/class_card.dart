@@ -41,7 +41,7 @@ class ClassCard extends StatelessWidget {
           side: BorderSide(color: context.colors.divider),
         ),
         child: SizedBox(
-          width: 224,
+          width: 196,
           child: Column(
             crossAxisAlignment: .start,
             children: [
@@ -68,7 +68,7 @@ class ClassCard extends StatelessWidget {
                       CoachInfo(firstname: firstname, lastname: lastname),
                       LocationInfo(location: location),
                       CapacityInfo(remaining: remaining),
-                      SizedBox(height: 12),
+                      const SizedBox(height: 12),
                       CostInfo(cost: cost),
                     ],
                   ),

@@ -25,7 +25,7 @@ class CoachTile extends StatelessWidget {
         Text(
           username,
           style: context.textTheme.bodyMedium?.copyWith(
-            color: context.colors.textSecondary,
+            color: context.colors.onBackgroundSecondary,
           ),
         ),
       ],

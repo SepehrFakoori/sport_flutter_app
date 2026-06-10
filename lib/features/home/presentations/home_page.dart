@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/constants/assets_icons.dart';
 import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
-import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
 import 'package:sport_flutter_app/features/home/presentations/widgets/category_list.dart';
-import 'package:sport_flutter_app/features/home/presentations/widgets/class_card.dart';
+import 'package:sport_flutter_app/features/home/presentations/widgets/class_list_view.dart';
 import 'package:sport_flutter_app/features/home/presentations/widgets/filter_tile.dart';
 
 class HomePage extends StatelessWidget {
@@ -42,15 +43,20 @@ class HomePage extends StatelessWidget {
           ],
         ),
         titleTextStyle: context.textTheme.bodyMedium?.copyWith(
-          color: context.colors.textSecondary,
+          color: context.colors.onBackgroundSecondary,
         ),
         actions: [
           AppIconButton(
             icon: AssetIcons.search,
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed(
+                AppRoutes.coach.name!,
+                pathParameters: {'id': '10'},
+              );
+            },
             tooltip: context.l10n.home_search_icon_tooltip,
           ),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           AppIconButton(
             icon: AssetIcons.notification,
             onPressed: () {},
@@ -67,44 +73,22 @@ class HomePage extends StatelessWidget {
                 title: context.l10n.home_categories_title,
                 onTap: () {},
               ),
-              CategoryListView(itemCount: 8),
+              CategoryListView(),
               FilterTile(title: context.l10n.home_popular_title, onTap: () {}),
               ClassListView(),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               FilterTile(
                 title: context.l10n.home_nearby_popular_title,
-                onTap: () {},
+                onTap: () {
+                  context.pushNamed(
+                    AppRoutes.classInfo.name!,
+                    pathParameters: {'id': '25'},
+                  );
+                },
               ),
               ClassListView(),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class ClassListView extends StatelessWidget {
-  const ClassListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 286,
-      child: ListView.builder(
-        itemCount: 8,
-        scrollDirection: Axis.horizontal,
-        padding: EdgeInsets.symmetric(horizontal: 8),
-        itemBuilder: (context, index) => ClassCard(
-          imageUrl:
-              'https://teempo.ir/wp-content/uploads/2025/04/167027126-H-1024x700-copy.webp',
-          title: 'یوگا صبحگاهی',
-          firstname: 'فاطمه',
-          lastname: 'اکبری',
-          location: 'تهران، سعادت آباد',
-          capacity: 20,
-          remaining: 16,
-          cost: '1,800,000',
         ),
       ),
     );

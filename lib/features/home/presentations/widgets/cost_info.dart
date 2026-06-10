@@ -21,7 +21,7 @@ class CostInfo extends StatelessWidget {
         Text(
           'تومان/ماهانه',
           style: context.textTheme.labelLarge?.copyWith(
-            color: context.colors.textSecondary,
+            color: context.colors.onBackgroundSecondary,
           ),
         ),
       ],
