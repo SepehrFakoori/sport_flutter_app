@@ -68,7 +68,7 @@ class ClassCard extends StatelessWidget {
                       CoachInfo(firstname: firstname, lastname: lastname),
                       LocationInfo(location: location),
                       CapacityInfo(remaining: remaining),
-                      SizedBox(height: 12),
+                      const SizedBox(height: 12),
                       CostInfo(cost: cost),
                     ],
                   ),

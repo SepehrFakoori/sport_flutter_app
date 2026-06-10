@@ -1,7 +1,7 @@
 {
     "bottom_navigation_home": "خانه",
     "bottom_navigation_bookmark": "مورد علاقه\u200Cها",
-    "bottom_navigation_chat": "گفتگو",
+    "bottom_navigation_inbox": "ورودی\u200Cها",
     "bottom_navigation_profile": "پروفایل",
 
     "account_appBarTitle": "پروفایل",
@@ -23,8 +23,8 @@
     "home_search_icon_tooltip": "جستوجو",
     "home_notifications_icon_tooltip": "اعلان\u200Cها",
 
-    "chat_list_appbar_title": "گفتگوها",
-    "chat_list_appbar_subtitle": "{count,plural, =0{بدون گفتگو} other{{count} گفتگو}}",
+    "inbox_message_tab_label": "گفتگو\u200Cها",
+    "inbox_notifications_tab_label": "اعلان\u200Cها",
 
     "coach_appbar_title": "پروفایل مربی",
     "coach_reviews_label": "{count, plural, =0{بدون دیدگاه} other{{count} دیدگاه}}",
@@ -40,5 +40,15 @@
     "global_button_save": "ذخیره",
     "global_badge_new_label": "جدید",
     "global_coach_label": "مربی",
-    "global_support_label": "پشتیبانی"
+    "global_support_label": "پشتیبانی",
+
+    "class_review_title": "نظرات",
+    "class_features": "ویژگی\u200Cهای کلاس",
+    "class_description": "توضیحات",
+    "class_reviews": "نظرات",
+    "class_show_more_reviews_title": "نمایش همه",
+    "class_coach_reviews":  "نظرات کاربران",
+    "class_coach_rate": "امتیاز",
+    "class_coach_title": "آشنایی با مربی",
+    "class_price_title": "قیمت"
 }

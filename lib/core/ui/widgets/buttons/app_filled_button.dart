@@ -2,30 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circular_progress_indicator.dart';
 
+enum ButtonVariant { primary, secondary }
+
 class AppFilledButton extends StatelessWidget {
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final String title;
   final bool isLoading;
+  final ButtonVariant type;
 
   const AppFilledButton({
     super.key,
     required this.onPressed,
     required this.title,
     this.isLoading = false,
-  });
+  }) : type = .primary;
+
+  const AppFilledButton.secondary({
+    super.key,
+    required this.onPressed,
+    required this.title,
+    this.isLoading = false,
+  }) : type = .secondary;
 
   @override
   Widget build(BuildContext context) {
     return FilledButton(
       onPressed: isLoading ? null : onPressed,
-      child: isLoading
-          ? AppCircularProgressIndicator()
-          : Text(
-              title,
-              style: context.textTheme.titleLarge?.copyWith(
-                color: context.colors.onPrimary,
-              ),
-            ),
+      style: type == .secondary
+          ? FilledButton.styleFrom(backgroundColor: context.colors.secondary)
+          : null,
+      child: isLoading ? AppCircularProgressIndicator() : Text(title),
     );
   }
 }

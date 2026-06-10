@@ -19,7 +19,7 @@ class AppNavigationDestination extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavigationDestination(
-      icon: IconWidget(icon: icon, color: context.colors.textSecondary),
+      icon: IconWidget(icon: icon, color: context.colors.onBackgroundSecondary),
       selectedIcon: IconWidget(
         icon: selectedIcon,
         color: context.colors.primary,

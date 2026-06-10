@@ -19,7 +19,7 @@ class CoachInfo extends StatelessWidget {
       children: [
         IconWidget(
           icon: AssetIcons.profile,
-          color: context.colors.textSecondary,
+          color: context.colors.onBackgroundSecondary,
           width: 16,
           height: 16,
         ),
@@ -29,7 +29,7 @@ class CoachInfo extends StatelessWidget {
             maxLines: 1,
             overflow: .ellipsis,
             style: context.textTheme.bodyMedium?.copyWith(
-              color: context.colors.textSecondary,
+              color: context.colors.onBackgroundSecondary,
             ),
           ),
         ),

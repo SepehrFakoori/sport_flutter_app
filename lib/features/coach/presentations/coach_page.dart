@@ -49,7 +49,7 @@ class CoachPage extends StatelessWidget {
                           'https://cdn.entekhab.ir/files/fa/news/1401/4/20/1291768_193.jpg',
                       radius: 56,
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Text(
                       coachFullName,
                       textAlign: .center,
@@ -63,10 +63,10 @@ class CoachPage extends StatelessWidget {
                       'مربی بدنسازی و مربی پیلاتس',
                       textAlign: .center,
                       style: context.textTheme.bodyMedium?.copyWith(
-                        color: context.colors.textSecondary,
+                        color: context.colors.onBackgroundSecondary,
                       ),
                     ),
-                    SizedBox(height: 4),
+                    const SizedBox(height: 4),
                     Row(
                       mainAxisAlignment: .center,
                       children: [
@@ -74,19 +74,19 @@ class CoachPage extends StatelessWidget {
                           '$rate • ',
                           textAlign: .center,
                           style: context.textTheme.bodyMedium?.copyWith(
-                            color: context.colors.textSecondary,
+                            color: context.colors.onBackgroundSecondary,
                           ),
                         ),
                         Text(
                           context.l10n.coach_reviews_label(10),
                           textAlign: .center,
                           style: context.textTheme.bodyMedium?.copyWith(
-                            color: context.colors.textSecondary,
+                            color: context.colors.onBackgroundSecondary,
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     Row(
                       mainAxisAlignment: .center,
                       children: [
@@ -142,7 +142,7 @@ class CoachPage extends StatelessWidget {
                       'مربی حرفه‌ای بدنسازی و فیتنس. برنامه‌های شخصی‌سازی شده برای هر نفر. از امروز شروع کن، نتیجه رو میبینی.' *
                           3,
                       style: context.textTheme.bodyMedium?.copyWith(
-                        color: context.colors.textSecondary,
+                        color: context.colors.onBackgroundSecondary,
                       ),
                     ),
                   ],
@@ -178,7 +178,7 @@ class CoachPage extends StatelessWidget {
                       'مربی حرفه‌ای بدنسازی و فیتنس. برنامه‌های شخصی‌سازی شده برای هر نفر. از امروز شروع کن، نتیجه رو میبینی.' *
                           3,
                       style: context.textTheme.bodyMedium?.copyWith(
-                        color: context.colors.textSecondary,
+                        color: context.colors.onBackgroundSecondary,
                       ),
                     ),
                   ],
@@ -214,7 +214,7 @@ class CoachPage extends StatelessWidget {
                       'مربی حرفه‌ای بدنسازی و فیتنس. برنامه‌های شخصی‌سازی شده برای هر نفر. از امروز شروع کن، نتیجه رو میبینی.' *
                           3,
                       style: context.textTheme.bodyMedium?.copyWith(
-                        color: context.colors.textSecondary,
+                        color: context.colors.onBackgroundSecondary,
                       ),
                     ),
                   ],
@@ -250,7 +250,7 @@ class CoachPage extends StatelessWidget {
                       'مربی حرفه‌ای بدنسازی و فیتنس. برنامه‌های شخصی‌سازی شده برای هر نفر. از امروز شروع کن، نتیجه رو میبینی.' *
                           3,
                       style: context.textTheme.bodyMedium?.copyWith(
-                        color: context.colors.textSecondary,
+                        color: context.colors.onBackgroundSecondary,
                       ),
                     ),
                   ],
@@ -287,7 +287,7 @@ class ShortDetail extends StatelessWidget {
           TextSpan(
             text: subtitle,
             style: context.textTheme.titleMedium?.copyWith(
-              color: context.colors.textSecondary,
+              color: context.colors.onBackgroundSecondary,
               height: 1,
             ),
           ),

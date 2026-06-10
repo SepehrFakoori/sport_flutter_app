@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_text_form_field.dart';
-import 'package:sport_flutter_app/features/chat/presentations/widgets/chat_bubble.dart';
+import 'package:sport_flutter_app/features/inbox/presentations/widgets/chat_bubble.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key});
@@ -53,7 +53,7 @@ class ChatPage extends StatelessWidget {
                   'مربی بدنسازی',
                   style: context.textTheme.bodyMedium?.copyWith(
                     fontWeight: .w500,
-                    color: context.colors.textSecondary,
+                    color: context.colors.onBackgroundSecondary,
                     height: 1,
                   ),
                 ),
@@ -72,7 +72,8 @@ class ChatPage extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(16, 16, 16, 96),
                 itemBuilder: (context, index) =>
                     ChatBubble(messages: messages, index: index),
-                separatorBuilder: (context, index) => SizedBox(height: 24),
+                separatorBuilder: (context, index) =>
+                    const SizedBox(height: 24),
                 itemCount: 20,
               ),
             ),

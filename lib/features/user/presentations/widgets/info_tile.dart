@@ -24,7 +24,7 @@ class InfoTile extends StatelessWidget {
       title: Text(title),
       titleTextStyle: context.textTheme.bodyMedium?.copyWith(
         fontWeight: .w500,
-        color: context.colors.textSecondary,
+        color: context.colors.onBackgroundSecondary,
       ),
       titleAlignment: ListTileTitleAlignment.center,
       subtitle: Text(subtitle, maxLines: 1, overflow: .ellipsis),

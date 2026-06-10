@@ -15,7 +15,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get bottom_navigation_bookmark => 'مورد علاقه‌ها';
 
   @override
-  String get bottom_navigation_chat => 'گفتگو';
+  String get bottom_navigation_inbox => 'ورودی‌ها';
 
   @override
   String get bottom_navigation_profile => 'پروفایل';
@@ -69,18 +69,10 @@ class AppLocalizationsFa extends AppLocalizations {
   String get home_notifications_icon_tooltip => 'اعلان‌ها';
 
   @override
-  String get chat_list_appbar_title => 'گفتگوها';
+  String get inbox_message_tab_label => 'گفتگو‌ها';
 
   @override
-  String chat_list_appbar_subtitle(num count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count گفتگو',
-      zero: 'بدون گفتگو',
-    );
-    return '$_temp0';
-  }
+  String get inbox_notifications_tab_label => 'اعلان‌ها';
 
   @override
   String get coach_appbar_title => 'پروفایل مربی';
@@ -122,4 +114,31 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get global_support_label => 'پشتیبانی';
+
+  @override
+  String get class_review_title => 'نظرات';
+
+  @override
+  String get class_features => 'ویژگی‌های کلاس';
+
+  @override
+  String get class_description => 'توضیحات';
+
+  @override
+  String get class_reviews => 'نظرات';
+
+  @override
+  String get class_show_more_reviews_title => 'نمایش همه';
+
+  @override
+  String get class_coach_reviews => 'نظرات کاربران';
+
+  @override
+  String get class_coach_rate => 'امتیاز';
+
+  @override
+  String get class_coach_title => 'آشنایی با مربی';
+
+  @override
+  String get class_price_title => 'قیمت';
 }
