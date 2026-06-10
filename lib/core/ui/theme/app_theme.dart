@@ -181,23 +181,20 @@ class AppTheme {
 
       iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
-          shape: WidgetStatePropertyAll(
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          ),
-          side: WidgetStateBorderSide.resolveWith((states) {
-            if (states.contains(WidgetState.pressed)) {
-              return BorderSide(color: colors.primary);
-            }
-            if (states.contains(WidgetState.hovered)) {
-              return BorderSide(color: colors.primary);
-            }
-            return BorderSide(color: colors.divider);
-          }),
+          shape: WidgetStatePropertyAll(CircleBorder()),
           backgroundColor: WidgetStateColor.resolveWith((states) {
-            if (states.contains(WidgetState.hovered)) {
-              return colors.surface;
-            }
-            return Colors.transparent;
+            final color = switch (states) {
+              _ when states.contains(WidgetState.hovered) =>
+                AppPalette.primary70,
+              _ when states.contains(WidgetState.focused) =>
+                AppPalette.primary60,
+              _ when states.contains(WidgetState.pressed) =>
+                AppPalette.neutral20,
+              _ when states.contains(WidgetState.disabled) =>
+                AppPalette.neutral50,
+              _ => colors.background,
+            };
+            return color;
           }),
           tapTargetSize: .shrinkWrap,
           alignment: .center,

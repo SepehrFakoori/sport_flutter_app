@@ -56,7 +56,7 @@ class HomePage extends StatelessWidget {
             },
             tooltip: context.l10n.home_search_icon_tooltip,
           ),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           AppIconButton(
             icon: AssetIcons.notification,
             onPressed: () {},
@@ -76,10 +76,15 @@ class HomePage extends StatelessWidget {
               CategoryListView(),
               FilterTile(title: context.l10n.home_popular_title, onTap: () {}),
               ClassListView(),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               FilterTile(
                 title: context.l10n.home_nearby_popular_title,
-                onTap: () {},
+                onTap: () {
+                  context.pushNamed(
+                    AppRoutes.classInfo.name!,
+                    pathParameters: {'id': '25'},
+                  );
+                },
               ),
               ClassListView(),
             ],

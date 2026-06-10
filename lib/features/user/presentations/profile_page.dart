@@ -33,7 +33,7 @@ class ProfilePage extends StatelessWidget {
                 tag: 'profile',
                 child: AppCircleAvatar(username: 'روشنا بابائی', radius: 30),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               ListView.separated(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),

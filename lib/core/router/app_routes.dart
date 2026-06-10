@@ -13,4 +13,5 @@ sealed class AppRoutes {
   static const account = AppRoute(name: 'account', path: '/account');
   static const profile = AppRoute(name: 'profile', path: '/profile');
   static const coach = AppRoute(name: 'coach', path: '/coach/:id');
+  static const classInfo = AppRoute(name: 'class', path: '/class/:id');
 }

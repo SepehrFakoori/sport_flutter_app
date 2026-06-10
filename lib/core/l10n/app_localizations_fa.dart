@@ -122,4 +122,31 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get global_support_label => 'پشتیبانی';
+
+  @override
+  String get class_review_title => 'نظرات';
+
+  @override
+  String get class_features => 'ویژگی‌های کلاس';
+
+  @override
+  String get class_description => 'توضیحات';
+
+  @override
+  String get class_reviews => 'نظرات';
+
+  @override
+  String get class_show_more_reviews_title => 'نمایش همه';
+
+  @override
+  String get class_coach_reviews => 'نظرات کاربران';
+
+  @override
+  String get class_coach_rate => 'امتیاز';
+
+  @override
+  String get class_coach_title => 'آشنایی با مربی';
+
+  @override
+  String get class_price_title => 'قیمت';
 }
