@@ -79,9 +79,7 @@ class ClassComments extends StatelessWidget {
                         ),
                         Text(
                           comment.toString(),
-                          style: context.textTheme.titleMedium?.copyWith(
-                            height: 1.5,
-                          ),
+                          style: context.textTheme.titleMedium,
                           textAlign: .justify,
                           maxLines: 3,
                           overflow: .ellipsis,

@@ -30,7 +30,6 @@ class ClassSummaryDetail extends StatelessWidget {
                 Text(
                   address,
                   style: context.textTheme.titleMedium?.copyWith(
-                    height: 0.7,
                     color: context.colors.onBackgroundSecondary,
                   ),
                 ),
@@ -46,11 +45,11 @@ class ClassSummaryDetail extends StatelessWidget {
                 children: [
                   Text(
                     comments.toString(),
-                    style: context.textTheme.bodyLarge?.copyWith(height: 0.7),
+                    style: context.textTheme.bodyLarge,
                   ),
                   Text(
                     context.l10n.class_review_title,
-                    style: context.textTheme.labelLarge?.copyWith(height: 1.2),
+                    style: context.textTheme.labelLarge,
                   ),
                 ],
               ),
@@ -71,7 +70,7 @@ class ClassSummaryDetail extends StatelessWidget {
                 children: [
                   Text(
                     rate.toString(),
-                    style: context.textTheme.bodyLarge?.copyWith(height: 0.7),
+                    style: context.textTheme.bodyLarge,
                   ),
                   Wrap(
                     spacing: 1,

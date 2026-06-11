@@ -62,7 +62,6 @@ class AppTheme {
               fontFamily: AppTextTheme.fontFamily,
               fontSize: 16,
               fontWeight: FontWeight.w500,
-              height: 1.75,
             );
           }),
           side: WidgetStateBorderSide.resolveWith((states) {
@@ -143,7 +142,6 @@ class AppTheme {
               fontFamily: AppTextTheme.fontFamily,
               fontSize: 16,
               fontWeight: FontWeight.w500,
-              height: 1.75,
             );
           }),
           padding: WidgetStatePropertyAll<EdgeInsets>(
@@ -224,13 +222,11 @@ class AppTheme {
             return AppTextTheme.textTheme.labelLarge!.copyWith(
               color: colors.primary,
               fontWeight: .w600,
-              height: 1,
             );
           }
           return AppTextTheme.textTheme.labelLarge!.copyWith(
             color: colors.onBackgroundSecondary,
             fontWeight: .w600,
-            height: 1,
           );
         }),
         height: 72,

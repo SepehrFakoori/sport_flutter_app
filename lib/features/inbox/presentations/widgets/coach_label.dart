@@ -12,7 +12,6 @@ class CoachLabel extends StatelessWidget {
       labelText: context.l10n.global_coach_label,
       textStyle: context.textTheme.labelLarge?.copyWith(
         color: context.colors.primary,
-        height: 1,
       ),
       backgroundColor: context.colors.surface,
       side: BorderSide.none,
@@ -30,7 +29,6 @@ class SupportLabel extends StatelessWidget {
       labelText: context.l10n.global_support_label,
       textStyle: context.textTheme.labelLarge?.copyWith(
         color: AppPalette.semantic2,
-        height: 1,
       ),
       backgroundColor: AppPalette.semantic2.withValues(alpha: 0.1),
       side: BorderSide.none,

@@ -28,7 +28,6 @@ class RatingChip extends StatelessWidget {
           style: context.textTheme.labelSmall?.copyWith(
             fontSize: 12,
             color: context.colors.onBackgroundSecondary,
-            height: 0.1,
           ),
         ),
         IconWidget(
