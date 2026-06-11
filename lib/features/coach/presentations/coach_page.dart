@@ -281,14 +281,12 @@ class ShortDetail extends StatelessWidget {
             text: '$title\n',
             style: context.textTheme.titleLarge?.copyWith(
               color: context.colors.primary,
-              height: 1.5,
             ),
           ),
           TextSpan(
             text: subtitle,
             style: context.textTheme.titleMedium?.copyWith(
               color: context.colors.onBackgroundSecondary,
-              height: 1,
             ),
           ),
         ],

@@ -35,7 +35,7 @@ class AppChip extends StatelessWidget {
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       label: Text(labelText, textAlign: .center),
       labelStyle: context.textTheme.labelLarge
-          ?.copyWith(color: side?.color, height: 1)
+          ?.copyWith(color: side?.color)
           .merge(textStyle),
     );
   }

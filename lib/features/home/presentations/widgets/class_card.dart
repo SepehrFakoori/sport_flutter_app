@@ -60,9 +60,7 @@ class ClassCard extends StatelessWidget {
                           title,
                           maxLines: 2,
                           overflow: .ellipsis,
-                          style: context.textTheme.titleLarge?.copyWith(
-                            height: 1.4,
-                          ),
+                          style: context.textTheme.titleLarge,
                         ),
                       ),
                       CoachInfo(firstname: firstname, lastname: lastname),

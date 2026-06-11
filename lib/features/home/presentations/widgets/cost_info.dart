@@ -16,7 +16,7 @@ class CostInfo extends StatelessWidget {
       children: [
         Text(
           '۳۰۰،۰۰۰',
-          style: context.textTheme.titleLarge?.copyWith(height: 1),
+          style: context.textTheme.titleLarge,
         ),
         Text(
           'تومان/ماهانه',

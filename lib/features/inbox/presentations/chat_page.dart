@@ -46,7 +46,6 @@ class ChatPage extends StatelessWidget {
                   'مصطفی گریزمان',
                   style: context.textTheme.headlineSmall?.copyWith(
                     fontWeight: .w600,
-                    height: 1.2,
                   ),
                 ),
                 Text(
@@ -54,7 +53,6 @@ class ChatPage extends StatelessWidget {
                   style: context.textTheme.bodyMedium?.copyWith(
                     fontWeight: .w500,
                     color: context.colors.onBackgroundSecondary,
-                    height: 1,
                   ),
                 ),
               ],
