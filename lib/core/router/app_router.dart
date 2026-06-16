@@ -2,6 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/screens/main_page.dart';
+import 'package:sport_flutter_app/features/auth/auth_page.dart';
 import 'package:sport_flutter_app/features/class/presentations/class_page.dart';
 import 'package:sport_flutter_app/features/inbox/presentations/chat_page.dart';
 import 'package:sport_flutter_app/features/coach/presentations/coach_page.dart';
@@ -80,6 +81,11 @@ final GoRouter routerConfig = GoRouter(
 
         return ClassPage(classId: classId!);
       },
+    ),
+    GoRoute(
+      path: AppRoutes.auth.path,
+      name: AppRoutes.auth.name,
+      builder: (context, state) => AuthPage(),
     ),
   ],
 );

@@ -345,6 +345,66 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'قیمت'**
   String get class_price_title;
+
+  /// No description provided for @auth_welcome.
+  ///
+  /// In fa, this message translates to:
+  /// **'خوش آمدید!'**
+  String get auth_welcome;
+
+  /// No description provided for @auth_description.
+  ///
+  /// In fa, this message translates to:
+  /// **'لطفا شماره موبایلتان را وارد کنید تا بتوانیم با شما در ارتباط باشیم.'**
+  String get auth_description;
+
+  /// No description provided for @auth_phone_number.
+  ///
+  /// In fa, this message translates to:
+  /// **'شماره موبایل'**
+  String get auth_phone_number;
+
+  /// No description provided for @auth_example.
+  ///
+  /// In fa, this message translates to:
+  /// **'مثلا'**
+  String get auth_example;
+
+  /// No description provided for @auth_terms_prefix.
+  ///
+  /// In fa, this message translates to:
+  /// **'با ثبت نام در پلی آن، '**
+  String get auth_terms_prefix;
+
+  /// No description provided for @auth_terms_and.
+  ///
+  /// In fa, this message translates to:
+  /// **' و '**
+  String get auth_terms_and;
+
+  /// No description provided for @auth_terms_suffix.
+  ///
+  /// In fa, this message translates to:
+  /// **' را قبول می‌کنم.'**
+  String get auth_terms_suffix;
+
+  /// No description provided for @auth_terms_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'قوانین و مقررات را'**
+  String get auth_terms_title;
+
+  /// No description provided for @auth_privacy_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'بیانیه حریم خصوصی'**
+  String get auth_privacy_title;
+
+  /// No description provided for @auth_continue.
+  ///
+  /// In fa, this message translates to:
+  /// **'ادامه'**
+  String get auth_continue;
 }
 
 class _AppLocalizationsDelegate

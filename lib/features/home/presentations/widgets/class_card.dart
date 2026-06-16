@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/constants/assets_icons.dart';
 import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
 
@@ -25,7 +27,9 @@ class ClassCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        context.pushNamed(AppRoutes.auth.name!);
+      },
       borderRadius: BorderRadius.circular(12),
       child: SizedBox(
         width: 180,
