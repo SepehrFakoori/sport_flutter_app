@@ -141,4 +141,35 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get class_price_title => 'قیمت';
+
+  @override
+  String get auth_welcome => 'خوش آمدید!';
+
+  @override
+  String get auth_description =>
+      'لطفا شماره موبایلتان را وارد کنید تا بتوانیم با شما در ارتباط باشیم.';
+
+  @override
+  String get auth_phone_number => 'شماره موبایل';
+
+  @override
+  String get auth_example => 'مثلا';
+
+  @override
+  String get auth_terms_prefix => 'با ثبت نام در پلی آن، ';
+
+  @override
+  String get auth_terms_and => ' و ';
+
+  @override
+  String get auth_terms_suffix => ' را قبول می‌کنم.';
+
+  @override
+  String get auth_terms_title => 'قوانین و مقررات را';
+
+  @override
+  String get auth_privacy_title => 'بیانیه حریم خصوصی';
+
+  @override
+  String get auth_continue => 'ادامه';
 }
