@@ -90,7 +90,6 @@ class CoachCard extends StatelessWidget {
                         'مربی $coachSport',
                         style: context.textTheme.titleMedium?.copyWith(
                           color: context.colors.onBackgroundSecondary,
-                          height: 1,
                         ),
                       ),
                     ],
@@ -120,14 +119,12 @@ class InfoItem extends StatelessWidget {
         Text(
           value,
           style: context.textTheme.headlineLarge?.copyWith(
-            height: 1,
             fontWeight: .w800,
           ),
         ),
         Text(
           label,
           style: context.textTheme.labelSmall?.copyWith(
-            height: 1.2,
             fontWeight: .w600,
           ),
         ),

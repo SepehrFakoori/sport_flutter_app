@@ -1,81 +1,130 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:sport_flutter_app/core/constants/assets_icons.dart';
 import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/router/app_routes.dart';
+import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
-import 'package:sport_flutter_app/features/home/presentations/widgets/capacity_info.dart';
-import 'package:sport_flutter_app/features/home/presentations/widgets/coach_info.dart';
-import 'package:sport_flutter_app/features/home/presentations/widgets/cost_info.dart';
-import 'package:sport_flutter_app/features/home/presentations/widgets/location_info.dart';
 
 class ClassCard extends StatelessWidget {
   final String imageUrl;
   final String title;
-  final String firstname;
-  final String lastname;
-  final String location;
-  final int capacity;
-  final int remaining;
+  final String coachName;
+  final String rate;
+  final String address;
   final String cost;
 
   const ClassCard({
     super.key,
     required this.imageUrl,
     required this.title,
-    required this.firstname,
-    required this.lastname,
-    required this.location,
-    required this.capacity,
-    required this.remaining,
+    required this.coachName,
+    required this.rate,
+    required this.address,
     required this.cost,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
-      borderRadius: BorderRadius.circular(8),
-      child: Card(
-        color: Colors.transparent,
-        shadowColor: Colors.transparent,
-        shape: RoundedRectangleBorder(
-          borderRadius: .circular(16),
-          side: BorderSide(color: context.colors.divider),
-        ),
-        child: SizedBox(
-          width: 196,
-          child: Column(
-            crossAxisAlignment: .start,
-            children: [
-              AspectRatio(
-                aspectRatio: 16 / 9,
-                child: ImageLoader(imageUrl: imageUrl, radius: 16),
+      onTap: () {
+        context.pushNamed(AppRoutes.auth.name!);
+      },
+      borderRadius: BorderRadius.circular(12),
+      child: SizedBox(
+        width: 180,
+        child: Column(
+          crossAxisAlignment: .start,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(24),
+                boxShadow: [
+                  BoxShadow(
+                    color: context.colors.secondary.withValues(alpha: 0.12),
+                    offset: const Offset(0, 1),
+                    blurRadius: 2,
+                    spreadRadius: 0,
+                  ),
+                ],
               ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Column(
-                    crossAxisAlignment: .start,
+              child: ImageLoader(
+                imageUrl: imageUrl,
+                height: 180,
+                width: 180,
+                radius: 24,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: .start,
+                spacing: 2,
+                children: [
+                  Text(
+                    title,
+                    style: context.textTheme.titleMedium,
+                    maxLines: 1,
+                    overflow: .ellipsis,
+                  ),
+                  Row(
+                    spacing: 4,
                     children: [
-                      Expanded(
+                      Flexible(
                         child: Text(
-                          title,
-                          maxLines: 2,
-                          overflow: .ellipsis,
-                          style: context.textTheme.titleLarge?.copyWith(
-                            height: 1.4,
+                          coachName,
+                          style: context.textTheme.bodyMedium?.copyWith(
+                            color: context.colors.onBackgroundSecondary,
                           ),
+                          maxLines: 1,
+                          overflow: .ellipsis,
                         ),
                       ),
-                      CoachInfo(firstname: firstname, lastname: lastname),
-                      LocationInfo(location: location),
-                      CapacityInfo(remaining: remaining),
-                      const SizedBox(height: 12),
-                      CostInfo(cost: cost),
+                      Text(
+                        '⋅',
+                        style: context.textTheme.titleMedium?.copyWith(
+                          color: context.colors.onBackgroundSecondary,
+                        ),
+                      ),
+                      Text(
+                        rate,
+                        style: context.textTheme.labelLarge?.copyWith(
+                          color: context.colors.onBackgroundSecondary,
+                        ),
+                      ),
+                      IconWidget(
+                        icon: AssetIcons.starFilled,
+                        height: 12,
+                        width: 12,
+                        color: context.colors.onBackgroundSecondary,
+                      ),
                     ],
                   ),
-                ),
+                  Text(
+                    address,
+                    style: context.textTheme.bodyMedium?.copyWith(
+                      color: context.colors.onBackgroundSecondary,
+                    ),
+                    maxLines: 1,
+                    overflow: .ellipsis,
+                  ),
+                  Row(
+                    mainAxisAlignment: .spaceBetween,
+                    children: [
+                      Text(
+                        'قیمت',
+                        style: context.textTheme.titleMedium?.copyWith(
+                          color: context.colors.onBackgroundSecondary,
+                        ),
+                      ),
+                      Text(cost, style: context.textTheme.titleMedium),
+                    ],
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -51,13 +51,13 @@ flutter:
     - assets/icons/
 
   fonts:
-    - family: Ravi
+    - family: IranYekanX
       fonts:
-        - asset: assets/fonts/Ravi-Regular.ttf
+        - asset: assets/fonts/IRANYekanXFaNum-Regular.ttf
           weight: 400
-        - asset: assets/fonts/Ravi-Medium.ttf
+        - asset: assets/fonts/IRANYekanXFaNum-Medium.ttf
           weight: 500
-        - asset: assets/fonts/Ravi-SemiBold.ttf
+        - asset: assets/fonts/IRANYekanXFaNum-DemiBold.ttf
           weight: 600
-        - asset: assets/fonts/Ravi-Bold.ttf
+        - asset: assets/fonts/IRANYekanXFaNum-Bold.ttf
           weight: 700
