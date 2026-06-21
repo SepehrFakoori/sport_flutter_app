@@ -1,5 +1,5 @@
-import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
+import 'package:sport_flutter_app/core/config/flavor_config.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/screens/main_page.dart';
 import 'package:sport_flutter_app/features/auth/auth_page.dart';
@@ -13,7 +13,7 @@ import 'package:sport_flutter_app/features/user/presentations/account_page.dart'
 import 'package:sport_flutter_app/features/user/presentations/simple_page.dart';
 
 final GoRouter routerConfig = GoRouter(
-  debugLogDiagnostics: appFlavor != 'production',
+  debugLogDiagnostics: !isProduction,
   initialLocation: AppRoutes.home.path,
   routes: <RouteBase>[
     StatefulShellRoute.indexedStack(
