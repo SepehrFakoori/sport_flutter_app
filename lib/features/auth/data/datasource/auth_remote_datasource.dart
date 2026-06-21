@@ -14,7 +14,7 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDataSource {
 
   @override
   Future<void> sendOtp(String phone) async {
-    await _client.post('/auth/sent-otp', data: {'phone': phone});
+    await _client.post('/send-otp', data: {'phone_number': phone});
   }
 
   @override
