@@ -21,7 +21,7 @@ class _AuthPageState extends State<AuthPage> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        actionsPadding: const EdgeInsetsGeometry.symmetric(horizontal: 12),
+        actionsPadding: const EdgeInsetsGeometry.symmetric(horizontal: 24),
         elevation: 1,
         actions: [
           InkWell(

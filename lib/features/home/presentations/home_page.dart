@@ -79,7 +79,7 @@ class HomePage extends StatelessWidget {
                 height: 293,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsetsGeometry.symmetric(horizontal: 12),
+                  padding: const EdgeInsetsGeometry.symmetric(horizontal: 24),
                   itemBuilder: (context, index) => ClassCard(
                     imageUrl:
                         'https://kavaalya.com/wp-content/uploads/2021/05/sukhasana-kavaalya.jpeg',
@@ -108,7 +108,7 @@ class HomePage extends StatelessWidget {
                 height: 293,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  padding: const EdgeInsetsGeometry.symmetric(horizontal: 12),
+                  padding: const EdgeInsetsGeometry.symmetric(horizontal: 24),
                   itemBuilder: (context, index) => ClassCard(
                     imageUrl:
                         'https://kavaalya.com/wp-content/uploads/2021/05/sukhasana-kavaalya.jpeg',

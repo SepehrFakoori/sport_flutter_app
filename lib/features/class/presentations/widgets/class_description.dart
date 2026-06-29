@@ -26,7 +26,7 @@ class _ClassDescriptionState extends State<ClassDescription> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+      padding: const EdgeInsets.symmetric(horizontal: 24.0),
       child: LayoutBuilder(
         builder: (context, constraints) {
           final hasOverflow = _isTextOverflowing(

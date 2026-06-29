@@ -39,7 +39,7 @@ class _ClassPageState extends State<ClassPage> {
               pinned: true,
               elevation: 0,
               expandedHeight: 350,
-              actionsPadding: EdgeInsets.symmetric(horizontal: 12),
+              actionsPadding: EdgeInsets.symmetric(horizontal: 24),
               actions: [
                 AppIconButton(onPressed: () {}, icon: AssetIcons.bookmark),
                 const SizedBox(width: 8),

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_filled_button.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_outlined_button.dart';
 
-class SimplePage extends StatelessWidget {
-  const SimplePage({super.key});
+class SimpleScreen extends StatelessWidget {
+  const SimpleScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

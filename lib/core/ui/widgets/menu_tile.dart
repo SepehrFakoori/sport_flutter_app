@@ -17,13 +17,11 @@ class MenuTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: IconWidget(icon: icon, height: 20, width: 20),
+      leading: IconWidget(icon: icon, height: 24, width: 24),
       title: Text(title, maxLines: 1, overflow: .ellipsis),
-      titleTextStyle: context.textTheme.titleMedium?.copyWith(
-        fontWeight: .w600,
-      ),
+      titleTextStyle: context.textTheme.titleMedium,
       titleAlignment: .center,
-      contentPadding: EdgeInsets.symmetric(horizontal: 24),
+      contentPadding: EdgeInsets.symmetric(horizontal: 16),
       minLeadingWidth: 20,
       minVerticalPadding: 8,
       minTileHeight: 48,
