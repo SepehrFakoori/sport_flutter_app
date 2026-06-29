@@ -19,6 +19,7 @@ class ChatsView extends StatelessWidget {
               AppDivider(endIndent: 0, indent: 0),
           itemCount: 10,
         ),
+        SliverToBoxAdapter(child: SizedBox(height: 96)),
       ],
     );
   }

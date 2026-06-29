@@ -9,8 +9,8 @@ import 'package:sport_flutter_app/features/home/presentations/widgets/category_l
 import 'package:sport_flutter_app/features/home/presentations/widgets/class_card.dart';
 import 'package:sport_flutter_app/features/home/presentations/widgets/filter_tile.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

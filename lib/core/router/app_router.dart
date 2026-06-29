@@ -3,11 +3,11 @@ import 'package:sport_flutter_app/core/config/flavor_config.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/screens/main_page.dart';
 import 'package:sport_flutter_app/features/auth/presentation/auth_screen.dart';
-import 'package:sport_flutter_app/features/class/presentations/class_page.dart';
-import 'package:sport_flutter_app/features/inbox/presentations/chat_page.dart';
-import 'package:sport_flutter_app/features/coach/presentations/coach_page.dart';
-import 'package:sport_flutter_app/features/home/presentations/home_page.dart';
-import 'package:sport_flutter_app/features/inbox/presentations/inbox_page.dart';
+import 'package:sport_flutter_app/features/class/presentations/class_screen.dart';
+import 'package:sport_flutter_app/features/inbox/presentations/chat_screen.dart';
+import 'package:sport_flutter_app/features/coach/presentations/coach_screen.dart';
+import 'package:sport_flutter_app/features/home/presentations/home_screen.dart';
+import 'package:sport_flutter_app/features/inbox/presentations/inbox_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/profile_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/account_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/simple_screen.dart';
@@ -24,7 +24,7 @@ final GoRouter routerConfig = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: AppRoutes.home.path,
-              builder: (context, state) => HomePage(),
+              builder: (context, state) => HomeScreen(),
             ),
           ],
         ),
@@ -62,7 +62,7 @@ final GoRouter routerConfig = GoRouter(
     GoRoute(
       path: AppRoutes.chat.path,
       name: AppRoutes.chat.name,
-      builder: (context, state) => ChatPage(),
+      builder: (context, state) => ChatScreen(),
     ),
     GoRoute(
       path: AppRoutes.coach.path,
@@ -70,7 +70,7 @@ final GoRouter routerConfig = GoRouter(
       builder: (context, state) {
         final coachId = int.tryParse(state.pathParameters['id']!);
 
-        return CoachPage(coachId: coachId!);
+        return CoachScreen(coachId: coachId!);
       },
     ),
     GoRoute(

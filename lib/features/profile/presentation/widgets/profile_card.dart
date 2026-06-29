@@ -21,15 +21,21 @@ class ProfileCard extends StatelessWidget {
       child: Padding(
         padding: const .all(28),
         child: Column(
+          spacing: 4,
           children: [
             ImageLoader(
               imageUrl: imageUrl,
-              height: 110,
-              width: 110,
-              radius: 100,
+              height: 112,
+              width: 112,
+              radius: 56,
             ),
-            const SizedBox(height: 16),
-            Text(username, style: context.textTheme.headlineLarge),
+            const SizedBox(height: 4),
+            Text(
+              username,
+              style: context.textTheme.headlineLarge,
+              maxLines: 1,
+              overflow: .ellipsis,
+            ),
             Text(
               description,
               style: context.textTheme.labelLarge?.copyWith(

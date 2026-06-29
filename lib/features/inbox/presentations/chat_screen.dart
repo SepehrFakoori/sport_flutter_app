@@ -4,8 +4,8 @@ import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_text_form_field.dart';
 import 'package:sport_flutter_app/features/inbox/presentations/widgets/chat_bubble.dart';
 
-class ChatPage extends StatelessWidget {
-  const ChatPage({super.key});
+class ChatScreen extends StatelessWidget {
+  const ChatScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

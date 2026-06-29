@@ -6,10 +6,10 @@ import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
 
-class CoachPage extends StatelessWidget {
+class CoachScreen extends StatelessWidget {
   final int coachId;
 
-  const CoachPage({super.key, required this.coachId});
+  const CoachScreen({super.key, required this.coachId});
 
   @override
   Widget build(BuildContext context) {
