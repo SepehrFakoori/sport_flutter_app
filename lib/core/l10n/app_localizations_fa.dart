@@ -42,6 +42,12 @@ class AppLocalizationsFa extends AppLocalizations {
   String get account_policy_button => 'قوانین و شرایط استفاده';
 
   @override
+  String get account_view_profile => 'مشاهده پروفایل';
+
+  @override
+  String get account_logout => 'خروج';
+
+  @override
   String get profile_firstname_title => 'نام';
 
   @override

@@ -8,9 +8,9 @@ import 'package:sport_flutter_app/features/inbox/presentations/chat_page.dart';
 import 'package:sport_flutter_app/features/coach/presentations/coach_page.dart';
 import 'package:sport_flutter_app/features/home/presentations/home_page.dart';
 import 'package:sport_flutter_app/features/inbox/presentations/inbox_page.dart';
-import 'package:sport_flutter_app/features/user/presentations/profile_page.dart';
-import 'package:sport_flutter_app/features/user/presentations/account_page.dart';
-import 'package:sport_flutter_app/features/user/presentations/simple_page.dart';
+import 'package:sport_flutter_app/features/profile/presentation/profile_screen.dart';
+import 'package:sport_flutter_app/features/profile/presentation/account_screen.dart';
+import 'package:sport_flutter_app/features/profile/presentation/simple_screen.dart';
 
 final GoRouter routerConfig = GoRouter(
   debugLogDiagnostics: !isProduction,
@@ -32,7 +32,7 @@ final GoRouter routerConfig = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: AppRoutes.page1.path,
-              builder: (context, state) => SimplePage(),
+              builder: (context, state) => SimpleScreen(),
             ),
           ],
         ),
@@ -48,7 +48,7 @@ final GoRouter routerConfig = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: AppRoutes.account.path,
-              builder: (context, state) => AccountPage(),
+              builder: (context, state) => AccountScreen(),
             ),
           ],
         ),
@@ -57,7 +57,7 @@ final GoRouter routerConfig = GoRouter(
     GoRoute(
       name: AppRoutes.profile.name,
       path: AppRoutes.profile.path,
-      builder: (context, state) => ProfilePage(),
+      builder: (context, state) => ProfileScreen(),
     ),
     GoRoute(
       path: AppRoutes.chat.path,

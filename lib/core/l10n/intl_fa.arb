@@ -11,6 +11,8 @@
     "account_support_button": "پشتیبانی",
     "account_invite_friends_button": "معرفی به دوستان",
     "account_policy_button": "قوانین و شرایط استفاده",
+    "account_view_profile": "مشاهده پروفایل",
+    "account_logout": "خروج",
 
     "profile_firstname_title": "نام",
     "profile_lastname_title": "نام خانوادگی",

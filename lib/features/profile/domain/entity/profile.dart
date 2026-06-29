@@ -1,0 +1,17 @@
+class Profile {
+  final String fullName;
+  final String phoneNumber;
+  final String? email;
+  final Gender gender;
+  final DateTime birthDate;
+
+  const Profile({
+    required this.fullName,
+    required this.phoneNumber,
+    this.email,
+    required this.gender,
+    required this.birthDate,
+  });
+}
+
+enum Gender { male, female }

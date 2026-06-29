@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       themeMode: .light,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: Locale('fa'),
+      locale: Locale('en'),
       routerConfig: routerConfig,
       builder: (context, child) => child!,
     );
