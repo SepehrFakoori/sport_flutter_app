@@ -20,7 +20,7 @@ class ClassSummaryDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+      padding: const EdgeInsets.symmetric(horizontal: 24.0),
       child: Column(
         children: [
           Center(
@@ -43,10 +43,7 @@ class ClassSummaryDetail extends StatelessWidget {
               Column(
                 crossAxisAlignment: .center,
                 children: [
-                  Text(
-                    comments.toString(),
-                    style: context.textTheme.bodyLarge,
-                  ),
+                  Text(comments.toString(), style: context.textTheme.bodyLarge),
                   Text(
                     context.l10n.class_review_title,
                     style: context.textTheme.labelLarge,
@@ -68,10 +65,7 @@ class ClassSummaryDetail extends StatelessWidget {
               Column(
                 crossAxisAlignment: .center,
                 children: [
-                  Text(
-                    rate.toString(),
-                    style: context.textTheme.bodyLarge,
-                  ),
+                  Text(rate.toString(), style: context.textTheme.bodyLarge),
                   Wrap(
                     spacing: 1,
                     children: List.generate(

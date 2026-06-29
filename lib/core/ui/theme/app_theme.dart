@@ -190,7 +190,7 @@ class AppTheme {
                 AppPalette.neutral20,
               _ when states.contains(WidgetState.disabled) =>
                 AppPalette.neutral50,
-              _ => colors.background,
+              _ => AppPalette.neutral30,
             };
             return color;
           }),

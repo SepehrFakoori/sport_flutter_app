@@ -160,6 +160,18 @@ abstract class AppLocalizations {
   /// **'قوانین و شرایط استفاده'**
   String get account_policy_button;
 
+  /// No description provided for @account_view_profile.
+  ///
+  /// In fa, this message translates to:
+  /// **'مشاهده پروفایل'**
+  String get account_view_profile;
+
+  /// No description provided for @account_logout.
+  ///
+  /// In fa, this message translates to:
+  /// **'خروج'**
+  String get account_logout;
+
   /// No description provided for @profile_firstname_title.
   ///
   /// In fa, this message translates to:

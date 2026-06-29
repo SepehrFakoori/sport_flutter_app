@@ -118,15 +118,11 @@ class InfoItem extends StatelessWidget {
       children: [
         Text(
           value,
-          style: context.textTheme.headlineLarge?.copyWith(
-            fontWeight: .w800,
-          ),
+          style: context.textTheme.headlineLarge?.copyWith(fontWeight: .w800),
         ),
         Text(
           label,
-          style: context.textTheme.labelSmall?.copyWith(
-            fontWeight: .w600,
-          ),
+          style: context.textTheme.labelSmall?.copyWith(fontWeight: .w600),
         ),
       ],
     );
