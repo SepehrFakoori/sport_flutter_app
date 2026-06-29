@@ -364,16 +364,22 @@ abstract class AppLocalizations {
   /// **'شماره موبایل'**
   String get auth_phone_number;
 
-  /// No description provided for @auth_example.
+  /// No description provided for @auth_phone_validation_invalid_prefix.
   ///
   /// In fa, this message translates to:
-  /// **'مثلا'**
-  String get auth_example;
+  /// **'شماره موبایل باید با 09 شروع شود.'**
+  String get auth_phone_validation_invalid_prefix;
+
+  /// No description provided for @auth_phone_number_example.
+  ///
+  /// In fa, this message translates to:
+  /// **'مثلا: 09123456789'**
+  String get auth_phone_number_example;
 
   /// No description provided for @auth_terms_prefix.
   ///
   /// In fa, this message translates to:
-  /// **'با ثبت نام در پلی آن، '**
+  /// **'با ثبت‌نام در پلی آن، '**
   String get auth_terms_prefix;
 
   /// No description provided for @auth_terms_and.

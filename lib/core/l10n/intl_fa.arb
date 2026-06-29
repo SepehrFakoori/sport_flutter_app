@@ -55,11 +55,12 @@
     "auth_welcome": "خوش آمدید!",
     "auth_description": "لطفا شماره موبایلتان را وارد کنید تا بتوانیم با شما در ارتباط باشیم.",
     "auth_phone_number": "شماره موبایل",
-    "auth_example": "مثلا",
-    "auth_terms_prefix": "با ثبت نام در پلی آن، ",
+    "auth_phone_validation_invalid_prefix": "شماره موبایل باید با 09 شروع شود.",
+    "auth_phone_number_example": "مثلا: 09123456789",
+    "auth_terms_prefix": "با ثبت\u200Cنام در پلی آن، ",
     "auth_terms_and": " و ",
     "auth_terms_suffix": " را قبول می‌کنم.",
     "auth_terms_title": "قوانین و مقررات را",
     "auth_privacy_title": "بیانیه حریم خصوصی",
     "auth_continue": "ادامه"
-    }
+}

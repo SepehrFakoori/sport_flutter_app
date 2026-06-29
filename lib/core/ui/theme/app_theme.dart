@@ -35,8 +35,9 @@ class AppTheme {
               borderRadius: BorderRadiusGeometry.circular(8),
             ),
           ),
+          minimumSize: WidgetStatePropertyAll(Size.fromHeight(48)),
           padding: WidgetStatePropertyAll<EdgeInsets>(
-            EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           ),
           backgroundColor: WidgetStateColor.resolveWith((states) {
             if (states.contains(WidgetState.hovered)) {
@@ -65,13 +66,6 @@ class AppTheme {
             );
           }),
           side: WidgetStateBorderSide.resolveWith((states) {
-            if (states.contains(WidgetState.disabled)) {
-              return BorderSide(
-                color: AppPalette.neutral50,
-                width: 1,
-                style: .solid,
-              );
-            }
             return .none;
           }),
           alignment: .center,
@@ -183,7 +177,7 @@ class AppTheme {
           backgroundColor: WidgetStateColor.resolveWith((states) {
             final color = switch (states) {
               _ when states.contains(WidgetState.hovered) =>
-                AppPalette.primary70,
+                AppPalette.primary10,
               _ when states.contains(WidgetState.focused) =>
                 AppPalette.primary60,
               _ when states.contains(WidgetState.pressed) =>
@@ -199,11 +193,10 @@ class AppTheme {
         ),
       ),
 
-      // inputDecorationTheme: InputDecorationThemeData(
-      //   constraints: BoxConstraints(maxHeight: 48),
-      //   isDense: true,
-      //   border: OutlineInputBorder(),
-      // ),
+      inputDecorationTheme: InputDecorationThemeData(
+        border: OutlineInputBorder(),
+      ),
+
       appBarTheme: AppBarThemeData(
         backgroundColor: colors.background,
         surfaceTintColor: Colors.transparent,
@@ -213,7 +206,7 @@ class AppTheme {
       navigationBarTheme: NavigationBarThemeData(
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
         elevation: 1.5,
-        indicatorColor: colors.surface,
+        indicatorColor: AppPalette.primary10,
         backgroundColor: colors.background,
         shadowColor: colors.onBackground,
         labelPadding: EdgeInsetsGeometry.zero,

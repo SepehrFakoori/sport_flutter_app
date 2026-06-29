@@ -153,10 +153,14 @@ class AppLocalizationsFa extends AppLocalizations {
   String get auth_phone_number => 'شماره موبایل';
 
   @override
-  String get auth_example => 'مثلا';
+  String get auth_phone_validation_invalid_prefix =>
+      'شماره موبایل باید با 09 شروع شود.';
 
   @override
-  String get auth_terms_prefix => 'با ثبت نام در پلی آن، ';
+  String get auth_phone_number_example => 'مثلا: 09123456789';
+
+  @override
+  String get auth_terms_prefix => 'با ثبت‌نام در پلی آن، ';
 
   @override
   String get auth_terms_and => ' و ';
