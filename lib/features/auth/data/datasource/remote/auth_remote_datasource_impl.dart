@@ -1,13 +1,8 @@
 import 'package:sport_flutter_app/core/network/http_client.dart';
+import 'package:sport_flutter_app/features/auth/data/datasource/remote/auth_remote_datasource.dart';
 import 'package:sport_flutter_app/features/auth/data/model/auth_model.dart';
 
-abstract class AuthRemoteDataSource {
-  Future<void> sendOtp(String phone);
-
-  Future<AuthModel> verifyOtp(String phone, String code);
-}
-
-class AuthRemoteDatasourceImpl implements AuthRemoteDataSource {
+class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
   final HttpClient _client;
 
   const AuthRemoteDatasourceImpl(this._client);

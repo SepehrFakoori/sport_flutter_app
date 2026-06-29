@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 import 'package:sport_flutter_app/core/config/app_config.dart';
 import 'package:sport_flutter_app/core/di/injection.dart';
-import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/l10n/app_localizations.dart';
 import 'package:sport_flutter_app/core/router/app_router.dart';
 import 'package:sport_flutter_app/core/ui/theme/app_theme.dart';
