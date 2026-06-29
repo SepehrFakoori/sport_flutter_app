@@ -8,6 +8,7 @@ class ChatsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) => ChatTile(
         sender: 'سپهر فکوری',
         message: 'سلام بر همه عزیزان گروه چطورین؟',
