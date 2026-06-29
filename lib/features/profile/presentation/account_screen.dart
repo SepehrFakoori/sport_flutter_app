@@ -60,7 +60,6 @@ class AccountScreen extends StatelessWidget {
                   title: context.l10n.account_logout,
                   icon: AssetIcons.logout,
                 ),
-                SizedBox(height: 800),
               ]),
             ),
           ],

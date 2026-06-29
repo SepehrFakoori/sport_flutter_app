@@ -193,6 +193,10 @@ class AppTheme {
         ),
       ),
 
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: colors.primary,
+      ),
+
       inputDecorationTheme: InputDecorationThemeData(
         border: OutlineInputBorder(),
       ),

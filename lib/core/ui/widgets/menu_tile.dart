@@ -21,7 +21,7 @@ class MenuTile extends StatelessWidget {
       title: Text(title, maxLines: 1, overflow: .ellipsis),
       titleTextStyle: context.textTheme.titleMedium,
       titleAlignment: .center,
-      contentPadding: EdgeInsets.symmetric(horizontal: 16),
+      contentPadding: EdgeInsets.symmetric(horizontal: 24),
       minLeadingWidth: 20,
       minVerticalPadding: 8,
       minTileHeight: 48,

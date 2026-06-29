@@ -40,7 +40,7 @@ final GoRouter routerConfig = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: AppRoutes.inbox.path,
-              builder: (context, state) => InboxPage(),
+              builder: (context, state) => InboxScreen(),
             ),
           ],
         ),

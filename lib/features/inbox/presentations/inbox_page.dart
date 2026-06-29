@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
-import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_sliver_app_bar.dart';
 import 'package:sport_flutter_app/features/inbox/presentations/widgets/chats_view.dart';
 import 'package:sport_flutter_app/features/inbox/presentations/widgets/notifications_view.dart';
-import 'package:sport_flutter_app/features/inbox/presentations/widgets/chat_tile.dart';
 
-class InboxPage extends StatefulWidget {
-  const InboxPage({super.key});
+class InboxScreen extends StatefulWidget {
+  const InboxScreen({super.key});
 
   @override
-  State<InboxPage> createState() => _InboxPageState();
+  State<InboxScreen> createState() => _InboxScreenState();
 }
 
-class _InboxPageState extends State<InboxPage>
+class _InboxScreenState extends State<InboxScreen>
     with SingleTickerProviderStateMixin {
   late TabController _controller;
 

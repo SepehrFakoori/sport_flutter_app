@@ -16,7 +16,7 @@ class NotificationsView extends StatelessWidget {
             onTap: () {},
           ),
           separatorBuilder: (context, index) =>
-              AppDivider(indent: 24, endIndent: 24),
+              AppDivider(endIndent: 0, indent: 0),
           itemCount: 10,
         ),
       ],
