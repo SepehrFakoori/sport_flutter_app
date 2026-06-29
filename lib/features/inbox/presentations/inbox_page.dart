@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_sliver_app_bar.dart';
-import 'package:sport_flutter_app/features/inbox/presentations/chats_page.dart';
-import 'package:sport_flutter_app/features/inbox/presentations/notifications_page.dart';
+import 'package:sport_flutter_app/features/inbox/presentations/widgets/chats_view.dart';
+import 'package:sport_flutter_app/features/inbox/presentations/widgets/notifications_view.dart';
+import 'package:sport_flutter_app/features/inbox/presentations/widgets/chat_tile.dart';
 
 class InboxPage extends StatefulWidget {
   const InboxPage({super.key});
@@ -26,9 +28,8 @@ class _InboxPageState extends State<InboxPage>
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: CustomScrollView(
-          physics: const AlwaysScrollableScrollPhysics(),
-          slivers: [
+        child: NestedScrollView(
+          headerSliverBuilder: (context, innerBoxIsScrolled) => [
             AppSliverAppBar(
               title: context.l10n.bottom_navigation_inbox,
               child: TabBar(
@@ -42,16 +43,11 @@ class _InboxPageState extends State<InboxPage>
                 labelStyle: context.textTheme.titleMedium,
               ),
             ),
-            SliverFillRemaining(
-              child: TabBarView(
-                controller: _controller,
-                children: [
-                  ChatsPage(),
-                  NotificationsPage(),
-                ],
-              ),
-            ),
           ],
+          body: TabBarView(
+            controller: _controller,
+            children: [ChatsView(), NotificationsView()],
+          ),
         ),
       ),
     );
