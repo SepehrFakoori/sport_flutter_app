@@ -1,9 +1,4 @@
-class HttpResponse {
-  final int statusCode;
-  final dynamic data;
-
-  const HttpResponse({required this.statusCode, required this.data});
-}
+import 'package:sport_flutter_app/core/network/http_response.dart';
 
 abstract class HttpClient {
   Future<HttpResponse> get(

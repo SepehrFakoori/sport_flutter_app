@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:sport_flutter_app/core/network/http_client.dart';
+import 'package:sport_flutter_app/core/network/http_response.dart';
 
 class DioHttpClient implements HttpClient {
   final Dio _dio;
