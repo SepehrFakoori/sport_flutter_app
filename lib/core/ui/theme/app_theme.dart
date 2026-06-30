@@ -160,14 +160,13 @@ class AppTheme {
 
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
-          fixedSize: WidgetStatePropertyAll<Size>(Size.fromHeight(40)),
-          minimumSize: WidgetStatePropertyAll<Size>(Size(96, 40)),
           shape: WidgetStatePropertyAll(
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+            RoundedRectangleBorder(borderRadius: .circular(8)),
           ),
           padding: WidgetStatePropertyAll<EdgeInsets>(
-            EdgeInsets.symmetric(horizontal: 8),
+            EdgeInsets.symmetric(horizontal: 12, vertical: 0),
           ),
+          foregroundColor: WidgetStatePropertyAll<Color>(colors.primary),
         ),
       ),
 

@@ -1,15 +1,11 @@
 import 'package:dio/dio.dart';
-import 'package:sport_flutter_app/core/config/app_config.dart';
+import 'package:sport_flutter_app/core/config/app_base_url.dart';
 import 'package:sport_flutter_app/core/storage/token_storage.dart';
 
 class AuthInterceptor implements QueuedInterceptor {
   final TokenStorage _storage;
-  final AppConfig appConfig;
 
-  const AuthInterceptor({
-    required TokenStorage storage,
-    required this.appConfig,
-  }) : _storage = storage;
+  const AuthInterceptor({required TokenStorage storage}) : _storage = storage;
 
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) async {
@@ -24,7 +20,7 @@ class AuthInterceptor implements QueuedInterceptor {
 
       final response = await Dio(
         BaseOptions(
-          baseUrl: appConfig.baseUrl,
+          baseUrl: AppBaseUrl.baseUrl,
           connectTimeout: const Duration(seconds: 20),
           receiveTimeout: const Duration(seconds: 20),
           headers: {

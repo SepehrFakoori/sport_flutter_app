@@ -2,7 +2,8 @@ import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/config/flavor_config.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/screens/main_page.dart';
-import 'package:sport_flutter_app/features/auth/presentation/auth_screen.dart';
+import 'package:sport_flutter_app/features/auth/presentation/enter_phone_screen.dart';
+import 'package:sport_flutter_app/features/auth/presentation/verify_otp_screen.dart';
 import 'package:sport_flutter_app/features/class/presentation/class_screen.dart';
 import 'package:sport_flutter_app/features/inbox/presentation/chat_screen.dart';
 import 'package:sport_flutter_app/features/coach/presentation/coach_screen.dart';
@@ -85,7 +86,28 @@ final GoRouter routerConfig = GoRouter(
     GoRoute(
       path: AppRoutes.auth.path,
       name: AppRoutes.auth.name,
-      builder: (context, state) => AuthScreen(),
+      redirect: (context, state) {
+        if (state.uri.path == '/auth') {
+          return '${AppRoutes.auth.path}/${AppRoutes.enterPhone.path}';
+        }
+        return null;
+      },
+      routes: <RouteBase>[
+        GoRoute(
+          path: AppRoutes.enterPhone.path,
+          name: AppRoutes.enterPhone.name,
+          builder: (context, state) => EnterPhoneScreen(),
+        ),
+        GoRoute(
+          path: AppRoutes.verifyOtp.path,
+          name: AppRoutes.verifyOtp.name,
+          builder: (context, state) {
+            final String phone = state.extra as String;
+
+            return VerifyOtpScreen(phone: phone);
+          },
+        ),
+      ],
     ),
   ],
 );

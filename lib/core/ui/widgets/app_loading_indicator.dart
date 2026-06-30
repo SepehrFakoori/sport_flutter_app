@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:sport_flutter_app/core/constants/assets_lotties.dart';
-import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/constant/assets_lotties.dart';
+import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 
 class AppLoadingIndicator extends StatelessWidget {
   final Color? color;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_text_form_field.dart';
 import 'package:sport_flutter_app/features/inbox/presentation/widgets/chat_bubble.dart';

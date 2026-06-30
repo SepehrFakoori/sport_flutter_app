@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sport_flutter_app/core/constants/assets_icons.dart';
-import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
@@ -74,6 +74,7 @@ class HomeScreen extends StatelessWidget {
                 onTap: () {},
               ),
               CategoryListView(),
+              const SizedBox(height: 16),
               FilterTile(title: context.l10n.home_popular_title, onTap: () {}),
               SizedBox(
                 height: 293,
@@ -98,10 +99,7 @@ class HomeScreen extends StatelessWidget {
               FilterTile(
                 title: context.l10n.home_nearby_popular_title,
                 onTap: () {
-                  context.pushNamed(
-                    AppRoutes.classInfo.name!,
-                    pathParameters: {'id': '25'},
-                  );
+                  context.pushNamed(AppRoutes.auth.name!);
                 },
               ),
               SizedBox(

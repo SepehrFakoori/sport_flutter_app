@@ -149,11 +149,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get class_price_title => 'قیمت';
 
   @override
-  String get auth_welcome => 'خوش آمدید!';
-
-  @override
-  String get auth_description =>
-      'لطفا شماره موبایلتان را وارد کنید تا بتوانیم با شما در ارتباط باشیم.';
+  String get auth_title =>
+      'لطفا شماره موبایل خود را وارد کنید و دکمه دریافت کد را بزنید';
 
   @override
   String get auth_phone_number => 'شماره موبایل';
@@ -166,20 +163,26 @@ class AppLocalizationsFa extends AppLocalizations {
   String get auth_phone_number_example => 'مثلا: 09123456789';
 
   @override
-  String get auth_terms_prefix => 'با ثبت‌نام در پلی آن، ';
+  String get auth_read_terms => 'مطالعه ';
 
   @override
-  String get auth_terms_and => ' و ';
-
-  @override
-  String get auth_terms_suffix => ' را قبول می‌کنم.';
-
-  @override
-  String get auth_terms_title => 'قوانین و مقررات را';
+  String get auth_terms => 'قوانین و مقررات ';
 
   @override
   String get auth_privacy_title => 'بیانیه حریم خصوصی';
 
   @override
-  String get auth_continue => 'ادامه';
+  String get auth_get_code => 'دریافت کد';
+
+  @override
+  String get auth_verify_code_title => 'کد ارسال شده را وارد کنید';
+
+  @override
+  String get auth_verify_code_subtitle => 'کد 6 رقمی به شماره شما پیامک شد';
+
+  @override
+  String get auth_resend_code_in => 'دریافت مجدد کد:';
+
+  @override
+  String get auth_resend_code => 'دریافت مجدد پیامک';
 }

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 
 class AppTextFormField extends StatelessWidget {
   final TextEditingController? controller;
+  final FocusNode? focusNode;
   final VoidCallback? onTap;
   final bool canRequestFocus;
   final String? hintText;
@@ -22,10 +23,15 @@ class AppTextFormField extends StatelessWidget {
   final List<TextInputFormatter>? inputFormatters;
   final bool autofocus;
   final AutovalidateMode? autovalidateMode;
+  final TextAlign textAlign;
+  final TextStyle? style;
+  final EdgeInsetsGeometry? contentPadding;
+  final InputBorder? border;
 
   const AppTextFormField({
     super.key,
     this.controller,
+    this.focusNode,
     this.onTap,
     this.canRequestFocus = true,
     this.hintText,
@@ -44,12 +50,17 @@ class AppTextFormField extends StatelessWidget {
     this.inputFormatters,
     this.autofocus = false,
     this.autovalidateMode,
+    this.textAlign = .start,
+    this.style,
+    this.contentPadding,
+    this.border,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      focusNode: focusNode,
       onTap: onTap,
       canRequestFocus: canRequestFocus,
       minLines: minLines,
@@ -66,6 +77,8 @@ class AppTextFormField extends StatelessWidget {
       errorBuilder: (context, errorText) {
         return Text(errorText);
       },
+      textAlign: textAlign,
+      style: style,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: context.textTheme.bodyLarge?.copyWith(
@@ -78,8 +91,11 @@ class AppTextFormField extends StatelessWidget {
         errorStyle: context.textTheme.labelLarge?.copyWith(
           color: context.colors.error,
         ),
-        contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-        border: CustomOutlineInputBorder(color: context.colorScheme.tertiary),
+        contentPadding:
+            contentPadding ?? EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        border:
+            border ??
+            CustomOutlineInputBorder(color: context.colorScheme.tertiary),
         disabledBorder: CustomOutlineInputBorder(
           color: context.colorScheme.tertiary,
         ),
