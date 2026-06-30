@@ -1,12 +1,11 @@
 import 'dart:core';
 
 abstract class AppException implements Exception {
-  final String message;
-  final String? code;
+  final String _message;
   final StackTrace? stackTrace;
 
-  const AppException(this.message, {this.code, this.stackTrace});
+  const AppException(this._message, [this.stackTrace]);
 
   @override
-  String toString() => message;
+  String toString() => '$runtimeType: $_message';
 }

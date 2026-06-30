@@ -33,6 +33,7 @@ dependencies:
   dio: ^5.9.2
   web_socket_channel: ^3.0.3
   smooth_page_indicator: ^2.0.1
+  lottie: ^3.4.0
 
 
 dev_dependencies:
@@ -49,6 +50,7 @@ flutter:
 
   assets:
     - assets/icons/
+    - assets/lottie/
 
   fonts:
     - family: IranYekanX

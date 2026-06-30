@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
-import 'package:sport_flutter_app/core/ui/widgets/app_circular_progress_indicator.dart';
+import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
 
 enum ButtonVariant { primary, secondary }
 
@@ -31,7 +31,7 @@ class AppFilledButton extends StatelessWidget {
       style: type == .secondary
           ? FilledButton.styleFrom(backgroundColor: context.colors.secondary)
           : null,
-      child: isLoading ? AppCircularProgressIndicator() : Text(title),
+      child: isLoading ? AppLoadingIndicator() : Text(title),
     );
   }
 }

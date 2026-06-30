@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/constants/assets_icons.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
-import 'package:sport_flutter_app/features/class/presentations/widgets/class_comments.dart';
-import 'package:sport_flutter_app/features/class/presentations/widgets/class_description.dart';
-import 'package:sport_flutter_app/features/class/presentations/widgets/class_features.dart';
-import 'package:sport_flutter_app/features/class/presentations/widgets/class_images.dart';
-import 'package:sport_flutter_app/features/class/presentations/widgets/class_summary_detail.dart';
-import 'package:sport_flutter_app/features/class/presentations/widgets/coach_card.dart';
-import 'package:sport_flutter_app/features/class/presentations/widgets/coach_tile.dart';
-import 'package:sport_flutter_app/features/class/presentations/widgets/enrollment_card.dart';
+import 'package:sport_flutter_app/features/class/presentation/widgets/class_comments.dart';
+import 'package:sport_flutter_app/features/class/presentation/widgets/class_description.dart';
+import 'package:sport_flutter_app/features/class/presentation/widgets/class_features.dart';
+import 'package:sport_flutter_app/features/class/presentation/widgets/class_images.dart';
+import 'package:sport_flutter_app/features/class/presentation/widgets/class_summary_detail.dart';
+import 'package:sport_flutter_app/features/class/presentation/widgets/coach_card.dart';
+import 'package:sport_flutter_app/features/class/presentation/widgets/coach_tile.dart';
+import 'package:sport_flutter_app/features/class/presentation/widgets/enrollment_card.dart';
 
 class ClassPage extends StatefulWidget {
   final int classId;

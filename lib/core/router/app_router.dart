@@ -3,11 +3,11 @@ import 'package:sport_flutter_app/core/config/flavor_config.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/screens/main_page.dart';
 import 'package:sport_flutter_app/features/auth/presentation/auth_screen.dart';
-import 'package:sport_flutter_app/features/class/presentations/class_screen.dart';
-import 'package:sport_flutter_app/features/inbox/presentations/chat_screen.dart';
-import 'package:sport_flutter_app/features/coach/presentations/coach_screen.dart';
-import 'package:sport_flutter_app/features/home/presentations/home_screen.dart';
-import 'package:sport_flutter_app/features/inbox/presentations/inbox_screen.dart';
+import 'package:sport_flutter_app/features/class/presentation/class_screen.dart';
+import 'package:sport_flutter_app/features/inbox/presentation/chat_screen.dart';
+import 'package:sport_flutter_app/features/coach/presentation/coach_screen.dart';
+import 'package:sport_flutter_app/features/home/presentation/home_screen.dart';
+import 'package:sport_flutter_app/features/inbox/presentation/inbox_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/profile_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/account_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/simple_screen.dart';
@@ -31,7 +31,7 @@ final GoRouter routerConfig = GoRouter(
         StatefulShellBranch(
           routes: <RouteBase>[
             GoRoute(
-              path: AppRoutes.page1.path,
+              path: AppRoutes.dashboard.path,
               builder: (context, state) => SimpleScreen(),
             ),
           ],

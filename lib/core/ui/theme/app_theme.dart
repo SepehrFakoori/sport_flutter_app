@@ -35,9 +35,9 @@ class AppTheme {
               borderRadius: BorderRadiusGeometry.circular(8),
             ),
           ),
-          minimumSize: WidgetStatePropertyAll(Size.fromHeight(48)),
+          fixedSize: WidgetStatePropertyAll<Size>(.fromHeight(48)),
           padding: WidgetStatePropertyAll<EdgeInsets>(
-            EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+            EdgeInsets.symmetric(horizontal: 24),
           ),
           backgroundColor: WidgetStateColor.resolveWith((states) {
             if (states.contains(WidgetState.hovered)) {

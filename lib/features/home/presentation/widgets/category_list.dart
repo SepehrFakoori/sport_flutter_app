@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/features/home/presentations/widgets/category_item.dart';
+import 'package:sport_flutter_app/features/home/presentation/widgets/category_item.dart';
 
 class CategoryListView extends StatelessWidget {
   const CategoryListView({super.key});

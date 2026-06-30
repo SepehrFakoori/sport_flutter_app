@@ -5,9 +5,9 @@ import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart'
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
-import 'package:sport_flutter_app/features/home/presentations/widgets/category_list.dart';
-import 'package:sport_flutter_app/features/home/presentations/widgets/class_card.dart';
-import 'package:sport_flutter_app/features/home/presentations/widgets/filter_tile.dart';
+import 'package:sport_flutter_app/features/home/presentation/widgets/category_list.dart';
+import 'package:sport_flutter_app/features/home/presentation/widgets/class_card.dart';
+import 'package:sport_flutter_app/features/home/presentation/widgets/filter_tile.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
