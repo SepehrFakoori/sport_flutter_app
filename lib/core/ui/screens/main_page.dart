@@ -25,7 +25,7 @@ class MainPage extends StatelessWidget {
           ),
           AppNavigationDestination(
             icon: AssetIcons.dashboard,
-            selectedIcon: AssetIcons.dashboard,
+            selectedIcon: AssetIcons.dashboardFilled,
             label: context.l10n.bottom_navigation_bookmark,
           ),
           AppNavigationDestination(
