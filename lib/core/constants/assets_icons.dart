@@ -8,6 +8,8 @@ class AssetIcons {
   static const addSquare = "$_basePath/add-square.svg";
   static const profile = "$_basePath/profile.svg";
   static const profileFilled = "$_basePath/profile-filled.svg";
+  static const dashboard = "$_basePath/dashboard.svg";
+  static const dashboardFilled = "$_basePath/dashboard-filled.svg";
   static const profileAdd = "$_basePath/profile-add.svg";
   static const galleryAdd = "$_basePath/gallery-add.svg";
   static const location = "$_basePath/location.svg";
