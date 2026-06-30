@@ -12,7 +12,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get bottom_navigation_home => 'خانه';
 
   @override
-  String get bottom_navigation_bookmark => 'مورد علاقه‌ها';
+  String get bottom_navigation_dashboard => 'داشبورد';
 
   @override
   String get bottom_navigation_inbox => 'ورودی‌ها';

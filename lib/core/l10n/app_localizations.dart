@@ -100,11 +100,11 @@ abstract class AppLocalizations {
   /// **'خانه'**
   String get bottom_navigation_home;
 
-  /// No description provided for @bottom_navigation_bookmark.
+  /// No description provided for @bottom_navigation_dashboard.
   ///
   /// In fa, this message translates to:
-  /// **'مورد علاقه‌ها'**
-  String get bottom_navigation_bookmark;
+  /// **'داشبورد'**
+  String get bottom_navigation_dashboard;
 
   /// No description provided for @bottom_navigation_inbox.
   ///
