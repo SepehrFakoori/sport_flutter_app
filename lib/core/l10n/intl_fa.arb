@@ -65,5 +65,6 @@
     "auth_verify_code_title": "کد ارسال شده را وارد کنید",
     "auth_verify_code_subtitle": "کد 6 رقمی به شماره شما پیامک شد",
     "auth_resend_code_in": "دریافت مجدد کد:",
-    "auth_resend_code": "دریافت مجدد پیامک"
+    "auth_resend_code": "دریافت مجدد پیامک",
+    "auth_send_code": "ارسال"
 }

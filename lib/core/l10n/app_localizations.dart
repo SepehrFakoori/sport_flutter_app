@@ -429,6 +429,12 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'دریافت مجدد پیامک'**
   String get auth_resend_code;
+
+  /// No description provided for @auth_send_code.
+  ///
+  /// In fa, this message translates to:
+  /// **'ارسال'**
+  String get auth_send_code;
 }
 
 class _AppLocalizationsDelegate

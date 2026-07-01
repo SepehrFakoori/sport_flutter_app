@@ -18,13 +18,19 @@ class EnterPhoneBloc extends Bloc<EnterPhoneEvent, EnterPhoneState> {
     try {
       sendOtp.validate(event.phone);
       emit(
-        state.copyWith(phone: event.phone, isValid: true, errorMessage: null),
+        state.copyWith(
+          phone: event.phone,
+          isValid: true,
+          status: .idle,
+          errorMessage: null,
+        ),
       );
     } on Exception catch (e) {
       emit(
         state.copyWith(
           phone: event.phone,
           isValid: false,
+          status: .idle,
           errorMessage: e.toString(),
         ),
       );

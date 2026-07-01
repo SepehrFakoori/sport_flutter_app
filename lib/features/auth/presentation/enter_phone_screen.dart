@@ -20,16 +20,12 @@ class EnterPhoneScreen extends StatefulWidget {
 }
 
 class _EnterPhoneScreenState extends State<EnterPhoneScreen> {
-  final phoneController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return BlocListener<EnterPhoneBloc, EnterPhoneState>(
       listener: (context, state) {
         if (state.status == .success) {
           context.pushNamed(AppRoutes.verifyOtp.name!, extra: state.phone);
-        } else if (state.status == .failure) {
-          print(state.errorMessage);
         }
       },
       child: Scaffold(
@@ -50,7 +46,6 @@ class _EnterPhoneScreenState extends State<EnterPhoneScreen> {
                       previous.isValid != current.isValid,
                   builder: (context, state) {
                     return AppTextFormField(
-                      controller: phoneController,
                       keyboardType: .phone,
                       inputFormatters: [
                         LengthLimitingTextInputFormatter(11),
@@ -101,37 +96,26 @@ class _EnterPhoneScreenState extends State<EnterPhoneScreen> {
                 ],
               ),
             ),
-            Container(
-              width: .infinity,
-              margin: .symmetric(horizontal: 24.0, vertical: 12.0),
-              child: BlocBuilder<EnterPhoneBloc, EnterPhoneState>(
-                buildWhen: (previous, current) =>
-                    previous.isValid != current.isValid ||
-                    previous.status != current.status,
-                builder: (context, state) {
-                  final isLoading = state.status == .loading;
-                  return AppFilledButton(
-                    onPressed: state.isValid && !isLoading
-                        ? () => context.read<EnterPhoneBloc>().add(
-                            const GetCodePressed(),
-                          )
-                        : null,
-                    title: context.l10n.auth_get_code,
-                    isLoading: isLoading,
-                  );
-                },
-              ),
+            BlocBuilder<EnterPhoneBloc, EnterPhoneState>(
+              buildWhen: (previous, current) =>
+                  previous.isValid != current.isValid ||
+                  previous.status != current.status,
+              builder: (context, state) {
+                final isLoading = state.status == .loading;
+                return AppFilledButton(
+                  onPressed: () => context.read<EnterPhoneBloc>().add(
+                    const GetCodePressed(),
+                  ),
+                  title: context.l10n.auth_get_code,
+                  isLoading: isLoading,
+                  isWide: true,
+                );
+              },
             ),
           ],
         ),
         floatingActionButtonLocation: .centerFloat,
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    phoneController.dispose();
-    super.dispose();
   }
 }

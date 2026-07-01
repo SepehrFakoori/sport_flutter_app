@@ -83,20 +83,15 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
             ),
           ),
         ),
-        floatingActionButton: Container(
-          width: .infinity,
-          margin: .symmetric(horizontal: 24.0, vertical: 12.0),
-          child: BlocBuilder<VerifyOtpBloc, VerifyOtpState>(
-            buildWhen: (previous, current) => previous != current,
-            builder: (context, state) {
-              return AppFilledButton(
-                onPressed: () => context.read<VerifyOtpBloc>().add(
-                  VerifyPressed(widget.phone, _controller.text),
-                ),
-                title: context.l10n.auth_get_code,
-                isLoading: state is LoadingState,
-              );
-            },
+        floatingActionButton: BlocBuilder<VerifyOtpBloc, VerifyOtpState>(
+          buildWhen: (previous, current) => previous != current,
+          builder: (context, state) => AppFilledButton(
+            title: context.l10n.auth_send_code,
+            onPressed: () => context.read<VerifyOtpBloc>().add(
+              VerifyPressed(widget.phone, _controller.text),
+            ),
+            isLoading: state is LoadingState,
+            isWide: true,
           ),
         ),
         floatingActionButtonLocation: .centerFloat,

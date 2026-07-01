@@ -16,7 +16,7 @@ class AppLoadingIndicator extends StatelessWidget {
       height: 32,
       addRepaintBoundary: true,
       alignment: .center,
-      delegates: _delegates(color ?? context.colors.primary),
+      delegates: _delegates(color ?? context.colors.onPrimary),
     );
   }
 

@@ -185,4 +185,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get auth_resend_code => 'دریافت مجدد پیامک';
+
+  @override
+  String get auth_send_code => 'ارسال';
 }
