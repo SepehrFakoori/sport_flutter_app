@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       themeMode: .light,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: Locale('en'),
+      locale: Locale('fa'),
       routerConfig: routerConfig,
     );
   }

@@ -15,8 +15,8 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
   @override
   Future<AuthModel> verifyOtp(String phone, String code) async {
     final response = await _client.post(
-      'auth/verify-otp',
-      data: {'phone': phone, 'code': code},
+      '/verify-otp',
+      data: {'phone_number': phone, 'code': code},
     );
 
     return AuthModel.fromJson(response.data);

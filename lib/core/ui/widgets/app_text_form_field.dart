@@ -27,6 +27,7 @@ class AppTextFormField extends StatelessWidget {
   final TextStyle? style;
   final EdgeInsetsGeometry? contentPadding;
   final InputBorder? border;
+  final String? errorText;
 
   const AppTextFormField({
     super.key,
@@ -54,6 +55,7 @@ class AppTextFormField extends StatelessWidget {
     this.style,
     this.contentPadding,
     this.border,
+    this.errorText,
   });
 
   @override
@@ -74,9 +76,6 @@ class AppTextFormField extends StatelessWidget {
       onChanged: onChange,
       inputFormatters: inputFormatters,
       autovalidateMode: autovalidateMode,
-      errorBuilder: (context, errorText) {
-        return Text(errorText);
-      },
       textAlign: textAlign,
       style: style,
       decoration: InputDecoration(
@@ -101,6 +100,7 @@ class AppTextFormField extends StatelessWidget {
         ),
         errorBorder: CustomOutlineInputBorder(color: context.colors.error),
         focusedBorder: CustomOutlineInputBorder(color: context.colors.primary),
+        errorText: errorText,
       ),
     );
   }

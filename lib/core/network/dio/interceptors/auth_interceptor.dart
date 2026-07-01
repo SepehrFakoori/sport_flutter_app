@@ -2,10 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:sport_flutter_app/core/config/app_base_url.dart';
 import 'package:sport_flutter_app/core/storage/token_storage.dart';
 
-class AuthInterceptor implements QueuedInterceptor {
+class AuthInterceptor extends QueuedInterceptor {
   final TokenStorage _storage;
 
-  const AuthInterceptor({required TokenStorage storage}) : _storage = storage;
+  AuthInterceptor({required TokenStorage storage}) : _storage = storage;
 
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) async {

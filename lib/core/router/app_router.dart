@@ -1,7 +1,11 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/config/flavor_config.dart';
+import 'package:sport_flutter_app/core/di/injection.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/screens/main_page.dart';
+import 'package:sport_flutter_app/features/auth/presentation/bloc/enter_phone_bloc/enter_phone_bloc.dart';
+import 'package:sport_flutter_app/features/auth/presentation/bloc/verify_otp_bloc/verify_otp_bloc.dart';
 import 'package:sport_flutter_app/features/auth/presentation/enter_phone_screen.dart';
 import 'package:sport_flutter_app/features/auth/presentation/verify_otp_screen.dart';
 import 'package:sport_flutter_app/features/class/presentation/class_screen.dart';
@@ -25,6 +29,7 @@ final GoRouter routerConfig = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: AppRoutes.home.path,
+              name: AppRoutes.home.name,
               builder: (context, state) => HomeScreen(),
             ),
           ],
@@ -56,8 +61,8 @@ final GoRouter routerConfig = GoRouter(
       ],
     ),
     GoRoute(
-      name: AppRoutes.profile.name,
       path: AppRoutes.profile.path,
+      name: AppRoutes.profile.name,
       builder: (context, state) => ProfileScreen(),
     ),
     GoRoute(
@@ -96,7 +101,10 @@ final GoRouter routerConfig = GoRouter(
         GoRoute(
           path: AppRoutes.enterPhone.path,
           name: AppRoutes.enterPhone.name,
-          builder: (context, state) => EnterPhoneScreen(),
+          builder: (context, state) => BlocProvider<EnterPhoneBloc>(
+            create: (context) => sl<EnterPhoneBloc>(),
+            child: EnterPhoneScreen(),
+          ),
         ),
         GoRoute(
           path: AppRoutes.verifyOtp.path,
@@ -104,7 +112,10 @@ final GoRouter routerConfig = GoRouter(
           builder: (context, state) {
             final String phone = state.extra as String;
 
-            return VerifyOtpScreen(phone: phone);
+            return BlocProvider(
+              create: (context) => sl<VerifyOtpBloc>(),
+              child: VerifyOtpScreen(phone: phone),
+            );
           },
         ),
       ],
