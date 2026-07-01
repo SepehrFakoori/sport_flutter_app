@@ -8,7 +8,9 @@ class SendOtpUseCase {
 
   void validate(String phone) {
     if (!phone.startsWith('09') && phone.length >= 2) {
-      throw InvalidPhoneException();
+      throw InvalidPhonePrefixException();
+    } else if (phone.length != 11) {
+      throw InvalidPhoneLengthException();
     }
   }
 

@@ -105,9 +105,11 @@ class _EnterPhoneScreenState extends State<EnterPhoneScreen> {
               builder: (context, state) {
                 final isLoading = state.status == .loading;
                 return AppFilledButton(
-                  onPressed: () => context.read<EnterPhoneBloc>().add(
-                    const GetCodePressed(),
-                  ),
+                  onPressed: state.isValid
+                      ? () => context.read<EnterPhoneBloc>().add(
+                          const GetCodePressed(),
+                        )
+                      : null,
                   title: context.l10n.auth_get_code,
                   isLoading: isLoading,
                   isWide: true,
@@ -123,7 +125,7 @@ class _EnterPhoneScreenState extends State<EnterPhoneScreen> {
 
   String? _translateException(BuildContext context, AppException? exception) {
     switch (exception) {
-      case InvalidPhoneException():
+      case InvalidPhonePrefixException():
         return context.l10n.auth_phone_exception;
       default:
         return null;
