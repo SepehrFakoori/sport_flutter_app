@@ -1,5 +1,8 @@
-abstract class AuthExceptions implements Exception {}
+import 'package:sport_flutter_app/core/exception/app_exception.dart';
 
-class PhoneInvalidPrefixException implements AuthExceptions {}
+abstract class AuthException extends AppException {}
 
-class PhoneInvalidLengthException implements AuthExceptions {}
+class InvalidPhoneException implements AuthException {
+  @override
+  String? get message => throw UnimplementedError();
+}

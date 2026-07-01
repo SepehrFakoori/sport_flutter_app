@@ -98,8 +98,13 @@ class AppTextFormField extends StatelessWidget {
         disabledBorder: CustomOutlineInputBorder(
           color: context.colorScheme.tertiary,
         ),
-        errorBorder: CustomOutlineInputBorder(color: context.colors.error),
+        errorBorder: CustomOutlineInputBorder(
+          color: context.colors.error.withValues(alpha: 0.6),
+        ),
         focusedBorder: CustomOutlineInputBorder(color: context.colors.primary),
+        focusedErrorBorder: CustomOutlineInputBorder(
+          color: context.colors.error,
+        ),
         errorText: errorText,
       ),
     );

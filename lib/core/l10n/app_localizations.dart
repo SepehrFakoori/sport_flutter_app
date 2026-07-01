@@ -435,6 +435,12 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'ارسال'**
   String get auth_send_code;
+
+  /// No description provided for @auth_phone_exception.
+  ///
+  /// In fa, this message translates to:
+  /// **'لطفا شماره همراه 11 رقمی و معتبر وارد کنید.'**
+  String get auth_phone_exception;
 }
 
 class _AppLocalizationsDelegate

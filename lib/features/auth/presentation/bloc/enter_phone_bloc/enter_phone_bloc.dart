@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sport_flutter_app/core/exception/app_exception.dart';
 import 'package:sport_flutter_app/features/auth/domain/use_case/send_otp_usecase.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/enter_phone_bloc/enter_phone_event.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/enter_phone_bloc/enter_phone_state.dart';
@@ -22,16 +23,16 @@ class EnterPhoneBloc extends Bloc<EnterPhoneEvent, EnterPhoneState> {
           phone: event.phone,
           isValid: true,
           status: .idle,
-          errorMessage: null,
+          exception: null,
         ),
       );
-    } on Exception catch (e) {
+    } on AppException catch (e) {
       emit(
         state.copyWith(
           phone: event.phone,
           isValid: false,
           status: .idle,
-          errorMessage: e.toString(),
+          exception: e,
         ),
       );
     }
@@ -45,8 +46,8 @@ class EnterPhoneBloc extends Bloc<EnterPhoneEvent, EnterPhoneState> {
     try {
       await sendOtp.call(state.phone);
       emit(state.copyWith(status: .success));
-    } on Exception catch (e) {
-      emit(state.copyWith(status: .failure, errorMessage: e.toString()));
+    } on AppException catch (e) {
+      emit(state.copyWith(status: .failure, exception: e));
     }
   }
 }

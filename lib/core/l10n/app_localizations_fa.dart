@@ -188,4 +188,8 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get auth_send_code => 'ارسال';
+
+  @override
+  String get auth_phone_exception =>
+      'لطفا شماره همراه 11 رقمی و معتبر وارد کنید.';
 }
