@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/constants/assets_icons.dart';
+import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
 import 'package:sport_flutter_app/features/class/presentation/widgets/class_comments.dart';
@@ -62,7 +63,6 @@ class _ClassPageState extends State<ClassPage> {
 
                 const SizedBox(height: 12),
                 AppDivider(indent: 24, endIndent: 24),
-
                 const SizedBox(height: 12),
 
                 CoachTile(
@@ -70,6 +70,47 @@ class _ClassPageState extends State<ClassPage> {
                       'https://www.lovepanky.com/wp-content/uploads/2012/03/How-to-Be-a-Man.jpg',
                   coachName: 'میعاد جاوید',
                   subtilte: 'مربی رسمی فدراسیون، 14 سال تجربه',
+                ),
+                const SizedBox(height: 12),
+                AppDivider(indent: 24, endIndent: 24),
+                const SizedBox(height: 12),
+
+                // Padding(
+                //   padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                //   child: Column(
+                //     crossAxisAlignment: .start,
+                //     spacing: 4,
+                //     children: [
+                //       Text(
+                //         'سانس ها',
+                //         textAlign: .start,
+                //         style: context.textTheme.headlineSmall,
+                //       ),
+                //       Row(
+                //         spacing: 8,
+                //         children: [
+                //           const Text('•'),
+                //           Text(
+                //             'دوشنبه ها',
+                //             style: context.textTheme.bodyMedium?.copyWith(
+                //               color: context.colors.onBackgroundSecondary,
+                //             ),
+                //           ),
+                //           Text(
+                //             'ساعت: 15:30 - 14',
+                //             style: context.textTheme.bodyMedium?.copyWith(
+                //               color: context.colors.onBackgroundSecondary,
+                //             ),
+                //           ),
+                //         ],
+                //       ),
+                //     ],
+                //   ),
+                // ),
+                ClassSessions(
+                  sessions: [
+                    ClassSession(day: 'دوشنبه ها', startTime: '14:00', endTime: '15:30'),
+                  ],
                 ),
 
                 const SizedBox(height: 12),
@@ -126,3 +167,94 @@ class _ClassPageState extends State<ClassPage> {
     );
   }
 }
+
+class ClassSession {
+  final String day;
+  final String startTime;
+  final String endTime;
+
+  const ClassSession({
+    required this.day,
+    required this.startTime,
+    required this.endTime,
+  });
+}
+class ClassSessions extends StatelessWidget {
+  final List<ClassSession> sessions;
+
+  const ClassSessions({super.key, required this.sessions});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 12,
+        children: [
+          Text('سانس ها', style: context.textTheme.headlineSmall),
+          Column(
+            spacing: 8,
+            children: sessions
+                .map((session) => _SessionTile(session: session))
+                .toList(),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+class _SessionTile extends StatelessWidget {
+  final ClassSession session;
+
+  const _SessionTile({required this.session});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      spacing: 8,
+      children: [
+        Container(
+          width: 26,
+          height: 26,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            color: context.colors.onBackgroundSecondary.withValues(
+              alpha: 0.1,
+            ),
+            shape: BoxShape.circle,
+          ),
+          child: Icon(
+            Icons.calendar_today_rounded,
+            size: 13,
+            color: context.colors.onBackgroundSecondary,
+          ),
+        ),
+        Text(
+          session.day,
+          style: context.textTheme.bodyMedium?.copyWith(
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        Container(
+          width: 3,
+          height: 3,
+          decoration: BoxDecoration(
+            color: context.colors.onBackgroundSecondary,
+            shape: BoxShape.circle,
+          ),
+        ),
+        Text(
+          '${session.startTime} تا ${session.endTime}',
+          style: context.textTheme.bodyMedium?.copyWith(
+            color: context.colors.onBackgroundSecondary,
+          ),
+        ),
+      ],
+    );
+  }
+}
+

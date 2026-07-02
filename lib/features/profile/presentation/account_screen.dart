@@ -63,6 +63,10 @@ class AccountScreen extends StatelessWidget {
                     icon: AssetIcons.setting,
                   ),
                   MenuTile(
+                    title: context.l10n.account_giftcard_button,
+                    icon: AssetIcons.money,
+                  ),
+                  MenuTile(
                     title: context.l10n.account_support_button,
                     icon: AssetIcons.headphone,
                   ),

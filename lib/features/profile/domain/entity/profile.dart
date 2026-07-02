@@ -1,3 +1,5 @@
+import 'package:sport_flutter_app/features/profile/domain/entity/gender.dart';
+
 class Profile {
   final String fullName;
   final String phoneNumber;
@@ -13,5 +15,3 @@ class Profile {
     required this.birthDate,
   });
 }
-
-enum Gender { male, female }

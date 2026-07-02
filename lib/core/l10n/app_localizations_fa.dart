@@ -33,6 +33,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get account_settings_button => 'تنظیمات';
 
   @override
+  String get account_giftcard_button => 'تخفیف';
+
+  @override
   String get account_support_button => 'پشتیبانی';
 
   @override
@@ -144,6 +147,9 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get class_coach_title => 'آشنایی با مربی';
+
+  @override
+  String get class_coach_experience => 'سابقه';
 
   @override
   String get class_price_title => 'قیمت';

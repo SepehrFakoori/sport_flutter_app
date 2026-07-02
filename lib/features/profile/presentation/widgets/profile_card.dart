@@ -17,32 +17,35 @@ class ProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomCard(
-      child: Padding(
-        padding: const .all(28),
-        child: Column(
-          spacing: 4,
-          children: [
-            ImageLoader(
-              imageUrl: imageUrl,
-              height: 112,
-              width: 112,
-              radius: 56,
-            ),
-            const SizedBox(height: 4),
-            Text(
-              username,
-              style: context.textTheme.headlineLarge,
-              maxLines: 1,
-              overflow: .ellipsis,
-            ),
-            Text(
-              description,
-              style: context.textTheme.labelLarge?.copyWith(
-                color: context.colors.onBackgroundSecondary,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      child: CustomCard(
+        child: Padding(
+          padding: const .all(28),
+          child: Column(
+            spacing: 4,
+            children: [
+              ImageLoader(
+                imageUrl: imageUrl,
+                height: 112,
+                width: 112,
+                radius: 56,
               ),
-            ),
-          ],
+              const SizedBox(height: 4),
+              Text(
+                username,
+                style: context.textTheme.headlineLarge,
+                maxLines: 1,
+                overflow: .ellipsis,
+              ),
+              Text(
+                description,
+                style: context.textTheme.labelLarge?.copyWith(
+                  color: context.colors.onBackgroundSecondary,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

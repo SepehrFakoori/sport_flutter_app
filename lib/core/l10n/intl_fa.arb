@@ -8,6 +8,7 @@
     "account_button_edit": "ویرایش پروفایل",
     "account_enrollments_button": "ثبت\u200Cنام\u200Cهای من",
     "account_settings_button": "تنظیمات",
+    "account_giftcard_button": "تخفیف",
     "account_support_button": "پشتیبانی",
     "account_invite_friends_button": "معرفی به دوستان",
     "account_policy_button": "قوانین و شرایط استفاده",
@@ -52,6 +53,7 @@
     "class_coach_reviews":  "نظرات کاربران",
     "class_coach_rate": "امتیاز",
     "class_coach_title": "آشنایی با مربی",
+    "class_coach_experience": "سابقه",
     "class_price_title": "قیمت",
 
     "auth_welcome": "خوش آمدید!",

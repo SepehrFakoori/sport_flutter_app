@@ -55,13 +55,17 @@ class ClassSummaryDetail extends StatelessWidget {
                 child: VerticalDivider(thickness: 1, width: 32),
               ),
               IconWidget(icon: AssetIcons.medal, height: 24, width: 24),
-              Text('محبوب بین ورزشکاران', style: context.textTheme.titleLarge),
+              Text(
+                'محبوب بین ورزشکاران',
+                maxLines: 1,
+                overflow: .ellipsis,
+                style: context.textTheme.titleLarge,
+              ),
               IconWidget(icon: AssetIcons.medal, height: 24, width: 24),
               const SizedBox(
                 height: 30,
                 child: VerticalDivider(thickness: 1, width: 32),
               ),
-
               Column(
                 crossAxisAlignment: .center,
                 children: [

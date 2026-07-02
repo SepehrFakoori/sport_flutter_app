@@ -142,6 +142,12 @@ abstract class AppLocalizations {
   /// **'تنظیمات'**
   String get account_settings_button;
 
+  /// No description provided for @account_giftcard_button.
+  ///
+  /// In fa, this message translates to:
+  /// **'تخفیف'**
+  String get account_giftcard_button;
+
   /// No description provided for @account_support_button.
   ///
   /// In fa, this message translates to:
@@ -351,6 +357,12 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'آشنایی با مربی'**
   String get class_coach_title;
+
+  /// No description provided for @class_coach_experience.
+  ///
+  /// In fa, this message translates to:
+  /// **'سابقه'**
+  String get class_coach_experience;
 
   /// No description provided for @class_price_title.
   ///
