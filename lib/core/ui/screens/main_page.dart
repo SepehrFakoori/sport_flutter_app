@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sport_flutter_app/core/constants/assets_icons.dart';
-import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/navigation/app_navigation_bar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/navigation/app_navigation_destination.dart';
 
@@ -24,9 +24,9 @@ class MainPage extends StatelessWidget {
             label: context.l10n.bottom_navigation_home,
           ),
           AppNavigationDestination(
-            icon: AssetIcons.bookmark,
-            selectedIcon: AssetIcons.bookmarkFilled,
-            label: context.l10n.bottom_navigation_bookmark,
+            icon: AssetIcons.dashboard,
+            selectedIcon: AssetIcons.dashboardFilled,
+            label: context.l10n.bottom_navigation_dashboard,
           ),
           AppNavigationDestination(
             icon: AssetIcons.message,

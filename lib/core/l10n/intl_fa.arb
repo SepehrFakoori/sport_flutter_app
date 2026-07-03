@@ -1,6 +1,6 @@
 {
     "bottom_navigation_home": "خانه",
-    "bottom_navigation_bookmark": "مورد علاقه\u200Cها",
+    "bottom_navigation_dashboard": "داشبورد",
     "bottom_navigation_inbox": "ورودی\u200Cها",
     "bottom_navigation_profile": "پروفایل",
 
@@ -8,9 +8,12 @@
     "account_button_edit": "ویرایش پروفایل",
     "account_enrollments_button": "ثبت\u200Cنام\u200Cهای من",
     "account_settings_button": "تنظیمات",
+    "account_giftcard_button": "تخفیف",
     "account_support_button": "پشتیبانی",
     "account_invite_friends_button": "معرفی به دوستان",
     "account_policy_button": "قوانین و شرایط استفاده",
+    "account_view_profile": "مشاهده پروفایل",
+    "account_logout": "خروج",
 
     "profile_firstname_title": "نام",
     "profile_lastname_title": "نام خانوادگی",
@@ -50,16 +53,21 @@
     "class_coach_reviews":  "نظرات کاربران",
     "class_coach_rate": "امتیاز",
     "class_coach_title": "آشنایی با مربی",
+    "class_coach_experience": "سابقه",
     "class_price_title": "قیمت",
 
-    "auth_welcome": "خوش آمدید!",
-    "auth_description": "لطفا شماره موبایلتان را وارد کنید تا بتوانیم با شما در ارتباط باشیم.",
+    "auth_title": "لطفا شماره موبایل خود را وارد کنید و دکمه دریافت کد را بزنید",
     "auth_phone_number": "شماره موبایل",
-    "auth_example": "مثلا",
-    "auth_terms_prefix": "با ثبت نام در پلی آن، ",
-    "auth_terms_and": " و ",
-    "auth_terms_suffix": " را قبول می‌کنم.",
-    "auth_terms_title": "قوانین و مقررات را",
+    "auth_phone_validation_invalid_prefix": "شماره موبایل باید با 09 شروع شود.",
+    "auth_phone_number_example": "مثلا: 09123456789",
+    "auth_read_terms": "مطالعه ",
+    "auth_terms": "قوانین و مقررات ",
     "auth_privacy_title": "بیانیه حریم خصوصی",
-    "auth_continue": "ادامه"
-    }
+    "auth_get_code": "دریافت کد",
+    "auth_verify_code_title": "کد ارسال شده را وارد کنید",
+    "auth_verify_code_subtitle": "کد 6 رقمی به شماره شما پیامک شد",
+    "auth_resend_code_in": "دریافت مجدد کد:",
+    "auth_resend_code": "دریافت مجدد پیامک",
+    "auth_send_code": "ارسال",
+    "auth_phone_exception": "لطفا شماره همراه 11 رقمی و معتبر وارد کنید."
+}

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
-import 'package:sport_flutter_app/core/ui/widgets/app_circular_progress_indicator.dart';
+import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_filled_button.dart';
 
 class AppOutlinedButton extends StatelessWidget {
@@ -33,7 +33,7 @@ class AppOutlinedButton extends StatelessWidget {
               foregroundColor: context.colors.secondary,
             )
           : null,
-      child: isLoading ? AppCircularProgressIndicator() : Text(title),
+      child: isLoading ? AppLoadingIndicator() : Text(title),
     );
   }
 }

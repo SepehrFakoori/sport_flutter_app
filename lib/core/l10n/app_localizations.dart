@@ -100,11 +100,11 @@ abstract class AppLocalizations {
   /// **'خانه'**
   String get bottom_navigation_home;
 
-  /// No description provided for @bottom_navigation_bookmark.
+  /// No description provided for @bottom_navigation_dashboard.
   ///
   /// In fa, this message translates to:
-  /// **'مورد علاقه‌ها'**
-  String get bottom_navigation_bookmark;
+  /// **'داشبورد'**
+  String get bottom_navigation_dashboard;
 
   /// No description provided for @bottom_navigation_inbox.
   ///
@@ -142,6 +142,12 @@ abstract class AppLocalizations {
   /// **'تنظیمات'**
   String get account_settings_button;
 
+  /// No description provided for @account_giftcard_button.
+  ///
+  /// In fa, this message translates to:
+  /// **'تخفیف'**
+  String get account_giftcard_button;
+
   /// No description provided for @account_support_button.
   ///
   /// In fa, this message translates to:
@@ -159,6 +165,18 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'قوانین و شرایط استفاده'**
   String get account_policy_button;
+
+  /// No description provided for @account_view_profile.
+  ///
+  /// In fa, this message translates to:
+  /// **'مشاهده پروفایل'**
+  String get account_view_profile;
+
+  /// No description provided for @account_logout.
+  ///
+  /// In fa, this message translates to:
+  /// **'خروج'**
+  String get account_logout;
 
   /// No description provided for @profile_firstname_title.
   ///
@@ -340,23 +358,23 @@ abstract class AppLocalizations {
   /// **'آشنایی با مربی'**
   String get class_coach_title;
 
+  /// No description provided for @class_coach_experience.
+  ///
+  /// In fa, this message translates to:
+  /// **'سابقه'**
+  String get class_coach_experience;
+
   /// No description provided for @class_price_title.
   ///
   /// In fa, this message translates to:
   /// **'قیمت'**
   String get class_price_title;
 
-  /// No description provided for @auth_welcome.
+  /// No description provided for @auth_title.
   ///
   /// In fa, this message translates to:
-  /// **'خوش آمدید!'**
-  String get auth_welcome;
-
-  /// No description provided for @auth_description.
-  ///
-  /// In fa, this message translates to:
-  /// **'لطفا شماره موبایلتان را وارد کنید تا بتوانیم با شما در ارتباط باشیم.'**
-  String get auth_description;
+  /// **'لطفا شماره موبایل خود را وارد کنید و دکمه دریافت کد را بزنید'**
+  String get auth_title;
 
   /// No description provided for @auth_phone_number.
   ///
@@ -364,35 +382,29 @@ abstract class AppLocalizations {
   /// **'شماره موبایل'**
   String get auth_phone_number;
 
-  /// No description provided for @auth_example.
+  /// No description provided for @auth_phone_validation_invalid_prefix.
   ///
   /// In fa, this message translates to:
-  /// **'مثلا'**
-  String get auth_example;
+  /// **'شماره موبایل باید با 09 شروع شود.'**
+  String get auth_phone_validation_invalid_prefix;
 
-  /// No description provided for @auth_terms_prefix.
+  /// No description provided for @auth_phone_number_example.
   ///
   /// In fa, this message translates to:
-  /// **'با ثبت نام در پلی آن، '**
-  String get auth_terms_prefix;
+  /// **'مثلا: 09123456789'**
+  String get auth_phone_number_example;
 
-  /// No description provided for @auth_terms_and.
+  /// No description provided for @auth_read_terms.
   ///
   /// In fa, this message translates to:
-  /// **' و '**
-  String get auth_terms_and;
+  /// **'مطالعه '**
+  String get auth_read_terms;
 
-  /// No description provided for @auth_terms_suffix.
+  /// No description provided for @auth_terms.
   ///
   /// In fa, this message translates to:
-  /// **' را قبول می‌کنم.'**
-  String get auth_terms_suffix;
-
-  /// No description provided for @auth_terms_title.
-  ///
-  /// In fa, this message translates to:
-  /// **'قوانین و مقررات را'**
-  String get auth_terms_title;
+  /// **'قوانین و مقررات '**
+  String get auth_terms;
 
   /// No description provided for @auth_privacy_title.
   ///
@@ -400,11 +412,47 @@ abstract class AppLocalizations {
   /// **'بیانیه حریم خصوصی'**
   String get auth_privacy_title;
 
-  /// No description provided for @auth_continue.
+  /// No description provided for @auth_get_code.
   ///
   /// In fa, this message translates to:
-  /// **'ادامه'**
-  String get auth_continue;
+  /// **'دریافت کد'**
+  String get auth_get_code;
+
+  /// No description provided for @auth_verify_code_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'کد ارسال شده را وارد کنید'**
+  String get auth_verify_code_title;
+
+  /// No description provided for @auth_verify_code_subtitle.
+  ///
+  /// In fa, this message translates to:
+  /// **'کد 6 رقمی به شماره شما پیامک شد'**
+  String get auth_verify_code_subtitle;
+
+  /// No description provided for @auth_resend_code_in.
+  ///
+  /// In fa, this message translates to:
+  /// **'دریافت مجدد کد:'**
+  String get auth_resend_code_in;
+
+  /// No description provided for @auth_resend_code.
+  ///
+  /// In fa, this message translates to:
+  /// **'دریافت مجدد پیامک'**
+  String get auth_resend_code;
+
+  /// No description provided for @auth_send_code.
+  ///
+  /// In fa, this message translates to:
+  /// **'ارسال'**
+  String get auth_send_code;
+
+  /// No description provided for @auth_phone_exception.
+  ///
+  /// In fa, this message translates to:
+  /// **'لطفا شماره همراه 11 رقمی و معتبر وارد کنید.'**
+  String get auth_phone_exception;
 }
 
 class _AppLocalizationsDelegate

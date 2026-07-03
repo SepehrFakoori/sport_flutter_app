@@ -35,8 +35,9 @@ class AppTheme {
               borderRadius: BorderRadiusGeometry.circular(8),
             ),
           ),
+          fixedSize: WidgetStatePropertyAll<Size>(.fromHeight(48)),
           padding: WidgetStatePropertyAll<EdgeInsets>(
-            EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            EdgeInsets.symmetric(horizontal: 24),
           ),
           backgroundColor: WidgetStateColor.resolveWith((states) {
             if (states.contains(WidgetState.hovered)) {
@@ -65,13 +66,6 @@ class AppTheme {
             );
           }),
           side: WidgetStateBorderSide.resolveWith((states) {
-            if (states.contains(WidgetState.disabled)) {
-              return BorderSide(
-                color: AppPalette.neutral50,
-                width: 1,
-                style: .solid,
-              );
-            }
             return .none;
           }),
           alignment: .center,
@@ -166,14 +160,13 @@ class AppTheme {
 
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
-          fixedSize: WidgetStatePropertyAll<Size>(Size.fromHeight(40)),
-          minimumSize: WidgetStatePropertyAll<Size>(Size(96, 40)),
           shape: WidgetStatePropertyAll(
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+            RoundedRectangleBorder(borderRadius: .circular(8)),
           ),
           padding: WidgetStatePropertyAll<EdgeInsets>(
-            EdgeInsets.symmetric(horizontal: 8),
+            EdgeInsets.symmetric(horizontal: 12, vertical: 0),
           ),
+          foregroundColor: WidgetStatePropertyAll<Color>(colors.primary),
         ),
       ),
 
@@ -183,14 +176,14 @@ class AppTheme {
           backgroundColor: WidgetStateColor.resolveWith((states) {
             final color = switch (states) {
               _ when states.contains(WidgetState.hovered) =>
-                AppPalette.primary70,
+                AppPalette.primary10,
               _ when states.contains(WidgetState.focused) =>
                 AppPalette.primary60,
               _ when states.contains(WidgetState.pressed) =>
                 AppPalette.neutral20,
               _ when states.contains(WidgetState.disabled) =>
                 AppPalette.neutral50,
-              _ => colors.background,
+              _ => AppPalette.neutral30,
             };
             return color;
           }),
@@ -199,11 +192,14 @@ class AppTheme {
         ),
       ),
 
-      // inputDecorationTheme: InputDecorationThemeData(
-      //   constraints: BoxConstraints(maxHeight: 48),
-      //   isDense: true,
-      //   border: OutlineInputBorder(),
-      // ),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: colors.primary,
+      ),
+
+      inputDecorationTheme: InputDecorationThemeData(
+        border: OutlineInputBorder(),
+      ),
+
       appBarTheme: AppBarThemeData(
         backgroundColor: colors.background,
         surfaceTintColor: Colors.transparent,
@@ -213,7 +209,7 @@ class AppTheme {
       navigationBarTheme: NavigationBarThemeData(
         labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
         elevation: 1.5,
-        indicatorColor: colors.surface,
+        indicatorColor: AppPalette.primary10,
         backgroundColor: colors.background,
         shadowColor: colors.onBackground,
         labelPadding: EdgeInsetsGeometry.zero,
