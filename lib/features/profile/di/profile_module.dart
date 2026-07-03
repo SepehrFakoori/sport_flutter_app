@@ -1,6 +1,6 @@
 import 'package:sport_flutter_app/core/di/injection.dart';
-import 'package:sport_flutter_app/features/profile/data/datasource/remote/remote_datasource.dart';
-import 'package:sport_flutter_app/features/profile/data/datasource/remote/remote_datasource_impl.dart';
+import 'package:sport_flutter_app/features/profile/data/datasource/remote/profile_remote_datasource.dart';
+import 'package:sport_flutter_app/features/profile/data/datasource/remote/profile_remote_datasource_impl.dart';
 import 'package:sport_flutter_app/features/profile/data/repository/profile_repository_impl.dart';
 import 'package:sport_flutter_app/features/profile/domain/repository/profile_repository.dart';
 import 'package:sport_flutter_app/features/profile/domain/use_case/get_profile_usecase.dart';

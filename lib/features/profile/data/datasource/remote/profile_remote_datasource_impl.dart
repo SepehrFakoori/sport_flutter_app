@@ -1,5 +1,5 @@
 import 'package:sport_flutter_app/core/network/http_client.dart';
-import 'package:sport_flutter_app/features/profile/data/datasource/remote/remote_datasource.dart';
+import 'package:sport_flutter_app/features/profile/data/datasource/remote/profile_remote_datasource.dart';
 import 'package:sport_flutter_app/features/profile/data/model/profile_model.dart';
 
 class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {

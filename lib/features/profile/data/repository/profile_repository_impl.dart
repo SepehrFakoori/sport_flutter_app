@@ -1,4 +1,4 @@
-import 'package:sport_flutter_app/features/profile/data/datasource/remote/remote_datasource.dart';
+import 'package:sport_flutter_app/features/profile/data/datasource/remote/profile_remote_datasource.dart';
 import 'package:sport_flutter_app/features/profile/data/mapper/profile_mapper.dart';
 import 'package:sport_flutter_app/features/profile/domain/entity/profile.dart';
 import 'package:sport_flutter_app/features/profile/domain/repository/profile_repository.dart';
