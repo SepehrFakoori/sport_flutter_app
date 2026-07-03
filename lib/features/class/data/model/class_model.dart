@@ -1,11 +1,14 @@
+import 'package:sport_flutter_app/features/coach/data/model/coach_model.dart';
+
 class ClassModel {
   final int id;
   final String title;
   final String description;
-  final int fee;
+  final String fee;
   final int capacity;
   final int remainingCapacity;
   final bool isFull;
+  final CoachModel coach;
   final bool isActive;
 
   ClassModel({
@@ -16,6 +19,7 @@ class ClassModel {
     required this.capacity,
     required this.remainingCapacity,
     required this.isFull,
+    required this.coach,
     required this.isActive,
   });
 
@@ -25,8 +29,9 @@ class ClassModel {
     description: json['description'],
     fee: json['fee'],
     capacity: json['capacity'],
-    remainingCapacity: json['remainingCapacity'],
-    isFull: json['isFull'],
-    isActive: json['isActive'],
+    remainingCapacity: json['remaining_capacity'],
+    isFull: json['is_full'],
+    coach: CoachModel.fromJson(json['coach']),
+    isActive: json['is_active'],
   );
 }

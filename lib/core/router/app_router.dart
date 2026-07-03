@@ -9,6 +9,7 @@ import 'package:sport_flutter_app/features/auth/presentation/bloc/verify_otp_blo
 import 'package:sport_flutter_app/features/auth/presentation/enter_phone_screen.dart';
 import 'package:sport_flutter_app/features/auth/presentation/verify_otp_screen.dart';
 import 'package:sport_flutter_app/features/class/presentation/class_screen.dart';
+import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_bloc.dart';
 import 'package:sport_flutter_app/features/inbox/presentation/chat_screen.dart';
 import 'package:sport_flutter_app/features/coach/presentation/coach_screen.dart';
 import 'package:sport_flutter_app/features/home/presentation/home_screen.dart';
@@ -31,7 +32,12 @@ final GoRouter routerConfig = GoRouter(
             GoRoute(
               path: AppRoutes.home.path,
               name: AppRoutes.home.name,
-              builder: (context, state) => HomeScreen(),
+              builder: (context, state) => MultiBlocProvider(
+                providers: [
+                  BlocProvider<HomeBloc>(create: (context) => sl<HomeBloc>()),
+                ],
+                child: HomeScreen(),
+              ),
             ),
           ],
         ),

@@ -20,7 +20,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       emit(const LoadingState());
       final Profile profile = await getProfile.call();
       emit(SuccessState(profile));
-    } on AppException catch (e) {
+    } on AppException {
       emit(FailureState());
     }
   }

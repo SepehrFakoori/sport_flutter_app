@@ -41,7 +41,7 @@ class ClassCard extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: context.colors.background,
                 borderRadius: BorderRadius.circular(24),
                 boxShadow: [
                   BoxShadow(
@@ -60,7 +60,7 @@ class ClassCard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const .all(8.0),
               child: Column(
                 crossAxisAlignment: .start,
                 spacing: 2,

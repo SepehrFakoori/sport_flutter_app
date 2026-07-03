@@ -4,6 +4,7 @@ import 'package:sport_flutter_app/core/di/network_module.dart';
 import 'package:sport_flutter_app/core/storage/token_storage.dart';
 import 'package:sport_flutter_app/core/storage/token_storage_impl.dart';
 import 'package:sport_flutter_app/features/auth/di/auth_module.dart';
+import 'package:sport_flutter_app/features/class/di/class_module.dart';
 import 'package:sport_flutter_app/features/profile/di/profile_module.dart';
 
 final sl = GetIt.instance;
@@ -15,4 +16,5 @@ Future<void> setupDependencies() async {
   registerNetworkModule();
   registerAuthModule();
   registerProfileModule();
+  registerClassModule();
 }

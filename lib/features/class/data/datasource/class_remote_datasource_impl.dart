@@ -16,9 +16,7 @@ class ClassRemoteDatasourceImpl implements ClassRemoteDatasource {
   @override
   Future<List<ClassModel>> getClasses() async {
     final response = await _client.get('/classes/');
-    final classes = response.data['results'];
-    return classes
-        .map((item) => ClassModel.fromJson(item as Map<String, dynamic>))
-        .toList();
+    final List<dynamic> classes = response.data["results"];
+    return classes.map((item) => ClassModel.fromJson(item)).toList();
   }
 }
