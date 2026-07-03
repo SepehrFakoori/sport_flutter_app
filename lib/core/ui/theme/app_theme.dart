@@ -286,8 +286,6 @@ class AppTheme {
         padding: EdgeInsets.symmetric(vertical: 0, horizontal: 2),
       ),
 
-      chipTheme: ChipThemeData(labelStyle: AppTextTheme.textTheme.labelLarge),
-
       tabBarTheme: TabBarThemeData(
         dividerColor: colors.surface,
         indicatorAnimation: .elastic,

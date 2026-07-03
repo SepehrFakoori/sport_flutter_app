@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pinput/pinput.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 
@@ -29,7 +30,16 @@ class CodeInputField extends StatelessWidget {
         keyboardType: .number,
         defaultPinTheme: defaultPinTheme,
         focusedPinTheme: defaultPinTheme,
+        errorPinTheme: defaultPinTheme.copyBorderWith(
+          border: .all(color: context.colors.error),
+        ),
         onCompleted: onCompleted,
+        inputFormatters: [
+          LengthLimitingTextInputFormatter(6),
+          FilteringTextInputFormatter.digitsOnly,
+        ],
+        closeKeyboardWhenCompleted: true,
+        mainAxisAlignment: .center,
       ),
     );
   }

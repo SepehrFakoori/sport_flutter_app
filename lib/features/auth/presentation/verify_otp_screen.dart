@@ -8,6 +8,7 @@ import 'package:sport_flutter_app/features/auth/presentation/bloc/verify_otp_blo
 import 'package:sport_flutter_app/features/auth/presentation/bloc/verify_otp_bloc/verify_otp_event.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/verify_otp_bloc/verify_otp_state.dart';
 import 'package:sport_flutter_app/features/auth/presentation/widgets/code_input_field.dart';
+import 'package:sport_flutter_app/features/auth/presentation/widgets/edit_phone_action_chip.dart';
 import 'package:sport_flutter_app/features/auth/presentation/widgets/resend_time.dart';
 
 class VerifyOtpScreen extends StatefulWidget {
@@ -60,10 +61,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                       ),
                       textAlign: .center,
                     ),
-                    AppFilledButton.secondary(
-                      onPressed: () {},
-                      title: widget.phone,
-                    ),
+                    EditPhoneActionChip(phone: widget.phone),
                   ],
                 ),
                 CodeInputField(controller: _controller),

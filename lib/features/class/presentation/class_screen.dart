@@ -109,7 +109,11 @@ class _ClassPageState extends State<ClassPage> {
                 // ),
                 ClassSessions(
                   sessions: [
-                    ClassSession(day: 'دوشنبه ها', startTime: '14:00', endTime: '15:30'),
+                    ClassSession(
+                      day: 'دوشنبه ها',
+                      startTime: '14:00',
+                      endTime: '15:30',
+                    ),
                   ],
                 ),
 
@@ -179,6 +183,7 @@ class ClassSession {
     required this.endTime,
   });
 }
+
 class ClassSessions extends StatelessWidget {
   final List<ClassSession> sessions;
 
@@ -205,8 +210,6 @@ class ClassSessions extends StatelessWidget {
   }
 }
 
-
-
 class _SessionTile extends StatelessWidget {
   final ClassSession session;
 
@@ -222,9 +225,7 @@ class _SessionTile extends StatelessWidget {
           height: 26,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: context.colors.onBackgroundSecondary.withValues(
-              alpha: 0.1,
-            ),
+            color: context.colors.onBackgroundSecondary.withValues(alpha: 0.1),
             shape: BoxShape.circle,
           ),
           child: Icon(
@@ -257,4 +258,3 @@ class _SessionTile extends StatelessWidget {
     );
   }
 }
-

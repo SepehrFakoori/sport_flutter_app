@@ -13,6 +13,7 @@ import 'package:sport_flutter_app/features/inbox/presentation/chat_screen.dart';
 import 'package:sport_flutter_app/features/coach/presentation/coach_screen.dart';
 import 'package:sport_flutter_app/features/home/presentation/home_screen.dart';
 import 'package:sport_flutter_app/features/inbox/presentation/inbox_screen.dart';
+import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_bloc/profile_bloc.dart';
 import 'package:sport_flutter_app/features/profile/presentation/profile_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/account_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/simple_screen.dart';
@@ -54,7 +55,10 @@ final GoRouter routerConfig = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: AppRoutes.account.path,
-              builder: (context, state) => AccountScreen(),
+              builder: (context, state) => BlocProvider<ProfileBloc>(
+                create: (context) => sl<ProfileBloc>(),
+                child: AccountScreen(),
+              ),
             ),
           ],
         ),
