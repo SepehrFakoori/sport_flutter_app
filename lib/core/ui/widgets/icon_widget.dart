@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 
 class IconWidget extends StatelessWidget {
   final String icon;

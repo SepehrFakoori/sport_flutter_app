@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:sport_flutter_app/core/config/flavor_config.dart';
 
-class LoggerInterceptor implements Interceptor {
+class LoggerInterceptor extends Interceptor {
   final PrettyDioLogger _dioLogger = PrettyDioLogger(
     enabled: !isProduction,
     request: true,

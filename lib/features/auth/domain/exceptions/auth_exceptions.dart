@@ -1,7 +1,7 @@
-abstract class AuthExceptions implements Exception {}
+import 'package:sport_flutter_app/core/exception/app_exception.dart';
 
-class PhoneEmptyException implements AuthExceptions {}
+abstract class AuthException extends AppException {}
 
-class PhoneInvalidPrefixException implements AuthExceptions {}
+class InvalidPhonePrefixException extends AuthException {}
 
-class PhoneInvalidLengthException implements AuthExceptions {}
+class InvalidPhoneLengthException extends AuthException {}

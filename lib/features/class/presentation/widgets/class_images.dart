@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
 
 class ClassImages extends StatefulWidget {

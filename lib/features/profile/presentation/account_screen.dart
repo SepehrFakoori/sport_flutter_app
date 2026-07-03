@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/constants/assets_icons.dart';
-import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_sliver_app_bar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
 import 'package:sport_flutter_app/features/profile/presentation/widgets/menu_tile.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_filled_button.dart';
 
 class EnrollmentCard extends StatelessWidget {

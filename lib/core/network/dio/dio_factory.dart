@@ -1,16 +1,15 @@
 import 'package:dio/dio.dart';
-import 'package:sport_flutter_app/core/config/app_config.dart';
+import 'package:sport_flutter_app/core/config/app_base_url.dart';
 
 class DioFactory {
-  final AppConfig config;
   final List<Interceptor> interceptors;
 
-  const DioFactory(this.config, {required this.interceptors});
+  const DioFactory({required this.interceptors});
 
   Dio create() {
     final dio = Dio(
       BaseOptions(
-        baseUrl: config.baseUrl,
+        baseUrl: AppBaseUrl.baseUrl,
         connectTimeout: const Duration(seconds: 20),
         receiveTimeout: const Duration(seconds: 20),
         headers: {

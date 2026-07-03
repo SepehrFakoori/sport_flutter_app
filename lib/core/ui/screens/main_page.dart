@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sport_flutter_app/core/constants/assets_icons.dart';
-import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/navigation/app_navigation_bar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/navigation/app_navigation_destination.dart';
 

@@ -7,9 +7,11 @@ class SendOtpUseCase {
   const SendOtpUseCase(this._repository);
 
   void validate(String phone) {
-    if (phone.isEmpty) throw PhoneEmptyException();
-    if (phone.startsWith('09')) throw PhoneInvalidPrefixException();
-    if (phone.length != 11) throw PhoneInvalidLengthException();
+    if (!phone.startsWith('09') && phone.length >= 2) {
+      throw InvalidPhonePrefixException();
+    } else if (phone.length != 11) {
+      throw InvalidPhoneLengthException();
+    }
   }
 
   Future<void> call(String phone) => _repository.sendOtp(phone);

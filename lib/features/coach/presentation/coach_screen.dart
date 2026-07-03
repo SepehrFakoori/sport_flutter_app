@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/constants/assets_icons.dart';
-import 'package:sport_flutter_app/core/extensions/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_chip.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
