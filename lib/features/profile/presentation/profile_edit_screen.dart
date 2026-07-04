@@ -4,6 +4,7 @@ import 'package:sport_flutter_app/core/exception/app_exception.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_text_form_field.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_filled_button.dart';
+import 'package:sport_flutter_app/core/ui/widgets/custom_app_bar.dart';
 import 'package:sport_flutter_app/features/profile/domain/exceptions/profile_exceptions.dart';
 
 class ProfileEditScreen extends StatefulWidget {
@@ -28,7 +29,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: CustomAppBar(),
       body: SafeArea(
         child: Padding(
           padding: const .symmetric(horizontal: 16.0),

@@ -5,6 +5,7 @@ import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_sliver_app_bar.dart';
+import 'package:sport_flutter_app/core/ui/widgets/custom_app_bar.dart';
 import 'package:sport_flutter_app/features/profile/presentation/widgets/info_tile.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -27,13 +28,14 @@ class ProfileScreen extends StatelessWidget {
     ];
 
     return Scaffold(
+      appBar: CustomAppBar(),
       body: SafeArea(
-        child: CustomScrollView(
+        child: SingleChildScrollView(
           physics: const AlwaysScrollableScrollPhysics(),
-          slivers: [
-            AppSliverAppBar(expandedHeight: kToolbarHeight),
-            SliverToBoxAdapter(
-              child: Column(
+          child: Column(
+            spacing: 24,
+            children: [
+              Column(
                 crossAxisAlignment: .center,
                 mainAxisSize: .max,
                 children: [
@@ -54,10 +56,9 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-            SliverPadding(
-              padding: const .only(top: 24.0),
-              sliver: SliverList.separated(
+              ListView.separated(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) => InfoTile(
                   title: titles[index],
                   subtitle: subtitles[index],
@@ -69,8 +70,8 @@ class ProfileScreen extends StatelessWidget {
                 separatorBuilder: (context, index) => AppDivider(endIndent: 0),
                 itemCount: 4,
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

@@ -7,6 +7,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final List<Widget>? actions;
   final bool cancelLeading;
   final Color? backgroundColor;
+  final TextStyle? titleTextStyle;
 
   const CustomAppBar({
     super.key,
@@ -15,23 +16,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.actions,
     this.cancelLeading = false,
     this.backgroundColor,
+    this.titleTextStyle,
   });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: backgroundColor,
-      leading: context.canPop()
-          ? IconButton(
-              onPressed: context.pop,
-              icon: Icon(
-                cancelLeading
-                    ? Icons.close_rounded
-                    : Icons.arrow_back_ios_rounded,
-              ),
-            )
-          : null,
       title: title,
+      titleTextStyle: titleTextStyle,
       // TODO: can use titleSpacing: NavigationToolbar.kMiddleSpacing, for space between icon and title
       actions: actions,
       actionsPadding: EdgeInsetsDirectional.only(end: 16),
