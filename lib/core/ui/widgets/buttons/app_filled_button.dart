@@ -43,7 +43,7 @@ class AppFilledButton extends StatelessWidget {
     if (isWide) {
       return Container(
         width: .infinity,
-        margin: .symmetric(horizontal: 24.0, vertical: 12.0),
+        margin: .symmetric(horizontal: 24.0),
         child: button,
       );
     }

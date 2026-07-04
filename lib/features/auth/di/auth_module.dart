@@ -5,6 +5,7 @@ import 'package:sport_flutter_app/features/auth/data/datasource/remote/auth_remo
 import 'package:sport_flutter_app/features/auth/data/datasource/remote/auth_remote_datasource_impl.dart';
 import 'package:sport_flutter_app/features/auth/data/repository/auth_repository_impl.dart';
 import 'package:sport_flutter_app/features/auth/domain/repository/auth_repository.dart';
+import 'package:sport_flutter_app/features/auth/domain/use_case/resend_otp_usecase.dart';
 import 'package:sport_flutter_app/features/auth/domain/use_case/send_otp_usecase.dart';
 import 'package:sport_flutter_app/features/auth/domain/use_case/verify_otp_usecase.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/enter_phone_bloc/enter_phone_bloc.dart';
@@ -27,8 +28,9 @@ void registerAuthModule() {
   );
 
   sl.registerLazySingleton(() => SendOtpUseCase(sl()));
+  sl.registerLazySingleton(() => ResendOtpUseCase(sl()));
   sl.registerLazySingleton(() => VerifyOtpUseCase(sl()));
 
   sl.registerFactory(() => EnterPhoneBloc(sl()));
-  sl.registerFactory(() => VerifyOtpBloc(sl()));
+  sl.registerFactory(() => VerifyOtpBloc(verifyOtp: sl(), resendOtp: sl()));
 }

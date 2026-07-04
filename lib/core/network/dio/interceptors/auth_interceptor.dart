@@ -28,10 +28,10 @@ class AuthInterceptor extends QueuedInterceptor {
             'Accept': 'application/json',
           },
         ),
-      ).post('/auth/refresh/', data: {'refresh_token': refreshToken});
+      ).post('/refresh', data: {'refresh': refreshToken});
 
-      final newAccessToken = response.data['access_token'];
-      final newRefreshToken = response.data['refresh_token'];
+      final newAccessToken = response.data['access'];
+      final newRefreshToken = response.data['refresh'];
 
       await _storage.saveAccessToken(newAccessToken);
       await _storage.saveRefreshToken(newRefreshToken);
