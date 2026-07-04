@@ -12,16 +12,16 @@ import 'package:sport_flutter_app/features/class/presentation/widgets/coach_card
 import 'package:sport_flutter_app/features/class/presentation/widgets/coach_tile.dart';
 import 'package:sport_flutter_app/features/class/presentation/widgets/enrollment_card.dart';
 
-class ClassPage extends StatefulWidget {
+class ClassScreen extends StatefulWidget {
   final int classId;
 
-  const ClassPage({super.key, required this.classId});
+  const ClassScreen({super.key, required this.classId});
 
   @override
-  State<ClassPage> createState() => _ClassPageState();
+  State<ClassScreen> createState() => _ClassScreenState();
 }
 
-class _ClassPageState extends State<ClassPage> {
+class _ClassScreenState extends State<ClassScreen> {
   final images = [
     'https://saeidhamidzade.com/wp-content/uploads/2025/05/%DA%86%DA%A9-%D9%84%DB%8C%D8%B3%D8%AA-%D8%AD%D8%B1%D9%81%D9%87-%D8%A7%DB%8C-%D9%82%D8%A8%D9%84-%D8%A7%D8%B2-%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D9%87-%D9%81%D9%88%D8%AA%D8%A8%D8%A7%D9%84.jpg',
     'https://api2.zoomg.ir/media/2024-7-top-soccer-games-android-ios-update-66cc7d122b5676090d02f5fa?w=1200&q=80',

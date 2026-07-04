@@ -95,7 +95,7 @@ final GoRouter routerConfig = GoRouter(
       builder: (context, state) {
         final classId = int.tryParse(state.pathParameters['id']!);
 
-        return ClassPage(classId: classId!);
+        return ClassScreen(classId: classId!);
       },
     ),
     GoRoute(
