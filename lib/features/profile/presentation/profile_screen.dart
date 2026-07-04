@@ -4,12 +4,14 @@ import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
-import 'package:sport_flutter_app/core/ui/widgets/app_sliver_app_bar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/custom_app_bar.dart';
+import 'package:sport_flutter_app/features/profile/domain/entity/profile.dart';
 import 'package:sport_flutter_app/features/profile/presentation/widgets/info_tile.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  final Profile profile;
+
+  const ProfileScreen({super.key, required this.profile});
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +23,10 @@ class ProfileScreen extends StatelessWidget {
     ];
 
     final List<String> subtitles = [
-      'روشنا',
-      'بابائی',
-      '۰۹۳۰۱۹۱۴۳۲۱',
-      'sepehrfakoori@gmail.com',
+      profile.fullName,
+      profile.fullName,
+      profile.phoneNumber,
+      profile.email ?? '',
     ];
 
     return Scaffold(

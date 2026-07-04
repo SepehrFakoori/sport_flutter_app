@@ -6,15 +6,12 @@ import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
-import 'package:sport_flutter_app/features/class/domain/entity/class.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_bloc.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_event.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_state.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/category_list.dart';
-import 'package:sport_flutter_app/features/home/presentation/widgets/class_card.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/filter_tile.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/horizontal_class_card_list.dart';
-import 'package:sport_flutter_app/features/home/presentation/widgets/skeleton/class_card_skeleton.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/skeleton/horizontal_class_card_list_skeleton.dart';
 
 class HomeScreen extends StatefulWidget {

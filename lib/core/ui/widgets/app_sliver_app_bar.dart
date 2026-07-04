@@ -22,7 +22,8 @@ class AppSliverAppBar extends StatelessWidget {
       actions: actions,
       floating: false,
       pinned: true,
-      expandedHeight: expandedHeight ?? 112 + (child?.preferredSize.height ?? 0),
+      expandedHeight:
+          expandedHeight ?? 112 + (child?.preferredSize.height ?? 0),
       elevation: 0.1,
       flexibleSpace: title != null
           ? FlexibleSpaceBar(

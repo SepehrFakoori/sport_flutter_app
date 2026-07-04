@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sport_flutter_app/core/constant/assets_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
-import 'package:sport_flutter_app/core/ui/widgets/app_circular_progress_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
