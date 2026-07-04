@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/constant/assets_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_sliver_app_bar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_bloc/profile_bloc.dart';
@@ -43,6 +45,51 @@ class _AccountScreenState extends State<AccountScreen> {
               ),
               BlocBuilder<ProfileBloc, ProfileState>(
                 builder: (BuildContext context, ProfileState state) {
+                  return SliverList.list(
+                    children: [
+                      const SizedBox(height: 16),
+                      ProfileCard(
+                        imageUrl:
+                            'https://cdn.tabnak.ir/files/fa/news/1404/9/6/2168532_979.jpg',
+                        description: 'قزوین، مهرگان',
+                        username: 'سهند فکوری',
+                        onTap: () => context.pushNamed(AppRoutes.profile.name!),
+                      ),
+                      const SizedBox(height: 16),
+                      MenuTile(
+                        title: context.l10n.account_enrollments_button,
+                        icon: AssetIcons.receiptItem,
+                      ),
+                      MenuTile(
+                        title: context.l10n.account_view_profile,
+                        icon: AssetIcons.profile,
+                      ),
+                      MenuTile(
+                        title: context.l10n.account_settings_button,
+                        icon: AssetIcons.setting,
+                      ),
+                      MenuTile(
+                        title: context.l10n.account_giftcard_button,
+                        icon: AssetIcons.money,
+                      ),
+                      MenuTile(
+                        title: context.l10n.account_support_button,
+                        icon: AssetIcons.headphone,
+                      ),
+                      MenuTile(
+                        title: context.l10n.account_invite_friends_button,
+                        icon: AssetIcons.profileAdd,
+                      ),
+                      MenuTile(
+                        title: context.l10n.account_policy_button,
+                        icon: AssetIcons.taskSquare,
+                      ),
+                      MenuTile(
+                        title: context.l10n.account_logout,
+                        icon: AssetIcons.logout,
+                      ),
+                    ],
+                  );
                   if (state is SuccessState) {
                     return SliverList.list(
                       children: [

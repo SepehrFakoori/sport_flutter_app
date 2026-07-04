@@ -16,6 +16,8 @@ import 'package:sport_flutter_app/features/coach/presentation/coach_screen.dart'
 import 'package:sport_flutter_app/features/home/presentation/home_screen.dart';
 import 'package:sport_flutter_app/features/inbox/presentation/inbox_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_bloc/profile_bloc.dart';
+import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_edit_bloc/profile_edit_bloc.dart';
+import 'package:sport_flutter_app/features/profile/presentation/profile_edit_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/profile_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/account_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/simple_screen.dart';
@@ -75,6 +77,21 @@ final GoRouter routerConfig = GoRouter(
       path: AppRoutes.profile.path,
       name: AppRoutes.profile.name,
       builder: (context, state) => ProfileScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.editProfile.path,
+      name: AppRoutes.editProfile.name,
+      builder: (context, state) {
+        final data = state.extra as Map<String, dynamic>;
+
+        final title = data['title'];
+        final name = data['name'];
+
+        return BlocProvider<ProfileEditBloc>(
+          create: (context) => sl<ProfileEditBloc>(),
+          child: ProfileEditScreen(name: name, title: title),
+        );
+      },
     ),
     GoRoute(
       path: AppRoutes.chat.path,

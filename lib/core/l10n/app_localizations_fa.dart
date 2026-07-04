@@ -51,6 +51,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get account_logout => 'خروج';
 
   @override
+  String get profile_appbar_title => 'اطلاعات حساب کاربری';
+
+  @override
   String get profile_firstname_title => 'نام';
 
   @override
@@ -61,6 +64,9 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get profile_email_title => 'ایمیل';
+
+  @override
+  String get profile_submit_button => 'ثبت';
 
   @override
   String get home_categories_title => 'دسته‌بندی';

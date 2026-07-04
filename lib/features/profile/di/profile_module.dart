@@ -4,7 +4,9 @@ import 'package:sport_flutter_app/features/profile/data/datasource/remote/profil
 import 'package:sport_flutter_app/features/profile/data/repository/profile_repository_impl.dart';
 import 'package:sport_flutter_app/features/profile/domain/repository/profile_repository.dart';
 import 'package:sport_flutter_app/features/profile/domain/use_case/get_profile_usecase.dart';
+import 'package:sport_flutter_app/features/profile/domain/use_case/update_profile_usecase.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_bloc/profile_bloc.dart';
+import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_edit_bloc/profile_edit_bloc.dart';
 
 void registerProfileModule() {
   sl.registerLazySingleton<ProfileRemoteDataSource>(
@@ -16,6 +18,8 @@ void registerProfileModule() {
   );
 
   sl.registerLazySingleton(() => GetProfileUseCase(sl<ProfileRepository>()));
+  sl.registerLazySingleton(() => UpdateProfileUseCase(sl<ProfileRepository>()));
 
   sl.registerFactory(() => ProfileBloc(sl<GetProfileUseCase>()));
+  sl.registerFactory(() => ProfileEditBloc(sl<UpdateProfileUseCase>()));
 }

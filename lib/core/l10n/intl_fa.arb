@@ -15,10 +15,12 @@
     "account_view_profile": "مشاهده پروفایل",
     "account_logout": "خروج",
 
+    "profile_appbar_title": "اطلاعات حساب کاربری",
     "profile_firstname_title": "نام",
     "profile_lastname_title": "نام خانوادگی",
     "profile_phone_number_title": "شماره همراه",
     "profile_email_title": "ایمیل",
+    "profile_submit_button": "ثبت",
 
     "home_categories_title": "دسته\u200Cبندی",
     "home_popular_title": "پرطرفدارترین\u200Cها",

@@ -178,6 +178,12 @@ abstract class AppLocalizations {
   /// **'خروج'**
   String get account_logout;
 
+  /// No description provided for @profile_appbar_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'اطلاعات حساب کاربری'**
+  String get profile_appbar_title;
+
   /// No description provided for @profile_firstname_title.
   ///
   /// In fa, this message translates to:
@@ -201,6 +207,12 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'ایمیل'**
   String get profile_email_title;
+
+  /// No description provided for @profile_submit_button.
+  ///
+  /// In fa, this message translates to:
+  /// **'ثبت'**
+  String get profile_submit_button;
 
   /// No description provided for @home_categories_title.
   ///

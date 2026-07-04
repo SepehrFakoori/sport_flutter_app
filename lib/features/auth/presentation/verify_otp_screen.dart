@@ -42,7 +42,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
       child: Scaffold(
         body: SafeArea(
           child: Padding(
-            padding: const .all(24),
+            padding: const .all(16),
             child: Column(
               crossAxisAlignment: .center,
               spacing: 20,

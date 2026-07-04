@@ -9,7 +9,7 @@ class MenuTileSkeleton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 48,
-      margin: .symmetric(horizontal: 24),
+      margin: .symmetric(horizontal: 16),
       child: Row(
         spacing: 16,
         children: [
