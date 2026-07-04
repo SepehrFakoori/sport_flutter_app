@@ -8,9 +8,9 @@ class ClassRemoteDatasourceImpl implements ClassRemoteDatasource {
   const ClassRemoteDatasourceImpl(this._client);
 
   @override
-  Future<ClassModel> getClass() {
-    // TODO: implement getClass
-    throw UnimplementedError();
+  Future<ClassModel> getClass(int id) async {
+    final response = await _client.get('/classes/$id/');
+    return ClassModel.fromJson(response.data);
   }
 
   @override

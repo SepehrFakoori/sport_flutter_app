@@ -20,6 +20,9 @@ class SuccessState extends HomeState {
   final List<Class> classes;
 
   const SuccessState(this.classes);
+
+  @override
+  List<Object?> get props => [classes];
 }
 
 class FailureState extends HomeState {}

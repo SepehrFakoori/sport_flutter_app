@@ -10,9 +10,9 @@ class ClassRepositoryImpl implements ClassRepository {
   const ClassRepositoryImpl(this._datasource);
 
   @override
-  Future<Class> getClass() {
-    // TODO: implement getClass
-    throw UnimplementedError();
+  Future<Class> getClass(int id) async {
+    final ClassModel result = await _datasource.getClass(id);
+    return result.toEntity();
   }
 
   @override

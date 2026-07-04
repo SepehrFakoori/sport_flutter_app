@@ -6,13 +6,16 @@ import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
+import 'package:sport_flutter_app/features/class/domain/entity/class.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_bloc.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_event.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_state.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/category_list.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/class_card.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/filter_tile.dart';
+import 'package:sport_flutter_app/features/home/presentation/widgets/horizontal_class_card_list.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/skeleton/class_card_skeleton.dart';
+import 'package:sport_flutter_app/features/home/presentation/widgets/skeleton/horizontal_class_card_list_skeleton.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -102,35 +105,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: BlocBuilder<HomeBloc, HomeState>(
                     builder: (context, state) {
                       if (state is SuccessState) {
-                        return ListView.separated(
-                          scrollDirection: Axis.horizontal,
-                          padding: const EdgeInsetsGeometry.symmetric(
-                            horizontal: 24,
-                          ),
-                          itemBuilder: (context, index) => ClassCard(
-                            imageUrl:
-                                'https://kavaalya.com/wp-content/uploads/2021/05/sukhasana-kavaalya.jpeg',
-                            title: state.classes[index].title,
-                            coachName: state.classes[index].coach.fullName,
-                            rate: '4.1',
-                            address: 'قزوین، زیباشهر',
-                            cost: '${state.classes[index].fee} تومان',
-                          ),
-                          separatorBuilder: (context, index) =>
-                              const SizedBox(width: 12),
-                          itemCount: state.classes.length,
-                        );
+                        return HorizontalClassCardList(classes: state.classes);
                       } else {
-                        return ListView.separated(
-                          scrollDirection: Axis.horizontal,
-                          padding: const EdgeInsetsGeometry.symmetric(
-                            horizontal: 24,
-                          ),
-                          itemBuilder: (context, index) => ClassCardSkeleton(),
-                          separatorBuilder: (context, index) =>
-                              const SizedBox(width: 12),
-                          itemCount: 8,
-                        );
+                        return HorizontalClassCardListSkeleton();
                       }
                     },
                   ),
@@ -144,21 +121,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 SizedBox(
                   height: 293,
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsetsGeometry.symmetric(horizontal: 24),
-                    itemBuilder: (context, index) => ClassCard(
-                      imageUrl:
-                          'https://kavaalya.com/wp-content/uploads/2021/05/sukhasana-kavaalya.jpeg',
-                      title: 'تکواندو فرکانس',
-                      coachName: 'میعاد جاوید',
-                      rate: '4.1',
-                      address: 'قزوین، زیباشهر',
-                      cost: '560.000 تومان',
-                    ),
-                    separatorBuilder: (context, index) =>
-                        const SizedBox(width: 12),
-                    itemCount: 8,
+                  child: BlocBuilder<HomeBloc, HomeState>(
+                    builder: (context, state) {
+                      if (state is SuccessState) {
+                        return HorizontalClassCardList(classes: state.classes);
+                      } else {
+                        return HorizontalClassCardListSkeleton();
+                      }
+                    },
                   ),
                 ),
               ],
