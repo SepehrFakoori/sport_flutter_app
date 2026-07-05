@@ -1,0 +1,1 @@
+enum AuthOutcome { authenticated, profileCompletionRequired }

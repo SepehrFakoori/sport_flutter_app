@@ -1,15 +1,16 @@
 import 'package:equatable/equatable.dart';
+import 'package:sport_flutter_app/features/auth/domain/entity/auth_outcome.dart';
 
 class VerifyOtpState extends Equatable {
   final bool isLoading;
-  final bool isSuccess;
+  final AuthOutcome? outcome;
   final String? error;
   final int remainingSeconds;
   final bool canResend;
 
   const VerifyOtpState({
     this.isLoading = false,
-    this.isSuccess = false,
+    this.outcome,
     this.error,
     this.remainingSeconds = 120,
     this.canResend = false,
@@ -17,14 +18,14 @@ class VerifyOtpState extends Equatable {
 
   VerifyOtpState copyWith({
     bool? isLoading,
-    bool? isSuccess,
+    AuthOutcome? outcome,
     String? error,
     int? remainingSeconds,
     bool? canResend,
   }) {
     return VerifyOtpState(
       isLoading: isLoading ?? this.isLoading,
-      isSuccess: isSuccess ?? this.isSuccess,
+      outcome: outcome,
       error: error,
       remainingSeconds: remainingSeconds ?? this.remainingSeconds,
       canResend: canResend ?? this.canResend,
@@ -34,29 +35,9 @@ class VerifyOtpState extends Equatable {
   @override
   List<Object?> get props => [
     isLoading,
-    isSuccess,
+    outcome,
     error,
     remainingSeconds,
     canResend,
   ];
 }
-
-// sealed class VerifyOtpState extends Equatable {
-//   @override
-//   List<Object?> get props => [];
-// }
-//
-// class InitialState extends VerifyOtpState {}
-//
-// class LoadingState extends VerifyOtpState {}
-//
-// class SuccessState extends VerifyOtpState {}
-//
-// class FailureState extends VerifyOtpState {
-//   final String message;
-//
-//   FailureState(this.message);
-//
-//   @override
-//   List<Object?> get props => [message];
-// }

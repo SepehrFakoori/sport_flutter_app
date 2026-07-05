@@ -35,8 +35,15 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
   Widget build(BuildContext context) {
     return BlocListener<VerifyOtpBloc, VerifyOtpState>(
       listener: (context, state) {
-        if (state.isSuccess) {
-          context.goNamed(AppRoutes.home.name!);
+        if (state.outcome != null) {
+          switch (state.outcome!) {
+            case .authenticated:
+              context.goNamed(AppRoutes.home.name!);
+              break;
+            case .profileCompletionRequired:
+              context.goNamed(AppRoutes.account.name!);
+              break;
+          }
         }
       },
       child: Scaffold(

@@ -1,3 +1,4 @@
+import 'package:sport_flutter_app/features/auth/domain/entity/auth_outcome.dart';
 import 'package:sport_flutter_app/features/auth/domain/repository/auth_repository.dart';
 
 class VerifyOtpUseCase {
@@ -5,6 +6,6 @@ class VerifyOtpUseCase {
 
   const VerifyOtpUseCase(this._repository);
 
-  Future<void> call(String phone, String code) =>
+  Future<AuthOutcome> call(String phone, String code) =>
       _repository.verifyOtp(phone, code);
 }
