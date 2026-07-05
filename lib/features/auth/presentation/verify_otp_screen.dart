@@ -41,7 +41,7 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
               context.goNamed(AppRoutes.home.name!);
               break;
             case .profileCompletionRequired:
-              context.goNamed(AppRoutes.account.name!);
+              context.goNamed(AppRoutes.profile.name!);
               break;
           }
         }
