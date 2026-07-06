@@ -304,6 +304,13 @@ class AppTheme {
         ),
         labelPadding: .symmetric(horizontal: 12),
       ),
+
+      pageTransitionsTheme: PageTransitionsTheme(
+        builders: {
+          .android: FadeForwardsPageTransitionsBuilder(),
+          .iOS: FadeForwardsPageTransitionsBuilder(),
+        },
+      ),
     );
   }
 }
