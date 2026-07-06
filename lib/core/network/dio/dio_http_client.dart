@@ -41,6 +41,21 @@ class DioHttpClient implements HttpClient {
   }
 
   @override
+  Future<HttpResponse> patch(
+    String path, {
+    Object? data,
+    Map<String, dynamic>? queryParameters,
+  }) async {
+    final res = await _dio.patch(
+      path,
+      data: data,
+      queryParameters: queryParameters,
+    );
+
+    return HttpResponse(statusCode: res.statusCode!, data: res.data);
+  }
+
+  @override
   Future<HttpResponse> put(
     String path, {
     Object? data,

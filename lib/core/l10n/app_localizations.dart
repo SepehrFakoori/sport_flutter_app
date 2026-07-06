@@ -465,6 +465,24 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'لطفا شماره همراه 11 رقمی و معتبر وارد کنید.'**
   String get auth_phone_exception;
+
+  /// No description provided for @choose_profile_photo_sheet_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'انتخاب تصویر حساب کاربری'**
+  String get choose_profile_photo_sheet_title;
+
+  /// No description provided for @choose_from_gallery_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'انتخاب از گالری'**
+  String get choose_from_gallery_title;
+
+  /// No description provided for @take_photo_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'بازکردن دوربین'**
+  String get take_photo_title;
 }
 
 class _AppLocalizationsDelegate

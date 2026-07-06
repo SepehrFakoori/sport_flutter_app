@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:sport_flutter_app/features/profile/data/datasource/remote/profile_remote_datasource.dart';
 import 'package:sport_flutter_app/features/profile/data/mapper/profile_mapper.dart';
 import 'package:sport_flutter_app/features/profile/domain/entity/profile.dart';
@@ -18,5 +20,18 @@ class ProfileRepositoryImpl implements ProfileRepository {
   Future<Profile> updateProfile(Profile profile) async {
     final response = await remoteDataSource.updateProfile(profile.toModel());
     return response.toEntity();
+  }
+
+  @override
+  Future<String> uploadProfilePhoto({
+    required File file,
+    required void Function(double progress) onProgress,
+  }) async {
+    final url = await remoteDataSource.uploadProfilePhoto(
+      file: file,
+      onProgress: onProgress,
+    );
+
+    return url;
   }
 }

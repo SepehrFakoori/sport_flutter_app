@@ -4,14 +4,14 @@ import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/custom_card.dart';
 
 class ProfileCard extends StatelessWidget {
-  final String imageUrl;
+  final String? avatar;
   final String username;
   final String description;
   final GestureTapCallback? onTap;
 
   const ProfileCard({
     super.key,
-    required this.imageUrl,
+    required this.avatar,
     required this.username,
     required this.description,
     this.onTap,
@@ -31,7 +31,7 @@ class ProfileCard extends StatelessWidget {
               children: [
                 AppCircleAvatar(
                   fullName: username,
-                  imageUrl: imageUrl,
+                  imageUrl: avatar,
                   radius: 56,
                 ),
                 const SizedBox(height: 4),

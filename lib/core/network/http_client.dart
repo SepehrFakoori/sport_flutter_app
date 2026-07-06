@@ -15,6 +15,12 @@ abstract class HttpClient {
     Map<String, dynamic>? queryParameters,
   });
 
+  Future<HttpResponse> patch(
+    String path, {
+    Object? data,
+    Map<String, dynamic>? queryParameters,
+  });
+
   Future<HttpResponse> delete(
     String path, {
     Object? data,

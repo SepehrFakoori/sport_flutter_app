@@ -204,4 +204,13 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get auth_phone_exception =>
       'لطفا شماره همراه 11 رقمی و معتبر وارد کنید.';
+
+  @override
+  String get choose_profile_photo_sheet_title => 'انتخاب تصویر حساب کاربری';
+
+  @override
+  String get choose_from_gallery_title => 'انتخاب از گالری';
+
+  @override
+  String get take_photo_title => 'بازکردن دوربین';
 }

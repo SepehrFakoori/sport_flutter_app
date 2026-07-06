@@ -7,6 +7,7 @@ extension ProfileMapper on ProfileModel {
     return Profile(
       fullName: fullName,
       phoneNumber: phoneNumber,
+      avatar: avatar,
       email: email,
       gender: GenderMapper.fromApi(gender),
       birthDate: birthDate,
@@ -19,6 +20,7 @@ extension ProfileModelMapper on Profile {
     return ProfileModel(
       fullName: fullName,
       phoneNumber: phoneNumber,
+      avatar: avatar,
       email: email,
       gender: GenderMapper.toApi(gender),
       birthDate: birthDate,

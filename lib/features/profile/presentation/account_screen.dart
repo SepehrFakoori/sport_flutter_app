@@ -50,8 +50,7 @@ class _AccountScreenState extends State<AccountScreen> {
                       children: [
                         const SizedBox(height: 16),
                         ProfileCard(
-                          imageUrl:
-                              'https://2017.lutheranworld.org/sites/default/files/styles/large_updates_image/public/updates/1B_humans_not_for_sale.jpg?itok=IkUtnG_I&c=65435ce6d02504401a0b2ddbe3611983',
+                          avatar: state.profile.avatar,
                           description:
                               state.profile.phoneNumber, //'قزوین، مهرگان'
                           username: state.profile.fullName,

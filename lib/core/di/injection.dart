@@ -1,6 +1,7 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:sport_flutter_app/core/di/network_module.dart';
+import 'package:sport_flutter_app/core/di/service_module.dart';
 import 'package:sport_flutter_app/core/storage/token_storage.dart';
 import 'package:sport_flutter_app/core/storage/token_storage_impl.dart';
 import 'package:sport_flutter_app/features/auth/di/auth_module.dart';
@@ -14,6 +15,7 @@ Future<void> setupDependencies() async {
     () => TokenStorageImpl(const FlutterSecureStorage()),
   );
   registerNetworkModule();
+  registerServiceModule();
   registerAuthModule();
   registerProfileModule();
   registerClassModule();

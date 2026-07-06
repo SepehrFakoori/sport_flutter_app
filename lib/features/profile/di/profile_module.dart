@@ -1,4 +1,6 @@
 import 'package:sport_flutter_app/core/di/injection.dart';
+import 'package:sport_flutter_app/core/network/http_client.dart';
+import 'package:sport_flutter_app/core/services/file_upload_service.dart';
 import 'package:sport_flutter_app/features/profile/data/datasource/remote/profile_remote_datasource.dart';
 import 'package:sport_flutter_app/features/profile/data/datasource/remote/profile_remote_datasource_impl.dart';
 import 'package:sport_flutter_app/features/profile/data/repository/profile_repository_impl.dart';
@@ -10,7 +12,8 @@ import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_edi
 
 void registerProfileModule() {
   sl.registerLazySingleton<ProfileRemoteDataSource>(
-    () => ProfileRemoteDataSourceImpl(sl()),
+    () =>
+        ProfileRemoteDataSourceImpl(sl<HttpClient>(), sl<FileUploadService>()),
   );
 
   sl.registerLazySingleton<ProfileRepository>(
