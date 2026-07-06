@@ -108,8 +108,7 @@ class _ClassScreenState extends State<ClassScreen> {
                       AppDivider(indent: 24, endIndent: 24),
                       const SizedBox(height: 12),
                       ClassDescription(
-                        description:
-                            'این یک متن است که خودم با دست های خودم نوشتم و میخوام تست کنم ایا کار میکند یا نه امروز شاید برم بیرون یکم والیبال بازی کنم باید زنگ بزنم به امیر محمد ببینم میاد یا نه یا حتی راستین شاید کیف داد بازی کردیم باید حال بده چون هوا هم عالیه و خیلی خوبه.',
+                        description: state.classItem.description,
                       ),
                       const SizedBox(height: 8),
                       AppDivider(indent: 24, endIndent: 24),
