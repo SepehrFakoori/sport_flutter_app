@@ -8,6 +8,7 @@ class AppRoute {
 sealed class AppRoutes {
   static const home = AppRoute(name: 'home', path: '/');
   static const dashboard = AppRoute(name: 'dashboard', path: '/dashboard');
+  static const search = AppRoute(name: 'search', path: '/search');
   static const inbox = AppRoute(name: 'inbox', path: '/inbox');
   static const chat = AppRoute(name: 'chat', path: '/chat');
   static const account = AppRoute(name: 'account', path: '/account');

@@ -22,6 +22,7 @@ import 'package:sport_flutter_app/features/profile/presentation/profile_edit_scr
 import 'package:sport_flutter_app/features/profile/presentation/profile_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/account_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/simple_screen.dart';
+import 'package:sport_flutter_app/features/search/presentation/search_screen.dart';
 
 final GoRouter routerConfig = GoRouter(
   debugLogDiagnostics: !isProduction,
@@ -102,6 +103,11 @@ final GoRouter routerConfig = GoRouter(
       path: AppRoutes.chat.path,
       name: AppRoutes.chat.name,
       builder: (context, state) => ChatScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.search.path,
+      name: AppRoutes.search.name,
+      builder: (context, state) => SearchScreen(),
     ),
     GoRoute(
       path: AppRoutes.coach.path,

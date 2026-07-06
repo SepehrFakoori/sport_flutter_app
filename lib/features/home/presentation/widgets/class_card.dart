@@ -79,17 +79,17 @@ class ClassCard extends StatelessWidget {
                           color: context.colors.onBackgroundSecondary,
                         ),
                       ),
-                      Text(
-                        '4.1',
-                        style: context.textTheme.labelLarge?.copyWith(
-                          color: context.colors.onBackgroundSecondary,
-                        ),
-                      ),
                       IconWidget(
                         icon: AssetIcons.starFilled,
                         height: 12,
                         width: 12,
                         color: context.colors.onBackgroundSecondary,
+                      ),
+                      Text(
+                        '4.1',
+                        style: context.textTheme.labelLarge?.copyWith(
+                          color: context.colors.onBackgroundSecondary,
+                        ),
                       ),
                     ],
                   ),
