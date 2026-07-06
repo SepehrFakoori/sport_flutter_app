@@ -48,7 +48,7 @@ class ClassComments extends StatelessWidget {
                         spacing: 8,
                         children: [
                           AppCircleAvatar(
-                            username: username,
+                            fullName: username,
                             imageUrl:
                                 'https://www.gfxdownload.ir/uploads/posts/2023-02/thumbs/menfigure.jpg',
                             radius: 18,

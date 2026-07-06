@@ -43,7 +43,7 @@ class CoachScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     AppCircleAvatar(
-                      username: coachFullName,
+                      fullName: coachFullName,
                       imageUrl:
                           'https://cdn.entekhab.ir/files/fa/news/1401/4/20/1291768_193.jpg',
                       radius: 56,

@@ -26,7 +26,7 @@ class ProfileTile extends StatelessWidget {
       leading: Hero(
         tag: 'profile',
         child: AppCircleAvatar(
-          username: username,
+          fullName: username,
           imageUrl: imageUrl,
           radius: 28,
         ),

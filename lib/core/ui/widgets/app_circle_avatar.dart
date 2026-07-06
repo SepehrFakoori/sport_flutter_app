@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 
 class AppCircleAvatar extends StatelessWidget {
-  final String username;
+  final String fullName;
   final String? imageUrl;
   final double? radius;
 
   const AppCircleAvatar({
     super.key,
-    required this.username,
+    required this.fullName,
     this.imageUrl,
     this.radius = 30,
   });
@@ -24,7 +24,8 @@ class AppCircleAvatar extends StatelessWidget {
       backgroundImage: hasImage ? CachedNetworkImageProvider(imageUrl!) : null,
       child: !hasImage
           ? Text(
-              username[0].toUpperCase(),
+              fullName[0].toUpperCase(),
+              textScaler: .linear(radius! / 30),
               style: context.textTheme.headlineLarge!.copyWith(
                 color: context.colors.onPrimary,
               ),

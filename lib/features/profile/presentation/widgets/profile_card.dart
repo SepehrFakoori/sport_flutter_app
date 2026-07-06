@@ -30,7 +30,7 @@ class ProfileCard extends StatelessWidget {
               spacing: 4,
               children: [
                 AppCircleAvatar(
-                  username: username,
+                  fullName: username,
                   imageUrl: imageUrl,
                   radius: 56,
                 ),

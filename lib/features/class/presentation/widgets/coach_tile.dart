@@ -18,7 +18,7 @@ class CoachTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {},
-      leading: AppCircleAvatar(username: fullName, imageUrl: imageUrl),
+      leading: AppCircleAvatar(fullName: fullName, imageUrl: imageUrl),
       title: Text(fullName),
       titleTextStyle: context.textTheme.titleLarge,
       subtitle: Text(credentials),
