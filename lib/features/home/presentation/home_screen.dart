@@ -65,10 +65,11 @@ class _HomeScreenState extends State<HomeScreen> {
           AppIconButton(
             icon: AssetIcons.search,
             onPressed: () {
-              context.pushNamed(
-                AppRoutes.coach.name!,
-                pathParameters: {'id': '10'},
-              );
+              // context.pushNamed(
+              //   AppRoutes.coach.name!,
+              //   pathParameters: {'id': '10'},
+              // );
+              context.pushNamed(AppRoutes.search.name!);
             },
             tooltip: context.l10n.home_search_icon_tooltip,
           ),
