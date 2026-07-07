@@ -85,14 +85,72 @@ class _ClassScreenState extends State<ClassScreen> {
                       ),
                       AppDivider(indent: 24, endIndent: 24),
                       const SizedBox(height: 12),
-                      ClassScheduleSection(
-                        sessions: [
-                          ClassSession(
-                            day: 'دوشنبه ها',
-                            startTime: '14:00',
-                            endTime: '15:30',
-                          ),
-                        ],
+
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          spacing: 12,
+                          children: [
+                            Text(
+                              'سانس ها',
+                              style: context.textTheme.headlineSmall,
+                            ),
+                            Column(
+                              spacing: 8,
+                              children: [
+                                Row(
+                                  spacing: 8,
+                                  children: [
+                                    Container(
+                                      width: 26,
+                                      height: 26,
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                        color: context
+                                            .colors
+                                            .onBackgroundSecondary
+                                            .withValues(alpha: 0.1),
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: IconWidget(
+                                        icon: AssetIcons.notification,
+                                        height: 16,
+                                        width: 16,
+                                      ),
+                                    ),
+                                    Text(
+                                      'دوشنبه',
+                                      style: context.textTheme.bodyMedium
+                                          ?.copyWith(
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                    ),
+                                    Container(
+                                      width: 3,
+                                      height: 3,
+                                      decoration: BoxDecoration(
+                                        color: context
+                                            .colors
+                                            .onBackgroundSecondary,
+                                        shape: BoxShape.circle,
+                                      ),
+                                    ),
+                                    Text(
+                                      '20 تا 21:45',
+                                      style: context.textTheme.bodyMedium
+                                          ?.copyWith(
+                                            color: context
+                                                .colors
+                                                .onBackgroundSecondary,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(height: 12),
                       AppDivider(indent: 24, endIndent: 24),
@@ -146,93 +204,6 @@ class _ClassScreenState extends State<ClassScreen> {
         ),
       ),
       bottomNavigationBar: ClassEnrollmentCard(price: '12,000,000'),
-    );
-  }
-}
-
-class ClassSession {
-  final String day;
-  final String startTime;
-  final String endTime;
-
-  const ClassSession({
-    required this.day,
-    required this.startTime,
-    required this.endTime,
-  });
-}
-
-class ClassScheduleSection extends StatelessWidget {
-  final List<ClassSession> sessions;
-
-  const ClassScheduleSection({super.key, required this.sessions});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 12,
-        children: [
-          Text('سانس ها', style: context.textTheme.headlineSmall),
-          Column(
-            spacing: 8,
-            children: sessions
-                .map((session) => _SessionTile(session: session))
-                .toList(),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _SessionTile extends StatelessWidget {
-  final ClassSession session;
-
-  const _SessionTile({required this.session});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      spacing: 8,
-      children: [
-        Container(
-          width: 26,
-          height: 26,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: context.colors.onBackgroundSecondary.withValues(alpha: 0.1),
-            shape: BoxShape.circle,
-          ),
-          child: IconWidget(
-            icon: AssetIcons.notification,
-            height: 16,
-            width: 16,
-          ),
-        ),
-        Text(
-          session.day,
-          style: context.textTheme.bodyMedium?.copyWith(
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-        Container(
-          width: 3,
-          height: 3,
-          decoration: BoxDecoration(
-            color: context.colors.onBackgroundSecondary,
-            shape: BoxShape.circle,
-          ),
-        ),
-        Text(
-          '${session.startTime} تا ${session.endTime}',
-          style: context.textTheme.bodyMedium?.copyWith(
-            color: context.colors.onBackgroundSecondary,
-          ),
-        ),
-      ],
     );
   }
 }
