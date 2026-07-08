@@ -76,7 +76,9 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(width: 8),
           AppIconButton(
             icon: AssetIcons.notification,
-            onPressed: () {},
+            onPressed: () {
+              context.pushNamed(AppRoutes.completeProfile.name!);
+            },
             tooltip: context.l10n.home_notifications_icon_tooltip,
           ),
         ],

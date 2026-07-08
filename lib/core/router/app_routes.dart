@@ -13,6 +13,7 @@ sealed class AppRoutes {
   static const chat = AppRoute(name: 'chat', path: '/chat');
   static const account = AppRoute(name: 'account', path: '/account');
   static const profile = AppRoute(name: 'profile', path: '/profile');
+  static const completeProfile = AppRoute(name: 'completeProfile', path: '/completeProfile');
   static const editProfile = AppRoute(
     name: 'edit-profile',
     path: '/edit-profile',

@@ -69,6 +69,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get profile_submit_button => 'ثبت';
 
   @override
+  String get profile_signup_button => 'ثبت نام';
+
+  @override
   String get home_categories_title => 'دسته‌بندی';
 
   @override

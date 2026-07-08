@@ -38,6 +38,7 @@ dependencies:
   pinput: ^6.0.2
   firebase_messaging: ^16.4.1
   firebase_core: ^4.11.0
+  persian_datetime_picker: ^3.2.0
   image_picker: ^1.2.3
   #  flutter_local_notifications: ^22.0.1
 

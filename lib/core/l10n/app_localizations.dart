@@ -214,6 +214,12 @@ abstract class AppLocalizations {
   /// **'ثبت'**
   String get profile_submit_button;
 
+  /// No description provided for @profile_signup_button.
+  ///
+  /// In fa, this message translates to:
+  /// **'ثبت نام'**
+  String get profile_signup_button;
+
   /// No description provided for @home_categories_title.
   ///
   /// In fa, this message translates to:

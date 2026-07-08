@@ -18,6 +18,7 @@ import 'package:sport_flutter_app/features/inbox/presentation/inbox_screen.dart'
 import 'package:sport_flutter_app/features/profile/domain/entity/profile.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_bloc/profile_bloc.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_edit_bloc/profile_edit_bloc.dart';
+import 'package:sport_flutter_app/features/profile/presentation/complete_profile_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/profile_edit_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/profile_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/account_screen.dart';
@@ -83,6 +84,11 @@ final GoRouter routerConfig = GoRouter(
 
         return ProfileScreen(profile: profile);
       },
+    ),
+    GoRoute(
+      path: AppRoutes.completeProfile.path,
+      name: AppRoutes.completeProfile.name,
+      builder: (context, state) => CompleteProfileScreen(),
     ),
     GoRoute(
       path: AppRoutes.editProfile.path,
