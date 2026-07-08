@@ -84,26 +84,28 @@ final GoRouter routerConfig = GoRouter(
 
         return ProfileScreen(profile: profile);
       },
-    ),
-    GoRoute(
-      path: AppRoutes.completeProfile.path,
-      name: AppRoutes.completeProfile.name,
-      builder: (context, state) => CompleteProfileScreen(),
-    ),
-    GoRoute(
-      path: AppRoutes.editProfile.path,
-      name: AppRoutes.editProfile.name,
-      builder: (context, state) {
-        final data = state.extra as Map<String, dynamic>;
+      routes: <RouteBase>[
+        GoRoute(
+          path: AppRoutes.completeProfile.path,
+          name: AppRoutes.completeProfile.name,
+          builder: (context, state) => CompleteProfileScreen(),
+        ),
+        GoRoute(
+          path: AppRoutes.editProfile.path,
+          name: AppRoutes.editProfile.name,
+          builder: (context, state) {
+            final data = state.extra as Map<String, dynamic>;
 
-        final title = data['title'];
-        final name = data['name'];
+            final title = data['title'];
+            final name = data['name'];
 
-        return BlocProvider<ProfileEditBloc>(
-          create: (context) => sl<ProfileEditBloc>(),
-          child: ProfileEditScreen(name: name, title: title),
-        );
-      },
+            return BlocProvider<ProfileEditBloc>(
+              create: (context) => sl<ProfileEditBloc>(),
+              child: ProfileEditScreen(name: name, title: title),
+            );
+          },
+        ),
+      ],
     ),
     GoRoute(
       path: AppRoutes.chat.path,
