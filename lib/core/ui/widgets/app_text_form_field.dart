@@ -5,6 +5,7 @@ import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 class AppTextFormField extends StatelessWidget {
   final TextEditingController? controller;
   final FocusNode? focusNode;
+  final String? initialValue;
   final VoidCallback? onTap;
   final bool canRequestFocus;
   final String? hintText;
@@ -33,6 +34,7 @@ class AppTextFormField extends StatelessWidget {
     super.key,
     this.controller,
     this.focusNode,
+    this.initialValue,
     this.onTap,
     this.canRequestFocus = true,
     this.hintText,
@@ -63,6 +65,7 @@ class AppTextFormField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       focusNode: focusNode,
+      initialValue: initialValue,
       onTap: onTap,
       canRequestFocus: canRequestFocus,
       minLines: minLines,
@@ -90,13 +93,16 @@ class AppTextFormField extends StatelessWidget {
         errorStyle: context.textTheme.labelLarge?.copyWith(
           color: context.colors.error,
         ),
+        filled: true,
+        fillColor: context.colors.surface,
         contentPadding:
             contentPadding ?? EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-        border:
+        border: CustomOutlineInputBorder(color: context.colors.tertiary),
+        enabledBorder:
             border ??
-            CustomOutlineInputBorder(color: context.colorScheme.tertiary),
+            CustomOutlineInputBorder(color: context.colors.tertiary),
         disabledBorder: CustomOutlineInputBorder(
-          color: context.colorScheme.tertiary,
+          color: context.colors.tertiary,
         ),
         errorBorder: CustomOutlineInputBorder(
           color: context.colors.error.withValues(alpha: 0.6),
@@ -120,5 +126,5 @@ class CustomOutlineInputBorder extends OutlineInputBorder {
   BorderRadius get borderRadius => BorderRadius.circular(12);
 
   @override
-  BorderSide get borderSide => BorderSide(color: color);
+  BorderSide get borderSide => BorderSide(color: color, width: 1.2);
 }

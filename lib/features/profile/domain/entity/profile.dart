@@ -11,7 +11,7 @@ class Profile {
   const Profile({
     required this.fullName,
     required this.phoneNumber,
-    required this.avatar,
+    this.avatar,
     this.email,
     required this.gender,
     required this.birthDate,

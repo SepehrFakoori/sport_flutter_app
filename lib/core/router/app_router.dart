@@ -16,6 +16,7 @@ import 'package:sport_flutter_app/features/coach/presentation/coach_screen.dart'
 import 'package:sport_flutter_app/features/home/presentation/home_screen.dart';
 import 'package:sport_flutter_app/features/inbox/presentation/inbox_screen.dart';
 import 'package:sport_flutter_app/features/profile/domain/entity/profile.dart';
+import 'package:sport_flutter_app/features/profile/presentation/bloc/complete_profile/complete_profile_bloc.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_bloc/profile_bloc.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_edit_bloc/profile_edit_bloc.dart';
 import 'package:sport_flutter_app/features/profile/presentation/complete_profile_screen.dart';
@@ -88,7 +89,10 @@ final GoRouter routerConfig = GoRouter(
         GoRoute(
           path: AppRoutes.completeProfile.path,
           name: AppRoutes.completeProfile.name,
-          builder: (context, state) => CompleteProfileScreen(),
+          builder: (context, state) => BlocProvider<CompleteProfileBloc>(
+            create: (context) => sl<CompleteProfileBloc>(),
+            child: CompleteProfileScreen(),
+          ),
         ),
         GoRoute(
           path: AppRoutes.editProfile.path,

@@ -66,10 +66,30 @@ class AppLocalizationsFa extends AppLocalizations {
   String get profile_email_title => 'ایمیل';
 
   @override
+  String get profile_optional_email_title => 'ایمیل (اختیاری)';
+
+  @override
+  String get profile_birthdate_title => 'تاریخ تولد';
+
+  @override
   String get profile_submit_button => 'ثبت';
 
   @override
   String get profile_signup_button => 'ثبت نام';
+
+  @override
+  String get profile_complete_title => 'حساب کاربری‌تان را ایجاد کنید.';
+
+  @override
+  String get profile_firstname_exception =>
+      'فیلد نام باید حداقل 3 کارکتر باشد.';
+
+  @override
+  String get profile_lastname_exception =>
+      'فیلد نام خانوادگی باید حداقل 3 کارکتر باشد.';
+
+  @override
+  String get profile_email_exception => 'لطفا یک ایمیل معتبر وارد کنید.';
 
   @override
   String get home_categories_title => 'دسته‌بندی';

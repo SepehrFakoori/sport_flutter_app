@@ -208,6 +208,18 @@ abstract class AppLocalizations {
   /// **'ایمیل'**
   String get profile_email_title;
 
+  /// No description provided for @profile_optional_email_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'ایمیل (اختیاری)'**
+  String get profile_optional_email_title;
+
+  /// No description provided for @profile_birthdate_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'تاریخ تولد'**
+  String get profile_birthdate_title;
+
   /// No description provided for @profile_submit_button.
   ///
   /// In fa, this message translates to:
@@ -219,6 +231,30 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'ثبت نام'**
   String get profile_signup_button;
+
+  /// No description provided for @profile_complete_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'حساب کاربری‌تان را ایجاد کنید.'**
+  String get profile_complete_title;
+
+  /// No description provided for @profile_firstname_exception.
+  ///
+  /// In fa, this message translates to:
+  /// **'فیلد نام باید حداقل 3 کارکتر باشد.'**
+  String get profile_firstname_exception;
+
+  /// No description provided for @profile_lastname_exception.
+  ///
+  /// In fa, this message translates to:
+  /// **'فیلد نام خانوادگی باید حداقل 3 کارکتر باشد.'**
+  String get profile_lastname_exception;
+
+  /// No description provided for @profile_email_exception.
+  ///
+  /// In fa, this message translates to:
+  /// **'لطفا یک ایمیل معتبر وارد کنید.'**
+  String get profile_email_exception;
 
   /// No description provided for @home_categories_title.
   ///

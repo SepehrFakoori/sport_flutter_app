@@ -192,12 +192,41 @@ class AppTheme {
         ),
       ),
 
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: colors.primary,
+      segmentedButtonTheme: SegmentedButtonThemeData(
+        style: ButtonStyle(
+          alignment: .center,
+          shape: WidgetStateOutlinedBorder.resolveWith((states) {
+            return RoundedRectangleBorder(borderRadius: .circular(12));
+          }),
+          side: WidgetStateBorderSide.resolveWith((states) {
+            final color = switch (states) {
+              _ when states.contains(WidgetState.hovered) =>
+                AppPalette.primary10,
+              _ when states.contains(WidgetState.pressed) => colors.secondary,
+              _ => AppPalette.neutral30,
+            };
+            return BorderSide(color: color);
+          }),
+          backgroundColor: WidgetStateColor.resolveWith((states) {
+            final color = switch (states) {
+              _ when states.contains(WidgetState.selected) => colors.secondary,
+              _ => colors.surface,
+            };
+            return color;
+          }),
+          foregroundColor: WidgetStateColor.resolveWith((states) {
+            final color = switch (states) {
+              _ when states.contains(WidgetState.selected) =>
+                colors.onSecondary,
+              _ => colors.onBackground,
+            };
+            return color;
+          }),
+        ),
       ),
 
-      inputDecorationTheme: InputDecorationThemeData(
-        border: OutlineInputBorder(),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: colors.primary,
       ),
 
       appBarTheme: AppBarThemeData(
@@ -304,6 +333,8 @@ class AppTheme {
         ),
         labelPadding: .symmetric(horizontal: 12),
       ),
+
+      datePickerTheme: DatePickerThemeData(dividerColor: colors.divider),
 
       pageTransitionsTheme: PageTransitionsTheme(
         builders: {

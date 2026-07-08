@@ -74,9 +74,9 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
 
   String? _translateException(BuildContext context, AppException? exception) {
     switch (exception) {
-      case InvalidFirstNameLengthException():
+      case InvalidFirstNameException():
         return context.l10n.auth_phone_exception;
-      case InvalidLastNameLengthException():
+      case InvalidLastNameException():
         return context.l10n.auth_phone_exception;
       case InvalidEmailException():
         return context.l10n.auth_phone_exception;

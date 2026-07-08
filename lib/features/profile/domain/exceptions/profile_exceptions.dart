@@ -2,8 +2,10 @@ import 'package:sport_flutter_app/core/exception/app_exception.dart';
 
 abstract class ProfileExceptions extends AppException {}
 
-class InvalidFirstNameLengthException extends ProfileExceptions {}
+class InvalidFirstNameException extends ProfileExceptions {}
 
-class InvalidLastNameLengthException extends ProfileExceptions {}
+class InvalidLastNameException extends ProfileExceptions {}
 
 class InvalidEmailException extends ProfileExceptions {}
+
+class InvalidBirthDateException extends ProfileExceptions {}
