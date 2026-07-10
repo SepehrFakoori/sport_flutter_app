@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/features/class/presentation/widgets/class_overview_card.dart';
+import 'package:sport_flutter_app/features/class/presentation/widgets/skeleton/class_overview_card_skeleton.dart';
 
 class SimpleScreen extends StatelessWidget {
   const SimpleScreen({super.key});
@@ -7,14 +8,14 @@ class SimpleScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> imageUrl = [
-      'https://www.usab.com/imgproxy/pqyjiaoACLJisHD0PtVetmyc-JlJ97If2bRmi9NYz7s/rs:fit:2000:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3VzYWItY29tLXByb2QvdXBsb2FkLzIwMjMvMDgvMDcvYTMxNzViZjYtZTBhZC00Nzk1LTgyYmEtMzQ0ODIwZmVkYTgzLnBuZw.png',
-      'https://www.usab.com/imgproxy/pqyjiaoACLJisHD0PtVetmyc-JlJ97If2bRmi9NYz7s/rs:fit:2000:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3VzYWItY29tLXByb2QvdXBsb2FkLzIwMjMvMDgvMDcvYTMxNzViZjYtZTBhZC00Nzk1LTgyYmEtMzQ0ODIwZmVkYTgzLnBuZw.png',
-      'https://www.usab.com/imgproxy/pqyjiaoACLJisHD0PtVetmyc-JlJ97If2bRmi9NYz7s/rs:fit:2000:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3VzYWItY29tLXByb2QvdXBsb2FkLzIwMjMvMDgvMDcvYTMxNzViZjYtZTBhZC00Nzk1LTgyYmEtMzQ0ODIwZmVkYTgzLnBuZw.png',
-      'https://www.usab.com/imgproxy/pqyjiaoACLJisHD0PtVetmyc-JlJ97If2bRmi9NYz7s/rs:fit:2000:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3VzYWItY29tLXByb2QvdXBsb2FkLzIwMjMvMDgvMDcvYTMxNzViZjYtZTBhZC00Nzk1LTgyYmEtMzQ0ODIwZmVkYTgzLnBuZw.png',
-      'https://www.usab.com/imgproxy/pqyjiaoACLJisHD0PtVetmyc-JlJ97If2bRmi9NYz7s/rs:fit:2000:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3VzYWItY29tLXByb2QvdXBsb2FkLzIwMjMvMDgvMDcvYTMxNzViZjYtZTBhZC00Nzk1LTgyYmEtMzQ0ODIwZmVkYTgzLnBuZw.png',
-      'https://www.usab.com/imgproxy/pqyjiaoACLJisHD0PtVetmyc-JlJ97If2bRmi9NYz7s/rs:fit:2000:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3VzYWItY29tLXByb2QvdXBsb2FkLzIwMjMvMDgvMDcvYTMxNzViZjYtZTBhZC00Nzk1LTgyYmEtMzQ0ODIwZmVkYTgzLnBuZw.png',
-      'https://www.usab.com/imgproxy/pqyjiaoACLJisHD0PtVetmyc-JlJ97If2bRmi9NYz7s/rs:fit:2000:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3VzYWItY29tLXByb2QvdXBsb2FkLzIwMjMvMDgvMDcvYTMxNzViZjYtZTBhZC00Nzk1LTgyYmEtMzQ0ODIwZmVkYTgzLnBuZw.png',
-      'https://www.usab.com/imgproxy/pqyjiaoACLJisHD0PtVetmyc-JlJ97If2bRmi9NYz7s/rs:fit:2000:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3VzYWItY29tLXByb2QvdXBsb2FkLzIwMjMvMDgvMDcvYTMxNzViZjYtZTBhZC00Nzk1LTgyYmEtMzQ0ODIwZmVkYTgzLnBuZw.png',
+      'https://bstf.org.uk/wp-content/uploads/2016/09/About-Taekwondo-1-2-1.png',
+      'https://bstf.org.uk/wp-content/uploads/2016/09/About-Taekwondo-1-2-1.png',
+      'https://bstf.org.uk/wp-content/uploads/2016/09/About-Taekwondo-1-2-1.png',
+      'https://bstf.org.uk/wp-content/uploads/2016/09/About-Taekwondo-1-2-1.png',
+      'https://bstf.org.uk/wp-content/uploads/2016/09/About-Taekwondo-1-2-1.png',
+      'https://bstf.org.uk/wp-content/uploads/2016/09/About-Taekwondo-1-2-1.png',
+      'https://bstf.org.uk/wp-content/uploads/2016/09/About-Taekwondo-1-2-1.png',
+      'https://bstf.org.uk/wp-content/uploads/2016/09/About-Taekwondo-1-2-1.png',
     ];
 
     final List<String> title = [
@@ -93,15 +94,17 @@ class SimpleScreen extends StatelessWidget {
                 physics: const AlwaysScrollableScrollPhysics(),
                 scrollDirection: Axis.vertical,
                 itemBuilder: (context, index) {
-                  return ClassOverviewCard(
-                    imageUrl: imageUrl[index],
-                    title: title[index],
-                    coachName: coachName[index],
-                    rate: rate[index],
-                    address: address[index],
-                    day: day[index],
-                    price: price[index],
-                  );
+                  return index % 2 == 0
+                      ? ClassOverviewCard(
+                          imageUrl: imageUrl[index],
+                          title: title[index],
+                          coachName: coachName[index],
+                          rate: rate[index],
+                          address: address[index],
+                          day: day[index],
+                          price: price[index],
+                        )
+                      : const ClassOverviewCardSkeleton();
                 },
                 separatorBuilder: (context, index) =>
                     const SizedBox(height: 24),

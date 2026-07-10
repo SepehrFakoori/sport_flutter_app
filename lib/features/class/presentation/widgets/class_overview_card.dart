@@ -35,11 +35,9 @@ class ClassOverviewCard extends StatelessWidget {
           crossAxisAlignment: .start,
           spacing: 4,
           children: [
-            ImageLoader(
-              imageUrl: imageUrl,
-              width: double.infinity,
-              height: 276,
-              radius: 24,
+            AspectRatio(
+              aspectRatio: 4 / 3,
+              child: ImageLoader(imageUrl: imageUrl, radius: 24),
             ),
             Padding(
               padding: const .all(8.0),
