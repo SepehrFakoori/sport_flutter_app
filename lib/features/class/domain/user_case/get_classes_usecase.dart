@@ -7,6 +7,6 @@ class GetClassesUseCase {
 
   const GetClassesUseCase(this._repository);
 
-  Future<Paginated<Class>> call({required int page, required int pageSize}) =>
+  Future<Paginated<Class>> call({required int page, int pageSize = 20}) =>
       _repository.getClasses(page: page, pageSize: pageSize);
 }

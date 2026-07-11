@@ -4,5 +4,8 @@ import 'package:sport_flutter_app/features/class/domain/entity/class.dart';
 abstract class ClassRepository {
   Future<Class> getClass(int id);
 
-  Future<Paginated<Class>> getClasses({required int page, int pageSize = 20});
+  Future<Paginated<Class>> getClasses({
+    required int page,
+    required int pageSize,
+  });
 }

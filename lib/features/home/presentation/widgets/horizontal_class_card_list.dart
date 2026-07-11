@@ -18,7 +18,7 @@ class HorizontalClassCardList extends StatelessWidget {
         return ClassCard(classItem: classItem);
       },
       separatorBuilder: (context, index) => const SizedBox(width: 12),
-      itemCount: classes.length,
+      itemCount: 8,
     );
   }
 }

@@ -10,6 +10,8 @@ import 'package:sport_flutter_app/features/auth/presentation/bloc/verify_otp_blo
 import 'package:sport_flutter_app/features/auth/presentation/enter_phone_screen.dart';
 import 'package:sport_flutter_app/features/auth/presentation/verify_otp_screen.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_bloc/class_bloc.dart';
+import 'package:sport_flutter_app/features/class/presentation/bloc/class_list_bloc/class_list_bloc.dart';
+import 'package:sport_flutter_app/features/class/presentation/class_list_screen.dart';
 import 'package:sport_flutter_app/features/class/presentation/class_screen.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_bloc.dart';
 import 'package:sport_flutter_app/features/inbox/presentation/chat_screen.dart';
@@ -181,6 +183,14 @@ final GoRouter routerConfig = GoRouter(
           },
         ),
       ],
+    ),
+    GoRoute(
+      path: AppRoutes.classList.path,
+      name: AppRoutes.classList.name,
+      builder: (context, state) => BlocProvider<ClassListBloc>(
+        create: (context) => sl<ClassListBloc>(),
+        child: ClassListScreen(),
+      ),
     ),
   ],
 );

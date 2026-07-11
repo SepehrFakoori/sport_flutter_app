@@ -98,7 +98,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(height: 16),
                 FilterTile(
                   title: context.l10n.home_popular_title,
-                  onTap: () {},
+                  onTap: () {
+                    context.pushNamed(AppRoutes.classList.name!);
+                  },
                 ),
                 SizedBox(
                   height: 293,

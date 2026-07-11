@@ -5,7 +5,6 @@ import 'package:sport_flutter_app/core/constant/assets_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_sliver_app_bar.dart';
-import 'package:sport_flutter_app/core/ui/widgets/app_snack_bar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/logout_bloc/logout_bloc.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/logout_bloc/logout_event.dart';

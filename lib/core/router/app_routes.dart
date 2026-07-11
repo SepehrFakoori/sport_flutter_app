@@ -20,6 +20,7 @@ sealed class AppRoutes {
   static const editProfile = AppRoute(name: 'profile.edit', path: 'edit');
   static const coach = AppRoute(name: 'coach', path: '/coach/:id');
   static const classInfo = AppRoute(name: 'class', path: '/class/:id');
+  static const classList = AppRoute(name: 'class-list', path: '/class-list');
   static const auth = AppRoute(name: 'auth', path: '/auth');
   static const enterPhone = AppRoute(
     name: 'auth.enter-phone',
