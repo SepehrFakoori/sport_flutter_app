@@ -8,17 +8,20 @@ class ProfileCardSkeleton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomCard(
-      child: Padding(
-        padding: const .all(28),
-        child: Column(
-          spacing: 4,
-          children: [
-            SkeletonBox(width: 112, height: 112, shape: .circle),
-            const SizedBox(height: 4),
-            SkeletonText(width: 112, height: 24),
-            SkeletonText(width: 68, height: 12),
-          ],
+    return Padding(
+      padding: const .symmetric(horizontal: 16.0),
+      child: CustomCard(
+        child: Padding(
+          padding: const .all(28),
+          child: Column(
+            spacing: 4,
+            children: [
+              SkeletonBox(width: 112, height: 112, shape: .circle),
+              const SizedBox(height: 4),
+              SkeletonText(width: 112, height: 24),
+              SkeletonText(width: 68, height: 12),
+            ],
+          ),
         ),
       ),
     );
