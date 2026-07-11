@@ -42,8 +42,8 @@ class ImageLoader extends StatelessWidget {
         child: Center(child: Icon(Icons.image_not_supported_outlined)),
       ),
       progressIndicatorBuilder: (context, _, progress) => SkeletonBox(
-        width: height,
-        height: width,
+        width: width,
+        height: height,
         radius: BorderRadius.circular(radius),
         shape: BoxShape.rectangle,
       ),
