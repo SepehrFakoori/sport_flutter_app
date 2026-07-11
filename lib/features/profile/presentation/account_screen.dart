@@ -50,9 +50,9 @@ class _AccountScreenState extends State<AccountScreen> {
                       children: [
                         const SizedBox(height: 16),
                         ProfileCard(
-                          avatar: state.profile.imageUrl,
+                          imageUrl: state.profile.imageUrl,
                           description: state.profile.phone, //'قزوین، مهرگان'
-                          username: state.profile.fullName,
+                          fullName: state.profile.fullName,
                           onTap: () => context.pushNamed(
                             AppRoutes.profile.name!,
                             extra: state.profile,
