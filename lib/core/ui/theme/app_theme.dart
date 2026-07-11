@@ -138,8 +138,9 @@ class AppTheme {
               fontWeight: FontWeight.w500,
             );
           }),
+          fixedSize: WidgetStatePropertyAll<Size>(.fromHeight(48)),
           padding: WidgetStatePropertyAll<EdgeInsets>(
-            EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+            EdgeInsets.symmetric(horizontal: 24),
           ),
           backgroundColor: WidgetStatePropertyAll<Color>(Colors.transparent),
           foregroundColor: WidgetStateColor.resolveWith((states) {
@@ -192,12 +193,41 @@ class AppTheme {
         ),
       ),
 
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
-        backgroundColor: colors.primary,
+      segmentedButtonTheme: SegmentedButtonThemeData(
+        style: ButtonStyle(
+          alignment: .center,
+          shape: WidgetStateOutlinedBorder.resolveWith((states) {
+            return RoundedRectangleBorder(borderRadius: .circular(12));
+          }),
+          side: WidgetStateBorderSide.resolveWith((states) {
+            final color = switch (states) {
+              _ when states.contains(WidgetState.hovered) =>
+                AppPalette.primary10,
+              _ when states.contains(WidgetState.pressed) => colors.secondary,
+              _ => AppPalette.neutral30,
+            };
+            return BorderSide(color: color);
+          }),
+          backgroundColor: WidgetStateColor.resolveWith((states) {
+            final color = switch (states) {
+              _ when states.contains(WidgetState.selected) => colors.secondary,
+              _ => colors.surface,
+            };
+            return color;
+          }),
+          foregroundColor: WidgetStateColor.resolveWith((states) {
+            final color = switch (states) {
+              _ when states.contains(WidgetState.selected) =>
+                colors.onSecondary,
+              _ => colors.onBackground,
+            };
+            return color;
+          }),
+        ),
       ),
 
-      inputDecorationTheme: InputDecorationThemeData(
-        border: OutlineInputBorder(),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: colors.primary,
       ),
 
       appBarTheme: AppBarThemeData(
@@ -286,8 +316,6 @@ class AppTheme {
         padding: EdgeInsets.symmetric(vertical: 0, horizontal: 2),
       ),
 
-      chipTheme: ChipThemeData(labelStyle: AppTextTheme.textTheme.labelLarge),
-
       tabBarTheme: TabBarThemeData(
         dividerColor: colors.surface,
         indicatorAnimation: .elastic,
@@ -305,6 +333,15 @@ class AppTheme {
           borderRadius: .circular(1),
         ),
         labelPadding: .symmetric(horizontal: 12),
+      ),
+
+      datePickerTheme: DatePickerThemeData(dividerColor: colors.divider),
+
+      pageTransitionsTheme: PageTransitionsTheme(
+        builders: {
+          .android: FadeForwardsPageTransitionsBuilder(),
+          .iOS: FadeForwardsPageTransitionsBuilder(),
+        },
       ),
     );
   }

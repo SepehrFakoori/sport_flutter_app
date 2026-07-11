@@ -5,24 +5,12 @@ import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
+import 'package:sport_flutter_app/features/class/domain/entity/class.dart';
 
 class ClassCard extends StatelessWidget {
-  final String imageUrl;
-  final String title;
-  final String coachName;
-  final String rate;
-  final String address;
-  final String cost;
+  final Class classItem;
 
-  const ClassCard({
-    super.key,
-    required this.imageUrl,
-    required this.title,
-    required this.coachName,
-    required this.rate,
-    required this.address,
-    required this.cost,
-  });
+  const ClassCard({super.key, required this.classItem});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +18,7 @@ class ClassCard extends StatelessWidget {
       onTap: () {
         context.pushNamed(
           AppRoutes.classInfo.name!,
-          pathParameters: {'id': '25'},
+          pathParameters: {'id': '${classItem.id}'},
         );
       },
       borderRadius: BorderRadius.circular(12),
@@ -41,7 +29,7 @@ class ClassCard extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: context.colors.background,
                 borderRadius: BorderRadius.circular(24),
                 boxShadow: [
                   BoxShadow(
@@ -53,20 +41,21 @@ class ClassCard extends StatelessWidget {
                 ],
               ),
               child: ImageLoader(
-                imageUrl: imageUrl,
+                imageUrl:
+                    'https://kavaalya.com/wp-content/uploads/2021/05/sukhasana-kavaalya.jpeg',
                 height: 180,
                 width: 180,
                 radius: 24,
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const .all(8.0),
               child: Column(
                 crossAxisAlignment: .start,
                 spacing: 2,
                 children: [
                   Text(
-                    title,
+                    classItem.title,
                     style: context.textTheme.titleMedium,
                     maxLines: 1,
                     overflow: .ellipsis,
@@ -76,7 +65,7 @@ class ClassCard extends StatelessWidget {
                     children: [
                       Flexible(
                         child: Text(
-                          coachName,
+                          classItem.coach.fullName,
                           style: context.textTheme.bodyMedium?.copyWith(
                             color: context.colors.onBackgroundSecondary,
                           ),
@@ -90,22 +79,22 @@ class ClassCard extends StatelessWidget {
                           color: context.colors.onBackgroundSecondary,
                         ),
                       ),
-                      Text(
-                        rate,
-                        style: context.textTheme.labelLarge?.copyWith(
-                          color: context.colors.onBackgroundSecondary,
-                        ),
-                      ),
                       IconWidget(
                         icon: AssetIcons.starFilled,
                         height: 12,
                         width: 12,
                         color: context.colors.onBackgroundSecondary,
                       ),
+                      Text(
+                        '4.1',
+                        style: context.textTheme.labelLarge?.copyWith(
+                          color: context.colors.onBackgroundSecondary,
+                        ),
+                      ),
                     ],
                   ),
                   Text(
-                    address,
+                    'قزوین، زیباشهر',
                     style: context.textTheme.bodyMedium?.copyWith(
                       color: context.colors.onBackgroundSecondary,
                     ),
@@ -121,7 +110,7 @@ class ClassCard extends StatelessWidget {
                           color: context.colors.onBackgroundSecondary,
                         ),
                       ),
-                      Text(cost, style: context.textTheme.titleMedium),
+                      Text(classItem.fee, style: context.textTheme.titleMedium),
                     ],
                   ),
                 ],

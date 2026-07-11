@@ -178,6 +178,12 @@ abstract class AppLocalizations {
   /// **'خروج'**
   String get account_logout;
 
+  /// No description provided for @profile_appbar_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'اطلاعات حساب کاربری'**
+  String get profile_appbar_title;
+
   /// No description provided for @profile_firstname_title.
   ///
   /// In fa, this message translates to:
@@ -201,6 +207,72 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'ایمیل'**
   String get profile_email_title;
+
+  /// No description provided for @profile_optional_email_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'ایمیل (اختیاری)'**
+  String get profile_optional_email_title;
+
+  /// No description provided for @profile_birthdate_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'تاریخ تولد'**
+  String get profile_birthdate_title;
+
+  /// No description provided for @profile_submit_button.
+  ///
+  /// In fa, this message translates to:
+  /// **'ثبت'**
+  String get profile_submit_button;
+
+  /// No description provided for @profile_signup_button.
+  ///
+  /// In fa, this message translates to:
+  /// **'ثبت نام'**
+  String get profile_signup_button;
+
+  /// No description provided for @profile_complete_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'حساب کاربری‌تان را ایجاد کنید.'**
+  String get profile_complete_title;
+
+  /// No description provided for @profile_firstname_exception.
+  ///
+  /// In fa, this message translates to:
+  /// **'فیلد نام باید حداقل 3 کارکتر باشد.'**
+  String get profile_firstname_exception;
+
+  /// No description provided for @profile_lastname_exception.
+  ///
+  /// In fa, this message translates to:
+  /// **'فیلد نام خانوادگی باید حداقل 3 کارکتر باشد.'**
+  String get profile_lastname_exception;
+
+  /// No description provided for @profile_email_exception.
+  ///
+  /// In fa, this message translates to:
+  /// **'لطفا یک ایمیل معتبر وارد کنید.'**
+  String get profile_email_exception;
+
+  /// No description provided for @profile_gender_selection_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'جنسیت'**
+  String get profile_gender_selection_title;
+
+  /// No description provided for @profile_gender_male.
+  ///
+  /// In fa, this message translates to:
+  /// **'آقا'**
+  String get profile_gender_male;
+
+  /// No description provided for @profile_gender_female.
+  ///
+  /// In fa, this message translates to:
+  /// **'خانم'**
+  String get profile_gender_female;
 
   /// No description provided for @home_categories_title.
   ///
@@ -453,6 +525,24 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'لطفا شماره همراه 11 رقمی و معتبر وارد کنید.'**
   String get auth_phone_exception;
+
+  /// No description provided for @choose_profile_photo_sheet_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'انتخاب تصویر حساب کاربری'**
+  String get choose_profile_photo_sheet_title;
+
+  /// No description provided for @choose_from_gallery_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'انتخاب از گالری'**
+  String get choose_from_gallery_title;
+
+  /// No description provided for @take_photo_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'بازکردن دوربین'**
+  String get take_photo_title;
 }
 
 class _AppLocalizationsDelegate

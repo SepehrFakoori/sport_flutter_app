@@ -3,25 +3,25 @@ import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 
 class CoachTile extends StatelessWidget {
-  final String coachName;
-  final String imageUrl;
-  final String subtilte;
+  final String fullName;
+  final String credentials;
+  final String? imageUrl;
 
   const CoachTile({
     super.key,
-    required this.coachName,
-    required this.imageUrl,
-    required this.subtilte,
+    required this.fullName,
+    required this.credentials,
+    this.imageUrl,
   });
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {},
-      leading: AppCircleAvatar(username: coachName, imageUrl: imageUrl),
-      title: Text(coachName),
-      titleTextStyle: context.textTheme.titleMedium,
-      subtitle: Text(subtilte),
+      leading: AppCircleAvatar(fullName: fullName, imageUrl: imageUrl),
+      title: Text(fullName),
+      titleTextStyle: context.textTheme.titleLarge,
+      subtitle: Text(credentials),
       subtitleTextStyle: context.textTheme.bodyMedium?.copyWith(
         color: context.colors.onBackgroundSecondary,
       ),

@@ -37,7 +37,7 @@ class ChatScreen extends StatelessWidget {
         title: Row(
           spacing: 12,
           children: [
-            AppCircleAvatar(username: 'مصطفی گریزمان', radius: 20),
+            AppCircleAvatar(fullName: 'مصطفی گریزمان', radius: 20),
             Column(
               mainAxisAlignment: .center,
               crossAxisAlignment: .start,

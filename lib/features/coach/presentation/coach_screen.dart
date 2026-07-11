@@ -5,6 +5,7 @@ import 'package:sport_flutter_app/core/ui/widgets/app_chip.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
+import 'package:sport_flutter_app/core/ui/widgets/custom_app_bar.dart';
 
 class CoachScreen extends StatelessWidget {
   final int coachId;
@@ -17,13 +18,12 @@ class CoachScreen extends StatelessWidget {
     final String rate = '۴.۳';
 
     return Scaffold(
-      appBar: AppBar(
+      appBar: CustomAppBar(
         title: Text(context.l10n.coach_appbar_title),
         titleTextStyle: context.textTheme.headlineMedium?.copyWith(
           color: context.colors.primary,
           fontWeight: .w700,
         ),
-        centerTitle: true,
         actions: [
           AppIconButton(
             icon: AssetIcons.share,
@@ -31,7 +31,6 @@ class CoachScreen extends StatelessWidget {
             tooltip: context.l10n.home_search_icon_tooltip,
           ),
         ],
-        actionsPadding: .symmetric(horizontal: 16),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -44,7 +43,7 @@ class CoachScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     AppCircleAvatar(
-                      username: coachFullName,
+                      fullName: coachFullName,
                       imageUrl:
                           'https://cdn.entekhab.ir/files/fa/news/1401/4/20/1291768_193.jpg',
                       radius: 56,

@@ -5,8 +5,10 @@ import 'package:sport_flutter_app/features/profile/domain/entity/profile.dart';
 extension ProfileMapper on ProfileModel {
   Profile toEntity() {
     return Profile(
-      fullName: fullName,
-      phoneNumber: phoneNumber,
+      firstName: firstName,
+      lastName: lastName,
+      phone: phone,
+      imageUrl: imageUrl,
       email: email,
       gender: GenderMapper.fromApi(gender),
       birthDate: birthDate,
@@ -17,8 +19,10 @@ extension ProfileMapper on ProfileModel {
 extension ProfileModelMapper on Profile {
   ProfileModel toModel() {
     return ProfileModel(
-      fullName: fullName,
-      phoneNumber: phoneNumber,
+      firstName: firstName,
+      lastName: lastName,
+      phone: phone,
+      imageUrl: imageUrl,
       email: email,
       gender: GenderMapper.toApi(gender),
       birthDate: birthDate,

@@ -33,7 +33,7 @@ class _EnterPhoneScreenState extends State<EnterPhoneScreen> {
       child: Scaffold(
         body: SafeArea(
           child: Padding(
-            padding: const .all(24),
+            padding: const .all(16),
             child: Column(
               crossAxisAlignment: .start,
               spacing: 20,

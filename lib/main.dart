@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:persian_datetime_picker/persian_datetime_picker.dart';
 import 'package:sport_flutter_app/core/di/injection.dart';
 import 'package:sport_flutter_app/core/l10n/app_localizations.dart';
 import 'package:sport_flutter_app/core/router/app_router.dart';
@@ -21,9 +22,15 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
       themeMode: .light,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      locale: Locale('fa'),
+      localizationsDelegates: const [
+        // Delegates for calendar date picker (Persian Date Picker)
+        PersianMaterialLocalizations.delegate,
+        PersianCupertinoLocalizations.delegate,
+        ...AppLocalizations.localizationsDelegates,
+      ],
+      // AppLocalizations.supportedLocales does not have countryCode in it.
+      supportedLocales: [Locale('fa', 'IR')],
+      locale: Locale('fa', 'IR'),
       routerConfig: routerConfig,
     );
   }

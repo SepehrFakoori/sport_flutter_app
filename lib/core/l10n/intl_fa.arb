@@ -15,10 +15,22 @@
     "account_view_profile": "مشاهده پروفایل",
     "account_logout": "خروج",
 
+    "profile_appbar_title": "اطلاعات حساب کاربری",
     "profile_firstname_title": "نام",
     "profile_lastname_title": "نام خانوادگی",
     "profile_phone_number_title": "شماره همراه",
     "profile_email_title": "ایمیل",
+    "profile_optional_email_title": "ایمیل (اختیاری)",
+    "profile_birthdate_title": "تاریخ تولد",
+    "profile_submit_button": "ثبت",
+    "profile_signup_button": "ثبت نام",
+    "profile_complete_title": "حساب کاربری\u200Cتان را ایجاد کنید.",
+    "profile_firstname_exception": "فیلد نام باید حداقل 3 کارکتر باشد.",
+    "profile_lastname_exception": "فیلد نام خانوادگی باید حداقل 3 کارکتر باشد.",
+    "profile_email_exception": "لطفا یک ایمیل معتبر وارد کنید.",
+    "profile_gender_selection_title": "جنسیت",
+    "profile_gender_male": "آقا",
+    "profile_gender_female": "خانم",
 
     "home_categories_title": "دسته\u200Cبندی",
     "home_popular_title": "پرطرفدارترین\u200Cها",
@@ -69,5 +81,8 @@
     "auth_resend_code_in": "دریافت مجدد کد:",
     "auth_resend_code": "دریافت مجدد پیامک",
     "auth_send_code": "ارسال",
-    "auth_phone_exception": "لطفا شماره همراه 11 رقمی و معتبر وارد کنید."
+    "auth_phone_exception": "لطفا شماره همراه 11 رقمی و معتبر وارد کنید.",
+    "choose_profile_photo_sheet_title": "انتخاب تصویر حساب کاربری",
+    "choose_from_gallery_title": "انتخاب از گالری",
+    "take_photo_title": "بازکردن دوربین"
 }

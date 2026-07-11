@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_filled_button.dart';
 
-class EnrollmentCard extends StatelessWidget {
-  const EnrollmentCard({super.key});
+class ClassEnrollmentCard extends StatelessWidget {
+  final String price;
+
+  const ClassEnrollmentCard({super.key, required this.price});
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +23,7 @@ class EnrollmentCard extends StatelessWidget {
         ],
       ),
       child: Row(
+        spacing: 8,
         children: [
           Expanded(
             child: Column(
@@ -31,7 +34,23 @@ class EnrollmentCard extends StatelessWidget {
                   context.l10n.class_price_title,
                   style: context.textTheme.titleMedium,
                 ),
-                Text('450,000 تومان', style: context.textTheme.headlineSmall),
+                RichText(
+                  text: TextSpan(
+                    text: price,
+                    children: [
+                      WidgetSpan(child: SizedBox(width: 4)),
+                      TextSpan(
+                        text: 'تومان',
+                        style: context.textTheme.titleLarge,
+                      ),
+                    ],
+                    style: context.textTheme.headlineSmall?.copyWith(
+                      fontWeight: .w600,
+                    ),
+                  ),
+                  maxLines: 1,
+                  overflow: .ellipsis,
+                ),
               ],
             ),
           ),

@@ -73,7 +73,7 @@ class CoachCard extends StatelessWidget {
                     crossAxisAlignment: .center,
                     children: [
                       AppCircleAvatar(
-                        username: coachName,
+                        fullName: coachName,
                         imageUrl: imageUrl,
                         radius: 50,
                       ),

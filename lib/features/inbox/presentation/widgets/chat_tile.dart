@@ -19,7 +19,7 @@ class ChatTile extends StatelessWidget {
     return ListTile(
       onTap: onTap,
       contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 4),
-      leading: AppCircleAvatar(username: sender, radius: 28),
+      leading: AppCircleAvatar(fullName: sender, radius: 28),
       title: Text(sender, maxLines: 1, overflow: .ellipsis),
       titleTextStyle: context.textTheme.titleLarge?.copyWith(
         color: context.colors.onBackground,

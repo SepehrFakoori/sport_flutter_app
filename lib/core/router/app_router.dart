@@ -8,14 +8,23 @@ import 'package:sport_flutter_app/features/auth/presentation/bloc/enter_phone_bl
 import 'package:sport_flutter_app/features/auth/presentation/bloc/verify_otp_bloc/verify_otp_bloc.dart';
 import 'package:sport_flutter_app/features/auth/presentation/enter_phone_screen.dart';
 import 'package:sport_flutter_app/features/auth/presentation/verify_otp_screen.dart';
+import 'package:sport_flutter_app/features/class/presentation/bloc/class_bloc/class_bloc.dart';
 import 'package:sport_flutter_app/features/class/presentation/class_screen.dart';
+import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_bloc.dart';
 import 'package:sport_flutter_app/features/inbox/presentation/chat_screen.dart';
 import 'package:sport_flutter_app/features/coach/presentation/coach_screen.dart';
 import 'package:sport_flutter_app/features/home/presentation/home_screen.dart';
 import 'package:sport_flutter_app/features/inbox/presentation/inbox_screen.dart';
+import 'package:sport_flutter_app/features/profile/domain/entity/profile.dart';
+import 'package:sport_flutter_app/features/profile/presentation/bloc/complete_profile/complete_profile_bloc.dart';
+import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_bloc/profile_bloc.dart';
+import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_edit_bloc/profile_edit_bloc.dart';
+import 'package:sport_flutter_app/features/profile/presentation/complete_profile_screen.dart';
+import 'package:sport_flutter_app/features/profile/presentation/profile_edit_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/profile_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/account_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/simple_screen.dart';
+import 'package:sport_flutter_app/features/search/presentation/search_screen.dart';
 
 final GoRouter routerConfig = GoRouter(
   debugLogDiagnostics: !isProduction,
@@ -30,7 +39,12 @@ final GoRouter routerConfig = GoRouter(
             GoRoute(
               path: AppRoutes.home.path,
               name: AppRoutes.home.name,
-              builder: (context, state) => HomeScreen(),
+              builder: (context, state) => MultiBlocProvider(
+                providers: [
+                  BlocProvider<HomeBloc>(create: (context) => sl<HomeBloc>()),
+                ],
+                child: HomeScreen(),
+              ),
             ),
           ],
         ),
@@ -54,7 +68,10 @@ final GoRouter routerConfig = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: AppRoutes.account.path,
-              builder: (context, state) => AccountScreen(),
+              builder: (context, state) => BlocProvider<ProfileBloc>(
+                create: (context) => sl<ProfileBloc>(),
+                child: AccountScreen(),
+              ),
             ),
           ],
         ),
@@ -63,12 +80,46 @@ final GoRouter routerConfig = GoRouter(
     GoRoute(
       path: AppRoutes.profile.path,
       name: AppRoutes.profile.name,
-      builder: (context, state) => ProfileScreen(),
+      builder: (context, state) {
+        final profile = state.extra as Profile;
+
+        return ProfileScreen(profile: profile);
+      },
+      routes: <RouteBase>[
+        GoRoute(
+          path: AppRoutes.completeProfile.path,
+          name: AppRoutes.completeProfile.name,
+          builder: (context, state) => BlocProvider<CompleteProfileBloc>(
+            create: (context) => sl<CompleteProfileBloc>(),
+            child: CompleteProfileScreen(),
+          ),
+        ),
+        GoRoute(
+          path: AppRoutes.editProfile.path,
+          name: AppRoutes.editProfile.name,
+          builder: (context, state) {
+            final data = state.extra as Map<String, dynamic>;
+
+            final title = data['title'];
+            final name = data['name'];
+
+            return BlocProvider<ProfileEditBloc>(
+              create: (context) => sl<ProfileEditBloc>(),
+              child: ProfileEditScreen(name: name, title: title),
+            );
+          },
+        ),
+      ],
     ),
     GoRoute(
       path: AppRoutes.chat.path,
       name: AppRoutes.chat.name,
       builder: (context, state) => ChatScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.search.path,
+      name: AppRoutes.search.name,
+      builder: (context, state) => SearchScreen(),
     ),
     GoRoute(
       path: AppRoutes.coach.path,
@@ -85,7 +136,10 @@ final GoRouter routerConfig = GoRouter(
       builder: (context, state) {
         final classId = int.tryParse(state.pathParameters['id']!);
 
-        return ClassPage(classId: classId!);
+        return BlocProvider<ClassBloc>(
+          create: (context) => sl<ClassBloc>(),
+          child: ClassScreen(classId: classId!),
+        );
       },
     ),
     GoRoute(

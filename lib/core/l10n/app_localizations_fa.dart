@@ -51,6 +51,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get account_logout => 'خروج';
 
   @override
+  String get profile_appbar_title => 'اطلاعات حساب کاربری';
+
+  @override
   String get profile_firstname_title => 'نام';
 
   @override
@@ -61,6 +64,41 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get profile_email_title => 'ایمیل';
+
+  @override
+  String get profile_optional_email_title => 'ایمیل (اختیاری)';
+
+  @override
+  String get profile_birthdate_title => 'تاریخ تولد';
+
+  @override
+  String get profile_submit_button => 'ثبت';
+
+  @override
+  String get profile_signup_button => 'ثبت نام';
+
+  @override
+  String get profile_complete_title => 'حساب کاربری‌تان را ایجاد کنید.';
+
+  @override
+  String get profile_firstname_exception =>
+      'فیلد نام باید حداقل 3 کارکتر باشد.';
+
+  @override
+  String get profile_lastname_exception =>
+      'فیلد نام خانوادگی باید حداقل 3 کارکتر باشد.';
+
+  @override
+  String get profile_email_exception => 'لطفا یک ایمیل معتبر وارد کنید.';
+
+  @override
+  String get profile_gender_selection_title => 'جنسیت';
+
+  @override
+  String get profile_gender_male => 'آقا';
+
+  @override
+  String get profile_gender_female => 'خانم';
 
   @override
   String get home_categories_title => 'دسته‌بندی';
@@ -198,4 +236,13 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get auth_phone_exception =>
       'لطفا شماره همراه 11 رقمی و معتبر وارد کنید.';
+
+  @override
+  String get choose_profile_photo_sheet_title => 'انتخاب تصویر حساب کاربری';
+
+  @override
+  String get choose_from_gallery_title => 'انتخاب از گالری';
+
+  @override
+  String get take_photo_title => 'بازکردن دوربین';
 }

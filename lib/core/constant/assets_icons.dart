@@ -49,4 +49,6 @@ class AssetIcons {
   static const profile2UserFilled = "$_basePath/profile-2user-filled.svg";
   static const medal = "$_basePath/medal.svg";
   static const money = "$_basePath/money.svg";
+  static const edit = "$_basePath/edit.svg";
+  static const calendar = "$_basePath/calendar.svg";
 }
