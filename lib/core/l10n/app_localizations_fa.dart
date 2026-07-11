@@ -92,6 +92,15 @@ class AppLocalizationsFa extends AppLocalizations {
   String get profile_email_exception => 'لطفا یک ایمیل معتبر وارد کنید.';
 
   @override
+  String get profile_gender_selection_title => 'جنسیت';
+
+  @override
+  String get profile_gender_male => 'آقا';
+
+  @override
+  String get profile_gender_female => 'خانم';
+
+  @override
   String get home_categories_title => 'دسته‌بندی';
 
   @override

@@ -1,4 +1,4 @@
-import 'package:sport_flutter_app/features/profile/domain/entity/profile.dart';
+import 'package:sport_flutter_app/features/profile/domain/entity/update_profile.dart';
 import 'package:sport_flutter_app/features/profile/domain/exceptions/profile_exceptions.dart';
 import 'package:sport_flutter_app/features/profile/domain/repository/profile_repository.dart';
 
@@ -8,12 +8,18 @@ class CompleteProfileUseCase {
   const CompleteProfileUseCase(this._repository);
 
   void validateFirstName(String firstName) {
+    if (firstName.isEmpty) {
+      throw EmptyFieldException();
+    }
     if (firstName.length < 3 && firstName.isNotEmpty) {
       throw InvalidFirstNameException();
     }
   }
 
   void validateLastName(String lastName) {
+    if (lastName.isEmpty) {
+      throw EmptyFieldException();
+    }
     if (lastName.length < 3 && lastName.isNotEmpty) {
       throw InvalidLastNameException();
     }
@@ -26,10 +32,11 @@ class CompleteProfileUseCase {
 
     final bool hasMatch = emailRegex.hasMatch(email);
 
-    if (email.length > 2 && !hasMatch) {
+    if (email.isNotEmpty && !hasMatch) {
       throw InvalidEmailException();
     }
   }
 
-  Future<void> call(Profile profile) => _repository.updateProfile(profile);
+  Future<void> call(UpdateProfile profile) =>
+      _repository.updateProfile(profile);
 }

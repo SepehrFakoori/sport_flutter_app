@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:sport_flutter_app/core/exception/app_exception.dart';
+import 'package:sport_flutter_app/features/profile/domain/entity/gender.dart';
 
 enum SubmissionStatus { idle, loading, success, failure }
 
@@ -8,9 +9,10 @@ class CompleteProfileState extends Equatable {
   final bool isFirstNameValid;
   final String lastName;
   final bool isLastNameValid;
+  final Gender gender;
   final String? email;
   final bool isEmailValid;
-  final String birthDate;
+  final DateTime? birthDate;
   final bool isBirthDateValid;
   final SubmissionStatus status;
   final AppException? exception;
@@ -20,9 +22,10 @@ class CompleteProfileState extends Equatable {
     this.isFirstNameValid = false,
     this.lastName = '',
     this.isLastNameValid = false,
+    this.gender = .male,
     this.email,
-    this.isEmailValid = false,
-    this.birthDate = '',
+    this.isEmailValid = true,
+    this.birthDate,
     this.isBirthDateValid = false,
     this.status = .idle,
     this.exception,
@@ -36,9 +39,10 @@ class CompleteProfileState extends Equatable {
     bool? isFirstNameValid,
     String? lastName,
     bool? isLastNameValid,
+    Gender? gender,
     String? email,
     bool? isEmailValid,
-    String? birthDate,
+    DateTime? birthDate,
     bool? isBirthDateValid,
     SubmissionStatus? status,
     AppException? exception,
@@ -48,7 +52,8 @@ class CompleteProfileState extends Equatable {
       isFirstNameValid: isFirstNameValid ?? this.isFirstNameValid,
       lastName: lastName ?? this.lastName,
       isLastNameValid: isLastNameValid ?? this.isLastNameValid,
-      email: email,
+      gender: gender ?? this.gender,
+      email: email ?? this.email,
       isEmailValid: isEmailValid ?? this.isEmailValid,
       birthDate: birthDate ?? this.birthDate,
       isBirthDateValid: isBirthDateValid ?? this.isBirthDateValid,
@@ -63,6 +68,7 @@ class CompleteProfileState extends Equatable {
     isFirstNameValid,
     lastName,
     isLastNameValid,
+    gender,
     email,
     isEmailValid,
     birthDate,

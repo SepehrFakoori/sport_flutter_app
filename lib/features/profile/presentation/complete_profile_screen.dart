@@ -1,27 +1,48 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:persian_datetime_picker/persian_datetime_picker.dart';
 import 'package:sport_flutter_app/core/constant/assets_icons.dart';
 import 'package:sport_flutter_app/core/exception/app_exception.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_modal_bottom_sheet.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_text_form_field.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_filled_button.dart';
+import 'package:sport_flutter_app/core/ui/widgets/buttons/app_outlined_button.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
+import 'package:sport_flutter_app/features/profile/domain/entity/gender.dart';
 import 'package:sport_flutter_app/features/profile/domain/exceptions/profile_exceptions.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/complete_profile/complete_profile_bloc.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/complete_profile/complete_profile_event.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/complete_profile/complete_profile_state.dart';
-import 'package:persian_datetime_picker/persian_datetime_picker.dart';
 
-class CompleteProfileScreen extends StatelessWidget {
+class CompleteProfileScreen extends StatefulWidget {
   const CompleteProfileScreen({super.key});
+
+  @override
+  State<CompleteProfileScreen> createState() => _CompleteProfileScreenState();
+}
+
+class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
+  late TextEditingController _birthDateController;
+
+  @override
+  void initState() {
+    super.initState();
+    _birthDateController = TextEditingController();
+  }
 
   @override
   Widget build(BuildContext context) {
     final CompleteProfileBloc bloc = context.read<CompleteProfileBloc>();
 
-    return BlocBuilder<CompleteProfileBloc, CompleteProfileState>(
+    return BlocConsumer<CompleteProfileBloc, CompleteProfileState>(
+      listener: (context, state) {
+        if (state.status == .success) {
+          context.goNamed(AppRoutes.home.name!);
+        }
+      },
       builder: (context, state) {
         return Scaffold(
           body: SafeArea(
@@ -57,24 +78,10 @@ class CompleteProfileScreen extends StatelessWidget {
                     ),
                     onChange: (value) => bloc.add(LastNameChanged(value)),
                   ),
-                  SizedBox(
-                    width: .infinity,
-                    child: SegmentedButton<String>(
-                      segments: const [
-                        ButtonSegment(
-                          value: 'male',
-                          label: Text('آقا'),
-                          tooltip: '',
-                          enabled: true,
-                        ),
-                        ButtonSegment(value: 'female', label: Text('خانم')),
-                        ButtonSegment(value: 'other', label: Text('کودک')),
-                      ],
-                      selected: {'female'},
-                      onSelectionChanged: (value) {},
-                      emptySelectionAllowed: false,
-                      multiSelectionEnabled: false,
-                    ),
+                  GenderSelection(
+                    selected: {state.gender},
+                    onSelectionChanged: (gender) =>
+                        bloc.add(GenderChanged(gender.single)),
                   ),
                   AppTextFormField(
                     labelText: context.l10n.profile_optional_email_title,
@@ -88,26 +95,55 @@ class CompleteProfileScreen extends StatelessWidget {
                     onChange: (value) => bloc.add(EmailChanged(value)),
                   ),
                   AppTextFormField(
-                    initialValue: state.birthDate,
+                    controller: _birthDateController,
                     onTap: () {
                       AppModalBottomSheet.show(
                         context,
-                        child: Padding(
-                          padding: const .symmetric(horizontal: 16.0),
-                          child: CalendarDatePicker(
-                            initialDate: null,
-                            firstDate: DateTime(1950),
-                            lastDate: DateTime(3000),
-                            initialCalendarMode: .year,
-                            onDateChanged: (value) {
-                              bloc.add(BirthDateChanged(value.toString()));
-                            },
-                          ),
+                        child: Column(
+                          mainAxisSize: .min,
+                          children: [
+                            PersianCalendarDatePicker(
+                              initialDate: null,
+                              firstDate: Jalali(1300),
+                              lastDate: Jalali.now(),
+                              initialCalendarMode: .year,
+                              onDateChanged: (Jalali picked) {
+                                _birthDateController.text = picked
+                                    .formatShortDate();
+                                bloc.add(BirthDateChanged(picked.toDateTime()));
+                              },
+                            ),
+                            Padding(
+                              padding: const .symmetric(
+                                vertical: 8.0,
+                                horizontal: 16.0,
+                              ),
+                              child: Row(
+                                mainAxisAlignment: .end,
+                                spacing: 8,
+                                children: [
+                                  Expanded(
+                                    child: AppOutlinedButton.secondary(
+                                      onPressed: () => context.pop(),
+                                      title: context.l10n.global_button_cancel,
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: AppFilledButton.secondary(
+                                      onPressed: () => context.pop(),
+                                      title: context.l10n.global_button_save,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                       );
                     },
                     labelText: context.l10n.profile_birthdate_title,
                     canRequestFocus: false,
+                    readOnly: true,
                     prefixIcon: Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: IconWidget(
@@ -116,10 +152,10 @@ class CompleteProfileScreen extends StatelessWidget {
                         width: 10,
                       ),
                     ),
-                    errorText: _translateBirthDateException(
-                      context,
-                      state.exception,
-                    ),
+                    // errorText: _translateBirthDateException(
+                    //   context,
+                    //   state.exception,
+                    // ),
                   ),
                 ],
               ),
@@ -187,20 +223,68 @@ class CompleteProfileScreen extends StatelessWidget {
     }
   }
 
-  // Future<void> _selectDateShamsi() async {
-  //   final Jalali? picked = await showPersianDatePicker(
-  //     context: context,
-  //     initialDate: Jalali(1385, 1),
-  //     firstDate: Jalali(1300, 1),
-  //     lastDate: Jalali.now(),
-  //     holidayConfig: PersianHolidayConfig(weekendDays: {7}),
-  //     initialEntryMode: PersianDatePickerEntryMode.calendarOnly,
-  //     initialDatePickerMode: PersianDatePickerMode.year,
-  //   );
-  //   if (picked != null) {
-  //     selectedBirthDate = picked;
-  //     birthDateController.text =
-  //         '${picked.year}/${picked.month.toString().padLeft(2, '0')}/${picked.day.toString().padLeft(2, '0')}';
-  //   }
-  // }
+  @override
+  void dispose() {
+    _birthDateController.dispose();
+    super.dispose();
+  }
+}
+
+class GenderSelection extends StatelessWidget {
+  final Set<Gender> selected;
+  final void Function(Set<Gender>)? onSelectionChanged;
+
+  const GenderSelection({
+    super.key,
+    required this.selected,
+    this.onSelectionChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: .start,
+      spacing: 8,
+      children: [
+        Text(
+          context.l10n.profile_gender_selection_title,
+          style: context.textTheme.headlineSmall,
+        ),
+        SizedBox(
+          width: .infinity,
+          child: SegmentedButton<Gender>(
+            segments: [
+              ButtonSegment(
+                value: .male,
+                label: Text(
+                  context.l10n.profile_gender_male,
+                  style: context.textTheme.bodyLarge?.copyWith(
+                    color: selected.single == .male
+                        ? context.colors.onSecondary
+                        : null,
+                  ),
+                ),
+              ),
+              ButtonSegment(
+                value: .female,
+                label: Text(
+                  context.l10n.profile_gender_female,
+                  style: context.textTheme.bodyLarge?.copyWith(
+                    color: selected.single == .female
+                        ? context.colors.onSecondary
+                        : null,
+                  ),
+                ),
+              ),
+            ],
+            selected: selected,
+            onSelectionChanged: onSelectionChanged,
+            emptySelectionAllowed: false,
+            multiSelectionEnabled: false,
+            showSelectedIcon: false,
+          ),
+        ),
+      ],
+    );
+  }
 }

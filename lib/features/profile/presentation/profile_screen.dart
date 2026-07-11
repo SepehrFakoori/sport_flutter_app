@@ -6,7 +6,6 @@ import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/services/image_picker_service.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
-import 'package:sport_flutter_app/core/ui/widgets/app_modal_bottom_sheet.dart';
 import 'package:sport_flutter_app/core/ui/widgets/custom_app_bar.dart';
 import 'package:sport_flutter_app/features/profile/domain/entity/profile.dart';
 import 'package:sport_flutter_app/features/profile/domain/repository/profile_repository.dart';
@@ -29,9 +28,9 @@ class ProfileScreen extends StatelessWidget {
     ];
 
     final List<String> subtitles = [
-      profile.fullName,
-      profile.fullName,
-      profile.phoneNumber,
+      profile.firstName,
+      profile.lastName,
+      profile.phone,
       profile.email ?? '',
     ];
 
@@ -58,7 +57,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   EditableAvatar(
                     fullName: subtitles[0],
-                    imageUrl: profile.avatar,
+                    imageUrl: profile.imageUrl,
                     onTap: () async {
                       final file = await sl<ImagePickerService>()
                           .pickFromGallery();

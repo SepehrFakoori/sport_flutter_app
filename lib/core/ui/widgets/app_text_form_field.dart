@@ -29,6 +29,7 @@ class AppTextFormField extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
   final InputBorder? border;
   final String? errorText;
+  final bool readOnly;
 
   const AppTextFormField({
     super.key,
@@ -58,6 +59,7 @@ class AppTextFormField extends StatelessWidget {
     this.contentPadding,
     this.border,
     this.errorText,
+    this.readOnly = false,
   });
 
   @override
@@ -81,6 +83,7 @@ class AppTextFormField extends StatelessWidget {
       autovalidateMode: autovalidateMode,
       textAlign: textAlign,
       style: style,
+      readOnly: readOnly,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: context.textTheme.bodyLarge?.copyWith(
@@ -99,8 +102,7 @@ class AppTextFormField extends StatelessWidget {
             contentPadding ?? EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         border: CustomOutlineInputBorder(color: context.colors.tertiary),
         enabledBorder:
-            border ??
-            CustomOutlineInputBorder(color: context.colors.tertiary),
+            border ?? CustomOutlineInputBorder(color: context.colors.tertiary),
         disabledBorder: CustomOutlineInputBorder(
           color: context.colors.tertiary,
         ),

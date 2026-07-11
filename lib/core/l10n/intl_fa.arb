@@ -28,6 +28,9 @@
     "profile_firstname_exception": "فیلد نام باید حداقل 3 کارکتر باشد.",
     "profile_lastname_exception": "فیلد نام خانوادگی باید حداقل 3 کارکتر باشد.",
     "profile_email_exception": "لطفا یک ایمیل معتبر وارد کنید.",
+    "profile_gender_selection_title": "جنسیت",
+    "profile_gender_male": "آقا",
+    "profile_gender_female": "خانم",
 
     "home_categories_title": "دسته\u200Cبندی",
     "home_popular_title": "پرطرفدارترین\u200Cها",

@@ -138,8 +138,9 @@ class AppTheme {
               fontWeight: FontWeight.w500,
             );
           }),
+          fixedSize: WidgetStatePropertyAll<Size>(.fromHeight(48)),
           padding: WidgetStatePropertyAll<EdgeInsets>(
-            EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+            EdgeInsets.symmetric(horizontal: 24),
           ),
           backgroundColor: WidgetStatePropertyAll<Color>(Colors.transparent),
           foregroundColor: WidgetStateColor.resolveWith((states) {

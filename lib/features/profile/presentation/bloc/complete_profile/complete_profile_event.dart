@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:sport_flutter_app/features/profile/domain/entity/gender.dart';
 
 sealed class CompleteProfileEvent extends Equatable {
   const CompleteProfileEvent();
@@ -25,6 +26,15 @@ class LastNameChanged extends CompleteProfileEvent {
   List<Object?> get props => [lastName];
 }
 
+class GenderChanged extends CompleteProfileEvent {
+  final Gender gender;
+
+  const GenderChanged(this.gender);
+
+  @override
+  List<Object?> get props => [gender];
+}
+
 class EmailChanged extends CompleteProfileEvent {
   final String email;
 
@@ -35,7 +45,7 @@ class EmailChanged extends CompleteProfileEvent {
 }
 
 class BirthDateChanged extends CompleteProfileEvent {
-  final String birthDate;
+  final DateTime birthDate;
 
   const BirthDateChanged(this.birthDate);
 

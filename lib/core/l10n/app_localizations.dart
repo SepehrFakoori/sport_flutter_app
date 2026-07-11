@@ -256,6 +256,24 @@ abstract class AppLocalizations {
   /// **'لطفا یک ایمیل معتبر وارد کنید.'**
   String get profile_email_exception;
 
+  /// No description provided for @profile_gender_selection_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'جنسیت'**
+  String get profile_gender_selection_title;
+
+  /// No description provided for @profile_gender_male.
+  ///
+  /// In fa, this message translates to:
+  /// **'آقا'**
+  String get profile_gender_male;
+
+  /// No description provided for @profile_gender_female.
+  ///
+  /// In fa, this message translates to:
+  /// **'خانم'**
+  String get profile_gender_female;
+
   /// No description provided for @home_categories_title.
   ///
   /// In fa, this message translates to:

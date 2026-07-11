@@ -1,36 +1,40 @@
+import 'package:intl/intl.dart';
+
 class ProfileModel {
-  final String fullName;
-  final String phoneNumber;
-  final String? avatar;
+  final String firstName;
+  final String lastName;
+  final String phone;
+  final String? imageUrl;
   final String? email;
   final String gender;
   final DateTime birthDate;
 
   const ProfileModel({
-    required this.fullName,
-    required this.phoneNumber,
-    this.avatar,
+    required this.firstName,
+    required this.lastName,
+    required this.phone,
+    this.imageUrl,
     this.email,
     required this.gender,
     required this.birthDate,
   });
 
   factory ProfileModel.fromJson(Map<String, dynamic> json) => ProfileModel(
-    fullName: json['full_name'],
-    phoneNumber: json['phone_number'],
-    avatar: json['profile_photo_url'],
+    firstName: json['first_name'],
+    lastName: json['last_name'],
+    phone: json['phone_number'],
+    imageUrl: json['profile_photo_url'],
     email: json['email'],
     gender: json['gender'],
-    // DateTime parsing بدون handling error || اگر API خراب باشد → crash ||  throw custom exception
     birthDate: DateTime.parse(json['birth_date']),
   );
 
   Map<String, dynamic> toJson() => {
-    'full_name': fullName,
-    'phone_number': phoneNumber,
-    'profile_photo_url': avatar,
+    'full_name': firstName,
+    'phone_number': phone,
+    'profile_photo_url': imageUrl,
     'email': email,
     'gender': gender,
-    'birth_date': birthDate.toIso8601String(),
+    'birth_date': DateFormat('yyyy-MM-dd').format(birthDate),
   };
 }

@@ -1,23 +1,17 @@
 import 'package:sport_flutter_app/features/profile/domain/entity/gender.dart';
 
-class Profile {
+class UpdateProfile {
   final String firstName;
   final String lastName;
-  final String phone;
-  final String? imageUrl;
-  final String? email;
   final Gender gender;
+  final String? email;
   final DateTime birthDate;
 
-  const Profile({
+  const UpdateProfile({
     required this.firstName,
     required this.lastName,
-    required this.phone,
-    this.imageUrl,
-    this.email,
     required this.gender,
+    this.email,
     required this.birthDate,
   });
-
-  String get fullName => '$firstName $lastName';
 }

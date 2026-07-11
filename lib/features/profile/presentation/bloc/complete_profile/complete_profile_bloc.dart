@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sport_flutter_app/core/exception/app_exception.dart';
-import 'package:sport_flutter_app/features/profile/domain/entity/gender.dart';
-import 'package:sport_flutter_app/features/profile/domain/entity/profile.dart';
+import 'package:sport_flutter_app/features/profile/domain/entity/update_profile.dart';
 import 'package:sport_flutter_app/features/profile/domain/use_case/complete_profile_usecase.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/complete_profile/complete_profile_event.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/complete_profile/complete_profile_state.dart';
@@ -14,6 +13,7 @@ class CompleteProfileBloc
     : super(const CompleteProfileState()) {
     on<FirstNameChanged>(_onFirstNameChanged);
     on<LastNameChanged>(_onLastNameChanged);
+    on<GenderChanged>(_onGenderChanged);
     on<EmailChanged>(_onEmailChanged);
     on<BirthDateChanged>(_onBirthDateChanged);
     on<SubmitProfile>(_onSubmitProfile);
@@ -55,6 +55,13 @@ class CompleteProfileBloc
     }
   }
 
+  Future<void> _onGenderChanged(
+    GenderChanged event,
+    Emitter<CompleteProfileState> emit,
+  ) async {
+    emit(state.copyWith(gender: event.gender, isLastNameValid: true));
+  }
+
   Future<void> _onEmailChanged(
     EmailChanged event,
     Emitter<CompleteProfileState> emit,
@@ -92,11 +99,12 @@ class CompleteProfileBloc
   ) async {
     emit(state.copyWith(status: .loading));
     try {
-      final Profile profile = Profile(
-        fullName: '${state.firstName} ${state.lastName}',
-        phoneNumber: '09301914321',
-        gender: Gender.male,
-        birthDate: DateTime.now(),
+      final UpdateProfile profile = UpdateProfile(
+        firstName: state.firstName,
+        lastName: state.lastName,
+        gender: state.gender,
+        email: state.email,
+        birthDate: state.birthDate!,
       );
       await completeProfile.call(profile);
       emit(state.copyWith(status: .success));

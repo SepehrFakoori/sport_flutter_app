@@ -4,6 +4,7 @@ import 'package:sport_flutter_app/core/network/http_client.dart';
 import 'package:sport_flutter_app/core/services/file_upload_service.dart';
 import 'package:sport_flutter_app/features/profile/data/datasource/remote/profile_remote_datasource.dart';
 import 'package:sport_flutter_app/features/profile/data/model/profile_model.dart';
+import 'package:sport_flutter_app/features/profile/data/model/update_profile_model.dart';
 
 class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
   final HttpClient _client;
@@ -18,7 +19,7 @@ class ProfileRemoteDataSourceImpl implements ProfileRemoteDataSource {
   }
 
   @override
-  Future<ProfileModel> updateProfile(ProfileModel profile) async {
+  Future<ProfileModel> updateProfile(UpdateProfileModel profile) async {
     final response = await _client.put('/users/me/', data: profile.toJson());
     return ProfileModel.fromJson(response.data);
   }
