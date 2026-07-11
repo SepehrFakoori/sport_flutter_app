@@ -21,4 +21,9 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDatasource {
 
     return AuthModel.fromJson(response.data);
   }
+
+  @override
+  Future<void> logout(String refreshToken) async {
+    await _client.post('/logout', data: {'refresh': refreshToken});
+  }
 }

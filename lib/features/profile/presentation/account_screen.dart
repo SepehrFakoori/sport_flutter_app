@@ -6,6 +6,8 @@ import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_sliver_app_bar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
+import 'package:sport_flutter_app/features/auth/presentation/bloc/logout_bloc/logout_bloc.dart';
+import 'package:sport_flutter_app/features/auth/presentation/bloc/logout_bloc/logout_event.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_bloc/profile_bloc.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_bloc/profile_event.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_bloc/profile_state.dart';
@@ -90,6 +92,9 @@ class _AccountScreenState extends State<AccountScreen> {
                         MenuTile(
                           title: context.l10n.account_logout,
                           icon: AssetIcons.logout,
+                          onTap: () {
+                            context.read<LogoutBloc>().add(Logout());
+                          },
                         ),
                       ],
                     );

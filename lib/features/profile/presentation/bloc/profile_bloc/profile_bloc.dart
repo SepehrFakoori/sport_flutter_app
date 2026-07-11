@@ -16,8 +16,8 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     GetProfile event,
     Emitter<ProfileState> emit,
   ) async {
+    emit(const LoadingState());
     try {
-      emit(const LoadingState());
       final Profile profile = await getProfile.call();
       emit(SuccessState(profile));
     } on AppException {

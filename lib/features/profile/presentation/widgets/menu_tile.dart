@@ -26,7 +26,7 @@ class MenuTile extends StatelessWidget {
       minVerticalPadding: 8,
       minTileHeight: 48,
       horizontalTitleGap: 16,
-      onTap: () {},
+      onTap: onTap,
     );
   }
 }

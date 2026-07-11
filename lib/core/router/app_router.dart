@@ -5,6 +5,7 @@ import 'package:sport_flutter_app/core/di/injection.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/screens/main_page.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/enter_phone_bloc/enter_phone_bloc.dart';
+import 'package:sport_flutter_app/features/auth/presentation/bloc/logout_bloc/logout_bloc.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/verify_otp_bloc/verify_otp_bloc.dart';
 import 'package:sport_flutter_app/features/auth/presentation/enter_phone_screen.dart';
 import 'package:sport_flutter_app/features/auth/presentation/verify_otp_screen.dart';
@@ -68,8 +69,15 @@ final GoRouter routerConfig = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: AppRoutes.account.path,
-              builder: (context, state) => BlocProvider<ProfileBloc>(
-                create: (context) => sl<ProfileBloc>(),
+              builder: (context, state) => MultiBlocProvider(
+                providers: [
+                  BlocProvider<ProfileBloc>(
+                    create: (context) => sl<ProfileBloc>(),
+                  ),
+                  BlocProvider<LogoutBloc>(
+                    create: (context) => sl<LogoutBloc>(),
+                  ),
+                ],
                 child: AccountScreen(),
               ),
             ),

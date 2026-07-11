@@ -91,7 +91,6 @@ class FileUploadService {
     required PresignedUploadInfo info,
     required void Function(double progress) onProgress,
   }) async {
-    print("Key from presign: ${info.key}");
     final formData = FormData();
 
     info.fields.forEach((key, value) {
@@ -117,9 +116,6 @@ class FileUploadService {
         }
       },
     );
-
-    print(response.statusCode);
-    print(response.data);
   }
 
   Future<String> _confirmUpload({required String id}) async {
@@ -127,7 +123,6 @@ class FileUploadService {
       final response = await _client.post('/file-storages/confirm/$id/');
       return response.data['id'];
     } catch (e) {
-      print(e.toString());
       return '';
     }
   }
