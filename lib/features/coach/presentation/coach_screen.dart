@@ -289,7 +289,11 @@ class _CoachScreenState extends State<CoachScreen> {
             ),
           );
         } else {
-          return AppLoadingIndicator();
+          return Scaffold(
+            body: Center(
+              child: AppLoadingIndicator(color: context.colors.primary),
+            ),
+          );
         }
       },
     );

@@ -27,8 +27,8 @@ class ClassEnrollmentCard extends StatelessWidget {
         children: [
           Expanded(
             child: Column(
-              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   context.l10n.class_price_title,

@@ -44,12 +44,12 @@ class _ClassScreenState extends State<ClassScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: BlocBuilder<ClassBloc, ClassState>(
-          builder: (context, state) {
-            if (state is SuccessState) {
-              return CustomScrollView(
+    return BlocBuilder<ClassBloc, ClassState>(
+      builder: (context, state) {
+        if (state is SuccessState) {
+          return Scaffold(
+            body: SafeArea(
+              child: CustomScrollView(
                 slivers: [
                   SliverAppBar(
                     pinned: true,
@@ -199,16 +199,18 @@ class _ClassScreenState extends State<ClassScreen> {
                     ],
                   ),
                 ],
-              );
-            } else {
-              return Center(
-                child: AppLoadingIndicator(color: context.colors.primary),
-              );
-            }
-          },
-        ),
-      ),
-      bottomNavigationBar: ClassEnrollmentCard(price: '12,000,000'),
+              ),
+            ),
+            bottomNavigationBar: ClassEnrollmentCard(price: state.classItem.fee),
+          );
+        } else {
+          return Scaffold(
+            body: Center(
+              child: AppLoadingIndicator(color: context.colors.primary),
+            ),
+          );
+        }
+      },
     );
   }
 }
