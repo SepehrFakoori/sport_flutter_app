@@ -17,7 +17,7 @@ class ClassCard extends StatelessWidget {
     return InkWell(
       onTap: () {
         context.pushNamed(
-          AppRoutes.classInfo.name!,
+          AppRoutes.classDetail.name!,
           pathParameters: {'id': '${classItem.id}'},
         );
       },

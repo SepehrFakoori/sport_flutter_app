@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/constant/assets_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
@@ -78,10 +80,14 @@ class _ClassScreenState extends State<ClassScreen> {
                       const SizedBox(height: 12),
                       AppDivider(indent: 24, endIndent: 24),
                       CoachTile(
+                        fullName: state.classItem.coach.fullName,
                         imageUrl:
                             'https://www.lovepanky.com/wp-content/uploads/2012/03/How-to-Be-a-Man.jpg',
-                        fullName: state.classItem.coach.fullName,
                         credentials: 'مربی رسمی فدراسیون، 14 سال تجربه',
+                        onTap: () => context.pushNamed(
+                          AppRoutes.coach.name!,
+                          pathParameters: {'id': '${state.classItem.coach.id}'},
+                        ),
                       ),
                       AppDivider(indent: 24, endIndent: 24),
                       const SizedBox(height: 12),

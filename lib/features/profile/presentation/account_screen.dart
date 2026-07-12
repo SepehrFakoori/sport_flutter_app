@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/constant/assets_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
+import 'package:sport_flutter_app/core/ui/widgets/app_refresh_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_sliver_app_bar.dart';
-import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/logout_bloc/logout_bloc.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/logout_bloc/logout_event.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_bloc/profile_bloc.dart';
@@ -34,17 +34,12 @@ class _AccountScreenState extends State<AccountScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: RefreshIndicator(
+        child: AppRefreshIndicator(
           onRefresh: () async => context.read<ProfileBloc>().add(GetProfile()),
           child: CustomScrollView(
             physics: const AlwaysScrollableScrollPhysics(),
             slivers: [
-              AppSliverAppBar(
-                title: context.l10n.account_appBarTitle,
-                actions: [
-                  AppIconButton(onPressed: () {}, icon: AssetIcons.bookmark),
-                ],
-              ),
+              AppSliverAppBar(title: context.l10n.account_appBarTitle),
               BlocBuilder<ProfileBloc, ProfileState>(
                 builder: (BuildContext context, ProfileState state) {
                   if (state is SuccessState) {
@@ -53,7 +48,7 @@ class _AccountScreenState extends State<AccountScreen> {
                         const SizedBox(height: 16),
                         ProfileCard(
                           imageUrl: state.profile.imageUrl,
-                          description: state.profile.phone, //'قزوین، مهرگان'
+                          description: state.profile.phone,
                           fullName: state.profile.fullName,
                           onTap: () => context.pushNamed(
                             AppRoutes.profile.name!,

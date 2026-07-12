@@ -6,6 +6,7 @@ import 'package:sport_flutter_app/core/storage/token_storage.dart';
 import 'package:sport_flutter_app/core/storage/token_storage_impl.dart';
 import 'package:sport_flutter_app/features/auth/di/auth_module.dart';
 import 'package:sport_flutter_app/features/class/di/class_module.dart';
+import 'package:sport_flutter_app/features/coach/data/di/coach_module.dart';
 import 'package:sport_flutter_app/features/profile/di/profile_module.dart';
 
 final sl = GetIt.instance;
@@ -19,4 +20,5 @@ Future<void> setupDependencies() async {
   registerAuthModule();
   registerProfileModule();
   registerClassModule();
+  registerCoachModule();
 }

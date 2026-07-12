@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/config/flavor_config.dart';
@@ -13,11 +14,13 @@ import 'package:sport_flutter_app/features/class/presentation/bloc/class_bloc/cl
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_list_bloc/class_list_bloc.dart';
 import 'package:sport_flutter_app/features/class/presentation/class_list_screen.dart';
 import 'package:sport_flutter_app/features/class/presentation/class_screen.dart';
+import 'package:sport_flutter_app/features/coach/presentation/bloc/coach_bloc/coach_bloc.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_bloc.dart';
 import 'package:sport_flutter_app/features/inbox/presentation/chat_screen.dart';
 import 'package:sport_flutter_app/features/coach/presentation/coach_screen.dart';
 import 'package:sport_flutter_app/features/home/presentation/home_screen.dart';
 import 'package:sport_flutter_app/features/inbox/presentation/inbox_screen.dart';
+import 'package:sport_flutter_app/features/notification/presentation/notifications_list_screen.dart';
 import 'package:sport_flutter_app/features/profile/domain/entity/profile.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/complete_profile/complete_profile_bloc.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_bloc/profile_bloc.dart';
@@ -132,25 +135,34 @@ final GoRouter routerConfig = GoRouter(
       builder: (context, state) => SearchScreen(),
     ),
     GoRoute(
-      path: AppRoutes.coach.path,
-      name: AppRoutes.coach.name,
-      builder: (context, state) {
-        final coachId = int.tryParse(state.pathParameters['id']!);
+      path: AppRoutes.coaches.path,
+      name: AppRoutes.coaches.name,
+      builder: (context, state) => Placeholder(),
+      routes: <RouteBase>[
+        GoRoute(
+          path: AppRoutes.coach.path,
+          name: AppRoutes.coach.name,
+          builder: (context, state) {
+            final coachId = int.tryParse(state.pathParameters['id']!);
 
-        return CoachScreen(coachId: coachId!);
-      },
-    ),
-    GoRoute(
-      path: AppRoutes.classInfo.path,
-      name: AppRoutes.classInfo.name,
-      builder: (context, state) {
-        final classId = int.tryParse(state.pathParameters['id']!);
+            return BlocProvider<CoachBloc>(
+              create: (context) => sl<CoachBloc>(),
+              child: CoachScreen(coachId: coachId!),
+            );
+          },
+          routes: <RouteBase>[
+            GoRoute(
+              path: AppRoutes.coachComments.path,
+              name: AppRoutes.coachComments.name,
+              builder: (context, state) {
+                final coachId = int.tryParse(state.pathParameters['id']!);
 
-        return BlocProvider<ClassBloc>(
-          create: (context) => sl<ClassBloc>(),
-          child: ClassScreen(classId: classId!),
-        );
-      },
+                return Placeholder();
+              },
+            ),
+          ],
+        ),
+      ],
     ),
     GoRoute(
       path: AppRoutes.auth.path,
@@ -185,12 +197,53 @@ final GoRouter routerConfig = GoRouter(
       ],
     ),
     GoRoute(
-      path: AppRoutes.classList.path,
-      name: AppRoutes.classList.name,
+      path: AppRoutes.classes.path,
+      name: AppRoutes.classes.name,
       builder: (context, state) => BlocProvider<ClassListBloc>(
         create: (context) => sl<ClassListBloc>(),
         child: ClassListScreen(),
       ),
+      routes: <RouteBase>[
+        GoRoute(
+          path: AppRoutes.classDetail.path,
+          name: AppRoutes.classDetail.name,
+          builder: (context, state) {
+            final classId = int.tryParse(state.pathParameters['id']!);
+
+            return BlocProvider<ClassBloc>(
+              create: (context) => sl<ClassBloc>(),
+              child: ClassScreen(classId: classId!),
+            );
+          },
+          routes: <RouteBase>[
+            GoRoute(
+              path: AppRoutes.classComments.path,
+              name: AppRoutes.classComments.name,
+              builder: (context, state) {
+                final classId = int.tryParse(state.pathParameters['id']!);
+
+                return Placeholder();
+              },
+            ),
+          ],
+        ),
+      ],
+    ),
+    GoRoute(
+      path: AppRoutes.notifications.path,
+      name: AppRoutes.notifications.name,
+      builder: (context, state) => NotificationsListScreen(),
+      routes: <RouteBase>[
+        GoRoute(
+          path: AppRoutes.notification.path,
+          name: AppRoutes.notification.name,
+          builder: (context, state) {
+            final notifId = int.tryParse(state.pathParameters['id']!);
+
+            return const Placeholder();
+          },
+        ),
+      ],
     ),
   ],
 );

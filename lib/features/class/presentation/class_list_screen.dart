@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
+import 'package:sport_flutter_app/core/ui/widgets/app_refresh_indicator.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_list_bloc/class_list_bloc.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_list_bloc/class_list_event.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_list_bloc/class_list_state.dart';
@@ -60,7 +61,7 @@ class _ClassListScreenState extends State<ClassListScreen> {
               return const Center(child: Text('No classes found'));
             }
 
-            return RefreshIndicator(
+            return AppRefreshIndicator(
               onRefresh: () async {
                 context.read<ClassListBloc>().add(ClassesRefreshRequested());
               },

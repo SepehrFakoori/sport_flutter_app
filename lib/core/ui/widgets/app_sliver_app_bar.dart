@@ -3,6 +3,7 @@ import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 
 class AppSliverAppBar extends StatelessWidget {
   final String? title;
+  final bool centerTitle;
   final List<Widget>? actions;
   final PreferredSizeWidget? child;
   final double? expandedHeight;
@@ -10,6 +11,7 @@ class AppSliverAppBar extends StatelessWidget {
   const AppSliverAppBar({
     super.key,
     this.title,
+    this.centerTitle = false,
     this.actions,
     this.child,
     this.expandedHeight,
@@ -33,11 +35,14 @@ class AppSliverAppBar extends StatelessWidget {
                   fontWeight: .w600,
                 ),
               ),
-              titlePadding: .directional(
-                end: 24,
-                start: 24,
-                bottom: 12 + (child?.preferredSize.height ?? 0),
-              ),
+              centerTitle: centerTitle,
+              titlePadding: !centerTitle
+                  ? .directional(
+                      end: 24,
+                      start: 24,
+                      bottom: 12 + (child?.preferredSize.height ?? 0),
+                    )
+                  : null,
               collapseMode: .parallax,
             )
           : null,
