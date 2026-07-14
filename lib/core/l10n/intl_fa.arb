@@ -43,6 +43,7 @@
 
     "coach_appbar_title": "پروفایل مربی",
     "coach_reviews_label": "{count, plural, =0{بدون دیدگاه} other{{count} دیدگاه}}",
+    "coach_class": "کلاس\u200Cها",
 
     "chat_text_field_hint": "پیام خود را بنویسید...",
 

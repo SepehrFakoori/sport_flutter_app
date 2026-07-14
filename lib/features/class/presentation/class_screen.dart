@@ -8,10 +8,10 @@ import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
+import 'package:sport_flutter_app/core/ui/widgets/shared/reviews.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_bloc/class_bloc.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_bloc/class_event.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_bloc/class_state.dart';
-import 'package:sport_flutter_app/features/class/presentation/widgets/class_comments.dart';
 import 'package:sport_flutter_app/features/class/presentation/widgets/class_description.dart';
 import 'package:sport_flutter_app/features/class/presentation/widgets/class_features.dart';
 import 'package:sport_flutter_app/features/class/presentation/widgets/class_images.dart';
@@ -55,7 +55,7 @@ class _ClassScreenState extends State<ClassScreen> {
                     pinned: true,
                     elevation: 0,
                     expandedHeight: 350,
-                    actionsPadding: EdgeInsets.symmetric(horizontal: 24),
+                    actionsPadding: const .symmetric(horizontal: 16),
                     actions: [
                       AppIconButton(
                         onPressed: () {},
@@ -78,7 +78,7 @@ class _ClassScreenState extends State<ClassScreen> {
                         rating: 4.1,
                       ),
                       const SizedBox(height: 12),
-                      AppDivider(indent: 24, endIndent: 24),
+                      AppDivider(),
                       CoachTile(
                         fullName: state.classItem.coach.fullName,
                         imageUrl:
@@ -89,11 +89,10 @@ class _ClassScreenState extends State<ClassScreen> {
                           pathParameters: {'id': '${state.classItem.coach.id}'},
                         ),
                       ),
-                      AppDivider(indent: 24, endIndent: 24),
+                      AppDivider(),
                       const SizedBox(height: 12),
-
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        padding: const .symmetric(horizontal: 16),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           spacing: 12,
@@ -159,7 +158,7 @@ class _ClassScreenState extends State<ClassScreen> {
                         ),
                       ),
                       const SizedBox(height: 12),
-                      AppDivider(indent: 24, endIndent: 24),
+                      AppDivider(),
                       const SizedBox(height: 12),
                       ClassFeatures(
                         feature: [
@@ -169,39 +168,33 @@ class _ClassScreenState extends State<ClassScreen> {
                         ],
                       ),
                       const SizedBox(height: 12),
-                      AppDivider(indent: 24, endIndent: 24),
+                      AppDivider(),
                       const SizedBox(height: 12),
                       ClassDescription(
                         description: state.classItem.description,
                       ),
                       const SizedBox(height: 8),
-                      AppDivider(indent: 24, endIndent: 24),
+                      AppDivider(),
                       const SizedBox(height: 12),
-                      ClassComments(
+                      Reviews(
                         username: 'سهند فکوری',
                         time: '2 ماه پیش',
                         comment:
                             'من سهند فکوری هستم میخوام از این کلاس براتون تعریف کنم کلاس نسبتا خوبیه استادش هم خوبه ولی در کل تهران خیلی بهتره تا قزوین ببینیم خدا چی میخواد.',
                       ),
                       const SizedBox(height: 8),
-                      Divider(indent: 24, endIndent: 24),
+                      AppDivider(),
                       const SizedBox(height: 12),
-                      CoachCard(
-                        coachName: state.classItem.coach.fullName,
-                        imageUrl:
-                            'https://www.lovepanky.com/wp-content/uploads/2012/03/How-to-Be-a-Man.jpg',
-                        coachSport: 'تکواندو',
-                        experience: 5,
-                        review: 319,
-                        rate: 4.4,
-                      ),
+                      ClassCoach(coachName: state.classItem.coach.fullName),
                       const SizedBox(height: 50),
                     ],
                   ),
                 ],
               ),
             ),
-            bottomNavigationBar: ClassEnrollmentCard(price: state.classItem.fee),
+            bottomNavigationBar: ClassEnrollmentCard(
+              price: state.classItem.fee,
+            ),
           );
         } else {
           return Scaffold(
@@ -211,6 +204,38 @@ class _ClassScreenState extends State<ClassScreen> {
           );
         }
       },
+    );
+  }
+}
+
+class ClassCoach extends StatelessWidget {
+  final String coachName;
+
+  const ClassCoach({super.key, required this.coachName});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const .symmetric(horizontal: 16.0),
+      child: Column(
+        crossAxisAlignment: .start,
+        spacing: 8,
+        children: [
+          Text(
+            context.l10n.class_coach_title,
+            style: context.textTheme.headlineSmall,
+          ),
+          CoachCard(
+            coachName: coachName,
+            imageUrl:
+                'https://www.lovepanky.com/wp-content/uploads/2012/03/How-to-Be-a-Man.jpg',
+            coachSport: 'تکواندو',
+            experience: 5,
+            review: 319,
+            rate: 4.4,
+          ),
+        ],
+      ),
     );
   }
 }

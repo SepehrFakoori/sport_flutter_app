@@ -11,8 +11,10 @@ import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_event.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_state.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/category_list.dart';
+import 'package:sport_flutter_app/features/home/presentation/widgets/coach_overview.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/filter_tile.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/horizontal_class_card_list.dart';
+import 'package:sport_flutter_app/features/home/presentation/widgets/skeleton/coach_overview_skeleton.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/skeleton/horizontal_class_card_list_skeleton.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -105,6 +107,39 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {},
                   ),
                   CategoryListView(),
+                  const SizedBox(height: 16),
+                  FilterTile(
+                    title: context.l10n.home_categories_title,
+                    onTap: () {},
+                  ),
+                  SizedBox(
+                    height: 260,
+                    child: ListView.separated(
+                      physics: const AlwaysScrollableScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return index % 2 == 0
+                            ? CoachOverview(
+                                onTap: () {
+                                  context.pushNamed(
+                                    AppRoutes.coach.name!,
+                                    pathParameters: {'id': '1'},
+                                  );
+                                },
+                                imageUrl:
+                                    'https://images.sportschau.de/image/5cd1f87c-6043-4158-8d74-6f4691de98a1/AAABlSNLA4g/AAABnSStdoM/4x3/pep-guardiola-240.jpg?width=1280',
+                                coachName: 'پپ گواردیولا',
+                                coachComment: 126,
+                                rate: 4.2,
+                                coachSport: 'فوتبال',
+                              )
+                            : const CoachOverviewSkeleton();
+                      },
+                      separatorBuilder: (context, index) => const SizedBox(width: 12,),
+                      itemCount: 8,
+                      padding: const .symmetric(horizontal: 12),
+                    ),
+                  ),
                   const SizedBox(height: 16),
                   FilterTile(
                     title: context.l10n.home_popular_title,
