@@ -5,13 +5,13 @@ import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 class MenuTile extends StatelessWidget {
   final String title;
   final String icon;
-  final GestureTapCallback? onTap;
+  final VoidCallback onTap;
 
   const MenuTile({
     super.key,
     required this.title,
     required this.icon,
-    this.onTap,
+    required this.onTap,
   });
 
   @override

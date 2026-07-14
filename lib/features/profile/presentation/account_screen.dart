@@ -59,30 +59,37 @@ class _AccountScreenState extends State<AccountScreen> {
                         MenuTile(
                           title: context.l10n.account_enrollments_button,
                           icon: AssetIcons.receiptItem,
+                          onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_view_profile,
                           icon: AssetIcons.profile,
+                          onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_settings_button,
                           icon: AssetIcons.setting,
+                          onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_giftcard_button,
                           icon: AssetIcons.money,
+                          onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_support_button,
                           icon: AssetIcons.headphone,
+                          onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_invite_friends_button,
                           icon: AssetIcons.profileAdd,
+                          onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_policy_button,
                           icon: AssetIcons.taskSquare,
+                          onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_logout,
