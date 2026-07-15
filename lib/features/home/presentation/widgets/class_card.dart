@@ -8,6 +8,7 @@ import 'package:sport_flutter_app/core/ui/widgets/custom_card.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
 import 'package:sport_flutter_app/features/class/domain/entity/class.dart';
+import 'package:sport_flutter_app/features/home/presentation/widgets/rating_indicator.dart';
 
 class ClassCard extends StatelessWidget {
   final Class classItem;
@@ -69,17 +70,7 @@ class ClassCard extends StatelessWidget {
                           color: context.colors.onBackgroundSecondary,
                         ),
                       ),
-                      IconWidget(
-                        icon: AssetIcons.starFilled,
-                        size: 12,
-                        color: context.colors.onBackgroundSecondary,
-                      ),
-                      Text(
-                        '4.1',
-                        style: context.textTheme.labelLarge?.copyWith(
-                          color: context.colors.onBackgroundSecondary,
-                        ),
-                      ),
+                      RatingIndicator(rating: 4.1),
                     ],
                   ),
                   Text(

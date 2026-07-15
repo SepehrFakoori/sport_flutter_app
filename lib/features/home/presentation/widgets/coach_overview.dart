@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
-import 'package:sport_flutter_app/core/ui/theme/palette.dart';
-import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
 import 'package:sport_flutter_app/features/coach/domain/entity/coach.dart';
+import 'package:sport_flutter_app/features/home/presentation/widgets/rating_summary.dart';
 
 class CoachOverview extends StatelessWidget {
   final Coach coach;
@@ -78,23 +76,7 @@ class CoachOverview extends StatelessWidget {
                           color: context.colors.onBackgroundSecondary,
                         ),
                       ),
-                      IconWidget(
-                        icon: AssetIcons.starFilled,
-                        size: 12,
-                        color: AppPalette.semantic3,
-                      ),
-                      Text(
-                        '4.1',
-                        style: context.textTheme.labelLarge?.copyWith(
-                          color: context.colors.onBackgroundSecondary,
-                        ),
-                      ),
-                      Text(
-                        '(126)',
-                        style: context.textTheme.labelLarge?.copyWith(
-                          color: context.colors.onBackgroundSecondary,
-                        ),
-                      ),
+                      RatingSummary(rating: 4.1, reviewCount: 150),
                     ],
                   ),
                   Text(
