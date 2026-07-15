@@ -4,7 +4,7 @@ class ClassModel {
   final int id;
   final String title;
   final String description;
-  final String fee;
+  final int fee;
   final int capacity;
   final int remainingCapacity;
   final bool isFull;
@@ -27,7 +27,8 @@ class ClassModel {
     id: json['id'],
     title: json['title'],
     description: json['description'],
-    fee: json['fee'],
+    fee: double.parse(json['fee']).toInt(),
+    // fee: double.tryParse(json['fee'])?.toInt(),
     capacity: json['capacity'],
     remainingCapacity: json['remaining_capacity'],
     isFull: json['is_full'],

@@ -4,7 +4,7 @@ class Class {
   final int id;
   final String title;
   final String description;
-  final String fee;
+  final int fee;
   final int capacity;
   final int remainingCapacity;
   final bool isFull;
