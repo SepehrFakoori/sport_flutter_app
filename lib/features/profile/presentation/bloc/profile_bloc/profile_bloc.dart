@@ -20,8 +20,8 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     final result = await getProfile.call();
 
     result.when(
-      success: (profile) => SuccessState(profile),
-      error: (failure) => FailureState(),
+      success: (profile) => emit(SuccessState(profile)),
+      error: (failure) => emit(FailureState()),
     );
   }
 }
