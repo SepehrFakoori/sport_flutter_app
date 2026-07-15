@@ -10,7 +10,7 @@ class CustomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: context.colors.onSecondary,
+        color: context.colors.background,
         borderRadius: BorderRadius.circular(24),
         boxShadow: [
           BoxShadow(
