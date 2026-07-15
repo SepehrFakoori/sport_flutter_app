@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:sport_flutter_app/core/utils/result.dart';
 import 'package:sport_flutter_app/features/profile/domain/repository/profile_repository.dart';
 
 class UploadProfilePhotoUseCase {
@@ -7,7 +8,7 @@ class UploadProfilePhotoUseCase {
 
   const UploadProfilePhotoUseCase(this._repository);
 
-  Future<String> call({
+  Future<Result<String>> call({
     required File file,
     required void Function(double progress) onProgress,
   }) => _repository.uploadProfilePhoto(file: file, onProgress: onProgress);
