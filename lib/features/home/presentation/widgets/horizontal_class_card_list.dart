@@ -10,13 +10,9 @@ class HorizontalClassCardList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      scrollDirection: Axis.horizontal,
+      scrollDirection: .horizontal,
       padding: const .symmetric(horizontal: 16),
-      itemBuilder: (context, index) {
-        final Class classItem = classes[index];
-
-        return ClassCard(classItem: classItem);
-      },
+      itemBuilder: (context, index) => ClassCard(classItem: classes[index]),
       separatorBuilder: (context, index) => const SizedBox(width: 12),
       itemCount: 8,
     );

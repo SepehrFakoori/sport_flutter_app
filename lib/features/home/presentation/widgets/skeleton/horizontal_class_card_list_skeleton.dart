@@ -7,8 +7,8 @@ class HorizontalClassCardListSkeleton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      scrollDirection: Axis.horizontal,
-      padding: const EdgeInsetsGeometry.symmetric(horizontal: 16),
+      scrollDirection: .horizontal,
+      padding: const .symmetric(horizontal: 16),
       itemBuilder: (context, index) => ClassCardSkeleton(),
       separatorBuilder: (context, index) => const SizedBox(width: 12),
       itemCount: 8,

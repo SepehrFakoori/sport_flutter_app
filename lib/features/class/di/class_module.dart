@@ -7,6 +7,7 @@ import 'package:sport_flutter_app/features/class/domain/user_case/get_class_usec
 import 'package:sport_flutter_app/features/class/domain/user_case/get_classes_usecase.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_bloc/class_bloc.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_list_bloc/class_list_bloc.dart';
+import 'package:sport_flutter_app/features/coach/domain/use_case/get_coaches_usecase.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_bloc.dart';
 
 void registerClassModule() {
@@ -21,7 +22,12 @@ void registerClassModule() {
   sl.registerLazySingleton(() => GetClassesUseCase(sl<ClassRepository>()));
   sl.registerLazySingleton(() => GetClassUseCase(sl<ClassRepository>()));
 
-  sl.registerFactory(() => HomeBloc(sl()));
+  sl.registerFactory(
+    () => HomeBloc(
+      getClasses: sl<GetClassesUseCase>(),
+      getCoaches: sl<GetCoachesUseCase>(),
+    ),
+  );
   sl.registerFactory(() => ClassBloc(sl()));
   sl.registerFactory(() => ClassListBloc(sl()));
 }

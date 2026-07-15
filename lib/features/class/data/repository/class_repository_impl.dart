@@ -26,10 +26,13 @@ class ClassRepositoryImpl implements ClassRepository {
   @override
   Future<Result<Paginated<Class>>> getClasses({
     required int page,
-    int pageSize = 20,
+    required int pageSize,
   }) async {
     try {
-      final result = await _datasource.getClasses(page: page, pageSize: 20);
+      final result = await _datasource.getClasses(
+        page: page,
+        pageSize: pageSize,
+      );
       return Success(result.map<Class>(mapper: (model) => model.toEntity()));
     } catch (e) {
       return Error(ServerFailure());
