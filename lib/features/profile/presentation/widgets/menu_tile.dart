@@ -17,7 +17,7 @@ class MenuTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: IconWidget(icon: icon, height: 24, width: 24),
+      leading: IconWidget(icon: icon, size: 24),
       title: Text(title, maxLines: 1, overflow: .ellipsis),
       titleTextStyle: context.textTheme.titleMedium,
       titleAlignment: .center,

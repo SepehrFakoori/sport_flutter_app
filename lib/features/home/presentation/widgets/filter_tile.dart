@@ -18,7 +18,7 @@ class FilterTile extends StatelessWidget {
       contentPadding: const .symmetric(horizontal: 16),
       minVerticalPadding: 4,
       minTileHeight: 48,
-      trailing: IconWidget(icon: AssetIcons.arrowLeft, height: 20, width: 20),
+      trailing: IconWidget(icon: AssetIcons.arrowLeft, size: 20),
       onTap: onTap,
     );
   }

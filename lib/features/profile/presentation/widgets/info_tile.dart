@@ -31,7 +31,7 @@ class InfoTile extends StatelessWidget {
       subtitleTextStyle: context.textTheme.titleLarge?.copyWith(
         fontWeight: .w600,
       ),
-      trailing: IconWidget(icon: AssetIcons.arrowLeft, height: 16, width: 16),
+      trailing: IconWidget(icon: AssetIcons.arrowLeft, size: 16),
     );
   }
 }

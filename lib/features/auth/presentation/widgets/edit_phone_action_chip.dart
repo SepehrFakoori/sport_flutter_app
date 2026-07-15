@@ -17,7 +17,7 @@ class EditPhoneActionChip extends StatelessWidget {
         spacing: 4,
         children: [
           Text(phone, style: context.textTheme.titleMedium),
-          IconWidget(icon: AssetIcons.edit, height: 14, width: 14),
+          IconWidget(icon: AssetIcons.edit, size: 14),
         ],
       ),
       onPressed: () {

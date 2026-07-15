@@ -156,8 +156,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                           padding: const EdgeInsets.all(12.0),
                           child: IconWidget(
                             icon: AssetIcons.calendar,
-                            height: 10,
-                            width: 10,
+                            size: 10,
                           ),
                         ),
                         // errorText: _translateBirthDateException(

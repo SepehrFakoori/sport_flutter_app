@@ -73,8 +73,7 @@ class ClassOverviewCard extends StatelessWidget {
                       ),
                       IconWidget(
                         icon: AssetIcons.starFilled,
-                        height: 12,
-                        width: 12,
+                        size: 12,
                         color: context.colors.onBackgroundSecondary,
                       ),
                       Text(
@@ -90,8 +89,7 @@ class ClassOverviewCard extends StatelessWidget {
                     children: [
                       IconWidget(
                         icon: AssetIcons.location,
-                        height: 16,
-                        width: 16,
+                        size: 16,
                         color: context.colors.onBackgroundSecondary,
                       ),
                       Flexible(
@@ -111,8 +109,7 @@ class ClassOverviewCard extends StatelessWidget {
                     children: [
                       IconWidget(
                         icon: AssetIcons.notification,
-                        height: 16,
-                        width: 16,
+                        size: 16,
                         color: context.colors.onBackgroundSecondary,
                       ),
                       Text(

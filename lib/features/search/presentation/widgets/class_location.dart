@@ -15,8 +15,7 @@ class ClassLocation extends StatelessWidget {
       children: [
         IconWidget(
           icon: AssetIcons.location,
-          height: 16,
-          width: 16,
+          size: 16,
           color: context.colors.onBackgroundSecondary,
         ),
         Flexible(

@@ -89,8 +89,7 @@ class ClassTile extends StatelessWidget {
                       ),
                       IconWidget(
                         icon: AssetIcons.starFilled,
-                        height: 12,
-                        width: 12,
+                        size: 12,
                         color: context.colors.onBackgroundSecondary,
                       ),
                       Text(

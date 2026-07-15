@@ -9,6 +9,9 @@ class AppLocalizationsFa extends AppLocalizations {
   AppLocalizationsFa([String locale = 'fa']) : super(locale);
 
   @override
+  String get app_name => 'سوپس';
+
+  @override
   String get bottom_navigation_home => 'خانه';
 
   @override

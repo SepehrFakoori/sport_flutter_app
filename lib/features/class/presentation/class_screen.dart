@@ -121,8 +121,7 @@ class _ClassScreenState extends State<ClassScreen> {
                                       ),
                                       child: IconWidget(
                                         icon: AssetIcons.notification,
-                                        height: 16,
-                                        width: 16,
+                                        size: 16,
                                       ),
                                     ),
                                     Text(

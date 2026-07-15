@@ -15,9 +15,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc({required this.getClasses, required this.getCoaches})
     : super(const InitState()) {
     on<FetchHomeData>(_onFetchHomeData);
-
-    // on<GetClasses>(_onGetClasses);
-    // on<GetCoaches>(_onGetCoaches);
   }
 
   Future<void> _onFetchHomeData(

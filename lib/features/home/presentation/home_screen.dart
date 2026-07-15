@@ -7,6 +7,7 @@ import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_refresh_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
+import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_bloc.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_event.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_state.dart';
@@ -27,8 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     context.read<HomeBloc>().add(FetchHomeData());
-    // context.read<HomeBloc>().add(GetClasses());
-    // context.read<HomeBloc>().add(GetCoaches());
   }
 
   @override
@@ -39,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: .start,
           children: [
             Text(
-              'پلی آن',
+              context.l10n.app_name,
               style: context.textTheme.headlineMedium?.copyWith(
                 color: context.colors.primary,
                 fontWeight: .w700,
@@ -52,8 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 IconWidget(
                   icon: AssetIcons.location,
-                  height: 16,
-                  width: 16,
+                  size: 16,
                   color: context.colors.primary,
                 ),
                 Text('تهران، سعادت آباد'),
@@ -92,8 +90,8 @@ class _HomeScreenState extends State<HomeScreen> {
               pinned: true,
               delegate: AppSliverPersistentHeaderDelegate(
                 child: Container(color: context.colors.primary),
-                minHeight: 56,
-                maxHeight: 112,
+                minHeight: 48,
+                maxHeight: 48 * 2,
               ),
             ),
           ],
@@ -127,13 +125,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: HorizontalClassCardList(classes: classes),
                         ),
                         const SizedBox(height: 16),
-                        AspectRatio(
-                          aspectRatio: 21 / 9,
-                          child: Container(
-                            margin: const .symmetric(horizontal: 16.0),
-                            decoration: BoxDecoration(
-                              color: Colors.green,
-                              borderRadius: .circular(12),
+                        Padding(
+                          padding: const .symmetric(horizontal: 16.0),
+                          child: AspectRatio(
+                            aspectRatio: 21 / 9,
+                            child: ImageLoader(
+                              imageUrl:
+                                  'https://img.magnific.com/free-psd/gym-fitness-web-banner-template_106176-5324.jpg?semt=ais_hybrid&w=740&q=80',
+                              radius: 12,
                             ),
                           ),
                         ),

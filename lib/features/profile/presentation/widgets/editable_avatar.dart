@@ -21,7 +21,7 @@ class EditableAvatar extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Badge(
-        label: IconWidget(icon: AssetIcons.edit, height: 20, width: 20),
+        label: IconWidget(icon: AssetIcons.edit, size: 20),
         padding: .all(4),
         backgroundColor: context.colors.tertiary,
         alignment: .bottomStart,

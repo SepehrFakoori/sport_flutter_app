@@ -65,8 +65,7 @@ class Reviews extends StatelessWidget {
                               5,
                               (_) => IconWidget(
                                 icon: AssetIcons.starFilled,
-                                height: 10,
-                                width: 10,
+                                size: 10,
                               ),
                             ),
                           ),

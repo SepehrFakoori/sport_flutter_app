@@ -94,6 +94,12 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('fa')];
 
+  /// No description provided for @app_name.
+  ///
+  /// In fa, this message translates to:
+  /// **'سوپس'**
+  String get app_name;
+
   /// No description provided for @bottom_navigation_home.
   ///
   /// In fa, this message translates to:
