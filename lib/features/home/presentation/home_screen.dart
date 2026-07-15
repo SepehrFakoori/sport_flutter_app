@@ -82,9 +82,6 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: NestedScrollView(
           headerSliverBuilder: (context, innerBoxIsScrolled) => [
-            SliverToBoxAdapter(
-              child: Container(color: Colors.blue, height: 100),
-            ),
             SliverPersistentHeader(
               floating: true,
               pinned: true,
