@@ -70,10 +70,12 @@ class _AccountScreenState extends State<AccountScreen> {
                         MenuTile(
                           title: context.l10n.account_comments,
                           icon: AssetIcons.comment,
+                          onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_addresses,
                           icon: AssetIcons.map,
+                          onTap: () {},
                         ),
                         const SizedBox(height: 16),
                         const AppDivider(),
@@ -86,6 +88,7 @@ class _AccountScreenState extends State<AccountScreen> {
                         MenuTile(
                           title: context.l10n.account_become_coach,
                           icon: AssetIcons.coach,
+                          onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_giftcard_button,
