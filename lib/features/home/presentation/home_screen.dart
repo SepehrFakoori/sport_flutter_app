@@ -113,27 +113,25 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {},
                   ),
                   SizedBox(
-                    height: 260,
+                    height: 293,
                     child: ListView.separated(
                       physics: const AlwaysScrollableScrollPhysics(),
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
-                        return index % 2 == 0
-                            ? CoachOverview(
-                                onTap: () {
-                                  context.pushNamed(
-                                    AppRoutes.coach.name!,
-                                    pathParameters: {'id': '1'},
-                                  );
-                                },
-                                imageUrl:
-                                    'https://images.sportschau.de/image/5cd1f87c-6043-4158-8d74-6f4691de98a1/AAABlSNLA4g/AAABnSStdoM/4x3/pep-guardiola-240.jpg?width=1280',
-                                coachName: 'پپ گواردیولا',
-                                coachComment: 126,
-                                rate: 4.2,
-                                coachSport: 'فوتبال',
-                              )
-                            : const CoachOverviewSkeleton();
+                        return CoachOverview(
+                          onTap: () {
+                            context.pushNamed(
+                              AppRoutes.coach.name!,
+                              pathParameters: {'id': '1'},
+                            );
+                          },
+                          imageUrl:
+                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjIjnCa4QxghR2hY_2NGc_y5xN7ZT_aXe__g4r4natMHrosGqVhTzKkSzK&s=10',
+                          coachName: 'پپ گواردیولا',
+                          coachComment: 126,
+                          rate: 4.2,
+                          coachSport: 'وزنه برداری',
+                        );
                       },
                       separatorBuilder: (context, index) => const SizedBox(width: 12,),
                       itemCount: 8,
