@@ -33,6 +33,15 @@ class AppLocalizationsFa extends AppLocalizations {
   String get account_settings_button => 'تنظیمات';
 
   @override
+  String get account_addresses => 'آدرس‌ها';
+
+  @override
+  String get account_comments => 'دیدگاه‌ها';
+
+  @override
+  String get account_become_coach => 'ثبت نام به عنوان مربی';
+
+  @override
   String get account_giftcard_button => 'تخفیف';
 
   @override

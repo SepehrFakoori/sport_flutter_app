@@ -142,6 +142,24 @@ abstract class AppLocalizations {
   /// **'تنظیمات'**
   String get account_settings_button;
 
+  /// No description provided for @account_addresses.
+  ///
+  /// In fa, this message translates to:
+  /// **'آدرس‌ها'**
+  String get account_addresses;
+
+  /// No description provided for @account_comments.
+  ///
+  /// In fa, this message translates to:
+  /// **'دیدگاه‌ها'**
+  String get account_comments;
+
+  /// No description provided for @account_become_coach.
+  ///
+  /// In fa, this message translates to:
+  /// **'ثبت نام به عنوان مربی'**
+  String get account_become_coach;
+
   /// No description provided for @account_giftcard_button.
   ///
   /// In fa, this message translates to:

@@ -4,6 +4,7 @@ import 'package:sport_flutter_app/core/constant/assets_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/extension/int_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
+import 'package:sport_flutter_app/core/ui/widgets/custom_card.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
 import 'package:sport_flutter_app/features/class/domain/entity/class.dart';
@@ -28,19 +29,7 @@ class ClassCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: .start,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                color: context.colors.background,
-                borderRadius: BorderRadius.circular(24),
-                boxShadow: [
-                  BoxShadow(
-                    color: context.colors.secondary.withValues(alpha: 0.12),
-                    offset: const Offset(0, 1),
-                    blurRadius: 2,
-                    spreadRadius: 0,
-                  ),
-                ],
-              ),
+            CustomCard(
               child: ImageLoader(
                 imageUrl:
                     'https://kavaalya.com/wp-content/uploads/2021/05/sukhasana-kavaalya.jpeg',
