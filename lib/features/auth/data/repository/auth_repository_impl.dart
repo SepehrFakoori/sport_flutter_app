@@ -23,4 +23,11 @@ class AuthRepositoryImpl implements AuthRepository {
 
     return authModel.isNewUser ? .profileCompletionRequired : .authenticated;
   }
+
+  @override
+  Future<void> logout() async {
+    final String? refreshToken = await _localDataSource.getRefreshToken();
+    return _remoteDataSource.logout(refreshToken!);
+    // TODO: clear tokens and navigate to EnterPhoneScreen
+  }
 }

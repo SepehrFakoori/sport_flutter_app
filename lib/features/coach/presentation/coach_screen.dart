@@ -1,265 +1,184 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
-import 'package:sport_flutter_app/core/ui/widgets/app_chip.dart';
-import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
-import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
+import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/custom_app_bar.dart';
+import 'package:sport_flutter_app/core/ui/widgets/shared/reviews.dart';
+import 'package:sport_flutter_app/features/class/domain/entity/class.dart';
+import 'package:sport_flutter_app/features/class/presentation/widgets/coach_card.dart';
+import 'package:sport_flutter_app/features/coach/presentation/bloc/coach_bloc/coach_bloc.dart';
+import 'package:sport_flutter_app/features/coach/presentation/bloc/coach_bloc/coach_event.dart';
+import 'package:sport_flutter_app/features/coach/presentation/bloc/coach_bloc/coach_state.dart';
+import 'package:sport_flutter_app/features/home/presentation/widgets/horizontal_class_card_list.dart';
 
-class CoachScreen extends StatelessWidget {
+class CoachScreen extends StatefulWidget {
   final int coachId;
 
   const CoachScreen({super.key, required this.coachId});
 
   @override
-  Widget build(BuildContext context) {
-    final String coachFullName = 'میعاد جاوید';
-    final String rate = '۴.۳';
+  State<CoachScreen> createState() => _CoachScreenState();
+}
 
-    return Scaffold(
-      appBar: CustomAppBar(
-        title: Text(context.l10n.coach_appbar_title),
-        titleTextStyle: context.textTheme.headlineMedium?.copyWith(
-          color: context.colors.primary,
-          fontWeight: .w700,
-        ),
-        actions: [
-          AppIconButton(
-            icon: AssetIcons.share,
-            onPressed: () {},
-            tooltip: context.l10n.home_search_icon_tooltip,
-          ),
-        ],
-      ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                width: double.infinity,
-                color: context.colors.surface,
-                padding: EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+class _CoachScreenState extends State<CoachScreen> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<CoachBloc>().add(GetCoach(widget.coachId));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<CoachBloc, CoachState>(
+      builder: (context, state) {
+        if (state is SuccessState) {
+          return Scaffold(
+            appBar: CustomAppBar(),
+            body: SafeArea(
+              child: SingleChildScrollView(
                 child: Column(
+                  mainAxisAlignment: .start,
+                  crossAxisAlignment: .stretch,
+                  spacing: 24,
                   children: [
-                    AppCircleAvatar(
-                      fullName: coachFullName,
-                      imageUrl:
-                          'https://cdn.entekhab.ir/files/fa/news/1401/4/20/1291768_193.jpg',
-                      radius: 56,
-                    ),
-                    const SizedBox(height: 16),
-                    Text(
-                      coachFullName,
-                      textAlign: .center,
-                      maxLines: 2,
-                      overflow: .ellipsis,
-                      style: context.textTheme.headlineMedium?.copyWith(
-                        fontWeight: .w700,
+                    const SizedBox(height: 24),
+                    Padding(
+                      padding: const .symmetric(horizontal: 16.0),
+                      child: CoachCard(
+                        coachName: state.coach.fullName,
+                        imageUrl: null,
+                        coachSport: 'فوتبال',
+                        experience: 5,
+                        review: 319,
+                        rate: 4.4,
                       ),
                     ),
-                    Text(
-                      'مربی بدنسازی و مربی پیلاتس',
-                      textAlign: .center,
-                      style: context.textTheme.bodyMedium?.copyWith(
-                        color: context.colors.onBackgroundSecondary,
+                    Padding(
+                      padding: const .symmetric(horizontal: 16.0),
+                      child: Text(
+                        context.l10n.coach_class,
+                        style: context.textTheme.headlineSmall,
                       ),
                     ),
-                    const SizedBox(height: 4),
-                    Row(
-                      mainAxisAlignment: .center,
-                      children: [
-                        Text(
-                          '$rate • ',
-                          textAlign: .center,
-                          style: context.textTheme.bodyMedium?.copyWith(
-                            color: context.colors.onBackgroundSecondary,
+                    SizedBox(
+                      height: 293,
+                      child: HorizontalClassCardList(
+                        classes: [
+                          Class(
+                            id: 1,
+                            title: 'تکواندو',
+                            description: 'یک باشگاه دوست داشتنی',
+                            fee: '250.000',
+                            capacity: 20,
+                            remainingCapacity: 5,
+                            isFull: false,
+                            coach: state.coach,
+                            isActive: true,
                           ),
-                        ),
-                        Text(
-                          context.l10n.coach_reviews_label(10),
-                          textAlign: .center,
-                          style: context.textTheme.bodyMedium?.copyWith(
-                            color: context.colors.onBackgroundSecondary,
+                          Class(
+                            id: 2,
+                            title: 'بدنسازی',
+                            description: 'تمرینات قدرتی و افزایش حجم عضلات',
+                            fee: '450.000',
+                            capacity: 25,
+                            remainingCapacity: 8,
+                            isFull: false,
+                            coach: state.coach,
+                            isActive: true,
                           ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 16),
-                    Row(
-                      mainAxisAlignment: .center,
-                      children: [
-                        ShortDetail(title: '۳۳۳', subtitle: 'شاگرد'),
-                        SizedBox(
-                          height: 38,
-                          child: VerticalDivider(
-                            color: context.colors.divider,
-                            width: 36,
+                          Class(
+                            id: 3,
+                            title: 'پیلاتس',
+                            description:
+                                'افزایش انعطاف و تقویت عضلات مرکزی بدن',
+                            fee: '380.000',
+                            capacity: 18,
+                            remainingCapacity: 0,
+                            isFull: true,
+                            coach: state.coach,
+                            isActive: true,
                           ),
-                        ),
-                        ShortDetail(title: '۳۳', subtitle: 'کلاس'),
-                        SizedBox(
-                          height: 38,
-                          child: VerticalDivider(
-                            color: context.colors.divider,
-                            width: 36,
+                          Class(
+                            id: 4,
+                            title: 'تی آر ایکس',
+                            description: 'تمرینات تعلیقی برای کل بدن',
+                            fee: '420.000',
+                            capacity: 15,
+                            remainingCapacity: 3,
+                            isFull: false,
+                            coach: state.coach,
+                            isActive: true,
                           ),
-                        ),
-                        ShortDetail(title: '۳', subtitle: 'سال تجربه'),
-                      ],
+                          Class(
+                            id: 5,
+                            title: 'فیتنس',
+                            description: 'برنامه جامع تناسب اندام',
+                            fee: '300.000',
+                            capacity: 30,
+                            remainingCapacity: 12,
+                            isFull: false,
+                            coach: state.coach,
+                            isActive: true,
+                          ),
+                          Class(
+                            id: 6,
+                            title: 'کراس فیت',
+                            description: 'تمرینات هوازی و قدرتی با شدت بالا',
+                            fee: '550.000',
+                            capacity: 16,
+                            remainingCapacity: 0,
+                            isFull: true,
+                            coach: state.coach,
+                            isActive: true,
+                          ),
+                          Class(
+                            id: 3,
+                            title: 'پیلاتس',
+                            description:
+                                'افزایش انعطاف و تقویت عضلات مرکزی بدن',
+                            fee: '380.000',
+                            capacity: 18,
+                            remainingCapacity: 0,
+                            isFull: true,
+                            coach: state.coach,
+                            isActive: true,
+                          ),
+                          Class(
+                            id: 4,
+                            title: 'تی آر ایکس',
+                            description: 'تمرینات تعلیقی برای کل بدن',
+                            fee: '420.000',
+                            capacity: 15,
+                            remainingCapacity: 3,
+                            isFull: false,
+                            coach: state.coach,
+                            isActive: true,
+                          ),
+                        ],
+                      ),
                     ),
+                    AppDivider(),
+                    Reviews(
+                      username: 'سهند فکوری',
+                      time: '2 ماه پیش',
+                      comment:
+                          'من سهند فکوری هستم میخوام از این کلاس براتون تعریف کنم کلاس نسبتا خوبیه استادش هم خوبه ولی در کل تهران خیلی بهتره تا قزوین ببینیم خدا چی میخواد.',
+                    ),
+                    const SizedBox(height: 50),
                   ],
                 ),
               ),
-              AppDivider(endIndent: 0, indent: 0),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 16,
-                ),
-                child: Column(
-                  spacing: 16,
-                  children: [
-                    Wrap(
-                      alignment: WrapAlignment.start,
-                      crossAxisAlignment: WrapCrossAlignment.start,
-                      runAlignment: WrapAlignment.start,
-                      spacing: 8,
-                      runSpacing: 8,
-                      direction: Axis.horizontal,
-                      children: List.generate(
-                        chips.length,
-                        (index) => AppChip(
-                          labelText: chips[index],
-                          backgroundColor: context.colors.surface,
-                          textStyle: TextStyle(color: context.colors.primary),
-                          side: BorderSide.none,
-                        ),
-                      ),
-                    ),
-                    Text(
-                      'مربی حرفه‌ای بدنسازی و فیتنس. برنامه‌های شخصی‌سازی شده برای هر نفر. از امروز شروع کن، نتیجه رو میبینی.' *
-                          3,
-                      style: context.textTheme.bodyMedium?.copyWith(
-                        color: context.colors.onBackgroundSecondary,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              AppDivider(endIndent: 0, indent: 0),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 16,
-                ),
-                child: Column(
-                  spacing: 16,
-                  children: [
-                    Wrap(
-                      alignment: WrapAlignment.start,
-                      crossAxisAlignment: WrapCrossAlignment.start,
-                      runAlignment: WrapAlignment.start,
-                      spacing: 8,
-                      runSpacing: 8,
-                      direction: Axis.horizontal,
-                      children: List.generate(
-                        chips.length,
-                        (index) => AppChip(
-                          labelText: chips[index],
-                          backgroundColor: context.colors.surface,
-                          textStyle: TextStyle(color: context.colors.primary),
-                          side: BorderSide.none,
-                        ),
-                      ),
-                    ),
-                    Text(
-                      'مربی حرفه‌ای بدنسازی و فیتنس. برنامه‌های شخصی‌سازی شده برای هر نفر. از امروز شروع کن، نتیجه رو میبینی.' *
-                          3,
-                      style: context.textTheme.bodyMedium?.copyWith(
-                        color: context.colors.onBackgroundSecondary,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              AppDivider(endIndent: 0, indent: 0),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 16,
-                ),
-                child: Column(
-                  spacing: 16,
-                  children: [
-                    Wrap(
-                      alignment: WrapAlignment.start,
-                      crossAxisAlignment: WrapCrossAlignment.start,
-                      runAlignment: WrapAlignment.start,
-                      spacing: 8,
-                      runSpacing: 8,
-                      direction: Axis.horizontal,
-                      children: List.generate(
-                        chips.length,
-                        (index) => AppChip(
-                          labelText: chips[index],
-                          backgroundColor: context.colors.surface,
-                          textStyle: TextStyle(color: context.colors.primary),
-                          side: BorderSide.none,
-                        ),
-                      ),
-                    ),
-                    Text(
-                      'مربی حرفه‌ای بدنسازی و فیتنس. برنامه‌های شخصی‌سازی شده برای هر نفر. از امروز شروع کن، نتیجه رو میبینی.' *
-                          3,
-                      style: context.textTheme.bodyMedium?.copyWith(
-                        color: context.colors.onBackgroundSecondary,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              AppDivider(endIndent: 0, indent: 0),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 16,
-                ),
-                child: Column(
-                  spacing: 16,
-                  children: [
-                    Wrap(
-                      alignment: WrapAlignment.start,
-                      crossAxisAlignment: WrapCrossAlignment.start,
-                      runAlignment: WrapAlignment.start,
-                      spacing: 8,
-                      runSpacing: 8,
-                      direction: Axis.horizontal,
-                      children: List.generate(
-                        chips.length,
-                        (index) => AppChip(
-                          labelText: chips[index],
-                          backgroundColor: context.colors.surface,
-                          textStyle: TextStyle(color: context.colors.primary),
-                          side: BorderSide.none,
-                        ),
-                      ),
-                    ),
-                    Text(
-                      'مربی حرفه‌ای بدنسازی و فیتنس. برنامه‌های شخصی‌سازی شده برای هر نفر. از امروز شروع کن، نتیجه رو میبینی.' *
-                          3,
-                      style: context.textTheme.bodyMedium?.copyWith(
-                        color: context.colors.onBackgroundSecondary,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              AppDivider(endIndent: 0, indent: 0),
-            ],
-          ),
-        ),
-      ),
+            ),
+          );
+        } else {
+          return Scaffold(
+            body: Center(
+              child: AppLoadingIndicator(color: context.colors.primary),
+            ),
+          );
+        }
+      },
     );
   }
 }

@@ -5,12 +5,12 @@ import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_filled_button.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 
-class ClassComments extends StatelessWidget {
+class Reviews extends StatelessWidget {
   final String username;
   final String time;
   final String comment;
 
-  const ClassComments({
+  const Reviews({
     super.key,
     required this.username,
     required this.time,
@@ -23,7 +23,7 @@ class ClassComments extends StatelessWidget {
       crossAxisAlignment: .start,
       children: [
         Padding(
-          padding: const .symmetric(horizontal: 24.0),
+          padding: const .symmetric(horizontal: 16.0),
           child: Text(
             context.l10n.class_reviews,
             style: context.textTheme.headlineSmall,
@@ -33,7 +33,7 @@ class ClassComments extends StatelessWidget {
           height: 240,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            padding: const .symmetric(horizontal: 24.0),
+            padding: const .symmetric(horizontal: 16.0),
             itemBuilder: (context, index) => SizedBox(
               width: MediaQuery.sizeOf(context).width * 0.8,
               child: Card(
@@ -101,7 +101,7 @@ class ClassComments extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const .symmetric(horizontal: 24.0),
+          padding: const .symmetric(horizontal: 16.0),
           child: Row(
             children: [
               Expanded(

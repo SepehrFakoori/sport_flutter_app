@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:sport_flutter_app/core/error/failure.dart';
+import 'package:sport_flutter_app/core/utils/result.dart';
 import 'package:sport_flutter_app/features/profile/data/datasource/remote/profile_remote_datasource.dart';
 import 'package:sport_flutter_app/features/profile/data/mapper/profile_mapper.dart';
 import 'package:sport_flutter_app/features/profile/data/mapper/update_profile_mapper.dart';
@@ -13,27 +15,39 @@ class ProfileRepositoryImpl implements ProfileRepository {
   const ProfileRepositoryImpl(this.remoteDataSource);
 
   @override
-  Future<Profile> getProfile() async {
-    final response = await remoteDataSource.getProfile();
-    return response.toEntity();
+  Future<Result<Profile>> getProfile() async {
+    try {
+      final response = await remoteDataSource.getProfile();
+      return Success(response.toEntity());
+    } catch (e) {
+      return Error(ServerFailure());
+    }
   }
 
   @override
-  Future<Profile> updateProfile(UpdateProfile profile) async {
-    final response = await remoteDataSource.updateProfile(profile.toModel());
-    return response.toEntity();
+  Future<Result<Profile>> updateProfile(UpdateProfile profile) async {
+    try {
+      final response = await remoteDataSource.updateProfile(profile.toModel());
+      return Success(response.toEntity());
+    } catch (e) {
+      return Error(ServerFailure());
+    }
   }
 
   @override
-  Future<String> uploadProfilePhoto({
+  Future<Result<String>> uploadProfilePhoto({
     required File file,
     required void Function(double progress) onProgress,
   }) async {
-    final url = await remoteDataSource.uploadProfilePhoto(
-      file: file,
-      onProgress: onProgress,
-    );
+    try {
+      final url = await remoteDataSource.uploadProfilePhoto(
+        file: file,
+        onProgress: onProgress,
+      );
 
-    return url;
+      return Success(url);
+    } catch (e) {
+      return Error(ServerFailure());
+    }
   }
 }

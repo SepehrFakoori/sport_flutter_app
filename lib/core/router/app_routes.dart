@@ -18,8 +18,23 @@ sealed class AppRoutes {
     path: 'complete',
   );
   static const editProfile = AppRoute(name: 'profile.edit', path: 'edit');
-  static const coach = AppRoute(name: 'coach', path: '/coach/:id');
-  static const classInfo = AppRoute(name: 'class', path: '/class/:id');
+  static const coaches = AppRoute(name: 'coaches', path: '/coaches');
+  static const coach = AppRoute(name: 'coach', path: ':id');
+  static const coachComments = AppRoute(
+    name: 'coach.comments',
+    path: 'comments',
+  );
+  static const classes = AppRoute(name: 'classes', path: '/classes');
+  static const classDetail = AppRoute(name: 'class', path: ':id');
+  static const classComments = AppRoute(
+    name: 'class.comments',
+    path: 'comments',
+  );
+  static const notifications = AppRoute(
+    name: 'notifications',
+    path: '/notifications',
+  );
+  static const notification = AppRoute(name: 'notification', path: ':id');
   static const auth = AppRoute(name: 'auth', path: '/auth');
   static const enterPhone = AppRoute(
     name: 'auth.enter-phone',

@@ -4,4 +4,6 @@ abstract class AuthRepository {
   Future<void> sendOtp(String phone);
 
   Future<AuthOutcome> verifyOtp(String phone, String code);
+
+  Future<void> logout();
 }

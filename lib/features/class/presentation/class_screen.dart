@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/constant/assets_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
+import 'package:sport_flutter_app/core/ui/widgets/shared/reviews.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_bloc/class_bloc.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_bloc/class_event.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_bloc/class_state.dart';
-import 'package:sport_flutter_app/features/class/presentation/widgets/class_comments.dart';
 import 'package:sport_flutter_app/features/class/presentation/widgets/class_description.dart';
 import 'package:sport_flutter_app/features/class/presentation/widgets/class_features.dart';
 import 'package:sport_flutter_app/features/class/presentation/widgets/class_images.dart';
@@ -42,18 +44,18 @@ class _ClassScreenState extends State<ClassScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: BlocBuilder<ClassBloc, ClassState>(
-          builder: (context, state) {
-            if (state is SuccessState) {
-              return CustomScrollView(
+    return BlocBuilder<ClassBloc, ClassState>(
+      builder: (context, state) {
+        if (state is SuccessState) {
+          return Scaffold(
+            body: SafeArea(
+              child: CustomScrollView(
                 slivers: [
                   SliverAppBar(
                     pinned: true,
                     elevation: 0,
                     expandedHeight: 350,
-                    actionsPadding: EdgeInsets.symmetric(horizontal: 24),
+                    actionsPadding: const .symmetric(horizontal: 16),
                     actions: [
                       AppIconButton(
                         onPressed: () {},
@@ -76,18 +78,21 @@ class _ClassScreenState extends State<ClassScreen> {
                         rating: 4.1,
                       ),
                       const SizedBox(height: 12),
-                      AppDivider(indent: 24, endIndent: 24),
+                      AppDivider(),
                       CoachTile(
+                        fullName: state.classItem.coach.fullName,
                         imageUrl:
                             'https://www.lovepanky.com/wp-content/uploads/2012/03/How-to-Be-a-Man.jpg',
-                        fullName: state.classItem.coach.fullName,
                         credentials: 'مربی رسمی فدراسیون، 14 سال تجربه',
+                        onTap: () => context.pushNamed(
+                          AppRoutes.coach.name!,
+                          pathParameters: {'id': '${state.classItem.coach.id}'},
+                        ),
                       ),
-                      AppDivider(indent: 24, endIndent: 24),
+                      AppDivider(),
                       const SizedBox(height: 12),
-
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        padding: const .symmetric(horizontal: 16),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           spacing: 12,
@@ -153,7 +158,7 @@ class _ClassScreenState extends State<ClassScreen> {
                         ),
                       ),
                       const SizedBox(height: 12),
-                      AppDivider(indent: 24, endIndent: 24),
+                      AppDivider(),
                       const SizedBox(height: 12),
                       ClassFeatures(
                         feature: [
@@ -163,46 +168,74 @@ class _ClassScreenState extends State<ClassScreen> {
                         ],
                       ),
                       const SizedBox(height: 12),
-                      AppDivider(indent: 24, endIndent: 24),
+                      AppDivider(),
                       const SizedBox(height: 12),
                       ClassDescription(
                         description: state.classItem.description,
                       ),
                       const SizedBox(height: 8),
-                      AppDivider(indent: 24, endIndent: 24),
+                      AppDivider(),
                       const SizedBox(height: 12),
-                      ClassComments(
+                      Reviews(
                         username: 'سهند فکوری',
                         time: '2 ماه پیش',
                         comment:
                             'من سهند فکوری هستم میخوام از این کلاس براتون تعریف کنم کلاس نسبتا خوبیه استادش هم خوبه ولی در کل تهران خیلی بهتره تا قزوین ببینیم خدا چی میخواد.',
                       ),
                       const SizedBox(height: 8),
-                      Divider(indent: 24, endIndent: 24),
+                      AppDivider(),
                       const SizedBox(height: 12),
-                      CoachCard(
-                        coachName: state.classItem.coach.fullName,
-                        imageUrl:
-                            'https://www.lovepanky.com/wp-content/uploads/2012/03/How-to-Be-a-Man.jpg',
-                        coachSport: 'تکواندو',
-                        experience: 5,
-                        review: 319,
-                        rate: 4.4,
-                      ),
+                      ClassCoach(coachName: state.classItem.coach.fullName),
                       const SizedBox(height: 50),
                     ],
                   ),
                 ],
-              );
-            } else {
-              return Center(
-                child: AppLoadingIndicator(color: context.colors.primary),
-              );
-            }
-          },
-        ),
+              ),
+            ),
+            bottomNavigationBar: ClassEnrollmentCard(
+              price: state.classItem.fee,
+            ),
+          );
+        } else {
+          return Scaffold(
+            body: Center(
+              child: AppLoadingIndicator(color: context.colors.primary),
+            ),
+          );
+        }
+      },
+    );
+  }
+}
+
+class ClassCoach extends StatelessWidget {
+  final String coachName;
+
+  const ClassCoach({super.key, required this.coachName});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const .symmetric(horizontal: 16.0),
+      child: Column(
+        crossAxisAlignment: .start,
+        spacing: 8,
+        children: [
+          Text(
+            context.l10n.class_coach_title,
+            style: context.textTheme.headlineSmall,
+          ),
+          CoachCard(
+            coachName: coachName,
+            imageUrl:
+                'https://www.lovepanky.com/wp-content/uploads/2012/03/How-to-Be-a-Man.jpg',
+            coachSport: 'تکواندو',
+            experience: 5,
+            review: 319,
+            rate: 4.4,
+          ),
+        ],
       ),
-      bottomNavigationBar: ClassEnrollmentCard(price: '12,000,000'),
     );
   }
 }

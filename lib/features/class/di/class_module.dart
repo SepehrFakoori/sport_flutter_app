@@ -6,6 +6,7 @@ import 'package:sport_flutter_app/features/class/domain/repository/class_reposit
 import 'package:sport_flutter_app/features/class/domain/user_case/get_class_usecase.dart';
 import 'package:sport_flutter_app/features/class/domain/user_case/get_classes_usecase.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_bloc/class_bloc.dart';
+import 'package:sport_flutter_app/features/class/presentation/bloc/class_list_bloc/class_list_bloc.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_bloc.dart';
 
 void registerClassModule() {
@@ -22,4 +23,5 @@ void registerClassModule() {
 
   sl.registerFactory(() => HomeBloc(sl()));
   sl.registerFactory(() => ClassBloc(sl()));
+  sl.registerFactory(() => ClassListBloc(sl()));
 }
