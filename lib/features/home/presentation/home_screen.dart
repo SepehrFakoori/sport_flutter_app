@@ -10,10 +10,10 @@ import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_bloc.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_event.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_state.dart';
-import 'package:sport_flutter_app/features/home/presentation/widgets/category_list.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/filter_tile.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/horizontal_class_card_list.dart';
-import 'package:sport_flutter_app/features/home/presentation/widgets/skeleton/horizontal_class_card_list_skeleton.dart';
+import 'package:sport_flutter_app/features/home/presentation/widgets/horizontal_coach_card_list.dart';
+import 'package:sport_flutter_app/features/home/presentation/widgets/skeleton/home_content_skeleton.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -26,7 +26,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<HomeBloc>().add(GetClasses());
+    context.read<HomeBloc>().add(FetchHomeData());
+    // context.read<HomeBloc>().add(GetClasses());
+    // context.read<HomeBloc>().add(GetCoaches());
   }
 
   @override
@@ -96,69 +98,61 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
           body: AppRefreshIndicator(
-            onRefresh: () async => context.read<HomeBloc>().add(GetClasses()),
+            onRefresh: () async =>
+                context.read<HomeBloc>().add(FetchHomeData()),
             child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  FilterTile(
-                    title: context.l10n.home_categories_title,
-                    onTap: () {},
-                  ),
-                  CategoryListView(),
-                  const SizedBox(height: 16),
-                  FilterTile(
-                    title: context.l10n.home_popular_title,
-                    onTap: () {
-                      context.pushNamed(AppRoutes.classes.name!);
-                    },
-                  ),
-                  SizedBox(
-                    height: 293,
-                    child: BlocBuilder<HomeBloc, HomeState>(
-                      builder: (context, state) {
-                        if (state is SuccessState) {
-                          return HorizontalClassCardList(
-                            classes: state.classes,
-                          );
-                        } else {
-                          return HorizontalClassCardListSkeleton();
-                        }
-                      },
+              child: BlocBuilder<HomeBloc, HomeState>(
+                builder: (context, state) {
+                  return switch (state) {
+                    InitState() || LoadingState() => HomeContentSkeleton(),
+                    SuccessState(:final coaches, :final classes) => Column(
+                      children: [
+                        FilterTile(
+                          title: context.l10n.home_categories_title,
+                          onTap: () {},
+                        ),
+                        SizedBox(
+                          height: 270,
+                          child: HorizontalCoachCardList(coaches: coaches),
+                        ),
+                        const SizedBox(height: 16),
+                        FilterTile(
+                          title: context.l10n.home_popular_title,
+                          onTap: () {
+                            context.pushNamed(AppRoutes.classes.name!);
+                          },
+                        ),
+                        SizedBox(
+                          height: 293,
+                          child: HorizontalClassCardList(classes: classes),
+                        ),
+                        const SizedBox(height: 16),
+                        AspectRatio(
+                          aspectRatio: 21 / 9,
+                          child: Container(
+                            margin: const .symmetric(horizontal: 16.0),
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: .circular(12),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 16),
+                        FilterTile(
+                          title: context.l10n.home_nearby_popular_title,
+                          onTap: () {
+                            context.pushNamed(AppRoutes.auth.name!);
+                          },
+                        ),
+                        SizedBox(
+                          height: 293,
+                          child: HorizontalClassCardList(classes: classes),
+                        ),
+                      ],
                     ),
-                  ),
-                  const SizedBox(height: 16),
-                  AspectRatio(
-                    aspectRatio: 21 / 9,
-                    child: Container(
-                      margin: const .symmetric(horizontal: 16.0),
-                      decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: .circular(12),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  FilterTile(
-                    title: context.l10n.home_nearby_popular_title,
-                    onTap: () {
-                      context.pushNamed(AppRoutes.auth.name!);
-                    },
-                  ),
-                  SizedBox(
-                    height: 293,
-                    child: BlocBuilder<HomeBloc, HomeState>(
-                      builder: (context, state) {
-                        if (state is SuccessState) {
-                          return HorizontalClassCardList(
-                            classes: state.classes,
-                          );
-                        } else {
-                          return HorizontalClassCardListSkeleton();
-                        }
-                      },
-                    ),
-                  ),
-                ],
+                    FailureState() => SizedBox.shrink(),
+                  };
+                },
               ),
             ),
           ),

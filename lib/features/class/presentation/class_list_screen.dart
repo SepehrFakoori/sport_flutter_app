@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/extension/int_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_refresh_indicator.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_list_bloc/class_list_bloc.dart';
@@ -91,10 +92,10 @@ class _ClassListScreenState extends State<ClassListScreen> {
                         'https://bstf.org.uk/wp-content/uploads/2016/09/About-Taekwondo-1-2-1.png',
                     title: item.title,
                     coachName: item.coach.fullName,
-                    rate: item.fee,
+                    rate: item.fee.toFormattedFee(),
                     address: 'address',
                     day: 'item.day',
-                    price: item.fee,
+                    price: item.fee.toFormattedFee(),
                   );
                 },
               ),

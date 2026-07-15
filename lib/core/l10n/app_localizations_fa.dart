@@ -145,6 +145,9 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
+  String get coach_class => 'کلاس‌ها';
+
+  @override
   String get chat_text_field_hint => 'پیام خود را بنویسید...';
 
   @override

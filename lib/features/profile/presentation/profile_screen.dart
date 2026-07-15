@@ -79,13 +79,13 @@ class ProfileScreen extends StatelessWidget {
 }
 
 class ProfilePictureSelectionSheet extends StatelessWidget {
-  final VoidCallback? onOpenGallery;
-  final VoidCallback? onTakePhoto;
+  final VoidCallback onOpenGallery;
+  final VoidCallback onTakePhoto;
 
   const ProfilePictureSelectionSheet({
     super.key,
-    this.onOpenGallery,
-    this.onTakePhoto,
+    required this.onOpenGallery,
+    required this.onTakePhoto,
   });
 
   @override

@@ -19,7 +19,7 @@ class ClassOverview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const .symmetric(horizontal: 24.0),
+      padding: const .symmetric(horizontal: 16.0),
       child: Column(
         spacing: 24,
         children: [
