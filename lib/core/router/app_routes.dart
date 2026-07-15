@@ -20,16 +20,10 @@ sealed class AppRoutes {
   static const editProfile = AppRoute(name: 'profile.edit', path: 'edit');
   static const coaches = AppRoute(name: 'coaches', path: '/coaches');
   static const coach = AppRoute(name: 'coach', path: ':id');
-  static const coachComments = AppRoute(
-    name: 'coach.comments',
-    path: 'comments',
-  );
+  static const coachReviews = AppRoute(name: 'coach.reviews', path: 'reviews');
   static const classes = AppRoute(name: 'classes', path: '/classes');
   static const classDetail = AppRoute(name: 'class', path: ':id');
-  static const classComments = AppRoute(
-    name: 'class.comments',
-    path: 'comments',
-  );
+  static const classReviews = AppRoute(name: 'class.reviews', path: 'reviews');
   static const notifications = AppRoute(
     name: 'notifications',
     path: '/notifications',

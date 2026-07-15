@@ -9,7 +9,7 @@ import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
-import 'package:sport_flutter_app/core/ui/widgets/shared/reviews.dart';
+import 'package:sport_flutter_app/core/ui/widgets/shared/reviews_section.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_bloc/class_bloc.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_bloc/class_event.dart';
 import 'package:sport_flutter_app/features/class/presentation/bloc/class_bloc/class_state.dart';
@@ -20,6 +20,8 @@ import 'package:sport_flutter_app/features/class/presentation/widgets/class_over
 import 'package:sport_flutter_app/features/class/presentation/widgets/coach_card.dart';
 import 'package:sport_flutter_app/features/class/presentation/widgets/coach_tile.dart';
 import 'package:sport_flutter_app/features/class/presentation/widgets/class_enrollment_card.dart';
+import 'package:sport_flutter_app/features/coach/domain/entity/coach.dart';
+import 'package:sport_flutter_app/features/review/domain/entity/review.dart';
 
 class ClassScreen extends StatefulWidget {
   final int classId;
@@ -171,21 +173,32 @@ class _ClassScreenState extends State<ClassScreen> {
                       AppDivider(),
                       const SizedBox(height: 12),
                       ClassDescription(
-                        description: state.classItem.description,
+                        description: state.classItem.description * 5,
                       ),
                       const SizedBox(height: 8),
                       AppDivider(),
                       const SizedBox(height: 12),
-                      Reviews(
-                        username: 'سهند فکوری',
-                        time: '2 ماه پیش',
-                        comment:
-                            'من سهند فکوری هستم میخوام از این کلاس براتون تعریف کنم کلاس نسبتا خوبیه استادش هم خوبه ولی در کل تهران خیلی بهتره تا قزوین ببینیم خدا چی میخواد.',
+                      ReviewsSection(
+                        reviews: List.generate(
+                          8,
+                          (index) => Review(
+                            id: index,
+                            author: 'سهند فکوری',
+                            rating: index > 5 ? 5 : index,
+                            comment:
+                                'من سهند فکوری هستم میخوام از این کلاس براتون تعریف کنم کلاس نسبتا خوبیه استادش هم خوبه ولی در کل تهران خیلی بهتره تا قزوین ببینیم خدا چی میخواد.',
+                            createdAt: DateTime.now(),
+                          ),
+                        ),
+                        onPressed: () => context.pushNamed(
+                          AppRoutes.classReviews.name!,
+                          pathParameters: {'id': '${state.classItem.id}'},
+                        ),
                       ),
                       const SizedBox(height: 8),
                       AppDivider(),
                       const SizedBox(height: 12),
-                      ClassCoach(coachName: state.classItem.coach.fullName),
+                      ClassCoach(coach: state.classItem.coach),
                       const SizedBox(height: 50),
                     ],
                   ),
@@ -209,9 +222,9 @@ class _ClassScreenState extends State<ClassScreen> {
 }
 
 class ClassCoach extends StatelessWidget {
-  final String coachName;
+  final Coach coach;
 
-  const ClassCoach({super.key, required this.coachName});
+  const ClassCoach({super.key, required this.coach});
 
   @override
   Widget build(BuildContext context) {
@@ -225,15 +238,7 @@ class ClassCoach extends StatelessWidget {
             context.l10n.class_coach_title,
             style: context.textTheme.headlineSmall,
           ),
-          CoachCard(
-            coachName: coachName,
-            imageUrl:
-                'https://www.lovepanky.com/wp-content/uploads/2012/03/How-to-Be-a-Man.jpg',
-            coachSport: 'تکواندو',
-            experience: 5,
-            review: 319,
-            rate: 4.4,
-          ),
+          CoachCard(coach: coach),
         ],
       ),
     );

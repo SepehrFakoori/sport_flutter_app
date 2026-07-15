@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/custom_app_bar.dart';
-import 'package:sport_flutter_app/core/ui/widgets/shared/reviews.dart';
+import 'package:sport_flutter_app/core/ui/widgets/shared/reviews_section.dart';
 import 'package:sport_flutter_app/features/class/domain/entity/class.dart';
 import 'package:sport_flutter_app/features/class/presentation/widgets/coach_card.dart';
 import 'package:sport_flutter_app/features/coach/presentation/bloc/coach_bloc/coach_bloc.dart';
 import 'package:sport_flutter_app/features/coach/presentation/bloc/coach_bloc/coach_event.dart';
 import 'package:sport_flutter_app/features/coach/presentation/bloc/coach_bloc/coach_state.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/horizontal_class_card_list.dart';
+import 'package:sport_flutter_app/features/review/domain/entity/review.dart';
 
 class CoachScreen extends StatefulWidget {
   final int coachId;
@@ -45,14 +48,7 @@ class _CoachScreenState extends State<CoachScreen> {
                     const SizedBox(height: 24),
                     Padding(
                       padding: const .symmetric(horizontal: 16.0),
-                      child: CoachCard(
-                        coachName: state.coach.fullName,
-                        imageUrl: null,
-                        coachSport: 'فوتبال',
-                        experience: 5,
-                        review: 319,
-                        rate: 4.4,
-                      ),
+                      child: CoachCard(coach: state.coach),
                     ),
                     Padding(
                       padding: const .symmetric(horizontal: 16.0),
@@ -159,11 +155,22 @@ class _CoachScreenState extends State<CoachScreen> {
                       ),
                     ),
                     AppDivider(),
-                    Reviews(
-                      username: 'سهند فکوری',
-                      time: '2 ماه پیش',
-                      comment:
-                          'من سهند فکوری هستم میخوام از این کلاس براتون تعریف کنم کلاس نسبتا خوبیه استادش هم خوبه ولی در کل تهران خیلی بهتره تا قزوین ببینیم خدا چی میخواد.',
+                    ReviewsSection(
+                      reviews: List.generate(
+                        8,
+                        (index) => Review(
+                          id: index,
+                          author: 'سهند فکوری',
+                          rating: index > 5 ? 5 : index,
+                          comment:
+                              'من سهند فکوری هستم میخوام از این کلاس براتون تعریف کنم کلاس نسبتا خوبیه استادش هم خوبه ولی در کل تهران خیلی بهتره تا قزوین ببینیم خدا چی میخواد.',
+                          createdAt: DateTime.now(),
+                        ),
+                      ),
+                      onPressed: () => context.pushNamed(
+                        AppRoutes.coachReviews.name!,
+                        pathParameters: {'id': '${state.coach.id}'},
+                      ),
                     ),
                     const SizedBox(height: 50),
                   ],
