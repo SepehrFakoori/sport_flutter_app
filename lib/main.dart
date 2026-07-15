@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persian_datetime_picker/persian_datetime_picker.dart';
+import 'package:sport_flutter_app/core/bloc/app_bloc_observer.dart';
 import 'package:sport_flutter_app/core/di/injection.dart';
 import 'package:sport_flutter_app/core/l10n/app_localizations.dart';
 import 'package:sport_flutter_app/core/router/app_router.dart';
@@ -8,6 +10,7 @@ import 'package:sport_flutter_app/core/ui/theme/app_theme.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupDependencies();
+  Bloc.observer = AppBlocObserver();
   runApp(const MyApp());
 }
 
