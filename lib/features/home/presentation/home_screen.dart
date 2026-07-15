@@ -113,25 +113,27 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {},
                   ),
                   SizedBox(
-                    height: 293,
+                    height: 270,
                     child: ListView.separated(
                       physics: const AlwaysScrollableScrollPhysics(),
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
-                        return CoachOverview(
-                          onTap: () {
-                            context.pushNamed(
-                              AppRoutes.coach.name!,
-                              pathParameters: {'id': '1'},
-                            );
-                          },
-                          imageUrl:
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjIjnCa4QxghR2hY_2NGc_y5xN7ZT_aXe__g4r4natMHrosGqVhTzKkSzK&s=10',
-                          coachName: 'پپ گواردیولا',
-                          coachComment: 126,
-                          rate: 4.2,
-                          coachSport: 'وزنه برداری',
-                        );
+                        return index % 2 == 0
+                            ? CoachOverview(
+                                onTap: () {
+                                  context.pushNamed(
+                                    AppRoutes.coach.name!,
+                                    pathParameters: {'id': '1'},
+                                  );
+                                },
+                                imageUrl:
+                                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjIjnCa4QxghR2hY_2NGc_y5xN7ZT_aXe__g4r4natMHrosGqVhTzKkSzK&s=10',
+                                      coachName: 'محمود اسکندری',
+                                coachComment: 126,
+                                rate: 4.2,
+                                coachSport: 'وزنه برداری',
+                              )
+                            : const CoachOverviewSkeleton();
                       },
                       separatorBuilder: (context, index) => const SizedBox(width: 12,),
                       itemCount: 8,
