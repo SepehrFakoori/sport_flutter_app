@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/constant/assets_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/extension/int_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
@@ -193,7 +194,7 @@ class _ClassScreenState extends State<ClassScreen> {
               ),
             ),
             bottomNavigationBar: ClassEnrollmentCard(
-              price: state.classItem.fee,
+              price: state.classItem.fee.toFormattedFee(),
             ),
           );
         } else {

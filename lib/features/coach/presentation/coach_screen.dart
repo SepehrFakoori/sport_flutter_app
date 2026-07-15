@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/extension/int_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/custom_app_bar.dart';
@@ -69,7 +70,7 @@ class _CoachScreenState extends State<CoachScreen> {
                             id: 1,
                             title: 'تکواندو',
                             description: 'یک باشگاه دوست داشتنی',
-                            fee: '250.000',
+                            fee: 250000,
                             capacity: 20,
                             remainingCapacity: 5,
                             isFull: false,
@@ -80,7 +81,7 @@ class _CoachScreenState extends State<CoachScreen> {
                             id: 2,
                             title: 'بدنسازی',
                             description: 'تمرینات قدرتی و افزایش حجم عضلات',
-                            fee: '450.000',
+                            fee: 450000,
                             capacity: 25,
                             remainingCapacity: 8,
                             isFull: false,
@@ -92,7 +93,7 @@ class _CoachScreenState extends State<CoachScreen> {
                             title: 'پیلاتس',
                             description:
                                 'افزایش انعطاف و تقویت عضلات مرکزی بدن',
-                            fee: '380.000',
+                            fee: 380000,
                             capacity: 18,
                             remainingCapacity: 0,
                             isFull: true,
@@ -103,7 +104,7 @@ class _CoachScreenState extends State<CoachScreen> {
                             id: 4,
                             title: 'تی آر ایکس',
                             description: 'تمرینات تعلیقی برای کل بدن',
-                            fee: '420.000',
+                            fee: 420000,
                             capacity: 15,
                             remainingCapacity: 3,
                             isFull: false,
@@ -114,7 +115,7 @@ class _CoachScreenState extends State<CoachScreen> {
                             id: 5,
                             title: 'فیتنس',
                             description: 'برنامه جامع تناسب اندام',
-                            fee: '300.000',
+                            fee: 300000,
                             capacity: 30,
                             remainingCapacity: 12,
                             isFull: false,
@@ -125,7 +126,7 @@ class _CoachScreenState extends State<CoachScreen> {
                             id: 6,
                             title: 'کراس فیت',
                             description: 'تمرینات هوازی و قدرتی با شدت بالا',
-                            fee: '550.000',
+                            fee: 550000,
                             capacity: 16,
                             remainingCapacity: 0,
                             isFull: true,
@@ -137,7 +138,7 @@ class _CoachScreenState extends State<CoachScreen> {
                             title: 'پیلاتس',
                             description:
                                 'افزایش انعطاف و تقویت عضلات مرکزی بدن',
-                            fee: '380.000',
+                            fee: 380000,
                             capacity: 18,
                             remainingCapacity: 0,
                             isFull: true,
@@ -148,7 +149,7 @@ class _CoachScreenState extends State<CoachScreen> {
                             id: 4,
                             title: 'تی آر ایکس',
                             description: 'تمرینات تعلیقی برای کل بدن',
-                            fee: '420.000',
+                            fee: 420000,
                             capacity: 15,
                             remainingCapacity: 3,
                             isFull: false,
