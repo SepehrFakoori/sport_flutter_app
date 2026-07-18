@@ -313,6 +313,19 @@ class AppTheme {
 
       cardTheme: CardThemeData(color: colors.background),
 
+      chipTheme: ChipThemeData(
+        checkmarkColor: colors.primary,
+        padding: const .symmetric(horizontal: 16, vertical: 8),
+        color: WidgetStateColor.resolveWith((states) {
+          final color = switch (states) {
+            _ when states.contains(WidgetState.selected) => AppPalette.primary10,
+            _ => colors.background,
+          };
+          return color;
+        }),
+        shape: RoundedRectangleBorder(borderRadius: .circular(24)),
+      ),
+
       badgeTheme: BadgeThemeData(
         backgroundColor: colors.primary,
         textStyle: AppTextTheme.textTheme.labelSmall,

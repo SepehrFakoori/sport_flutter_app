@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/theme/palette.dart';
-import 'package:sport_flutter_app/core/ui/widgets/app_chip.dart';
+import 'package:sport_flutter_app/core/ui/widgets/chips/app_chip.dart';
 
 class CoachLabel extends StatelessWidget {
   const CoachLabel({super.key});

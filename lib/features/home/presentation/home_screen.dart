@@ -6,6 +6,7 @@ import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_refresh_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
+import 'package:sport_flutter_app/core/ui/widgets/chips/app_filter_chip.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_bloc.dart';
@@ -24,6 +25,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int? value = 1;
+
   @override
   void initState() {
     super.initState();
@@ -86,7 +89,17 @@ class _HomeScreenState extends State<HomeScreen> {
               floating: true,
               pinned: true,
               delegate: AppSliverPersistentHeaderDelegate(
-                child: Container(color: context.colors.primary),
+                child: Container(
+                  color: context.colors.onSecondary,
+                  child: ListView.separated(
+                    itemBuilder: (context, index) => AppFilterChip(),
+                    scrollDirection: Axis.horizontal,
+                    separatorBuilder: (context, index) =>
+                        const SizedBox(width: 8),
+                    itemCount: 8,
+                    padding: const .symmetric(horizontal: 16),
+                  ),
+                ),
                 minHeight: 48,
                 maxHeight: 48 * 2,
               ),
