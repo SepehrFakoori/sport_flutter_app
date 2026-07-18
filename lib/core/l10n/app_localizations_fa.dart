@@ -128,6 +128,12 @@ class AppLocalizationsFa extends AppLocalizations {
   String get home_notifications_icon_tooltip => 'اعلان‌ها';
 
   @override
+  String get home_nearby_coaches_title => 'مربی‌های اطراف';
+
+  @override
+  String get home_nearby_classes_title => 'کلاس‌های اطراف';
+
+  @override
   String get inbox_message_tab_label => 'گفتگو‌ها';
 
   @override

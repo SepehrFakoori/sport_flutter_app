@@ -328,6 +328,18 @@ abstract class AppLocalizations {
   /// **'اعلان‌ها'**
   String get home_notifications_icon_tooltip;
 
+  /// No description provided for @home_nearby_coaches_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'مربی‌های اطراف'**
+  String get home_nearby_coaches_title;
+
+  /// No description provided for @home_nearby_classes_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'کلاس‌های اطراف'**
+  String get home_nearby_classes_title;
+
   /// No description provided for @inbox_message_tab_label.
   ///
   /// In fa, this message translates to:

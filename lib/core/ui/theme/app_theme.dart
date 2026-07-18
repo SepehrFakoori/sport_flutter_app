@@ -318,7 +318,8 @@ class AppTheme {
         padding: const .symmetric(horizontal: 16, vertical: 8),
         color: WidgetStateColor.resolveWith((states) {
           final color = switch (states) {
-            _ when states.contains(WidgetState.selected) => AppPalette.primary10,
+            _ when states.contains(WidgetState.selected) =>
+              colors.primary.withValues(alpha: 0.05),
             _ => colors.background,
           };
           return color;
