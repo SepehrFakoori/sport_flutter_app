@@ -23,7 +23,7 @@ class AppModalBottomSheet {
       useSafeArea: true,
       useRootNavigator: true,
       showDragHandle: showDragHandle,
-      backgroundColor: context.colors.surface,
+      backgroundColor: context.colors.background,
       shape: RoundedRectangleBorder(borderRadius: borderRadius),
       routeSettings: RouteSettings(name: rootName, arguments: arguments),
       sheetAnimationStyle: const AnimationStyle(
