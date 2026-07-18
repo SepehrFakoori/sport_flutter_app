@@ -3,8 +3,10 @@ import 'dart:io';
 import 'package:sport_flutter_app/core/error/failure.dart';
 import 'package:sport_flutter_app/core/utils/result.dart';
 import 'package:sport_flutter_app/features/profile/data/datasource/remote/profile_remote_datasource.dart';
+import 'package:sport_flutter_app/features/profile/data/mapper/patch_profile_mapper.dart';
 import 'package:sport_flutter_app/features/profile/data/mapper/profile_mapper.dart';
 import 'package:sport_flutter_app/features/profile/data/mapper/update_profile_mapper.dart';
+import 'package:sport_flutter_app/features/profile/domain/entity/patch_profile.dart';
 import 'package:sport_flutter_app/features/profile/domain/entity/profile.dart';
 import 'package:sport_flutter_app/features/profile/domain/entity/update_profile.dart';
 import 'package:sport_flutter_app/features/profile/domain/repository/profile_repository.dart';
@@ -28,6 +30,16 @@ class ProfileRepositoryImpl implements ProfileRepository {
   Future<Result<Profile>> updateProfile(UpdateProfile profile) async {
     try {
       final response = await remoteDataSource.updateProfile(profile.toModel());
+      return Success(response.toEntity());
+    } catch (e) {
+      return Error(ServerFailure());
+    }
+  }
+
+  @override
+  Future<Result<Profile>> patchProfile(PatchProfile profile) async {
+    try {
+      final response = await remoteDataSource.patchProfile(profile.toModel());
       return Success(response.toEntity());
     } catch (e) {
       return Error(ServerFailure());

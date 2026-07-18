@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:sport_flutter_app/features/profile/domain/entity/profile.dart';
+import 'package:sport_flutter_app/features/profile/domain/entity/patch_profile.dart';
 
 sealed class ProfileEditEvent extends Equatable {
   const ProfileEditEvent();
@@ -9,7 +9,7 @@ sealed class ProfileEditEvent extends Equatable {
 }
 
 class ValueChanged extends ProfileEditEvent {
-  final Profile profile;
+  final PatchProfile profile;
 
   const ValueChanged(this.profile);
 
