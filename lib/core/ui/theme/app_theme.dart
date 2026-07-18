@@ -287,6 +287,10 @@ class AppTheme {
 
       progressIndicatorTheme: ProgressIndicatorThemeData(
         refreshBackgroundColor: colors.background,
+        color: colors.primary,
+        circularTrackColor: colors.surface,
+        linearTrackColor: colors.surface,
+        stopIndicatorColor: colors.surface,
       ),
 
       expansionTileTheme: ExpansionTileThemeData(

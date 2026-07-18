@@ -25,6 +25,7 @@ import 'package:sport_flutter_app/features/profile/domain/entity/profile.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/complete_profile/complete_profile_bloc.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_bloc/profile_bloc.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_edit_bloc/profile_edit_bloc.dart';
+import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_photo_bloc/profile_photo_bloc.dart';
 import 'package:sport_flutter_app/features/profile/presentation/complete_profile_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/profile_edit_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/profile_screen.dart';
@@ -97,7 +98,12 @@ final GoRouter routerConfig = GoRouter(
       builder: (context, state) {
         final profile = state.extra as Profile;
 
-        return ProfileScreen(profile: profile);
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => sl<ProfilePhotoBloc>()),
+          ],
+          child: ProfileScreen(profile: profile),
+        );
       },
       routes: <RouteBase>[
         GoRoute(
