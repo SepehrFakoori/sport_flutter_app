@@ -120,12 +120,12 @@ final GoRouter routerConfig = GoRouter(
           builder: (context, state) {
             final data = state.extra as Map<String, dynamic>;
 
-            final title = data['title'];
+            final field = data['field'];
             final name = data['name'];
 
             return BlocProvider<ProfileEditBloc>(
               create: (context) => sl<ProfileEditBloc>(),
-              child: ProfileEditScreen(name: name, title: title),
+              child: ProfileEditScreen(field: field, name: name),
             );
           },
         ),

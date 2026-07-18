@@ -14,6 +14,7 @@ import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_pho
 import 'package:sport_flutter_app/features/profile/presentation/widgets/bottom_sheet/profile_picture_selection_sheet.dart';
 import 'package:sport_flutter_app/features/profile/presentation/widgets/editable_avatar.dart';
 import 'package:sport_flutter_app/features/profile/presentation/widgets/info_tile.dart';
+import 'package:sport_flutter_app/features/profile/profile_field_extensions.dart';
 
 class ProfileScreen extends StatelessWidget {
   final Profile profile;
@@ -24,14 +25,9 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final bloc = context.read<ProfilePhotoBloc>();
 
-    final List<String> titles = [
-      context.l10n.profile_firstname_title,
-      context.l10n.profile_lastname_title,
-      context.l10n.profile_phone_number_title,
-      context.l10n.profile_email_title,
-    ];
+    final fields = ProfileField.values;
 
-    final List<String> subtitles = [
+    List<String> subtitles = [
       profile.firstName,
       profile.lastName,
       profile.phone,
@@ -84,12 +80,14 @@ class ProfileScreen extends StatelessWidget {
             ),
             SliverList.separated(
               itemBuilder: (context, index) => InfoTile(
-                title: titles[index],
+                title: fields[index].label(context),
                 subtitle: subtitles[index],
-                onTap: () => context.pushNamed(
-                  AppRoutes.editProfile.name!,
-                  extra: {'title': titles[index], 'name': subtitles[index]},
-                ),
+                onTap: () {
+                  context.pushNamed(
+                    AppRoutes.editProfile.name!,
+                    extra: {'field': fields[index], 'name': subtitles[index]},
+                  );
+                },
               ),
               separatorBuilder: (context, index) => AppDivider(endIndent: 0),
               itemCount: 4,

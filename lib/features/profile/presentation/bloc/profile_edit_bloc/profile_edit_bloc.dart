@@ -10,11 +10,11 @@ class ProfileEditBloc extends Bloc<ProfileEditEvent, ProfileEditState> {
   final UpdateProfileUseCase updateProfile;
 
   ProfileEditBloc(this.updateProfile) : super(const ProfileEditState()) {
-    on<ValueChanged>(_onValueChanged);
+    on<ProfileChanged>(_onProfileChanged);
   }
 
-  Future<void> _onValueChanged(
-    ValueChanged event,
+  Future<void> _onProfileChanged(
+    ProfileChanged event,
     Emitter<ProfileEditState> emit,
   ) async {
     emit(ProfileEditState(status: .loading));

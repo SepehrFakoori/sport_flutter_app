@@ -8,10 +8,10 @@ sealed class ProfileEditEvent extends Equatable {
   List<Object?> get props => [];
 }
 
-class ValueChanged extends ProfileEditEvent {
+class ProfileChanged extends ProfileEditEvent {
   final PatchProfile profile;
 
-  const ValueChanged(this.profile);
+  const ProfileChanged(this.profile);
 
   @override
   List<Object?> get props => [profile];
