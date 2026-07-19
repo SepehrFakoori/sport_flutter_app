@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
-import 'package:sport_flutter_app/features/home/presentation/widgets/rating_indicator.dart';
+import 'package:sport_flutter_app/core/ui/widgets/rating_indicator.dart';
 
 class RatingSummary extends StatelessWidget {
   final double rating;

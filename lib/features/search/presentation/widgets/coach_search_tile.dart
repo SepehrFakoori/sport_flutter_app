@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
-import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
+import 'package:sport_flutter_app/core/ui/widgets/rating_indicator.dart';
 import 'package:sport_flutter_app/features/search/presentation/widgets/location_info.dart';
 
 class CoachSearchTile extends StatelessWidget {
@@ -12,7 +11,6 @@ class CoachSearchTile extends StatelessWidget {
   final String coachRate;
   final String address;
   final VoidCallback? onTap;
-
 
   const CoachSearchTile({
     super.key,
@@ -66,7 +64,6 @@ class CoachSearchTile extends StatelessWidget {
                     overflow: .ellipsis,
                     style: context.textTheme.titleMedium,
                   ),
-
                   Row(
                     spacing: 4,
                     children: [
@@ -84,20 +81,10 @@ class CoachSearchTile extends StatelessWidget {
                           color: context.colors.onBackgroundSecondary,
                         ),
                       ),
-                      IconWidget(
-                        icon: AssetIcons.starFilled,
-                        size: 12,
-                        color: context.colors.onBackgroundSecondary,
-                      ),
-                      Text(
-                        coachRate,
-                        style: context.textTheme.labelLarge?.copyWith(
-                          color: context.colors.onBackgroundSecondary,
-                        ),
-                      ),
+                      RatingIndicator(rating: 4.5),
                     ],
                   ),
-                  LocationInfo(location: address,),
+                  LocationInfo(location: address),
                 ],
               ),
             ),
