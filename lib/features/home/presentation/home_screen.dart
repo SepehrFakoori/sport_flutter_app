@@ -10,7 +10,7 @@ import 'package:sport_flutter_app/core/ui/widgets/chips/app_filter_chip.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_bloc.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_event.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_state.dart';
-import 'package:sport_flutter_app/features/home/presentation/widgets/app_banner_carousel.dart';
+import 'package:sport_flutter_app/features/ads/presentation/widgets/app_banner_carousel.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/filter_tile.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/horizontal_class_card_list.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/horizontal_coach_card_list.dart';
