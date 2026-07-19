@@ -5,12 +5,14 @@ import 'package:sport_flutter_app/core/bloc/app_bloc_observer.dart';
 import 'package:sport_flutter_app/core/di/injection.dart';
 import 'package:sport_flutter_app/core/l10n/app_localizations.dart';
 import 'package:sport_flutter_app/core/router/app_router.dart';
+import 'package:sport_flutter_app/core/services/deep_link_service.dart';
 import 'package:sport_flutter_app/core/ui/theme/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupDependencies();
   Bloc.observer = AppBlocObserver();
+  await sl<DeepLinkService>().init();
   runApp(const MyApp());
 }
 
