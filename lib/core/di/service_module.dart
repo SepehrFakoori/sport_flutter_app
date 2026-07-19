@@ -2,6 +2,7 @@ import 'package:app_links/app_links.dart';
 import 'package:dio/dio.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sport_flutter_app/core/config/app_base_url.dart';
+import 'package:sport_flutter_app/core/deep_link/deep_link_builder.dart';
 import 'package:sport_flutter_app/core/deep_link/deep_link_route_registry.dart';
 import 'package:sport_flutter_app/core/deep_link/deep_link_service.dart';
 import 'package:sport_flutter_app/core/deep_link/parser/deep_link_parser.dart';
@@ -23,6 +24,7 @@ void registerServiceModule() {
       routeRegistry: sl<DeepLinkRouteRegistry>(),
     ),
   );
+  sl.registerLazySingleton(() => DeepLinkBuilder(host: 'my-domain.ir'));
   sl.registerLazySingleton<AppLinks>(() => AppLinks());
   sl.registerLazySingleton(
     () => DeepLinkService(
