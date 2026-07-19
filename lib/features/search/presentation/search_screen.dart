@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/ui/widgets/custom_app_bar.dart';
-import 'package:sport_flutter_app/features/search/presentation/widgets/class_tile.dart';
-import 'package:sport_flutter_app/features/search/presentation/widgets/skeleton/class_tile_skeleton.dart';
+import 'package:sport_flutter_app/features/search/presentation/widgets/class_search_tile.dart';
+import 'package:sport_flutter_app/features/search/presentation/widgets/coach_search_tile.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -92,7 +92,7 @@ class SearchScreen extends StatelessWidget {
                 physics: const AlwaysScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
                   return index % 2 == 0
-                      ? ClassTile(
+                      ? ClassSearchTile(
                           onTap: () {},
                           image: images[index],
                           title: title[index],
@@ -101,9 +101,16 @@ class SearchScreen extends StatelessWidget {
                           address: address[index],
                           price: price[index],
                         )
-                      : const ClassTileSkeleton();
+                      : CoachSearchTile(
+                          onTap: () {},
+                          image:
+                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHAuxs3tGZeDS8UXld31JEK2Nw08vEHYMJqwqVSwq4WA&s=10',
+                          coachName: 'پپ گواردیولا',
+                          coachSport: 'فوتبال',
+                          coachRate: '4.2',
+                          address: 'منچستر',
+                        );
                 },
-
                 itemCount: 8,
                 padding: const .symmetric(vertical: 12),
               ),
