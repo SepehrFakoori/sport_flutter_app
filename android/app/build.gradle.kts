@@ -71,13 +71,13 @@ android {
             applicationIdSuffix = ".staging"
             resValue("string", "app_name", "Application (Staging)")
             versionNameSuffix = "-staging"
-            manifestPlaceholders["appLinkHost"] = "stage.mydomain.ir"
+            manifestPlaceholders["appLinkHost"] = "stage.my-domain.ir"
             manifestPlaceholders["appScheme"] = "sportappstage"
         }
         create("production") {
             dimension = "default"
             resValue("string", "app_name", "Application")
-            manifestPlaceholders["appLinkHost"] = "api.mydomain.ir"
+            manifestPlaceholders["appLinkHost"] = "api.my-domain.ir"
             manifestPlaceholders["appScheme"] = "sportapp"
         }
     }
