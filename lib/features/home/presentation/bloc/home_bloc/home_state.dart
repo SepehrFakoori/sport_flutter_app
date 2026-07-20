@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:sport_flutter_app/features/class/domain/entity/class.dart';
+import 'package:sport_flutter_app/features/coach/domain/entity/coach.dart';
 
 sealed class HomeState extends Equatable {
   const HomeState();
@@ -17,12 +18,13 @@ class LoadingState extends HomeState {
 }
 
 class SuccessState extends HomeState {
+  final List<Coach> coaches;
   final List<Class> classes;
 
-  const SuccessState(this.classes);
+  const SuccessState({required this.coaches, required this.classes});
 
   @override
-  List<Object?> get props => [classes];
+  List<Object?> get props => [coaches, classes];
 }
 
 class FailureState extends HomeState {}

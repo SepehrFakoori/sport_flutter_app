@@ -94,6 +94,12 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('fa')];
 
+  /// No description provided for @app_name.
+  ///
+  /// In fa, this message translates to:
+  /// **'سوپس'**
+  String get app_name;
+
   /// No description provided for @bottom_navigation_home.
   ///
   /// In fa, this message translates to:
@@ -141,6 +147,24 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'تنظیمات'**
   String get account_settings_button;
+
+  /// No description provided for @account_addresses.
+  ///
+  /// In fa, this message translates to:
+  /// **'آدرس‌ها'**
+  String get account_addresses;
+
+  /// No description provided for @account_comments.
+  ///
+  /// In fa, this message translates to:
+  /// **'دیدگاه‌ها'**
+  String get account_comments;
+
+  /// No description provided for @account_become_coach.
+  ///
+  /// In fa, this message translates to:
+  /// **'ثبت نام به عنوان مربی'**
+  String get account_become_coach;
 
   /// No description provided for @account_giftcard_button.
   ///
@@ -303,6 +327,18 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'اعلان‌ها'**
   String get home_notifications_icon_tooltip;
+
+  /// No description provided for @home_nearby_coaches_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'مربی‌های اطراف'**
+  String get home_nearby_coaches_title;
+
+  /// No description provided for @home_nearby_classes_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'کلاس‌های اطراف'**
+  String get home_nearby_classes_title;
 
   /// No description provided for @inbox_message_tab_label.
   ///

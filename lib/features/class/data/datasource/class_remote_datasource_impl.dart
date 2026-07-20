@@ -23,7 +23,8 @@ class ClassRemoteDatasourceImpl implements ClassRemoteDatasource {
       '/classes/',
       queryParams: {'page': page, 'page_size': pageSize},
     );
-    List<dynamic> classes = response.data["results"];
+
+    List<dynamic> classes = response.data['results'];
 
     return Paginated<ClassModel>(
       totalItems: response.data['total_items'],

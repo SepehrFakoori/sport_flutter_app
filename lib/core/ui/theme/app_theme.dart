@@ -287,6 +287,10 @@ class AppTheme {
 
       progressIndicatorTheme: ProgressIndicatorThemeData(
         refreshBackgroundColor: colors.background,
+        color: colors.primary,
+        circularTrackColor: colors.surface,
+        linearTrackColor: colors.surface,
+        stopIndicatorColor: colors.surface,
       ),
 
       expansionTileTheme: ExpansionTileThemeData(
@@ -308,6 +312,20 @@ class AppTheme {
       ),
 
       cardTheme: CardThemeData(color: colors.background),
+
+      chipTheme: ChipThemeData(
+        checkmarkColor: colors.primary,
+        padding: const .symmetric(horizontal: 16, vertical: 8),
+        color: WidgetStateColor.resolveWith((states) {
+          final color = switch (states) {
+            _ when states.contains(WidgetState.selected) =>
+              colors.primary.withValues(alpha: 0.05),
+            _ => colors.background,
+          };
+          return color;
+        }),
+        shape: RoundedRectangleBorder(borderRadius: .circular(24)),
+      ),
 
       badgeTheme: BadgeThemeData(
         backgroundColor: colors.primary,

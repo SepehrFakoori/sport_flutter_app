@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/constant/assets_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
+import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_refresh_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_sliver_app_bar.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/logout_bloc/logout_bloc.dart';
@@ -67,8 +68,26 @@ class _AccountScreenState extends State<AccountScreen> {
                           onTap: () {},
                         ),
                         MenuTile(
+                          title: context.l10n.account_comments,
+                          icon: AssetIcons.comment,
+                          onTap: () {},
+                        ),
+                        MenuTile(
+                          title: context.l10n.account_addresses,
+                          icon: AssetIcons.map,
+                          onTap: () {},
+                        ),
+                        const SizedBox(height: 16),
+                        const AppDivider(),
+                        const SizedBox(height: 16),
+                        MenuTile(
                           title: context.l10n.account_settings_button,
                           icon: AssetIcons.setting,
+                          onTap: () {},
+                        ),
+                        MenuTile(
+                          title: context.l10n.account_become_coach,
+                          icon: AssetIcons.coach,
                           onTap: () {},
                         ),
                         MenuTile(
@@ -91,6 +110,9 @@ class _AccountScreenState extends State<AccountScreen> {
                           icon: AssetIcons.taskSquare,
                           onTap: () {},
                         ),
+                        const SizedBox(height: 16),
+                        const AppDivider(),
+                        const SizedBox(height: 16),
                         MenuTile(
                           title: context.l10n.account_logout,
                           icon: AssetIcons.logout,
@@ -106,6 +128,10 @@ class _AccountScreenState extends State<AccountScreen> {
                         const SizedBox(height: 16),
                         const ProfileCardSkeleton(),
                         const SizedBox(height: 16),
+                        const MenuTileSkeleton(),
+                        const MenuTileSkeleton(),
+                        const MenuTileSkeleton(),
+                        const MenuTileSkeleton(),
                         const MenuTileSkeleton(),
                         const MenuTileSkeleton(),
                         const MenuTileSkeleton(),

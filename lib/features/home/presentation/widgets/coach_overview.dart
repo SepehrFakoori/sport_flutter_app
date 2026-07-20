@@ -1,32 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
-import 'package:sport_flutter_app/core/ui/theme/palette.dart';
-import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
+import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
+import 'package:sport_flutter_app/features/coach/domain/entity/coach.dart';
+import 'package:sport_flutter_app/features/home/presentation/widgets/rating_summary.dart';
 
 class CoachOverview extends StatelessWidget {
-  final String? imageUrl;
-  final String coachName;
-  final String coachSport;
-  final double rate;
-  final int coachComment;
-  final VoidCallback? onTap;
+  final Coach coach;
 
-  const CoachOverview({
-    super.key,
-    required this.imageUrl,
-    required this.coachName,
-    required this.rate,
-    required this.coachComment,
-    required this.coachSport,
-    this.onTap,
-  });
+  const CoachOverview({super.key, required this.coach});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: () => context.pushNamed(
+        AppRoutes.coach.name!,
+        pathParameters: {'id': '${coach.id}'},
+      ),
       borderRadius: BorderRadius.circular(16),
       child: SizedBox(
         width: 180,
@@ -47,7 +38,8 @@ class CoachOverview extends StatelessWidget {
                 ],
               ),
               child: ImageLoader(
-                imageUrl: imageUrl,
+                imageUrl:
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjIjnCa4QxghR2hY_2NGc_y5xN7ZT_aXe__g4r4natMHrosGqVhTzKkSzK&s=10',
                 height: 180,
                 width: 180,
                 radius: 24,
@@ -60,7 +52,7 @@ class CoachOverview extends StatelessWidget {
                 spacing: 2,
                 children: [
                   Text(
-                    coachName,
+                    coach.fullName,
                     style: context.textTheme.titleMedium,
                     maxLines: 1,
                     overflow: .ellipsis,
@@ -70,7 +62,7 @@ class CoachOverview extends StatelessWidget {
                     children: [
                       Flexible(
                         child: Text(
-                          coachSport,
+                          'وزنه برداری',
                           style: context.textTheme.bodyMedium?.copyWith(
                             color: context.colors.onBackgroundSecondary,
                           ),
@@ -84,24 +76,7 @@ class CoachOverview extends StatelessWidget {
                           color: context.colors.onBackgroundSecondary,
                         ),
                       ),
-                      IconWidget(
-                        icon: AssetIcons.starFilled,
-                        height: 12,
-                        width: 12,
-                        color: AppPalette.semantic3,
-                      ),
-                      Text(
-                        '4.1',
-                        style: context.textTheme.labelLarge?.copyWith(
-                          color: context.colors.onBackgroundSecondary,
-                        ),
-                      ),
-                      Text(
-                        '($coachComment)',
-                        style: context.textTheme.labelLarge?.copyWith(
-                          color: context.colors.onBackgroundSecondary,
-                        ),
-                      ),
+                      RatingSummary(rating: 4.1, reviewCount: 150),
                     ],
                   ),
                   Text(

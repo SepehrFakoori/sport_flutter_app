@@ -6,16 +6,15 @@ import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_refresh_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_icon_button.dart';
-import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
+import 'package:sport_flutter_app/core/ui/widgets/chips/app_filter_chip.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_bloc.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_event.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_state.dart';
-import 'package:sport_flutter_app/features/home/presentation/widgets/category_list.dart';
-import 'package:sport_flutter_app/features/home/presentation/widgets/coach_overview.dart';
+import 'package:sport_flutter_app/features/ads/presentation/widgets/app_banner_carousel.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/filter_tile.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/horizontal_class_card_list.dart';
-import 'package:sport_flutter_app/features/home/presentation/widgets/skeleton/coach_overview_skeleton.dart';
-import 'package:sport_flutter_app/features/home/presentation/widgets/skeleton/horizontal_class_card_list_skeleton.dart';
+import 'package:sport_flutter_app/features/home/presentation/widgets/horizontal_coach_card_list.dart';
+import 'package:sport_flutter_app/features/home/presentation/widgets/skeleton/home_content_skeleton.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -25,43 +24,27 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int? value = 1;
+
   @override
   void initState() {
     super.initState();
-    context.read<HomeBloc>().add(GetClasses());
+    context.read<HomeBloc>().add(FetchHomeData());
   }
 
   @override
   Widget build(BuildContext context) {
+    final List<String> categories = [
+      'رزمی',
+      'توپی',
+      'آبی',
+      'راکتی',
+      'بدنسازی و فیتنس',
+    ];
+
     return Scaffold(
       appBar: AppBar(
-        title: Column(
-          crossAxisAlignment: .start,
-          children: [
-            Text(
-              'پلی آن',
-              style: context.textTheme.headlineMedium?.copyWith(
-                color: context.colors.primary,
-                fontWeight: .w700,
-              ),
-            ),
-            Row(
-              mainAxisAlignment: .start,
-              crossAxisAlignment: .start,
-              spacing: 4,
-              children: [
-                IconWidget(
-                  icon: AssetIcons.location,
-                  height: 16,
-                  width: 16,
-                  color: context.colors.primary,
-                ),
-                Text('تهران، سعادت آباد'),
-              ],
-            ),
-          ],
-        ),
-        elevation: 0,
+        elevation: 10,
         shadowColor: Colors.transparent,
         titleTextStyle: context.textTheme.bodyMedium?.copyWith(
           color: context.colors.onBackgroundSecondary,
@@ -84,116 +67,85 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: NestedScrollView(
           headerSliverBuilder: (context, innerBoxIsScrolled) => [
-            SliverToBoxAdapter(
-              child: Container(color: Colors.blue, height: 100),
-            ),
             SliverPersistentHeader(
               floating: true,
               pinned: true,
               delegate: AppSliverPersistentHeaderDelegate(
-                child: Container(color: context.colors.primary),
-                minHeight: 56,
-                maxHeight: 112,
+                child: Container(
+                  color: context.colors.background,
+                  child: ListView.separated(
+                    scrollDirection: .horizontal,
+                    padding: const .symmetric(horizontal: 16),
+                    itemBuilder: (context, index) => AppFilterChip(
+                      title: categories[index],
+                      url: 'https://www.svgrepo.com/show/355292/swim.svg',
+                      selected: index % 2 == 0,
+                      onSelected: (bool value) => print(value),
+                    ),
+                    separatorBuilder: (context, index) =>
+                        const SizedBox(width: 8),
+                    itemCount: categories.length,
+                  ),
+                ),
+                height: 48,
               ),
             ),
           ],
           body: AppRefreshIndicator(
-            onRefresh: () async => context.read<HomeBloc>().add(GetClasses()),
+            onRefresh: () async =>
+                context.read<HomeBloc>().add(FetchHomeData()),
             child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  FilterTile(
-                    title: context.l10n.home_categories_title,
-                    onTap: () {},
-                  ),
-                  CategoryListView(),
-                  const SizedBox(height: 16),
-                  FilterTile(
-                    title: context.l10n.home_categories_title,
-                    onTap: () {},
-                  ),
-                  SizedBox(
-                    height: 270,
-                    child: ListView.separated(
-                      physics: const AlwaysScrollableScrollPhysics(),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) {
-                        return index % 2 == 0
-                            ? CoachOverview(
-                                onTap: () {
-                                  context.pushNamed(
-                                    AppRoutes.coach.name!,
-                                    pathParameters: {'id': '1'},
-                                  );
-                                },
-                                imageUrl:
-                                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjIjnCa4QxghR2hY_2NGc_y5xN7ZT_aXe__g4r4natMHrosGqVhTzKkSzK&s=10',
-                                      coachName: 'محمود اسکندری',
-                                coachComment: 126,
-                                rate: 4.2,
-                                coachSport: 'وزنه برداری',
-                              )
-                            : const CoachOverviewSkeleton();
-                      },
-                      separatorBuilder: (context, index) => const SizedBox(width: 12,),
-                      itemCount: 8,
-                      padding: const .symmetric(horizontal: 12),
+              child: BlocBuilder<HomeBloc, HomeState>(
+                builder: (context, state) {
+                  return switch (state) {
+                    InitState() || LoadingState() => HomeContentSkeleton(),
+                    SuccessState(:final coaches, :final classes) => Column(
+                      children: [
+                        const SizedBox(height: 8),
+                        AppBannerCarousel(
+                          imageUrls: [
+                            'https://img.magnific.com/free-vector/gradient-neon-gym-training-facebook-template_23-2149609440.jpg?semt=ais_hybrid&w=740&q=80',
+                            'https://img.magnific.com/free-psd/gym-fitness-web-banner-template_106176-5324.jpg?semt=ais_hybrid&w=740&q=80',
+                            'https://img.magnific.com/free-vector/green-wavy-sport-banner_1409-956.jpg?semt=ais_hybrid&w=740&q=80',
+                          ],
+                          onTap: () {},
+                        ),
+                        const SizedBox(height: 16),
+                        FilterTile(
+                          title: context.l10n.home_nearby_classes_title,
+                          onTap: () {
+                            context.pushNamed(AppRoutes.classes.name!);
+                          },
+                        ),
+                        SizedBox(
+                          height: 293,
+                          child: HorizontalClassCardList(classes: classes),
+                        ),
+                        const SizedBox(height: 16),
+                        FilterTile(
+                          title: context.l10n.home_nearby_coaches_title,
+                          onTap: () {},
+                        ),
+                        SizedBox(
+                          height: 270,
+                          child: HorizontalCoachCardList(coaches: coaches),
+                        ),
+                        const SizedBox(height: 16),
+                        FilterTile(
+                          title: context.l10n.home_nearby_popular_title,
+                          onTap: () {
+                            context.pushNamed(AppRoutes.auth.name!);
+                          },
+                        ),
+                        SizedBox(
+                          height: 293,
+                          child: HorizontalClassCardList(classes: classes),
+                        ),
+                      ],
                     ),
-                  ),
-                  const SizedBox(height: 16),
-                  FilterTile(
-                    title: context.l10n.home_popular_title,
-                    onTap: () {
-                      context.pushNamed(AppRoutes.classes.name!);
-                    },
-                  ),
-                  SizedBox(
-                    height: 293,
-                    child: BlocBuilder<HomeBloc, HomeState>(
-                      builder: (context, state) {
-                        if (state is SuccessState) {
-                          return HorizontalClassCardList(
-                            classes: state.classes,
-                          );
-                        } else {
-                          return HorizontalClassCardListSkeleton();
-                        }
-                      },
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  AspectRatio(
-                    aspectRatio: 21 / 9,
-                    child: Container(
-                      margin: const .symmetric(horizontal: 16.0),
-                      decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: .circular(12),
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  FilterTile(
-                    title: context.l10n.home_nearby_popular_title,
-                    onTap: () {
-                      context.pushNamed(AppRoutes.auth.name!);
-                    },
-                  ),
-                  SizedBox(
-                    height: 293,
-                    child: BlocBuilder<HomeBloc, HomeState>(
-                      builder: (context, state) {
-                        if (state is SuccessState) {
-                          return HorizontalClassCardList(
-                            classes: state.classes,
-                          );
-                        } else {
-                          return HorizontalClassCardListSkeleton();
-                        }
-                      },
-                    ),
-                  ),
-                ],
+                    FailureState() => SizedBox.shrink(),
+                  };
+                },
               ),
             ),
           ),
@@ -205,14 +157,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
 class AppSliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
   final Widget child;
-  final double maxHeight;
-  final double minHeight;
+  final double height;
+
+  // final double maxHeight = 48 * 2;
+  // final double minHeight = 48;
 
   const AppSliverPersistentHeaderDelegate({
     required this.child,
-    required this.maxHeight,
-    required this.minHeight,
-  }) : assert(maxHeight >= minHeight);
+    required this.height,
+    // required this.maxHeight,
+    // required this.minHeight,
+  }); // : assert(maxHeight >= minHeight);
 
   @override
   Widget build(
@@ -221,24 +176,22 @@ class AppSliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
     bool overlapsContent,
   ) {
     // Current height as the user scrolls: goes from maxHeight -> minHeight
-    final double currentHeight = (maxHeight - shrinkOffset).clamp(
-      minHeight,
-      maxHeight,
-    );
+    // final double currentHeight = (maxHeight - shrinkOffset).clamp(
+    //   minHeight,
+    //   maxHeight,
+    // );
 
-    return SizedBox(height: currentHeight, child: child);
+    return SizedBox(height: height, child: child);
   }
 
   @override
-  double get maxExtent => maxHeight;
+  double get maxExtent => height; // maxHeight;
 
   @override
-  double get minExtent => minHeight;
+  double get minExtent => height; // minHeight;
 
   @override
   bool shouldRebuild(covariant AppSliverPersistentHeaderDelegate oldDelegate) {
-    return oldDelegate.child != child ||
-        oldDelegate.maxHeight != maxHeight ||
-        oldDelegate.minHeight != minHeight;
+    return oldDelegate.child != child || oldDelegate.height != height;
   }
 }

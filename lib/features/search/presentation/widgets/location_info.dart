@@ -3,10 +3,10 @@ import 'package:sport_flutter_app/core/constant/assets_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 
-class ClassLocation extends StatelessWidget {
+class LocationInfo extends StatelessWidget {
   final String location;
 
-  const ClassLocation({super.key, required this.location});
+  const LocationInfo({super.key, required this.location});
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +15,7 @@ class ClassLocation extends StatelessWidget {
       children: [
         IconWidget(
           icon: AssetIcons.location,
-          height: 16,
-          width: 16,
+          size: 16,
           color: context.colors.onBackgroundSecondary,
         ),
         Flexible(

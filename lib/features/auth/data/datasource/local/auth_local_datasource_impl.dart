@@ -1,23 +1,29 @@
-import 'package:sport_flutter_app/core/storage/token_storage.dart';
+import 'package:sport_flutter_app/core/storage/device_id/device_id_storage.dart';
+import 'package:sport_flutter_app/core/storage/token/token_storage.dart';
 import 'package:sport_flutter_app/features/auth/data/datasource/local/auth_local_datasource.dart';
 
 class AuthLocalDatasourceImpl implements AuthLocalDatasource {
-  final TokenStorage _storage;
+  final TokenStorage _tokenStorage;
+  final DeviceIdStorage _idStorage;
 
-  const AuthLocalDatasourceImpl(this._storage);
-
-  @override
-  Future<void> clearTokens() => _storage.clear();
+  const AuthLocalDatasourceImpl(this._tokenStorage, this._idStorage);
 
   @override
-  Future<String?> getAccessToken() => _storage.getAccessToken();
+  Future<void> clearTokens() => _tokenStorage.clear();
 
   @override
-  Future<String?> getRefreshToken() => _storage.getRefreshToken();
+  Future<String?> getAccessToken() => _tokenStorage.getAccessToken();
+
+  @override
+  Future<String?> getRefreshToken() => _tokenStorage.getRefreshToken();
 
   @override
   Future<void> saveTokens(String accessToken, String refreshToken) async {
-    await _storage.saveAccessToken(accessToken);
-    await _storage.saveRefreshToken(refreshToken);
+    await _tokenStorage.saveAccessToken(accessToken);
+    await _tokenStorage.saveRefreshToken(refreshToken);
   }
+
+  @override
+  Future<String> getOrCreateDeviceId() async =>
+      _idStorage.getOrCreateDeviceId();
 }

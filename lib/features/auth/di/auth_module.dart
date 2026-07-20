@@ -1,4 +1,6 @@
 import 'package:sport_flutter_app/core/di/injection.dart';
+import 'package:sport_flutter_app/core/storage/device_id/device_id_storage.dart';
+import 'package:sport_flutter_app/core/storage/token/token_storage.dart';
 import 'package:sport_flutter_app/features/auth/data/datasource/local/auth_local_datasource.dart';
 import 'package:sport_flutter_app/features/auth/data/datasource/local/auth_local_datasource_impl.dart';
 import 'package:sport_flutter_app/features/auth/data/datasource/remote/auth_remote_datasource.dart';
@@ -15,11 +17,11 @@ import 'package:sport_flutter_app/features/auth/presentation/bloc/verify_otp_blo
 
 void registerAuthModule() {
   sl.registerLazySingleton<AuthLocalDatasource>(
-    () => AuthLocalDatasourceImpl(sl()),
+    () => AuthLocalDatasourceImpl(sl<TokenStorage>(), sl<DeviceIdStorage>()),
   );
 
   sl.registerLazySingleton<AuthRemoteDatasource>(
-    () => AuthRemoteDatasourceImpl(sl()),
+    () => AuthRemoteDatasourceImpl(sl(), sl(), sl(), sl()),
   );
 
   sl.registerLazySingleton<AuthRepository>(

@@ -51,4 +51,7 @@ class AssetIcons {
   static const money = "$_basePath/money.svg";
   static const edit = "$_basePath/edit.svg";
   static const calendar = "$_basePath/calendar.svg";
+  static const comment = "$_basePath/comment.svg";
+  static const map = "$_basePath/map.svg";
+  static const coach = "$_basePath/coach.svg";
 }

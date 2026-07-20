@@ -9,6 +9,9 @@ class AppLocalizationsFa extends AppLocalizations {
   AppLocalizationsFa([String locale = 'fa']) : super(locale);
 
   @override
+  String get app_name => 'سوپس';
+
+  @override
   String get bottom_navigation_home => 'خانه';
 
   @override
@@ -31,6 +34,15 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get account_settings_button => 'تنظیمات';
+
+  @override
+  String get account_addresses => 'آدرس‌ها';
+
+  @override
+  String get account_comments => 'دیدگاه‌ها';
+
+  @override
+  String get account_become_coach => 'ثبت نام به عنوان مربی';
 
   @override
   String get account_giftcard_button => 'تخفیف';
@@ -114,6 +126,12 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get home_notifications_icon_tooltip => 'اعلان‌ها';
+
+  @override
+  String get home_nearby_coaches_title => 'مربی‌های اطراف';
+
+  @override
+  String get home_nearby_classes_title => 'کلاس‌های اطراف';
 
   @override
   String get inbox_message_tab_label => 'گفتگو‌ها';

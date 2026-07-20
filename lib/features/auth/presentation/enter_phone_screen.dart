@@ -94,7 +94,7 @@ class _EnterPhoneScreenState extends State<EnterPhoneScreen> {
                         );
                       },
                   ),
-                  TextSpan(text: 'پلی آن'),
+                  TextSpan(text: context.l10n.app_name),
                 ],
               ),
             ),

@@ -63,16 +63,22 @@ android {
             applicationIdSuffix = ".development"
             resValue("string", "app_name", "Application (Development)")
             versionNameSuffix = "-dev"
+            manifestPlaceholders["appLinkHost"] = "dev.my-domain.ir"
+            manifestPlaceholders["appScheme"] = "sportappdev"
         }
         create("staging") {
             dimension = "default"
             applicationIdSuffix = ".staging"
             resValue("string", "app_name", "Application (Staging)")
             versionNameSuffix = "-staging"
+            manifestPlaceholders["appLinkHost"] = "stage.my-domain.ir"
+            manifestPlaceholders["appScheme"] = "sportappstage"
         }
         create("production") {
             dimension = "default"
             resValue("string", "app_name", "Application")
+            manifestPlaceholders["appLinkHost"] = "api.my-domain.ir"
+            manifestPlaceholders["appScheme"] = "sportapp"
         }
     }
 }
