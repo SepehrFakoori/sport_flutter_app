@@ -6,4 +6,6 @@ abstract class AuthLocalDatasource {
   Future<String?> getRefreshToken();
 
   Future<void> clearTokens();
+
+  Future<String> getOrCreateDeviceId();
 }

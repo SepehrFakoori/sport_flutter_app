@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:sport_flutter_app/core/config/app_base_url.dart';
-import 'package:sport_flutter_app/core/storage/token_storage.dart';
+import 'package:sport_flutter_app/core/storage/token/token_storage.dart';
 
 class AuthInterceptor extends QueuedInterceptor {
   final TokenStorage _storage;
