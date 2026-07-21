@@ -15,6 +15,7 @@ import 'package:sport_flutter_app/features/class/presentation/bloc/class_list_bl
 import 'package:sport_flutter_app/features/class/presentation/class_list_screen.dart';
 import 'package:sport_flutter_app/features/class/presentation/class_screen.dart';
 import 'package:sport_flutter_app/features/coach/presentation/bloc/coach_bloc/coach_bloc.dart';
+import 'package:sport_flutter_app/features/enrollment/presentation/enroll_screen.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_bloc.dart';
 import 'package:sport_flutter_app/features/inbox/presentation/chat_screen.dart';
 import 'package:sport_flutter_app/features/coach/presentation/coach_screen.dart';
@@ -251,6 +252,11 @@ final GoRouter routerConfig = GoRouter(
           },
         ),
       ],
+    ),
+    GoRoute(
+      path: AppRoutes.enroll.path,
+      name: AppRoutes.enroll.name,
+      builder: (context, state) => EnrollScreen(),
     ),
   ],
 );

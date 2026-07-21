@@ -3,7 +3,7 @@ import 'package:sport_flutter_app/core/constant/assets_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
-import 'package:sport_flutter_app/core/ui/widgets/rating_indicator.dart';
+import 'package:sport_flutter_app/core/ui/widgets/rating_value.dart';
 
 class ClassOverviewCard extends StatelessWidget {
   final String imageUrl;
@@ -72,7 +72,7 @@ class ClassOverviewCard extends StatelessWidget {
                           color: context.colors.onBackgroundSecondary,
                         ),
                       ),
-                      RatingIndicator(rating: 4.3),
+                      RatingValue(rating: 4.3),
                     ],
                   ),
                   Row(

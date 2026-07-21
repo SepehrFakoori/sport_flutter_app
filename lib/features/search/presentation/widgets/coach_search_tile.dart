@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
-import 'package:sport_flutter_app/core/ui/widgets/rating_indicator.dart';
+import 'package:sport_flutter_app/core/ui/widgets/rating_value.dart';
 import 'package:sport_flutter_app/features/search/presentation/widgets/location_info.dart';
 
 class CoachSearchTile extends StatelessWidget {
@@ -81,7 +81,7 @@ class CoachSearchTile extends StatelessWidget {
                           color: context.colors.onBackgroundSecondary,
                         ),
                       ),
-                      RatingIndicator(rating: 4.5),
+                      RatingValue(rating: 4.5),
                     ],
                   ),
                   LocationInfo(location: address),
