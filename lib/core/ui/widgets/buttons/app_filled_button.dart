@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
+import 'package:sport_flutter_app/core/ui/widgets/app_pressable_scale.dart';
 
 enum ButtonVariant { primary, secondary }
 
@@ -31,12 +32,17 @@ class AppFilledButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final Widget button = AbsorbPointer(
       absorbing: isLoading,
-      child: FilledButton(
-        onPressed: onPressed,
-        style: type == .secondary
-            ? FilledButton.styleFrom(backgroundColor: context.colors.secondary)
-            : null,
-        child: isLoading ? AppLoadingIndicator() : Text(title),
+      child: AppPressableScale(
+        isActive: onPressed != null,
+        child: FilledButton(
+          onPressed: onPressed,
+          style: type == .secondary
+              ? FilledButton.styleFrom(
+                  backgroundColor: context.colors.secondary,
+                )
+              : null,
+          child: isLoading ? AppLoadingIndicator() : Text(title),
+        ),
       ),
     );
 
