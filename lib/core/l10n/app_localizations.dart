@@ -340,6 +340,12 @@ abstract class AppLocalizations {
   /// **'کلاس‌های اطراف'**
   String get home_nearby_classes_title;
 
+  /// No description provided for @dashboard_appbar_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'داشبورد'**
+  String get dashboard_appbar_title;
+
   /// No description provided for @inbox_message_tab_label.
   ///
   /// In fa, this message translates to:

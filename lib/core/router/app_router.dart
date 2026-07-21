@@ -15,6 +15,7 @@ import 'package:sport_flutter_app/features/class/presentation/bloc/class_list_bl
 import 'package:sport_flutter_app/features/class/presentation/class_list_screen.dart';
 import 'package:sport_flutter_app/features/class/presentation/class_screen.dart';
 import 'package:sport_flutter_app/features/coach/presentation/bloc/coach_bloc/coach_bloc.dart';
+import 'package:sport_flutter_app/features/dashboard/presentation/dashboard_screen.dart';
 import 'package:sport_flutter_app/features/enrollment/presentation/enroll_screen.dart';
 import 'package:sport_flutter_app/features/home/presentation/bloc/home_bloc/home_bloc.dart';
 import 'package:sport_flutter_app/features/inbox/presentation/chat_screen.dart';
@@ -31,7 +32,6 @@ import 'package:sport_flutter_app/features/profile/presentation/complete_profile
 import 'package:sport_flutter_app/features/profile/presentation/profile_edit_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/profile_screen.dart';
 import 'package:sport_flutter_app/features/profile/presentation/account_screen.dart';
-import 'package:sport_flutter_app/features/profile/presentation/simple_screen.dart';
 import 'package:sport_flutter_app/features/review/presentation/reviews_screen.dart';
 import 'package:sport_flutter_app/features/search/presentation/search_screen.dart';
 
@@ -61,7 +61,7 @@ final GoRouter routerConfig = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: AppRoutes.dashboard.path,
-              builder: (context, state) => SimpleScreen(),
+              builder: (context, state) => DashboardScreen(),
             ),
           ],
         ),
