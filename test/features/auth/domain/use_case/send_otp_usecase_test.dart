@@ -25,7 +25,7 @@ void main() {
 
     test('Phone should has 11 length => throws InvalidPhoneLengthException', () {
       expect(
-        () => useCase.validate('09301914321'),
+        () => useCase.validate('093019143211'),
         throwsA(isA<InvalidPhoneLengthException>()),
       );
     });
