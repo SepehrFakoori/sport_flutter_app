@@ -3,11 +3,11 @@ import 'package:sport_flutter_app/core/constant/assets_icons.dart';
 import 'package:sport_flutter_app/core/ui/theme/palette.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 
-class RatingIndicator extends StatelessWidget {
+class RatingStars extends StatelessWidget {
   final int rating;
   final double size;
 
-  const RatingIndicator({super.key, required this.rating, this.size = 12});
+  const RatingStars({super.key, required this.rating, this.size = 12});
 
   @override
   Widget build(BuildContext context) {

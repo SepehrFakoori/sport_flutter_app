@@ -6,7 +6,7 @@ import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/custom_card.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
 import 'package:sport_flutter_app/features/class/domain/entity/class.dart';
-import 'package:sport_flutter_app/core/ui/widgets/rating_indicator.dart';
+import 'package:sport_flutter_app/core/ui/widgets/rating_value.dart';
 
 class ClassCard extends StatelessWidget {
   final Class classItem;
@@ -68,7 +68,7 @@ class ClassCard extends StatelessWidget {
                           color: context.colors.onBackgroundSecondary,
                         ),
                       ),
-                      RatingIndicator(rating: 4.1),
+                      RatingValue(rating: 4.1),
                     ],
                   ),
                   Text(

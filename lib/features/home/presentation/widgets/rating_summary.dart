@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
-import 'package:sport_flutter_app/core/ui/widgets/rating_indicator.dart';
+import 'package:sport_flutter_app/core/ui/widgets/rating_value.dart';
 
 class RatingSummary extends StatelessWidget {
   final double rating;
@@ -19,7 +19,7 @@ class RatingSummary extends StatelessWidget {
       crossAxisAlignment: .center,
       spacing: 4,
       children: [
-        RatingIndicator(rating: rating),
+        RatingValue(rating: rating),
         Text(
           '($reviewCount)',
           style: context.textTheme.labelLarge?.copyWith(

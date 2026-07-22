@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:device_info_plus/device_info_plus.dart';
+import 'package:flutter/foundation.dart';
 import 'package:sport_flutter_app/core/entity/device_info.dart';
 import 'package:sport_flutter_app/core/services/device_info/device_info_service.dart';
 
@@ -15,7 +16,15 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
   Future<DeviceInfo> getDeviceInfo() async {
     if (_cached != null) return _cached!;
 
-    if (Platform.isAndroid) {
+    if (kIsWeb) {
+      final info = await _plugin.webBrowserInfo;
+      return _cached = DeviceInfo(
+        platform: 'web',
+        osVersion: info.platform ?? 'unknown',
+        model: info.browserName.name,
+        name: info.vendor ?? 'unknown',
+      );
+    } else if (Platform.isAndroid) {
       final info = await _plugin.androidInfo;
       return _cached = DeviceInfo(
         platform: 'android',
@@ -32,13 +41,7 @@ class DeviceInfoServiceImpl implements DeviceInfoService {
         name: info.name,
       );
     } else {
-      final info = await _plugin.webBrowserInfo;
-      return _cached = DeviceInfo(
-        platform: 'web',
-        osVersion: info.platform ?? 'unknown',
-        model: info.browserName.name,
-        name: info.vendor ?? 'unknown',
-      );
+      throw UnsupportedError('Unsupported platform');
     }
   }
 }

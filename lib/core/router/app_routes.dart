@@ -24,6 +24,8 @@ sealed class AppRoutes {
   static const classes = AppRoute(name: 'classes', path: '/classes');
   static const classDetail = AppRoute(name: 'class', path: ':id');
   static const classReviews = AppRoute(name: 'class.reviews', path: 'reviews');
+  static const enroll = AppRoute(name: 'enroll', path: '/enroll');
+  static const map = AppRoute(name: 'map', path: '/map');
   static const notifications = AppRoute(
     name: 'notifications',
     path: '/notifications',

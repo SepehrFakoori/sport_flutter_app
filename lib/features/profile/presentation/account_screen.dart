@@ -5,6 +5,7 @@ import 'package:sport_flutter_app/core/constant/assets_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
+import 'package:sport_flutter_app/core/ui/widgets/app_pressable_scale.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_refresh_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_sliver_app_bar.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/logout_bloc/logout_bloc.dart';
@@ -47,13 +48,15 @@ class _AccountScreenState extends State<AccountScreen> {
                     return SliverList.list(
                       children: [
                         const SizedBox(height: 16),
-                        ProfileCard(
-                          imageUrl: state.profile.imageUrl,
-                          description: state.profile.phone,
-                          fullName: state.profile.fullName,
-                          onTap: () => context.pushNamed(
-                            AppRoutes.profile.name!,
-                            extra: state.profile,
+                        AppPressableScale(
+                          child: ProfileCard(
+                            imageUrl: state.profile.imageUrl,
+                            description: state.profile.phone,
+                            fullName: state.profile.fullName,
+                            onTap: () => context.pushNamed(
+                              AppRoutes.profile.name!,
+                              extra: state.profile,
+                            ),
                           ),
                         ),
                         const SizedBox(height: 16),

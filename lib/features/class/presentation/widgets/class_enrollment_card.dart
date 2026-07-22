@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_filled_button.dart';
 
 class ClassEnrollmentCard extends StatelessWidget {
@@ -54,7 +56,10 @@ class ClassEnrollmentCard extends StatelessWidget {
               ],
             ),
           ),
-          AppFilledButton(onPressed: () {}, title: 'ثبت نام'),
+          AppFilledButton(
+            onPressed: () => context.pushNamed(AppRoutes.enroll.name!),
+            title: 'ثبت نام',
+          ),
         ],
       ),
     );

@@ -9,6 +9,7 @@ import 'package:sport_flutter_app/core/storage/token/token_storage_impl.dart';
 import 'package:sport_flutter_app/features/auth/di/auth_module.dart';
 import 'package:sport_flutter_app/features/class/di/class_module.dart';
 import 'package:sport_flutter_app/features/coach/di/coach_module.dart';
+import 'package:sport_flutter_app/features/enrollment/di/enrollment_module.dart';
 import 'package:sport_flutter_app/features/profile/di/profile_module.dart';
 import 'package:uuid/uuid.dart';
 
@@ -27,4 +28,5 @@ Future<void> setupDependencies() async {
   registerProfileModule();
   registerClassModule();
   registerCoachModule();
+  registerEnrollmentModule();
 }

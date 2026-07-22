@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_filled_button.dart';
-import 'package:sport_flutter_app/core/ui/widgets/shared/rating_indicator.dart';
+import 'package:sport_flutter_app/core/ui/widgets/shared/rating_stars.dart';
 import 'package:sport_flutter_app/features/review/domain/entity/review.dart';
 
 class ReviewsSection extends StatelessWidget {
@@ -61,7 +61,7 @@ class ReviewsSection extends StatelessWidget {
                       Row(
                         spacing: 4,
                         children: [
-                          RatingIndicator(rating: review.rating),
+                          RatingStars(rating: review.rating),
                           Text(
                             review.createdAt.toString(),
                             style: context.textTheme.bodyMedium?.copyWith(
