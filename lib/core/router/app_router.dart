@@ -22,6 +22,7 @@ import 'package:sport_flutter_app/features/inbox/presentation/chat_screen.dart';
 import 'package:sport_flutter_app/features/coach/presentation/coach_screen.dart';
 import 'package:sport_flutter_app/features/home/presentation/home_screen.dart';
 import 'package:sport_flutter_app/features/inbox/presentation/inbox_screen.dart';
+import 'package:sport_flutter_app/features/map/presentation/map_screen.dart';
 import 'package:sport_flutter_app/features/notification/presentation/notifications_list_screen.dart';
 import 'package:sport_flutter_app/features/profile/domain/entity/profile.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/complete_profile/complete_profile_bloc.dart';
@@ -257,6 +258,11 @@ final GoRouter routerConfig = GoRouter(
       path: AppRoutes.enroll.path,
       name: AppRoutes.enroll.name,
       builder: (context, state) => EnrollScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.map.path,
+      name: AppRoutes.map.name,
+      builder: (context, state) => MapScreen(),
     ),
   ],
 );
