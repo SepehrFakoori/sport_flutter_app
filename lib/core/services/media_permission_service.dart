@@ -2,7 +2,7 @@ import 'package:permission_handler/permission_handler.dart';
 
 enum AppPermissionStatus { granted, denied, permanentlyDenied, restricted }
 
-class PermissionService {
+class MediaPermissionService {
   Future<AppPermissionStatus> checkGalleryPermission() async {
     final status = await Permission.photos.status;
 

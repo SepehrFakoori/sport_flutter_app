@@ -80,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       title: categories[index],
                       url: 'https://www.svgrepo.com/show/355292/swim.svg',
                       selected: index % 2 == 0,
-                      onSelected: (bool value) => print(value),
+                      onSelected: (bool value) {},
                     ),
                     separatorBuilder: (context, index) =>
                         const SizedBox(width: 8),

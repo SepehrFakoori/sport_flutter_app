@@ -17,10 +17,12 @@ import 'package:sport_flutter_app/core/services/device_info/device_info_service_
 import 'package:sport_flutter_app/core/services/file_upload_service.dart';
 import 'package:sport_flutter_app/core/services/image_cropper_service.dart';
 import 'package:sport_flutter_app/core/services/image_picker_service.dart';
-import 'package:sport_flutter_app/core/services/permission_service.dart';
+import 'package:sport_flutter_app/core/services/location_permission_service.dart';
+import 'package:sport_flutter_app/core/services/media_permission_service.dart';
 
 void registerServiceModule() {
-  sl.registerLazySingleton(() => PermissionService());
+  sl.registerLazySingleton(() => MediaPermissionService());
+  sl.registerLazySingleton(() => LocationPermissionService());
   sl.registerLazySingleton(() => const DeepLinkRouteRegistry({}));
   sl.registerLazySingleton(
     () => DeepLinkParser(
@@ -46,7 +48,7 @@ void registerServiceModule() {
   sl.registerLazySingleton(() => ImagePicker());
   sl.registerLazySingleton(() => FileUploadService(sl<HttpClient>(), Dio()));
   sl.registerLazySingleton(
-    () => ImagePickerService(sl<ImagePicker>(), sl<PermissionService>()),
+    () => ImagePickerService(sl<ImagePicker>(), sl<MediaPermissionService>()),
   );
   sl.registerLazySingleton(() => ImageCropperService());
 }
