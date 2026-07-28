@@ -37,6 +37,10 @@
     "profile_gender_male": "آقا",
     "profile_gender_female": "خانم",
 
+    "location_appbar_title": "شهر خود را انتخاب کنید",
+    "location_search_city_label": "جستجو در شهر\u200Cها",
+    "location_select_my_current_city": "انتخاب شهر فعلی من",
+
     "home_categories_title": "دسته\u200Cبندی",
     "home_popular_title": "پرطرفدارترین\u200Cها",
     "home_nearby_popular_title": "پرطرفدارترین\u200Cهای اطراف",

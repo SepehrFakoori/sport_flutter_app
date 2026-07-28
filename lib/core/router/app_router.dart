@@ -22,6 +22,8 @@ import 'package:sport_flutter_app/features/inbox/presentation/chat_screen.dart';
 import 'package:sport_flutter_app/features/coach/presentation/coach_screen.dart';
 import 'package:sport_flutter_app/features/home/presentation/home_screen.dart';
 import 'package:sport_flutter_app/features/inbox/presentation/inbox_screen.dart';
+import 'package:sport_flutter_app/features/location/presentation/bloc/location_list_bloc/location_list_bloc.dart';
+import 'package:sport_flutter_app/features/location/presentation/location_screen.dart';
 import 'package:sport_flutter_app/features/map/presentation/map_screen.dart';
 import 'package:sport_flutter_app/features/notification/presentation/notifications_list_screen.dart';
 import 'package:sport_flutter_app/features/profile/domain/entity/profile.dart';
@@ -263,6 +265,14 @@ final GoRouter routerConfig = GoRouter(
       path: AppRoutes.map.path,
       name: AppRoutes.map.name,
       builder: (context, state) => MapScreen(),
+    ),
+    GoRoute(
+      path: AppRoutes.location.path,
+      name: AppRoutes.location.name,
+      builder: (context, state) => BlocProvider(
+        create: (context) => sl<LocationListBloc>(),
+        child: LocationScreen(),
+      ),
     ),
   ],
 );

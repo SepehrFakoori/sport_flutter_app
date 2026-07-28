@@ -124,7 +124,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         const SizedBox(height: 16),
                         FilterTile(
                           title: context.l10n.home_nearby_coaches_title,
-                          onTap: () {},
+                          onTap: () {
+                            context.pushNamed(AppRoutes.location.name!);
+                          },
                         ),
                         SizedBox(
                           height: 270,

@@ -14,7 +14,7 @@ class HorizontalClassCardList extends StatelessWidget {
       padding: const .symmetric(horizontal: 16),
       itemBuilder: (context, index) => ClassCard(classItem: classes[index]),
       separatorBuilder: (context, index) => const SizedBox(width: 12),
-      itemCount: 8,
+      itemCount: classes.length < 8 ? classes.length : 8,
     );
   }
 }
