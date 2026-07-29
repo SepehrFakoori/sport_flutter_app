@@ -4,6 +4,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_pressable_scale.dart';
 import 'package:sport_flutter_app/core/ui/widgets/custom_card.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class MapScreen extends StatelessWidget {
   const MapScreen({super.key});
@@ -36,8 +37,8 @@ class MapScreen extends StatelessWidget {
                     child: CustomCard(
                       child: Padding(
                         padding: const .symmetric(
-                          horizontal: 16.0,
-                          vertical: 8.0,
+                          horizontal: AppSpacing.lg,
+                          vertical: AppSpacing.sm,
                         ),
                         child: Text(
                           'فوتبال',

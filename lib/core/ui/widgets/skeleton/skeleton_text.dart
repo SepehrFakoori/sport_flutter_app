@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/ui/widgets/skeleton/base_skeleton.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class SkeletonText extends StatelessWidget {
   final double width;
@@ -18,8 +19,8 @@ class SkeletonText extends StatelessWidget {
     return BaseSkeleton(
       width: width,
       height: height,
-      radius: BorderRadius.circular(4),
-      margin: margin ?? EdgeInsets.symmetric(vertical: 4),
+      radius: .circular(AppRadius.xs),
+      margin: margin ?? const .symmetric(vertical: AppSpacing.xs),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class AppChip extends StatelessWidget {
   final String labelText;
@@ -26,13 +27,14 @@ class AppChip extends StatelessWidget {
     return Chip(
       side: side,
       labelPadding:
-          labelPadding ?? EdgeInsets.symmetric(horizontal: 4, vertical: -4),
-      padding: EdgeInsets.zero,
+          labelPadding ??
+          const .symmetric(horizontal: AppSpacing.xs, vertical: -4),
+      padding: .zero,
       backgroundColor: backgroundColor,
       materialTapTargetSize: materialTapTargetSize,
       shape:
           shape ??
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          RoundedRectangleBorder(borderRadius: .circular(AppRadius.sm)),
       label: Text(labelText, textAlign: .center),
       labelStyle: context.textTheme.labelLarge
           ?.copyWith(color: side?.color)

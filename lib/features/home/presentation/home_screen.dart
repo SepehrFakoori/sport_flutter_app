@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_refresh_indicator.dart';
@@ -15,6 +14,7 @@ import 'package:sport_flutter_app/features/home/presentation/widgets/filter_tile
 import 'package:sport_flutter_app/features/home/presentation/widgets/horizontal_class_card_list.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/horizontal_coach_card_list.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/skeleton/home_content_skeleton.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -62,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
             tooltip: context.l10n.home_notifications_icon_tooltip,
           ),
         ],
-        actionsPadding: .symmetric(horizontal: 16),
+        actionsPadding: const .symmetric(horizontal: AppSpacing.lg),
       ),
       body: SafeArea(
         child: NestedScrollView(
@@ -75,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: context.colors.background,
                   child: ListView.separated(
                     scrollDirection: .horizontal,
-                    padding: const .symmetric(horizontal: 16),
+                    padding: const .symmetric(horizontal: AppSpacing.lg),
                     itemBuilder: (context, index) => AppFilterChip(
                       title: categories[index],
                       url: 'https://www.svgrepo.com/show/355292/swim.svg',

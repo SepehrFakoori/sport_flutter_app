@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/ui/widgets/custom_app_bar.dart';
 import 'package:sport_flutter_app/features/search/presentation/widgets/class_search_tile.dart';
 import 'package:sport_flutter_app/features/search/presentation/widgets/coach_search_tile.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -75,7 +76,7 @@ class SearchScreen extends StatelessWidget {
           height: 48,
           child: SearchBar(
             padding: const WidgetStatePropertyAll<EdgeInsets>(
-              EdgeInsets.symmetric(horizontal: 16.0),
+              .symmetric(horizontal: AppSpacing.lg),
             ),
             onTap: () {},
             onChanged: (_) {},
@@ -112,7 +113,7 @@ class SearchScreen extends StatelessWidget {
                         );
                 },
                 itemCount: 8,
-                padding: const .symmetric(vertical: 12),
+                padding: const .symmetric(vertical: AppSpacing.md),
               ),
             ),
           ],

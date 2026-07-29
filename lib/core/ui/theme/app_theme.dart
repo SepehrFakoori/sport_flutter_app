@@ -3,6 +3,7 @@ import 'package:sport_flutter_app/core/ui/theme/app_colors.dart';
 import 'package:sport_flutter_app/core/ui/theme/app_text_theme.dart';
 import 'package:sport_flutter_app/core/ui/theme/palette.dart';
 import 'package:sport_flutter_app/core/ui/theme/theme_colors.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 /// Easy access to application theme using `AppTheme.light()`
 class AppTheme {
@@ -31,13 +32,11 @@ class AppTheme {
       filledButtonTheme: FilledButtonThemeData(
         style: ButtonStyle(
           shape: WidgetStatePropertyAll(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadiusGeometry.circular(8),
-            ),
+            RoundedRectangleBorder(borderRadius: .circular(AppRadius.sm)),
           ),
           fixedSize: WidgetStatePropertyAll<Size>(.fromHeight(48)),
-          padding: WidgetStatePropertyAll<EdgeInsets>(
-            EdgeInsets.symmetric(horizontal: 24),
+          padding: const WidgetStatePropertyAll<EdgeInsets>(
+            .symmetric(horizontal: AppSpacing.xxl),
           ),
           backgroundColor: WidgetStateColor.resolveWith((states) {
             if (states.contains(WidgetState.hovered)) {
@@ -85,10 +84,10 @@ class AppTheme {
           fixedSize: WidgetStatePropertyAll<Size>(Size.fromHeight(48)),
           minimumSize: WidgetStatePropertyAll<Size>(Size(96, 48)),
           shape: WidgetStatePropertyAll(
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+            RoundedRectangleBorder(borderRadius: .circular(AppRadius.sm)),
           ),
-          padding: WidgetStatePropertyAll<EdgeInsets>(
-            EdgeInsets.symmetric(horizontal: 8),
+          padding: const WidgetStatePropertyAll<EdgeInsets>(
+            .symmetric(horizontal: AppSpacing.sm),
           ),
           backgroundColor: WidgetStateProperty.resolveWith((states) {
             if (states.contains(WidgetState.pressed)) {
@@ -114,9 +113,7 @@ class AppTheme {
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: ButtonStyle(
           shape: WidgetStatePropertyAll(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadiusGeometry.circular(8),
-            ),
+            RoundedRectangleBorder(borderRadius: .circular(AppRadius.sm)),
           ),
           side: WidgetStateBorderSide.resolveWith((states) {
             final color = switch (states) {
@@ -139,8 +136,8 @@ class AppTheme {
             );
           }),
           fixedSize: WidgetStatePropertyAll<Size>(.fromHeight(48)),
-          padding: WidgetStatePropertyAll<EdgeInsets>(
-            EdgeInsets.symmetric(horizontal: 24),
+          padding: const WidgetStatePropertyAll<EdgeInsets>(
+            .symmetric(horizontal: AppSpacing.xxl),
           ),
           backgroundColor: WidgetStatePropertyAll<Color>(Colors.transparent),
           foregroundColor: WidgetStateColor.resolveWith((states) {
@@ -162,10 +159,10 @@ class AppTheme {
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
           shape: WidgetStatePropertyAll(
-            RoundedRectangleBorder(borderRadius: .circular(8)),
+            RoundedRectangleBorder(borderRadius: .circular(AppRadius.sm)),
           ),
-          padding: WidgetStatePropertyAll<EdgeInsets>(
-            EdgeInsets.symmetric(horizontal: 12, vertical: 0),
+          padding: const WidgetStatePropertyAll<EdgeInsets>(
+            .symmetric(horizontal: AppSpacing.md, vertical: 0),
           ),
           foregroundColor: WidgetStatePropertyAll<Color>(colors.primary),
         ),
@@ -197,7 +194,9 @@ class AppTheme {
         style: ButtonStyle(
           alignment: .center,
           shape: WidgetStateOutlinedBorder.resolveWith((states) {
-            return RoundedRectangleBorder(borderRadius: .circular(12));
+            return RoundedRectangleBorder(
+              borderRadius: .circular(AppRadius.md),
+            );
           }),
           side: WidgetStateBorderSide.resolveWith((states) {
             final color = switch (states) {
@@ -266,7 +265,7 @@ class AppTheme {
         elevation: 0.5,
         constraints: BoxConstraints(minHeight: 174, maxWidth: 640),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
+          borderRadius: .vertical(top: .circular(AppRadius.xxxl)),
         ),
       ),
 
@@ -276,10 +275,10 @@ class AppTheme {
         iconColor: colors.primary,
         alignment: AlignmentDirectional.center,
         elevation: 0.5,
-        insetPadding: EdgeInsets.all(16),
+        insetPadding: const .all(AppSpacing.lg),
         constraints: BoxConstraints(minHeight: 174, maxWidth: 640),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(28)),
+          borderRadius: const .all(.circular(AppRadius.xxxl)),
         ),
       ),
 
@@ -294,8 +293,8 @@ class AppTheme {
       ),
 
       expansionTileTheme: ExpansionTileThemeData(
-        tilePadding: EdgeInsets.zero,
-        childrenPadding: EdgeInsets.zero,
+        tilePadding: .zero,
+        childrenPadding: .zero,
         shape: RoundedRectangleBorder(side: BorderSide.none),
         collapsedShape: RoundedRectangleBorder(side: BorderSide.none),
         expansionAnimationStyle: AnimationStyle(
@@ -315,7 +314,10 @@ class AppTheme {
 
       chipTheme: ChipThemeData(
         checkmarkColor: colors.primary,
-        padding: const .symmetric(horizontal: 16, vertical: 8),
+        padding: const .symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.sm,
+        ),
         color: WidgetStateColor.resolveWith((states) {
           final color = switch (states) {
             _ when states.contains(WidgetState.selected) =>
@@ -324,14 +326,14 @@ class AppTheme {
           };
           return color;
         }),
-        shape: RoundedRectangleBorder(borderRadius: .circular(24)),
+        shape: RoundedRectangleBorder(borderRadius: .circular(AppRadius.xxl)),
       ),
 
       badgeTheme: BadgeThemeData(
         backgroundColor: colors.primary,
         textStyle: AppTextTheme.textTheme.labelSmall,
         alignment: AlignmentDirectional.topEnd,
-        padding: EdgeInsets.symmetric(vertical: 0, horizontal: 2),
+        padding: const .symmetric(vertical: 0, horizontal: 2),
       ),
 
       tabBarTheme: TabBarThemeData(
@@ -350,7 +352,7 @@ class AppTheme {
           ),
           borderRadius: .circular(1),
         ),
-        labelPadding: .symmetric(horizontal: 12),
+        labelPadding: const .symmetric(vertical: AppSpacing.md),
       ),
 
       datePickerTheme: DatePickerThemeData(dividerColor: colors.divider),

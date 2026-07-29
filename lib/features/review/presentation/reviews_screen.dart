@@ -4,6 +4,7 @@ import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/custom_app_bar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/shared/rating_stars.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 enum ReviewType { coachReviews, classReviews }
 
@@ -26,7 +27,7 @@ class ReviewsScreen extends StatelessWidget {
         child: ListView.separated(
           scrollDirection: .vertical,
           itemBuilder: (context, index) => Padding(
-            padding: const .symmetric(horizontal: 16.0),
+            padding: const .symmetric(horizontal: AppSpacing.lg),
             child: Card(
               shadowColor: Colors.transparent,
               child: Padding(

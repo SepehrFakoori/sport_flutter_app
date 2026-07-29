@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/category_item.dart';
 
+import '../../../../core/constant/constants.dart';
+
 class CategoryListView extends StatelessWidget {
   const CategoryListView({super.key});
 
@@ -11,7 +13,7 @@ class CategoryListView extends StatelessWidget {
       height: 132,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        padding: EdgeInsets.symmetric(horizontal: 8),
+        padding: const .symmetric(horizontal: AppSpacing.sm),
         itemBuilder: (context, index) => CategoryCard(
           title: categories[index],
           imageUrl:

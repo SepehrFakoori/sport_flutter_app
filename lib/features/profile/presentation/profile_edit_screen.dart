@@ -12,6 +12,7 @@ import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_edi
 import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_edit_bloc/profile_edit_event.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/profile_edit_bloc/profile_edit_state.dart';
 import 'package:sport_flutter_app/features/profile/profile_field_extensions.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class ProfileEditScreen extends StatefulWidget {
   final ProfileField field;
@@ -44,7 +45,7 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
         appBar: CustomAppBar(),
         body: SafeArea(
           child: Padding(
-            padding: const .symmetric(horizontal: 16.0),
+            padding: const .symmetric(horizontal: AppSpacing.lg),
             child: Column(
               children: [
                 const SizedBox(height: 24),

@@ -11,6 +11,7 @@ import 'package:sport_flutter_app/features/auth/presentation/bloc/verify_otp_blo
 import 'package:sport_flutter_app/features/auth/presentation/widgets/code_input_field.dart';
 import 'package:sport_flutter_app/features/auth/presentation/widgets/edit_phone_action_chip.dart';
 import 'package:sport_flutter_app/features/auth/presentation/widgets/resend_time.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class VerifyOtpScreen extends StatefulWidget {
   final String phone;
@@ -49,14 +50,14 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
       child: Scaffold(
         body: SafeArea(
           child: Padding(
-            padding: const .all(16),
+            padding: const .all(AppSpacing.lg),
             child: Column(
               crossAxisAlignment: .center,
-              spacing: 20,
+              spacing: AppSpacing.xl,
               children: [
                 Column(
                   crossAxisAlignment: .center,
-                  spacing: 4,
+                  spacing: AppSpacing.xs,
                   children: [
                     Text(
                       context.l10n.auth_verify_code_title,

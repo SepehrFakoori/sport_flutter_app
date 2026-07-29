@@ -15,7 +15,7 @@ class CoachCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomCard(
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const .all(16.0),
         child: Row(
           mainAxisAlignment: .spaceBetween,
           spacing: 24,

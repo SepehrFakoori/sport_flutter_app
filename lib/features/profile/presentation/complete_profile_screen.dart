@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:persian_datetime_picker/persian_datetime_picker.dart';
-import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/exception/app_exception.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
@@ -16,6 +15,7 @@ import 'package:sport_flutter_app/features/profile/domain/exceptions/profile_exc
 import 'package:sport_flutter_app/features/profile/presentation/bloc/complete_profile/complete_profile_bloc.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/complete_profile/complete_profile_event.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/complete_profile/complete_profile_state.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class CompleteProfileScreen extends StatefulWidget {
   const CompleteProfileScreen({super.key});
@@ -50,7 +50,10 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
             child: Column(
               children: [
                 Padding(
-                  padding: const .symmetric(horizontal: 16.0, vertical: 24),
+                  padding: const .symmetric(
+                    horizontal: AppSpacing.lg,
+                    vertical: AppSpacing.xxl,
+                  ),
                   child: Column(
                     crossAxisAlignment: .start,
                     mainAxisSize: .max,
@@ -121,8 +124,8 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                                 ),
                                 Padding(
                                   padding: const .symmetric(
-                                    vertical: 8.0,
-                                    horizontal: 16.0,
+                                    vertical: AppSpacing.sm,
+                                    horizontal: AppSpacing.lg,
                                   ),
                                   child: Row(
                                     mainAxisAlignment: .end,
@@ -153,11 +156,8 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                         canRequestFocus: false,
                         readOnly: true,
                         prefixIcon: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: IconWidget(
-                            icon: AppIcons.calendar,
-                            size: 10,
-                          ),
+                          padding: const .all(AppSpacing.md),
+                          child: IconWidget(icon: AppIcons.calendar, size: 10),
                         ),
                         // errorText: _translateBirthDateException(
                         //   context,
@@ -169,7 +169,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                 ),
                 Spacer(),
                 Padding(
-                  padding: const .only(bottom: 16.0),
+                  padding: const .only(bottom: AppSpacing.lg),
                   child: AppFilledButton(
                     title: context.l10n.profile_signup_button,
                     onPressed: state.isValid

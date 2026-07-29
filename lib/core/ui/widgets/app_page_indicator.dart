@@ -14,7 +14,7 @@
 //   @override
 //   Widget build(BuildContext context) {
 //     return Padding(
-//       padding: const EdgeInsets.all(16),
+//       padding: const .all(16),
 //       child: SmoothPageIndicator(
 //         controller: controller,
 //         count: count,

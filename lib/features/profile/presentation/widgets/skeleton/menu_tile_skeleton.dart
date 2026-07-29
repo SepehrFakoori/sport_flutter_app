@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/ui/widgets/skeleton/skeleton_box.dart';
 import 'package:sport_flutter_app/core/ui/widgets/skeleton/skeleton_text.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class MenuTileSkeleton extends StatelessWidget {
   const MenuTileSkeleton({super.key});
@@ -9,7 +10,7 @@ class MenuTileSkeleton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 48,
-      margin: .symmetric(horizontal: 16),
+      margin: const .symmetric(horizontal: AppSpacing.lg),
       child: Row(
         spacing: 16,
         children: [

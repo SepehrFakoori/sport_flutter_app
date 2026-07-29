@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/ui/widgets/skeleton/skeleton_box.dart';
 import 'package:sport_flutter_app/core/ui/widgets/skeleton/skeleton_text.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class ClassSearchTileSkeleton extends StatelessWidget {
   const ClassSearchTileSkeleton({super.key});
@@ -8,7 +9,10 @@ class ClassSearchTileSkeleton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const .symmetric(horizontal: 16.0, vertical: 8.0),
+      padding: const .symmetric(
+        horizontal: AppSpacing.lg,
+        vertical: AppSpacing.sm,
+      ),
       child: Row(
         crossAxisAlignment: .center,
         mainAxisSize: .max,

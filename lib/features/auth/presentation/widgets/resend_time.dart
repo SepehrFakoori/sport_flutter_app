@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sport_flutter_app/core/constant/app_spacing.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class ResendTime extends StatelessWidget {
   final String duration;
@@ -9,11 +11,11 @@ class ResendTime extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const .all(12),
+      padding: const .all(AppSpacing.md),
       child: Row(
         mainAxisAlignment: .center,
         mainAxisSize: .max,
-        spacing: 4,
+        spacing: AppSpacing.xs,
         children: [
           Text(
             context.l10n.auth_resend_code_in,

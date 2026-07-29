@@ -3,6 +3,8 @@ import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/custom_card.dart';
 
+import '../../../../core/constant/constants.dart';
+
 class ProfileCard extends StatelessWidget {
   final String? imageUrl;
   final String fullName;
@@ -20,7 +22,7 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      padding: const .symmetric(horizontal: AppSpacing.lg),
       child: GestureDetector(
         onTap: onTap,
         child: CustomCard(

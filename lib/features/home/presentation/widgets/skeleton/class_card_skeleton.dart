@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/ui/widgets/skeleton/skeleton_box.dart';
 import 'package:sport_flutter_app/core/ui/widgets/skeleton/skeleton_text.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class ClassCardSkeleton extends StatelessWidget {
   const ClassCardSkeleton({super.key});
@@ -16,7 +17,7 @@ class ClassCardSkeleton extends StatelessWidget {
             width: 180,
             height: 180,
             shape: .rectangle,
-            radius: .circular(24),
+            radius: .circular(AppRadius.xxl),
           ),
           Padding(
             padding: const .all(8.0),

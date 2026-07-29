@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class EnrollScreen extends StatelessWidget {
   const EnrollScreen({super.key});
@@ -32,7 +33,7 @@ class EnrollScreen extends StatelessWidget {
             width: double.infinity,
             color: context.colors.secondary,
             alignment: .center,
-            padding: const .symmetric(horizontal: 16.0),
+            padding: const .symmetric(horizontal: AppSpacing.lg),
             child: Text(
               '${index + 1}',
               style: context.textTheme.headlineLarge?.copyWith(

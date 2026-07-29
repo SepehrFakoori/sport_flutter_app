@@ -2,13 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/ui/widgets/skeleton/skeleton_box.dart';
 import 'package:sport_flutter_app/core/ui/widgets/skeleton/skeleton_text.dart';
 
+import '../../../../core/constant/constants.dart';
+
 class ChatTileSkeleton extends StatelessWidget {
   const ChatTileSkeleton({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 4),
+      contentPadding: const .symmetric(
+        horizontal: AppSpacing.xxl,
+        vertical: AppSpacing.xs,
+      ),
       leading: SkeletonBox(width: 56, height: 56, shape: .circle),
       title: const Align(
         alignment: .centerStart,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/extension/int_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
@@ -22,6 +21,7 @@ import 'package:sport_flutter_app/features/class/presentation/widgets/coach_tile
 import 'package:sport_flutter_app/features/class/presentation/widgets/class_enrollment_card.dart';
 import 'package:sport_flutter_app/features/coach/domain/entity/coach.dart';
 import 'package:sport_flutter_app/features/review/domain/entity/review.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class ClassScreen extends StatefulWidget {
   final int classId;
@@ -58,12 +58,9 @@ class _ClassScreenState extends State<ClassScreen> {
                     pinned: true,
                     elevation: 0,
                     expandedHeight: 350,
-                    actionsPadding: const .symmetric(horizontal: 16),
+                    actionsPadding: const .symmetric(vertical: AppSpacing.lg),
                     actions: [
-                      AppIconButton(
-                        onPressed: () {},
-                        icon: AppIcons.bookmark,
-                      ),
+                      AppIconButton(onPressed: () {}, icon: AppIcons.bookmark),
                       const SizedBox(width: 8),
                       AppIconButton(onPressed: () {}, icon: AppIcons.share),
                     ],
@@ -95,7 +92,7 @@ class _ClassScreenState extends State<ClassScreen> {
                       AppDivider(),
                       const SizedBox(height: 12),
                       Padding(
-                        padding: const .symmetric(horizontal: 16),
+                        padding: const .symmetric(vertical: AppSpacing.lg),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           spacing: 12,
@@ -229,7 +226,7 @@ class ClassCoach extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const .symmetric(horizontal: 16.0),
+      padding: const .symmetric(horizontal: AppSpacing.lg),
       child: Column(
         crossAxisAlignment: .start,
         spacing: 8,

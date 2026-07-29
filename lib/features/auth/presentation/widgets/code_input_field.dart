@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pinput/pinput.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 
 class CodeInputField extends StatelessWidget {
@@ -24,7 +25,7 @@ class CodeInputField extends StatelessWidget {
       child: Pinput(
         controller: controller,
         focusNode: focusNode,
-        length: 6,
+        length: AppConstants.otpLength,
         crossAxisAlignment: .center,
         textInputAction: .done,
         keyboardType: .number,
@@ -35,7 +36,7 @@ class CodeInputField extends StatelessWidget {
         ),
         onCompleted: onCompleted,
         inputFormatters: [
-          LengthLimitingTextInputFormatter(6),
+          LengthLimitingTextInputFormatter(AppConstants.otpLength),
           FilteringTextInputFormatter.digitsOnly,
         ],
         closeKeyboardWhenCompleted: true,
@@ -50,8 +51,8 @@ class CodeInputField extends StatelessWidget {
     textStyle: context.textTheme.headlineLarge,
     decoration: BoxDecoration(
       color: context.colors.tertiary,
-      borderRadius: BorderRadius.circular(12),
-      border: Border.all(color: Colors.transparent),
+      borderRadius: .circular(AppRadius.md),
+      border: .all(color: Colors.transparent),
     ),
   );
 }

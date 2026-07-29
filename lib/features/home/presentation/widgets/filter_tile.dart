@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class FilterTile extends StatelessWidget {
   final String title;
@@ -15,7 +15,7 @@ class FilterTile extends StatelessWidget {
       title: Text(title),
       titleTextStyle: context.textTheme.titleLarge?.copyWith(fontWeight: .w600),
       titleAlignment: .center,
-      contentPadding: const .symmetric(horizontal: 16),
+      contentPadding: const .symmetric(horizontal: AppSpacing.lg),
       minVerticalPadding: 4,
       minTileHeight: 48,
       trailing: IconWidget(icon: AppIcons.arrowLeft, size: 20),

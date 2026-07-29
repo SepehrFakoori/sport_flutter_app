@@ -6,6 +6,8 @@ import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
 import 'package:sport_flutter_app/features/coach/domain/entity/coach.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/rating_summary.dart';
 
+import '../../../../core/constant/constants.dart';
+
 class CoachOverview extends StatelessWidget {
   final Coach coach;
 
@@ -18,7 +20,7 @@ class CoachOverview extends StatelessWidget {
         AppRoutes.coach.name!,
         pathParameters: {'id': '${coach.id}'},
       ),
-      borderRadius: BorderRadius.circular(16),
+      borderRadius: .circular(AppRadius.lg),
       child: SizedBox(
         width: 180,
         child: Column(
@@ -27,7 +29,7 @@ class CoachOverview extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 color: context.colors.background,
-                borderRadius: BorderRadius.circular(24),
+                borderRadius: .circular(AppRadius.xxl),
                 boxShadow: [
                   BoxShadow(
                     color: context.colors.secondary.withValues(alpha: 0.12),

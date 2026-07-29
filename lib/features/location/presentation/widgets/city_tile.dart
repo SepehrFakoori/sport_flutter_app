@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/features/location/domain/entity/location.dart';
 
+import '../../../../core/constant/constants.dart';
+
 class CityTile extends StatelessWidget {
   final Location city;
 
@@ -11,11 +13,14 @@ class CityTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: () {},
-      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      contentPadding: const .symmetric(
+        horizontal: AppSpacing.lg,
+        vertical: AppSpacing.sm,
+      ),
       minLeadingWidth: 20,
-      minVerticalPadding: 8,
+      minVerticalPadding: AppSpacing.sm,
       minTileHeight: 48,
-      horizontalTitleGap: 16,
+      horizontalTitleGap: AppSpacing.lg,
       title: Text(city.city),
       titleTextStyle: context.textTheme.titleLarge,
       subtitle: Padding(

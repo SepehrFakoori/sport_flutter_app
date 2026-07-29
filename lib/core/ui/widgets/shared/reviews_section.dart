@@ -4,6 +4,7 @@ import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_filled_button.dart';
 import 'package:sport_flutter_app/core/ui/widgets/shared/rating_stars.dart';
 import 'package:sport_flutter_app/features/review/domain/entity/review.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class ReviewsSection extends StatelessWidget {
   final List<Review> reviews;
@@ -21,7 +22,7 @@ class ReviewsSection extends StatelessWidget {
       crossAxisAlignment: .start,
       children: [
         Padding(
-          padding: const .symmetric(horizontal: 16.0),
+          padding: const .symmetric(horizontal: AppSpacing.lg),
           child: Text(
             context.l10n.class_reviews,
             style: context.textTheme.headlineSmall,
@@ -38,7 +39,10 @@ class ReviewsSection extends StatelessWidget {
               return Card(
                 shadowColor: Colors.transparent,
                 child: Padding(
-                  padding: const .symmetric(horizontal: 16.0, vertical: 8.0),
+                  padding: const .symmetric(
+                    horizontal: AppSpacing.lg,
+                    vertical: AppSpacing.sm,
+                  ),
                   child: Column(
                     mainAxisAlignment: .center,
                     mainAxisSize: MainAxisSize.min,

@@ -3,6 +3,8 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
 
+import '../../../../core/constant/constants.dart';
+
 class ClassImages extends StatefulWidget {
   const ClassImages({super.key, required this.images});
 
@@ -35,7 +37,7 @@ class _ClassImagesState extends State<ClassImages> {
         Positioned(
           bottom: 10,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+            padding: const .symmetric(horizontal: AppSpacing.xs, vertical: 2),
             child: SmoothPageIndicator(
               controller: controller,
               count: widget.images.length,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
 import 'package:sport_flutter_app/core/ui/widgets/rating_value.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class ClassOverviewCard extends StatelessWidget {
   final String imageUrl;
@@ -30,14 +30,14 @@ class ClassOverviewCard extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Padding(
-        padding: const .symmetric(horizontal: 16.0),
+        padding: const .symmetric(horizontal: AppSpacing.lg),
         child: Column(
           mainAxisAlignment: .start,
           crossAxisAlignment: .start,
           spacing: 4,
           children: [
             AspectRatio(
-              aspectRatio: 4 / 3,
+              aspectRatio: AppAspectRatio.ratio4x3,
               child: ImageLoader(imageUrl: imageUrl, radius: 24),
             ),
             Padding(

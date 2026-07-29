@@ -8,7 +8,7 @@ class AppCircularProgressIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CircularProgressIndicator(
-      padding: EdgeInsets.all(8),
+      padding: .all(8),
       constraints: BoxConstraints.expand(width: 24, height: 24),
       strokeCap: StrokeCap.round,
       value: value,

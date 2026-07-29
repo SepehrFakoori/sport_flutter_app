@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class CustomCard extends StatelessWidget {
   final Widget child;
@@ -11,7 +12,7 @@ class CustomCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: context.colors.background,
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: .circular(AppRadius.xxl),
         boxShadow: [
           BoxShadow(
             color: context.colors.secondary.withValues(alpha: 0.12),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/ui/widgets/skeleton/skeleton_text.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class CityTileSkeleton extends StatelessWidget {
   const CityTileSkeleton({super.key});
@@ -7,9 +8,9 @@ class CityTileSkeleton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: .symmetric(horizontal: 16),
+      margin: .symmetric(horizontal: AppSpacing.lg),
       child: Padding(
-        padding: const .symmetric(vertical: 16.0),
+        padding: const .symmetric(vertical: AppSpacing.lg),
         child: Column(
           crossAxisAlignment: .start,
           spacing: 8,

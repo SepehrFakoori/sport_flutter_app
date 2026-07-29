@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/ui/widgets/custom_card.dart';
 import 'package:sport_flutter_app/core/ui/widgets/skeleton/skeleton_box.dart';
 import 'package:sport_flutter_app/core/ui/widgets/skeleton/skeleton_text.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class ProfileCardSkeleton extends StatelessWidget {
   const ProfileCardSkeleton({super.key});
@@ -9,7 +10,7 @@ class ProfileCardSkeleton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const .symmetric(horizontal: 16.0),
+      padding: const .symmetric(horizontal: AppSpacing.lg),
       child: CustomCard(
         child: Padding(
           padding: const .all(28),

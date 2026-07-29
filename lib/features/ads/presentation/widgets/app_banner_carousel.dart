@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class AppBannerCarousel extends StatelessWidget {
   final List<String> imageUrls;
@@ -15,11 +16,11 @@ class AppBannerCarousel extends StatelessWidget {
     super.key,
     required this.imageUrls,
     required this.onTap,
-    this.aspectRatio = 21 / 9,
+    this.aspectRatio = AppAspectRatio.ratio21x9,
     this.viewportFraction = 0.85,
     this.autoPlay = true,
-    this.borderRadius = 12,
-    this.itemPadding = const .symmetric(horizontal: 8.0),
+    this.borderRadius = AppRadius.md,
+    this.itemPadding = const .symmetric(horizontal: AppSpacing.sm),
   });
 
   @override

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
+
+import '../../../../core/constant/constants.dart';
 
 class InfoTile extends StatelessWidget {
   final String title;
@@ -19,7 +20,7 @@ class InfoTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
-      contentPadding: EdgeInsets.symmetric(horizontal: 16),
+      contentPadding: const .symmetric(horizontal: AppSpacing.lg),
       horizontalTitleGap: 12,
       title: Text(title),
       titleTextStyle: context.textTheme.bodyMedium?.copyWith(

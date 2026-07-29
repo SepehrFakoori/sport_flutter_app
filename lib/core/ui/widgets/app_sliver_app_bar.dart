@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class AppSliverAppBar extends StatelessWidget {
   final String? title;
@@ -20,7 +21,7 @@ class AppSliverAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      actionsPadding: const .symmetric(horizontal: 16),
+      actionsPadding: const .symmetric(horizontal: AppSpacing.lg),
       actions: actions,
       floating: false,
       pinned: true,

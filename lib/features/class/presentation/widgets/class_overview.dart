@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/features/class/presentation/widgets/summary_stat.dart';
 
+import '../../../../core/constant/constants.dart';
+
 class ClassOverview extends StatelessWidget {
   final String title;
   final String address;
@@ -19,7 +21,7 @@ class ClassOverview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const .symmetric(horizontal: 16.0),
+      padding: const .symmetric(horizontal: AppSpacing.lg),
       child: Column(
         spacing: 24,
         children: [

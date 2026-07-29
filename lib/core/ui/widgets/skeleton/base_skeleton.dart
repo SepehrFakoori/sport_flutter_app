@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class BaseSkeleton extends StatelessWidget {
   final double width;
@@ -32,7 +33,7 @@ class BaseSkeleton extends StatelessWidget {
           color: const Color(0xffeaeaea),
           shape: shape ?? BoxShape.rectangle,
           borderRadius: shape == BoxShape.rectangle
-              ? (radius ?? BorderRadius.circular(8))
+              ? (radius ?? .circular(AppRadius.sm))
               : null,
         ),
       ),

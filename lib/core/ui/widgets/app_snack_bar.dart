@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/theme/palette.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 enum AppSnackBarType { neutral, success, error }
 
@@ -23,10 +24,13 @@ class AppSnackBar {
     return context.messenger.showSnackBar(
       SnackBar(
         behavior: .floating,
-        margin: const .symmetric(horizontal: 16.0, vertical: 8.0),
+        margin: const .symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.sm,
+        ),
         backgroundColor: accent,
         shape: RoundedRectangleBorder(
-          borderRadius: .circular(8),
+          borderRadius: .circular(AppRadius.sm),
           side: BorderSide(color: accent),
         ),
         dismissDirection: .horizontal,

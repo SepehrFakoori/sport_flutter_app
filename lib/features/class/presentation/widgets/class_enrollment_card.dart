@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_filled_button.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class ClassEnrollmentCard extends StatelessWidget {
   final String price;
@@ -12,7 +13,7 @@ class ClassEnrollmentCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const .all(AppSpacing.lg),
       decoration: BoxDecoration(
         color: context.colors.onSecondary,
         boxShadow: [
@@ -25,7 +26,7 @@ class ClassEnrollmentCard extends StatelessWidget {
         ],
       ),
       child: Row(
-        spacing: 8,
+        spacing: AppSpacing.sm,
         children: [
           Expanded(
             child: Column(

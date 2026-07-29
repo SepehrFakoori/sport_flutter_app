@@ -4,6 +4,8 @@ import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
 import 'package:sport_flutter_app/core/ui/widgets/rating_value.dart';
 import 'package:sport_flutter_app/features/search/presentation/widgets/location_info.dart';
 
+import '../../../../core/constant/constants.dart';
+
 class ClassSearchTile extends StatelessWidget {
   final String image;
   final String title;
@@ -29,7 +31,10 @@ class ClassSearchTile extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Padding(
-        padding: const .symmetric(horizontal: 16.0, vertical: 8.0),
+        padding: const .symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.sm,
+        ),
         child: Row(
           crossAxisAlignment: .center,
           mainAxisSize: .max,
@@ -37,7 +42,7 @@ class ClassSearchTile extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(24),
+                borderRadius: .circular(AppRadius.xxl),
                 boxShadow: [
                   BoxShadow(
                     color: context.colors.secondary.withValues(alpha: 0.12),

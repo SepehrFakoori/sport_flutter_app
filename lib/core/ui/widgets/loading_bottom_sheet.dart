@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circular_progress_indicator.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class LoadingBottomSheet extends StatelessWidget {
   const LoadingBottomSheet({super.key});
@@ -8,7 +9,10 @@ class LoadingBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      padding: const .symmetric(
+        horizontal: AppSpacing.lg,
+        vertical: AppSpacing.sm,
+      ),
       child: Row(
         mainAxisAlignment: .start,
         crossAxisAlignment: .center,

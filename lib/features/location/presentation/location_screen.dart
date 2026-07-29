@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
@@ -12,6 +11,7 @@ import 'package:sport_flutter_app/features/location/presentation/bloc/location_l
 import 'package:sport_flutter_app/features/location/presentation/bloc/location_list_bloc/location_list_state.dart';
 import 'package:sport_flutter_app/features/location/presentation/widgets/city_tile.dart';
 import 'package:sport_flutter_app/features/location/presentation/widgets/skeleton/city_tile_skeleton.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class LocationScreen extends StatefulWidget {
   const LocationScreen({super.key});
@@ -61,7 +61,7 @@ class _LocationScreenState extends State<LocationScreen> {
           mainAxisSize: .max,
           children: [
             Padding(
-              padding: const .symmetric(horizontal: 16.0, vertical: 16),
+              padding: const .all(AppSpacing.lg),
               child: AppTextFormField(
                 labelText: context.l10n.location_search_city_label,
                 keyboardType: .name,
@@ -73,7 +73,7 @@ class _LocationScreenState extends State<LocationScreen> {
             ),
             ListTile(
               onTap: () {},
-              contentPadding: EdgeInsets.symmetric(horizontal: 16),
+              contentPadding: const .symmetric(horizontal: AppSpacing.lg),
               minLeadingWidth: 20,
               minVerticalPadding: 8,
               minTileHeight: 48,

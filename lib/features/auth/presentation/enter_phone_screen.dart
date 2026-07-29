@@ -13,6 +13,7 @@ import 'package:sport_flutter_app/features/auth/presentation/bloc/enter_phone_bl
 import 'package:sport_flutter_app/features/auth/presentation/bloc/enter_phone_bloc/enter_phone_event.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/enter_phone_bloc/enter_phone_state.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class EnterPhoneScreen extends StatefulWidget {
   const EnterPhoneScreen({super.key});
@@ -33,10 +34,10 @@ class _EnterPhoneScreenState extends State<EnterPhoneScreen> {
       child: Scaffold(
         body: SafeArea(
           child: Padding(
-            padding: const .all(16),
+            padding: const .all(AppSpacing.lg),
             child: Column(
               crossAxisAlignment: .start,
-              spacing: 20,
+              spacing: AppSpacing.xl,
               children: [
                 Text(
                   context.l10n.auth_title,
@@ -71,7 +72,7 @@ class _EnterPhoneScreenState extends State<EnterPhoneScreen> {
         ),
         floatingActionButton: Column(
           mainAxisSize: .min,
-          spacing: 4,
+          spacing: AppSpacing.xs,
           children: [
             RichText(
               textAlign: .justify,

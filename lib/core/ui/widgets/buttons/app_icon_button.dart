@@ -23,7 +23,7 @@ class AppIconButton extends StatelessWidget {
       isActive: onPressed != null,
       child: IconButton(
         onPressed: onPressed,
-        padding: EdgeInsets.all(10),
+        padding: .all(10),
         icon: IconWidget(icon: icon, size: 24),
         isSelected: isSelected,
         selectedIcon: IconWidget(icon: icon, color: context.colors.primary),

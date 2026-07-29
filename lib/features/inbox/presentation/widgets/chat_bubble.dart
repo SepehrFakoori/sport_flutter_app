@@ -15,13 +15,17 @@ class ChatBubble extends StatelessWidget {
       children: [
         Flexible(
           child: Container(
-            padding: EdgeInsets.all(8),
+            padding: .all(8),
             constraints: BoxConstraints(maxWidth: context.deviceWidth * 0.8),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8).copyWith(
-                bottomRight: index % 2 == 0 ? Radius.circular(8) : Radius.zero,
-                bottomLeft: index % 2 == 0 ? Radius.zero : Radius.circular(8),
-              ),
+              // borderRadius: .circular(AppRadius.sm).copyWith(
+              //   bottomRight: index % 2 == 0
+              //       ? Radius.circular(AppRadius.sm)
+              //       : Radius.zero,
+              //   bottomLeft: index % 2 == 0
+              //       ? Radius.zero
+              //       : Radius.circular(AppRadius.sm),
+              // ),
               color: index % 2 == 0
                   ? context.colors.divider
                   : context.colors.surface,

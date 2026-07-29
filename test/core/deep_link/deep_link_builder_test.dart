@@ -3,7 +3,7 @@ import 'package:sport_flutter_app/core/deep_link/deep_link_builder.dart';
 
 void main() {
   late DeepLinkBuilder builder;
-  
+
   setUp(() {
     builder = const DeepLinkBuilder(host: 'example.ir');
   });

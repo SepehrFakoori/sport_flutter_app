@@ -3,6 +3,8 @@ import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/theme/palette.dart';
 import 'package:sport_flutter_app/core/ui/widgets/chips/app_chip.dart';
 
+import '../../../../core/constant/constants.dart';
+
 class CoachLabel extends StatelessWidget {
   const CoachLabel({super.key});
 
@@ -15,7 +17,7 @@ class CoachLabel extends StatelessWidget {
       ),
       backgroundColor: context.colors.surface,
       side: BorderSide.none,
-      labelPadding: EdgeInsets.symmetric(horizontal: 4, vertical: -6),
+      labelPadding: const .symmetric(horizontal: AppSpacing.xs, vertical: -6),
     );
   }
 }
@@ -32,7 +34,7 @@ class SupportLabel extends StatelessWidget {
       ),
       backgroundColor: AppPalette.semantic2.withValues(alpha: 0.1),
       side: BorderSide.none,
-      labelPadding: EdgeInsets.symmetric(horizontal: 4, vertical: -6),
+      labelPadding: const .symmetric(horizontal: AppSpacing.xs, vertical: -6),
     );
   }
 }

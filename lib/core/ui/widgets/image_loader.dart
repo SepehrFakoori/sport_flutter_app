@@ -27,7 +27,7 @@ class ImageLoader extends StatelessWidget {
           height: height,
           width: width,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(radius),
+            borderRadius: .circular(radius),
             image: DecorationImage(image: imageProvider, fit: fit),
           ),
         );
@@ -37,14 +37,14 @@ class ImageLoader extends StatelessWidget {
         width: width,
         decoration: BoxDecoration(
           color: Color(0xffeaeaea),
-          borderRadius: BorderRadius.circular(radius),
+          borderRadius: .circular(radius),
         ),
         child: Center(child: Icon(Icons.image_not_supported_outlined)),
       ),
       progressIndicatorBuilder: (context, _, progress) => SkeletonBox(
         width: width,
         height: height,
-        radius: BorderRadius.circular(radius),
+        radius: .circular(radius),
         shape: BoxShape.rectangle,
       ),
       placeholderFadeInDuration: Duration(milliseconds: 500),

@@ -3,6 +3,7 @@ import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_text_form_field.dart';
 import 'package:sport_flutter_app/features/inbox/presentation/widgets/chat_bubble.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -67,7 +68,7 @@ class ChatScreen extends StatelessWidget {
             Expanded(
               child: ListView.separated(
                 reverse: true,
-                padding: EdgeInsets.fromLTRB(16, 16, 16, 96),
+                padding: .fromLTRB(16, 16, 16, 96),
                 itemBuilder: (context, index) =>
                     ChatBubble(messages: messages, index: index),
                 separatorBuilder: (context, index) =>
@@ -79,7 +80,10 @@ class ChatScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        padding: const .symmetric(
+          horizontal: AppSpacing.lg,
+          vertical: AppSpacing.lg,
+        ),
         color: context.colors.background,
         child: AppTextFormField(
           hintText: context.l10n.chat_text_field_hint,

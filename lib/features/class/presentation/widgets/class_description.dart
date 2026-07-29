@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class ClassDescription extends StatefulWidget {
   final String description;
@@ -26,7 +27,7 @@ class _ClassDescriptionState extends State<ClassDescription> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const .symmetric(horizontal: 16.0),
+      padding: const .symmetric(horizontal: AppSpacing.lg),
       child: LayoutBuilder(
         builder: (context, constraints) {
           final hasOverflow = _isTextOverflowing(
@@ -37,14 +38,14 @@ class _ClassDescriptionState extends State<ClassDescription> {
 
           return Column(
             crossAxisAlignment: .start,
-            spacing: 4,
+            spacing: AppSpacing.xs,
             children: [
               Text(
                 context.l10n.class_description,
                 style: context.textTheme.headlineSmall,
               ),
               AnimatedSize(
-                duration: const Duration(milliseconds: 300),
+                duration: AppDuration.normal,
                 curve: Curves.easeInOut,
                 child: Text(
                   widget.description,
@@ -64,7 +65,7 @@ class _ClassDescriptionState extends State<ClassDescription> {
                     },
                     style: TextButton.styleFrom(
                       overlayColor: Colors.transparent,
-                      padding: EdgeInsets.zero,
+                      padding: .zero,
                     ),
                     child: Text(expanded ? 'نمایش کمتر' : 'نمایش بیشتر'),
                   ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/ui/widgets/skeleton/skeleton_box.dart';
 import 'package:sport_flutter_app/core/ui/widgets/skeleton/skeleton_text.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class ClassOverviewCardSkeleton extends StatelessWidget {
   const ClassOverviewCardSkeleton({super.key});
@@ -8,19 +9,19 @@ class ClassOverviewCardSkeleton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const .symmetric(horizontal: 16.0),
+      padding: const .symmetric(horizontal: AppSpacing.lg),
       child: Column(
         mainAxisAlignment: .start,
         crossAxisAlignment: .start,
         spacing: 4,
         children: [
           AspectRatio(
-            aspectRatio: 4 / 3,
+            aspectRatio: AppAspectRatio.ratio4x3,
             child: SkeletonBox(
               width: double.infinity,
               height: double.infinity,
               shape: .rectangle,
-              radius: .circular(24),
+              radius: .circular(AppRadius.xxl),
             ),
           ),
           Padding(

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 
+import '../../../../core/constant/constants.dart';
+
 class MenuTile extends StatelessWidget {
   final String title;
   final String icon;
@@ -21,7 +23,7 @@ class MenuTile extends StatelessWidget {
       title: Text(title, maxLines: 1, overflow: .ellipsis),
       titleTextStyle: context.textTheme.titleMedium,
       titleAlignment: .center,
-      contentPadding: EdgeInsets.symmetric(horizontal: 16),
+      contentPadding: const .symmetric(horizontal: AppSpacing.lg),
       minLeadingWidth: 20,
       minVerticalPadding: 8,
       minTileHeight: 48,

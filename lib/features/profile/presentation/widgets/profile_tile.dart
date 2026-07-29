@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 
+import '../../../../core/constant/constants.dart';
+
 class ProfileTile extends StatelessWidget {
   final String username;
   final String phoneNumber;
@@ -20,7 +22,10 @@ class ProfileTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
-      contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      contentPadding: .symmetric(
+        horizontal: AppSpacing.sm,
+        vertical: AppSpacing.lg,
+      ),
       horizontalTitleGap: 12,
       titleAlignment: ListTileTitleAlignment.center,
       leading: Hero(

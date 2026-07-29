@@ -23,11 +23,14 @@ void main() {
       );
     });
 
-    test('Phone should has 11 length => throws InvalidPhoneLengthException', () {
-      expect(
-        () => useCase.validate('093019143211'),
-        throwsA(isA<InvalidPhoneLengthException>()),
-      );
-    });
+    test(
+      'Phone should has 11 length => throws InvalidPhoneLengthException',
+      () {
+        expect(
+          () => useCase.validate('093019143211'),
+          throwsA(isA<InvalidPhoneLengthException>()),
+        );
+      },
+    );
   });
 }

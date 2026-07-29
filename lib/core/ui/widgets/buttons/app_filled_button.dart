@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_pressable_scale.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 enum ButtonVariant { primary, secondary }
 
@@ -49,7 +50,7 @@ class AppFilledButton extends StatelessWidget {
     if (isWide) {
       return Container(
         width: .infinity,
-        margin: .symmetric(horizontal: 16.0),
+        margin: const .symmetric(horizontal: AppSpacing.lg),
         child: button,
       );
     }

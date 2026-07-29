@@ -22,7 +22,11 @@ class LocationRemoteDatasourceImpl implements LocationRemoteDatasource {
   }) async {
     final response = await _client.get(
       '/cities/',
-      queryParams: {'page': page, 'page_size': pageSize, if (value != null && value.isNotEmpty) 'search': value,},
+      queryParams: {
+        'page': page,
+        'page_size': pageSize,
+        if (value != null && value.isNotEmpty) 'search': value,
+      },
     );
 
     List<dynamic> cities = response.data['results'];

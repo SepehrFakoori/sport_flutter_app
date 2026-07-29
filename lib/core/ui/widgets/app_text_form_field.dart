@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class AppTextFormField extends StatelessWidget {
   final TextEditingController? controller;
@@ -99,7 +100,11 @@ class AppTextFormField extends StatelessWidget {
         filled: true,
         fillColor: context.colors.surface,
         contentPadding:
-            contentPadding ?? EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            contentPadding ??
+            const .symmetric(
+              horizontal: AppSpacing.md,
+              vertical: AppSpacing.sm,
+            ),
         border: CustomOutlineInputBorder(color: context.colors.tertiary),
         enabledBorder:
             border ?? CustomOutlineInputBorder(color: context.colors.tertiary),
@@ -125,7 +130,7 @@ class CustomOutlineInputBorder extends OutlineInputBorder {
   const CustomOutlineInputBorder({required this.color});
 
   @override
-  BorderRadius get borderRadius => BorderRadius.circular(12);
+  BorderRadius get borderRadius => .circular(AppRadius.md);
 
   @override
   BorderSide get borderSide => BorderSide(color: color, width: 1.2);

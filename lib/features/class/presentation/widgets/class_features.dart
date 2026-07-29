@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 
+import '../../../../core/constant/constants.dart';
+
 class ClassFeatures extends StatelessWidget {
   final List<String> feature;
 
@@ -9,7 +11,7 @@ class ClassFeatures extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const .symmetric(horizontal: 16.0),
+      padding: const .symmetric(horizontal: AppSpacing.lg),
       child: Column(
         crossAxisAlignment: .start,
         spacing: 4,

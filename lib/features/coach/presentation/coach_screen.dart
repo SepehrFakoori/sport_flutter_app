@@ -14,6 +14,7 @@ import 'package:sport_flutter_app/features/coach/presentation/bloc/coach_bloc/co
 import 'package:sport_flutter_app/features/coach/presentation/bloc/coach_bloc/coach_state.dart';
 import 'package:sport_flutter_app/features/home/presentation/widgets/horizontal_class_card_list.dart';
 import 'package:sport_flutter_app/features/review/domain/entity/review.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class CoachScreen extends StatefulWidget {
   final int coachId;
@@ -47,11 +48,11 @@ class _CoachScreenState extends State<CoachScreen> {
                   children: [
                     const SizedBox(height: 24),
                     Padding(
-                      padding: const .symmetric(horizontal: 16.0),
+                      padding: const .symmetric(horizontal: AppSpacing.lg),
                       child: CoachCard(coach: state.coach),
                     ),
                     Padding(
-                      padding: const .symmetric(horizontal: 16.0),
+                      padding: const .symmetric(horizontal: AppSpacing.lg),
                       child: Text(
                         context.l10n.coach_class,
                         style: context.textTheme.headlineSmall,

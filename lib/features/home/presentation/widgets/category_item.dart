@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
 
+import '../../../../core/constant/constants.dart';
+
 class CategoryCard extends StatelessWidget {
   final String title;
   final String imageUrl;
@@ -18,7 +20,7 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(8),
+      borderRadius: .circular(AppRadius.sm),
       child: Card(
         margin: .all(4),
         color: Colors.transparent,

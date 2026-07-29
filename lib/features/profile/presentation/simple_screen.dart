@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/features/class/presentation/widgets/class_overview_card.dart';
 import 'package:sport_flutter_app/features/class/presentation/widgets/skeleton/class_overview_card_skeleton.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class SimpleScreen extends StatelessWidget {
   const SimpleScreen({super.key});
@@ -109,7 +110,7 @@ class SimpleScreen extends StatelessWidget {
                 separatorBuilder: (context, index) =>
                     const SizedBox(height: 24),
                 itemCount: 8,
-                padding: const .symmetric(vertical: 12),
+                padding: const .symmetric(vertical: AppSpacing.md),
               ),
             ),
           ],
