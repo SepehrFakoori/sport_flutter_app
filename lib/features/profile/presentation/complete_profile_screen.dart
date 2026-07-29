@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:persian_datetime_picker/persian_datetime_picker.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/exception/app_exception.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
@@ -155,7 +155,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                         prefixIcon: Padding(
                           padding: const EdgeInsets.all(12.0),
                           child: IconWidget(
-                            icon: AssetIcons.calendar,
+                            icon: AppIcons.calendar,
                             size: 10,
                           ),
                         ),

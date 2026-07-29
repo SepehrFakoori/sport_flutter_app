@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_loading_indicator.dart';
@@ -82,7 +82,7 @@ class _LocationScreenState extends State<LocationScreen> {
                 context.l10n.location_select_my_current_city,
                 style: context.textTheme.titleMedium,
               ),
-              leading: IconWidget(icon: AssetIcons.locationFilled, size: 20),
+              leading: IconWidget(icon: AppIcons.locationFilled, size: 20),
             ),
             Expanded(
               child: BlocBuilder<LocationListBloc, LocationListState>(

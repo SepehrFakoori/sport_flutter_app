@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/extension/int_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
@@ -62,10 +62,10 @@ class _ClassScreenState extends State<ClassScreen> {
                     actions: [
                       AppIconButton(
                         onPressed: () {},
-                        icon: AssetIcons.bookmark,
+                        icon: AppIcons.bookmark,
                       ),
                       const SizedBox(width: 8),
-                      AppIconButton(onPressed: () {}, icon: AssetIcons.share),
+                      AppIconButton(onPressed: () {}, icon: AppIcons.share),
                     ],
                     flexibleSpace: FlexibleSpaceBar(
                       background: ClassImages(images: images),
@@ -122,7 +122,7 @@ class _ClassScreenState extends State<ClassScreen> {
                                         shape: BoxShape.circle,
                                       ),
                                       child: IconWidget(
-                                        icon: AssetIcons.notification,
+                                        icon: AppIcons.notification,
                                         size: 16,
                                       ),
                                     ),

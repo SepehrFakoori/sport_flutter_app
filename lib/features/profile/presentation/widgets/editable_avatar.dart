@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
@@ -21,7 +21,7 @@ class EditableAvatar extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Badge(
-        label: IconWidget(icon: AssetIcons.edit, size: 20),
+        label: IconWidget(icon: AppIcons.edit, size: 20),
         padding: .all(4),
         backgroundColor: context.colors.tertiary,
         alignment: .bottomStart,

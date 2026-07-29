@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/features/profile/presentation/widgets/menu_tile.dart';
 
@@ -28,12 +28,12 @@ class ProfilePictureSelectionSheet extends StatelessWidget {
         ),
         MenuTile(
           title: context.l10n.choose_from_gallery_title,
-          icon: AssetIcons.galleryAdd,
+          icon: AppIcons.galleryAdd,
           onTap: () => onSourceSelected(.gallery),
         ),
         MenuTile(
           title: context.l10n.take_photo_title,
-          icon: AssetIcons.camera,
+          icon: AppIcons.camera,
           onTap: () => onSourceSelected(.camera),
         ),
         SizedBox(height: 16.0),

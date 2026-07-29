@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
@@ -62,22 +62,22 @@ class _AccountScreenState extends State<AccountScreen> {
                         const SizedBox(height: 16),
                         MenuTile(
                           title: context.l10n.account_enrollments_button,
-                          icon: AssetIcons.receiptItem,
+                          icon: AppIcons.receiptItem,
                           onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_view_profile,
-                          icon: AssetIcons.profile,
+                          icon: AppIcons.profile,
                           onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_comments,
-                          icon: AssetIcons.comment,
+                          icon: AppIcons.comment,
                           onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_addresses,
-                          icon: AssetIcons.map,
+                          icon: AppIcons.map,
                           onTap: () {},
                         ),
                         const SizedBox(height: 16),
@@ -85,32 +85,32 @@ class _AccountScreenState extends State<AccountScreen> {
                         const SizedBox(height: 16),
                         MenuTile(
                           title: context.l10n.account_settings_button,
-                          icon: AssetIcons.setting,
+                          icon: AppIcons.setting,
                           onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_become_coach,
-                          icon: AssetIcons.coach,
+                          icon: AppIcons.coach,
                           onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_giftcard_button,
-                          icon: AssetIcons.money,
+                          icon: AppIcons.money,
                           onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_support_button,
-                          icon: AssetIcons.headphone,
+                          icon: AppIcons.headphone,
                           onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_invite_friends_button,
-                          icon: AssetIcons.profileAdd,
+                          icon: AppIcons.profileAdd,
                           onTap: () {},
                         ),
                         MenuTile(
                           title: context.l10n.account_policy_button,
-                          icon: AssetIcons.taskSquare,
+                          icon: AppIcons.taskSquare,
                           onTap: () {},
                         ),
                         const SizedBox(height: 16),
@@ -118,7 +118,7 @@ class _AccountScreenState extends State<AccountScreen> {
                         const SizedBox(height: 16),
                         MenuTile(
                           title: context.l10n.account_logout,
-                          icon: AssetIcons.logout,
+                          icon: AppIcons.logout,
                           onTap: () {
                             context.read<LogoutBloc>().add(Logout());
                           },

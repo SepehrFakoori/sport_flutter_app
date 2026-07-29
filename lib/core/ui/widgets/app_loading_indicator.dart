@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:sport_flutter_app/core/constant/assets_lotties.dart';
+import 'package:sport_flutter_app/core/constant/app_lotties.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 
 class AppLoadingIndicator extends StatelessWidget {
@@ -11,7 +11,7 @@ class AppLoadingIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Lottie.asset(
-      AssetsLotties.loading,
+      AppLotties.loading,
       fit: .fill,
       height: 32,
       addRepaintBoundary: true,

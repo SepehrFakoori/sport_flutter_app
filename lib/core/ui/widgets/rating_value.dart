@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 
@@ -16,7 +16,7 @@ class RatingValue extends StatelessWidget {
       spacing: 4,
       children: [
         IconWidget(
-          icon: AssetIcons.starFilled,
+          icon: AppIcons.starFilled,
           size: 12,
           color: context.colors.secondary,
         ),

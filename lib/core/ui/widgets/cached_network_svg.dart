@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 import 'package:sport_flutter_app/core/ui/widgets/skeleton/skeleton_box.dart';
@@ -50,7 +50,7 @@ class _CachedNetworkSvgState extends State<CachedNetworkSvg> {
           return SkeletonBox(width: widget.size, height: widget.size);
         }
         if (snapshot.hasError || !snapshot.hasData) {
-          return IconWidget(icon: AssetIcons.edit);
+          return IconWidget(icon: AppIcons.edit);
         }
         return SvgPicture.file(
           snapshot.data!,

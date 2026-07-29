@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/ui/theme/palette.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 
@@ -18,14 +18,14 @@ class RatingStars extends StatelessWidget {
 
         if (rating >= starValue) {
           return IconWidget(
-            icon: AssetIcons.starFilled,
+            icon: AppIcons.starFilled,
             color: AppPalette.semantic3,
             size: size,
           );
         }
 
         return IconWidget(
-          icon: AssetIcons.star,
+          icon: AppIcons.star,
           color: AppPalette.semantic3,
           size: size,
         );

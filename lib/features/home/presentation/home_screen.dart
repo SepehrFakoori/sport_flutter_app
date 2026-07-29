@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_refresh_indicator.dart';
@@ -51,13 +51,13 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: [
           AppIconButton(
-            icon: AssetIcons.search,
+            icon: AppIcons.search,
             onPressed: () => context.pushNamed(AppRoutes.search.name!),
             tooltip: context.l10n.home_search_icon_tooltip,
           ),
           const SizedBox(width: 8),
           AppIconButton(
-            icon: AssetIcons.notification,
+            icon: AppIcons.notification,
             onPressed: () => context.pushNamed(AppRoutes.notifications.name!),
             tooltip: context.l10n.home_notifications_icon_tooltip,
           ),

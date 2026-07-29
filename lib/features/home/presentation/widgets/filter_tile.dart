@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 
@@ -18,7 +18,7 @@ class FilterTile extends StatelessWidget {
       contentPadding: const .symmetric(horizontal: 16),
       minVerticalPadding: 4,
       minTileHeight: 48,
-      trailing: IconWidget(icon: AssetIcons.arrowLeft, size: 20),
+      trailing: IconWidget(icon: AppIcons.arrowLeft, size: 20),
       onTap: onTap,
     );
   }

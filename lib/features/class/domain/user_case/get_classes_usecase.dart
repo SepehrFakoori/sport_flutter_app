@@ -2,6 +2,7 @@ import 'package:sport_flutter_app/core/entity/paginated.dart';
 import 'package:sport_flutter_app/core/utils/result.dart';
 import 'package:sport_flutter_app/features/class/domain/entity/class.dart';
 import 'package:sport_flutter_app/features/class/domain/repository/class_repository.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class GetClassesUseCase {
   final ClassRepository _repository;
@@ -10,6 +11,6 @@ class GetClassesUseCase {
 
   Future<Result<Paginated<Class>>> call({
     required int page,
-    int pageSize = 20,
+    int pageSize = AppConstants.defaultPageSize,
   }) => _repository.getClasses(page: page, pageSize: pageSize);
 }

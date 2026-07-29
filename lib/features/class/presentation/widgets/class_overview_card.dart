@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 import 'package:sport_flutter_app/core/ui/widgets/image_loader.dart';
@@ -79,7 +79,7 @@ class ClassOverviewCard extends StatelessWidget {
                     spacing: 4,
                     children: [
                       IconWidget(
-                        icon: AssetIcons.location,
+                        icon: AppIcons.location,
                         size: 16,
                         color: context.colors.onBackgroundSecondary,
                       ),
@@ -99,7 +99,7 @@ class ClassOverviewCard extends StatelessWidget {
                     spacing: 8,
                     children: [
                       IconWidget(
-                        icon: AssetIcons.notification,
+                        icon: AppIcons.notification,
                         size: 16,
                         color: context.colors.onBackgroundSecondary,
                       ),

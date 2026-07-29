@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sport_flutter_app/core/constant/assets_icons.dart';
+import 'package:sport_flutter_app/core/constant/app_icons.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 
@@ -17,7 +17,7 @@ class EditPhoneActionChip extends StatelessWidget {
         spacing: 4,
         children: [
           Text(phone, style: context.textTheme.titleMedium),
-          IconWidget(icon: AssetIcons.edit, size: 14),
+          IconWidget(icon: AppIcons.edit, size: 14),
         ],
       ),
       onPressed: () {

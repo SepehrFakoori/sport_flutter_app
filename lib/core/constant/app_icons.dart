@@ -1,4 +1,4 @@
-class AssetIcons {
+class AppIcons {
   static const _basePath = "assets/icons";
 
   static const home = "$_basePath/home.svg";
