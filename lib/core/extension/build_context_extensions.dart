@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/l10n/app_localizations.dart';
 import 'package:sport_flutter_app/core/ui/theme/app_colors.dart';
 
-extension BuildContextExtensions on BuildContext {
+extension BuildContextX on BuildContext {
   /// Returns the [MediaQuery.sizeOf(context)].
   Size get size => MediaQuery.sizeOf(this);
 

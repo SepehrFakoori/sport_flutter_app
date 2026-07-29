@@ -58,7 +58,7 @@ class _ClassScreenState extends State<ClassScreen> {
                     pinned: true,
                     elevation: 0,
                     expandedHeight: 350,
-                    actionsPadding: const .symmetric(vertical: AppSpacing.lg),
+                    actionsPadding: const .symmetric(horizontal: AppSpacing.lg),
                     actions: [
                       AppIconButton(onPressed: () {}, icon: AppIcons.bookmark),
                       const SizedBox(width: 8),

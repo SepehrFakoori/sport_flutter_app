@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/extension/date_time_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_filled_button.dart';
 import 'package:sport_flutter_app/core/ui/widgets/shared/rating_stars.dart';
@@ -67,7 +68,7 @@ class ReviewsSection extends StatelessWidget {
                         children: [
                           RatingStars(rating: review.rating),
                           Text(
-                            review.createdAt.toString(),
+                            review.createdAt.formatPersianDate,
                             style: context.textTheme.bodyMedium?.copyWith(
                               color: context.colors.onBackgroundSecondary,
                             ),

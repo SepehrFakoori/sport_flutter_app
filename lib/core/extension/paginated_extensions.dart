@@ -1,6 +1,6 @@
 import 'package:sport_flutter_app/core/entity/paginated.dart';
 
-extension PaginatedExtensions<M> on Paginated<M> {
+extension PaginatedX<M> on Paginated<M> {
   Paginated<E> map<E>({required E Function(M model) mapper}) => Paginated<E>(
     totalItems: totalItems,
     totalPages: totalPages,

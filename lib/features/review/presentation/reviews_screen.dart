@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
+import 'package:sport_flutter_app/core/extension/date_time_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_circle_avatar.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_divider.dart';
 import 'package:sport_flutter_app/core/ui/widgets/custom_app_bar.dart';
@@ -52,7 +53,7 @@ class ReviewsScreen extends StatelessWidget {
                       children: [
                         RatingStars(rating: index > 5 ? 5 : index + 1),
                         Text(
-                          DateTime.now().toString(),
+                          DateTime.now().formatPersianDate,
                           style: context.textTheme.bodyMedium?.copyWith(
                             color: context.colors.onBackgroundSecondary,
                           ),
