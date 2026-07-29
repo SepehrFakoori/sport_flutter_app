@@ -22,7 +22,7 @@ class CategoryCard extends StatelessWidget {
       onTap: onTap,
       borderRadius: .circular(AppRadius.sm),
       child: Card(
-        margin: .all(4),
+        margin: const .all(4),
         color: Colors.transparent,
         shadowColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,

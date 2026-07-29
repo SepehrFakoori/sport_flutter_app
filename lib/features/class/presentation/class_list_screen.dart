@@ -80,7 +80,7 @@ class _ClassListScreenState extends State<ClassListScreen> {
                   if (index >= state.classes.length) {
                     return Center(
                       child: Padding(
-                        padding: .all(8.0),
+                        padding: const .all(8.0),
                         child: AppLoadingIndicator(
                           color: context.colors.primary,
                         ),

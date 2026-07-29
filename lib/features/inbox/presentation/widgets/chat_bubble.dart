@@ -15,7 +15,7 @@ class ChatBubble extends StatelessWidget {
       children: [
         Flexible(
           child: Container(
-            padding: .all(8),
+            padding: const .all(8),
             constraints: BoxConstraints(maxWidth: context.deviceWidth * 0.8),
             decoration: BoxDecoration(
               // borderRadius: .circular(AppRadius.sm).copyWith(

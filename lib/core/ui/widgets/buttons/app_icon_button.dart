@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_pressable_scale.dart';
 import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class AppIconButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -23,7 +24,7 @@ class AppIconButton extends StatelessWidget {
       isActive: onPressed != null,
       child: IconButton(
         onPressed: onPressed,
-        padding: .all(10),
+        padding: const .all(AppSpacing.sm),
         icon: IconWidget(icon: icon, size: 24),
         isSelected: isSelected,
         selectedIcon: IconWidget(icon: icon, color: context.colors.primary),

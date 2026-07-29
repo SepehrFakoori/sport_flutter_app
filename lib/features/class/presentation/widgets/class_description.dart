@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/constant/constants.dart';
+import 'package:sport_flutter_app/core/ui/widgets/icon_widget.dart';
 
 class ClassDescription extends StatefulWidget {
   final String description;
@@ -12,67 +13,53 @@ class ClassDescription extends StatefulWidget {
 }
 
 class _ClassDescriptionState extends State<ClassDescription> {
-  bool expanded = false;
+  bool _expand = false;
 
-  bool _isTextOverflowing(BuildContext context, String text, double maxWidth) {
-    final textPainter = TextPainter(
-      text: TextSpan(text: text, style: DefaultTextStyle.of(context).style),
-      maxLines: 2,
-      textDirection: TextDirection.rtl,
-    )..layout(maxWidth: maxWidth);
-
-    return textPainter.didExceedMaxLines;
-  }
+  final int defaultMaxLines = 3;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const .symmetric(horizontal: AppSpacing.lg),
-      child: LayoutBuilder(
-        builder: (context, constraints) {
-          final hasOverflow = _isTextOverflowing(
-            context,
-            widget.description,
-            constraints.maxWidth,
-          );
-
-          return Column(
-            crossAxisAlignment: .start,
-            spacing: AppSpacing.xs,
-            children: [
-              Text(
-                context.l10n.class_description,
-                style: context.textTheme.headlineSmall,
-              ),
-              AnimatedSize(
-                duration: AppDuration.normal,
-                curve: Curves.easeInOut,
-                child: Text(
-                  widget.description,
-                  key: ValueKey(expanded),
-                  maxLines: expanded ? null : 2,
-                  textAlign: .justify,
-                ),
-              ),
-              if (hasOverflow)
-                Center(
-                  heightFactor: 0.6,
-                  child: TextButton(
-                    onPressed: () {
-                      setState(() {
-                        expanded = !expanded;
-                      });
-                    },
-                    style: TextButton.styleFrom(
-                      overlayColor: Colors.transparent,
-                      padding: .zero,
+      child: Column(
+        crossAxisAlignment: .start,
+        spacing: AppSpacing.xs,
+        children: [
+          Text(
+            context.l10n.class_description,
+            style: context.textTheme.headlineSmall,
+          ),
+          AnimatedSize(
+            duration: AppDuration.normal,
+            curve: Curves.easeInOut,
+            child: Text(
+              widget.description,
+              maxLines: _expand ? null : defaultMaxLines,
+              overflow: _expand ? .visible : .ellipsis,
+            ),
+          ),
+          GestureDetector(
+            onTap: () => setState(() => _expand = !_expand),
+            child: SizedBox(
+              height: 24,
+              child: Row(
+                mainAxisAlignment: .center,
+                mainAxisSize: .max,
+                children: [
+                  AnimatedRotation(
+                    duration: AppDuration.normal,
+                    curve: Curves.easeInOut,
+                    turns: _expand ? 0.5 : 0,
+                    child: IconWidget(
+                      icon: AppIcons.arrowDown,
+                      color: context.colors.secondary,
                     ),
-                    child: Text(expanded ? 'نمایش کمتر' : 'نمایش بیشتر'),
                   ),
-                ),
-            ],
-          );
-        },
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

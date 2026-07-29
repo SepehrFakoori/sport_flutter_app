@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sport_flutter_app/core/ui/widgets/navigation/app_navigation_destination.dart';
+import 'package:sport_flutter_app/core/constant/constants.dart';
 
 class AppNavigationBar extends StatelessWidget {
   final int currentIndex;
@@ -19,7 +20,7 @@ class AppNavigationBar extends StatelessWidget {
       selectedIndex: currentIndex,
       onDestinationSelected: onTap,
       elevation: 0.5,
-      labelPadding: EdgeInsetsGeometry.all(4),
+      labelPadding: const .all(AppSpacing.xs),
       destinations: destinations,
     );
   }
