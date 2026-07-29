@@ -40,4 +40,5 @@ sealed class AppRoutes {
     name: 'auth.verify-otp',
     path: 'verify-otp',
   );
+  static const location = AppRoute(name: 'location', path: '/location');
 }
