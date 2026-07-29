@@ -113,6 +113,15 @@ class AppLocalizationsFa extends AppLocalizations {
   String get profile_gender_female => 'خانم';
 
   @override
+  String get location_appbar_title => 'شهر خود را انتخاب کنید';
+
+  @override
+  String get location_search_city_label => 'جستجو در شهر‌ها';
+
+  @override
+  String get location_select_my_current_city => 'انتخاب شهر فعلی من';
+
+  @override
   String get home_categories_title => 'دسته‌بندی';
 
   @override

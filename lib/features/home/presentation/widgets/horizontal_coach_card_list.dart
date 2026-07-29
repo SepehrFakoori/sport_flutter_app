@@ -15,7 +15,7 @@ class HorizontalCoachCardList extends StatelessWidget {
       padding: const .symmetric(horizontal: 16),
       itemBuilder: (context, index) => CoachOverview(coach: coaches[index]),
       separatorBuilder: (context, index) => const SizedBox(width: 12),
-      itemCount: 8,
+      itemCount: coaches.length < 8 ? coaches.length : 8,
     );
   }
 }

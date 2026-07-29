@@ -7,6 +7,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool cancelLeading;
   final Color? backgroundColor;
   final TextStyle? titleTextStyle;
+  final Color? shadowColor;
 
   const CustomAppBar({
     super.key,
@@ -16,6 +17,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.cancelLeading = false,
     this.backgroundColor,
     this.titleTextStyle,
+    this.shadowColor,
   });
 
   @override
@@ -28,6 +30,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: actions,
       actionsPadding: EdgeInsetsDirectional.only(end: 16),
       elevation: elevation,
+      shadowColor: shadowColor,
     );
   }
 

@@ -298,6 +298,24 @@ abstract class AppLocalizations {
   /// **'خانم'**
   String get profile_gender_female;
 
+  /// No description provided for @location_appbar_title.
+  ///
+  /// In fa, this message translates to:
+  /// **'شهر خود را انتخاب کنید'**
+  String get location_appbar_title;
+
+  /// No description provided for @location_search_city_label.
+  ///
+  /// In fa, this message translates to:
+  /// **'جستجو در شهر‌ها'**
+  String get location_search_city_label;
+
+  /// No description provided for @location_select_my_current_city.
+  ///
+  /// In fa, this message translates to:
+  /// **'انتخاب شهر فعلی من'**
+  String get location_select_my_current_city;
+
   /// No description provided for @home_categories_title.
   ///
   /// In fa, this message translates to:

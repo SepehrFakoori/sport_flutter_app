@@ -7,3 +7,5 @@ class PermissionDeniedException extends AppPermissionException {}
 class ImagePickCancelledException extends AppPermissionException {}
 
 class ImagePickFailedException extends AppPermissionException {}
+
+class LocationFailedException extends AppPermissionException {}
