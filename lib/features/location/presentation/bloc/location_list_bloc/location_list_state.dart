@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:sport_flutter_app/core/error/failure.dart';
 import 'package:sport_flutter_app/features/location/domain/entity/location.dart';
 
 enum PaginatedStatus { initial, loading, loadingMore, success, failure }
@@ -9,7 +10,7 @@ class LocationListState extends Equatable {
   final int currentPage;
   final bool hasReachedMax;
   final String? searchValue;
-  final String? errorMessage;
+  final Failure? failure;
 
   const LocationListState({
     this.status = PaginatedStatus.initial,
@@ -17,7 +18,7 @@ class LocationListState extends Equatable {
     this.currentPage = 0,
     this.hasReachedMax = false,
     this.searchValue,
-    this.errorMessage,
+    this.failure,
   });
 
   LocationListState copyWith({
@@ -26,7 +27,7 @@ class LocationListState extends Equatable {
     int? currentPage,
     bool? hasReachedMax,
     String? searchValue,
-    String? errorMessage,
+    Failure? failure,
   }) {
     return LocationListState(
       status: status ?? this.status,
@@ -34,7 +35,7 @@ class LocationListState extends Equatable {
       currentPage: currentPage ?? this.currentPage,
       hasReachedMax: hasReachedMax ?? this.hasReachedMax,
       searchValue: searchValue ?? this.searchValue,
-      errorMessage: errorMessage,
+      failure: failure,
     );
   }
 
@@ -45,6 +46,6 @@ class LocationListState extends Equatable {
     currentPage,
     hasReachedMax,
     searchValue,
-    errorMessage,
+    failure,
   ];
 }

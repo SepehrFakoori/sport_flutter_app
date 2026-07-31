@@ -37,7 +37,7 @@ class ClassListBloc extends Bloc<ClassListEvent, ClassListState> {
         );
       },
       error: (failure) =>
-          emit(state.copyWith(status: .failure, errorMessage: failure.message)),
+          emit(state.copyWith(status: .failure, failure: failure)),
     );
   }
 

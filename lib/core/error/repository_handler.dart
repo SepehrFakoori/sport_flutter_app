@@ -26,8 +26,9 @@ mixin RepositoryHandler {
   Future<Result<T>> execute<T>(Future<T> Function() action) async {
     try {
       return Success<T>(await action());
-    } on DioException {
-      return Error<T>(ServerFailure());
+    } on DioException catch (e) {
+      final some = Error<T>(_mapDioException(e));
+      return some;
     } catch (e) {
       // TODO: log e/st (e.g. via a logging service) — this branch means
       // something unexpected happened outside the network layer.
@@ -37,21 +38,30 @@ mixin RepositoryHandler {
 
   /// Maps a [DioException] to a specific [Failure] based on its type
   /// and, for HTTP errors, the response status code.
-  // Failure _mapDioException(DioException e) {
-  //   switch (e.type) {
-  //     case DioExceptionType.connectionTimeout:
-  //     case DioExceptionType.receiveTimeout:
-  //     case DioExceptionType.sendTimeout:
-  //       return TimeoutFailure();
-  //     case DioExceptionType.connectionError:
-  //       return NetworkFailure();
-  //     default:
-  //       final statusCode = e.response?.statusCode;
-  //       if (statusCode == 401) return UnauthorizedFailure();
-  //       if (statusCode == 422 || statusCode == 400) {
-  //         return ValidationFailure(e.response?.data);
-  //       }
-  //       return ServerFailure();
-  //   }
-  // }
+  Failure _mapDioException(DioException e) {
+    switch (e.type) {
+      case DioExceptionType.connectionTimeout:
+      case DioExceptionType.receiveTimeout:
+      case DioExceptionType.sendTimeout:
+        return TimeoutFailure();
+      case DioExceptionType.connectionError:
+        return NetworkFailure();
+      default:
+        switch (e.response?.statusCode) {
+          case 401:
+            return const UnauthorizedFailure();
+          case 403:
+            return const ForbiddenFailure();
+          case 404:
+            return const NotFoundFailure();
+          case 429:
+            return const RateLimitedFailure();
+          case 422:
+          case 400:
+            return ValidationFailure(e.response?.data);
+          default:
+            return const ServerFailure();
+        }
+    }
+  }
 }

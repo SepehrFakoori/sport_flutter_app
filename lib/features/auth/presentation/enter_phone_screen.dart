@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:sport_flutter_app/core/exception/app_exception.dart';
+import 'package:sport_flutter_app/core/error/failure.dart';
 import 'package:sport_flutter_app/core/extension/build_context_extensions.dart';
 import 'package:sport_flutter_app/core/router/app_routes.dart';
 import 'package:sport_flutter_app/core/ui/widgets/app_text_form_field.dart';
 import 'package:sport_flutter_app/core/ui/widgets/buttons/app_filled_button.dart';
-import 'package:sport_flutter_app/features/auth/domain/exceptions/auth_exceptions.dart';
+import 'package:sport_flutter_app/features/auth/domain/failure/auth_failure.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/enter_phone_bloc/enter_phone_bloc.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/enter_phone_bloc/enter_phone_event.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/enter_phone_bloc/enter_phone_state.dart';
@@ -45,7 +45,7 @@ class _EnterPhoneScreenState extends State<EnterPhoneScreen> {
                 ),
                 BlocBuilder<EnterPhoneBloc, EnterPhoneState>(
                   buildWhen: (previous, current) =>
-                      previous.exception != current.exception ||
+                      previous.failure != current.failure ||
                       previous.isValid != current.isValid,
                   builder: (context, state) {
                     return AppTextFormField(
@@ -59,7 +59,7 @@ class _EnterPhoneScreenState extends State<EnterPhoneScreen> {
                       textInputAction: .done,
                       autofocus: true,
                       autovalidateMode: .onUserInteraction,
-                      errorText: _translateException(context, state.exception),
+                      errorText: _translateFailure(context, state.failure),
                       onChange: (value) => context.read<EnterPhoneBloc>().add(
                         PhoneChanged(value),
                       ),
@@ -124,9 +124,9 @@ class _EnterPhoneScreenState extends State<EnterPhoneScreen> {
     );
   }
 
-  String? _translateException(BuildContext context, AppException? exception) {
-    switch (exception) {
-      case InvalidPhonePrefixException():
+  String? _translateFailure(BuildContext context, Failure? failure) {
+    switch (failure) {
+      case InvalidPhoneLengthFailure() || InvalidPhonePrefixFailure():
         return context.l10n.auth_phone_exception;
       default:
         return null;

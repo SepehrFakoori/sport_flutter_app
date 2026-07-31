@@ -103,7 +103,9 @@ class _LocationScreenState extends State<LocationScreen> {
 
                   if (state.status == .failure) {
                     return Center(
-                      child: Text(state.errorMessage ?? 'Something went wrong'),
+                      child: Text(
+                        state.failure.toString() ?? 'Something went wrong',
+                      ),
                     );
                   }
                   final cities = state.cities;

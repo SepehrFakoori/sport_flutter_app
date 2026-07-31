@@ -10,7 +10,7 @@ void registerNetworkModule() {
   sl.registerLazySingleton(() => LoggerInterceptor());
   sl.registerLazySingleton(
     () => DioFactory(
-      interceptors: [sl<LoggerInterceptor>(), sl<AuthInterceptor>()],
+      interceptors: [sl<AuthInterceptor>(), sl<LoggerInterceptor>()],
     ).create(),
   );
   sl.registerLazySingleton<HttpClient>(() => DioHttpClient(sl()));

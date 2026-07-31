@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sport_flutter_app/core/exception/app_exception.dart';
+import 'package:sport_flutter_app/core/extension/result_extensions.dart';
 import 'package:sport_flutter_app/features/auth/domain/use_case/send_otp_usecase.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/enter_phone_bloc/enter_phone_event.dart';
 import 'package:sport_flutter_app/features/auth/presentation/bloc/enter_phone_bloc/enter_phone_state.dart';
@@ -16,38 +16,39 @@ class EnterPhoneBloc extends Bloc<EnterPhoneEvent, EnterPhoneState> {
     PhoneChanged event,
     Emitter<EnterPhoneState> emit,
   ) async {
-    try {
-      sendOtp.validate(event.phone);
-      emit(
+    final result = sendOtp.validate(event.phone);
+
+    result.when(
+      success: (data) => emit(
         state.copyWith(
           phone: event.phone,
           isValid: true,
           status: .idle,
-          exception: null,
+          failure: null,
         ),
-      );
-    } on AppException catch (e) {
-      emit(
+      ),
+      error: (failure) => emit(
         state.copyWith(
           phone: event.phone,
           isValid: false,
           status: .idle,
-          exception: e,
+          failure: failure,
         ),
-      );
-    }
+      ),
+    );
   }
 
   Future<void> _onGetCodePressed(
     GetCodePressed event,
     Emitter<EnterPhoneState> emit,
   ) async {
-    emit(state.copyWith(status: .loading));
-    try {
-      await sendOtp.call(state.phone);
-      emit(state.copyWith(status: .success));
-    } on AppException catch (e) {
-      emit(state.copyWith(status: .failure, exception: e));
-    }
+    emit(state.copyWith(status: .loading, failure: null));
+
+    final result = await sendOtp.call(state.phone);
+    result.when(
+      success: (data) => emit(state.copyWith(status: .success)),
+      error: (failure) =>
+          emit(state.copyWith(status: .failure, failure: failure)),
+    );
   }
 }

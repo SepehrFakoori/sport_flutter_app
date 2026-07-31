@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:sport_flutter_app/core/error/failure.dart';
 import 'package:sport_flutter_app/features/class/domain/entity/class.dart';
 
 enum PaginatedStatus { initial, loading, loadingMore, success, failure }
@@ -8,14 +9,14 @@ class ClassListState extends Equatable {
   final List<Class> classes;
   final int currentPage;
   final bool hasReachedMax;
-  final String? errorMessage;
+  final Failure? failure;
 
   const ClassListState({
     this.status = PaginatedStatus.initial,
     this.classes = const [],
     this.currentPage = 0,
     this.hasReachedMax = false,
-    this.errorMessage,
+    this.failure,
   });
 
   ClassListState copyWith({
@@ -23,14 +24,14 @@ class ClassListState extends Equatable {
     List<Class>? classes,
     int? currentPage,
     bool? hasReachedMax,
-    String? errorMessage,
+    Failure? failure,
   }) {
     return ClassListState(
       status: status ?? this.status,
       classes: classes ?? this.classes,
       currentPage: currentPage ?? this.currentPage,
       hasReachedMax: hasReachedMax ?? this.hasReachedMax,
-      errorMessage: errorMessage,
+      failure: failure,
     );
   }
 
@@ -40,6 +41,6 @@ class ClassListState extends Equatable {
     classes,
     currentPage,
     hasReachedMax,
-    errorMessage,
+    failure,
   ];
 }

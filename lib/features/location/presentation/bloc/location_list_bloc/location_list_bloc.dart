@@ -37,7 +37,7 @@ class LocationListBloc extends Bloc<LocationListEvent, LocationListState> {
         );
       },
       error: (failure) =>
-          emit(state.copyWith(status: .failure, errorMessage: failure.message)),
+          emit(state.copyWith(status: .failure, failure: failure)),
     );
   }
 
@@ -77,7 +77,7 @@ class LocationListBloc extends Bloc<LocationListEvent, LocationListState> {
         );
       },
       error: (failure) {
-        emit(state.copyWith(status: .failure, errorMessage: failure.message));
+        emit(state.copyWith(status: .failure, failure: failure));
       },
     );
   }

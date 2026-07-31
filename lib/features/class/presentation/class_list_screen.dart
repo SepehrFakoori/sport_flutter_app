@@ -55,7 +55,7 @@ class _ClassListScreenState extends State<ClassListScreen> {
 
             if (state.status == .failure && state.classes.isEmpty) {
               return Center(
-                child: Text(state.errorMessage ?? 'Something went wrong'),
+                child: Text(state.failure.toString() ?? 'Something went wrong'),
               );
             }
 
