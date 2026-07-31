@@ -26,9 +26,9 @@ class ProfilePhotoBloc extends Bloc<ProfilePhotoEvent, ProfilePhotoState> {
     ProfileImageGalleryRequested event,
     Emitter<ProfilePhotoState> emit,
   ) async {
-    final pickedResult = await pickProfilePhoto.call(source: .gallery);
+    final result = await pickProfilePhoto.call(source: .gallery);
 
-    await pickedResult.when(
+    await result.when(
       success: (file) async {
         emit(state.copyWith(pickedFile: file, status: .success));
         add(ProfileCropImageRequested(file: file, theme: event.theme));
@@ -42,9 +42,9 @@ class ProfilePhotoBloc extends Bloc<ProfilePhotoEvent, ProfilePhotoState> {
     ProfileImageCameraRequested event,
     Emitter<ProfilePhotoState> emit,
   ) async {
-    final pickedResult = await pickProfilePhoto.call(source: .camera);
+    final result = await pickProfilePhoto.call(source: .camera);
 
-    await pickedResult.when(
+    await result.when(
       success: (file) async {
         emit(state.copyWith(pickedFile: file, status: .idle));
         add(ProfileCropImageRequested(file: file, theme: event.theme));
@@ -58,12 +58,12 @@ class ProfilePhotoBloc extends Bloc<ProfilePhotoEvent, ProfilePhotoState> {
     ProfileCropImageRequested event,
     Emitter<ProfilePhotoState> emit,
   ) async {
-    final cropResult = await imageCropper.call(
+    final result = await imageCropper.call(
       sourcePath: event.file.path,
       theme: event.theme,
     );
 
-    await cropResult.when(
+    await result.when(
       success: (file) {
         emit(state.copyWith(pickedFile: file));
         add(ProfileUploadRequested(file: file));
@@ -80,14 +80,14 @@ class ProfilePhotoBloc extends Bloc<ProfilePhotoEvent, ProfilePhotoState> {
   ) async {
     emit(state.copyWith(status: .loading, uploadProgress: 0.0));
 
-    final uploadResult = await uploadProfilePhoto.call(
+    final result = await uploadProfilePhoto.call(
       file: event.file,
       onProgress: (progress) {
         emit(state.copyWith(uploadProgress: progress));
       },
     );
 
-    uploadResult.when(
+    result.when(
       success: (_) =>
           emit(state.copyWith(status: .success, uploadProgress: 1.0)),
       error: (failure) =>

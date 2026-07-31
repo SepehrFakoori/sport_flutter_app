@@ -26,9 +26,9 @@ mixin RepositoryHandler {
   Future<Result<T>> execute<T>(Future<T> Function() action) async {
     try {
       return Success<T>(await action());
-    } on DioException catch (e) {
+    } on DioException {
       return Error<T>(ServerFailure());
-    } catch (e, st) {
+    } catch (e) {
       // TODO: log e/st (e.g. via a logging service) — this branch means
       // something unexpected happened outside the network layer.
       return Error<T>(ServerFailure());

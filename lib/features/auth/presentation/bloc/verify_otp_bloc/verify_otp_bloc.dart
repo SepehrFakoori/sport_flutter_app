@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sport_flutter_app/core/error/failure.dart';
+import 'package:sport_flutter_app/core/extension/result_extensions.dart';
 import 'package:sport_flutter_app/features/auth/domain/entity/auth_outcome.dart';
 import 'package:sport_flutter_app/features/auth/domain/use_case/resend_otp_usecase.dart';
 import 'package:sport_flutter_app/features/auth/domain/use_case/verify_otp_usecase.dart';
@@ -28,12 +30,13 @@ class VerifyOtpBloc extends Bloc<VerifyOtpEvent, VerifyOtpState> {
     Emitter<VerifyOtpState> emit,
   ) async {
     emit(state.copyWith(isLoading: true, error: null));
-    try {
-      final AuthOutcome outcome = await verifyOtp.call(event.phone, event.code);
-      emit(state.copyWith(isLoading: false, outcome: outcome));
-    } on Exception catch (e) {
-      emit(state.copyWith(isLoading: false, error: e.toString()));
-    }
+    final result = await verifyOtp.call(event.phone, event.code);
+    result.when(
+      success: (AuthOutcome outcome) =>
+          emit(state.copyWith(isLoading: false, outcome: outcome)),
+      error: (Failure failure) =>
+          emit(state.copyWith(isLoading: false, error: failure.toString())),
+    );
   }
 
   Future<void> _onCompleteCode(

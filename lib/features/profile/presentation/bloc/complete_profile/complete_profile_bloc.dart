@@ -1,5 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sport_flutter_app/core/exception/app_exception.dart';
+import 'package:sport_flutter_app/core/exception/permission_exception.dart';
+import 'package:sport_flutter_app/core/extension/result_extensions.dart';
 import 'package:sport_flutter_app/features/profile/domain/entity/update_profile.dart';
 import 'package:sport_flutter_app/features/profile/domain/use_case/complete_profile_usecase.dart';
 import 'package:sport_flutter_app/features/profile/presentation/bloc/complete_profile/complete_profile_event.dart';
@@ -98,18 +100,25 @@ class CompleteProfileBloc
     Emitter<CompleteProfileState> emit,
   ) async {
     emit(state.copyWith(status: .loading));
-    try {
-      final UpdateProfile profile = UpdateProfile(
-        firstName: state.firstName,
-        lastName: state.lastName,
-        gender: state.gender,
-        email: state.email,
-        birthDate: state.birthDate!,
-      );
-      await completeProfile.call(profile);
-      emit(state.copyWith(status: .success));
-    } on AppException catch (e) {
-      emit(state.copyWith(status: .failure, exception: e));
-    }
+
+    final UpdateProfile profile = UpdateProfile(
+      firstName: state.firstName,
+      lastName: state.lastName,
+      gender: state.gender,
+      email: state.email,
+      birthDate: state.birthDate!,
+    );
+
+    final result = await completeProfile.call(profile);
+
+    result.when(
+      success: (status) => emit(state.copyWith(status: .success)),
+      error: (failure) => emit(
+        state.copyWith(
+          status: .failure,
+          exception: PermissionDeniedException(),
+        ),
+      ),
+    );
   }
 }

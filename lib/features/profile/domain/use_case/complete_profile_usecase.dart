@@ -1,3 +1,4 @@
+import 'package:sport_flutter_app/core/utils/result.dart';
 import 'package:sport_flutter_app/features/profile/domain/entity/update_profile.dart';
 import 'package:sport_flutter_app/features/profile/domain/exceptions/profile_exceptions.dart';
 import 'package:sport_flutter_app/features/profile/domain/repository/profile_repository.dart';
@@ -37,6 +38,6 @@ class CompleteProfileUseCase {
     }
   }
 
-  Future<void> call(UpdateProfile profile) =>
+  Future<Result<void>> call(UpdateProfile profile) =>
       _repository.updateProfile(profile);
 }

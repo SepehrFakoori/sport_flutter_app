@@ -1,3 +1,4 @@
+import 'package:sport_flutter_app/core/utils/result.dart';
 import 'package:sport_flutter_app/features/auth/domain/repository/auth_repository.dart';
 
 class ResendOtpUseCase {
@@ -5,5 +6,5 @@ class ResendOtpUseCase {
 
   const ResendOtpUseCase(this._repository);
 
-  Future<void> call(String phone) => _repository.sendOtp(phone);
+  Future<Result<void>> call(String phone) => _repository.sendOtp(phone);
 }

@@ -1,5 +1,5 @@
 import 'package:sport_flutter_app/core/entity/paginated.dart';
-import 'package:sport_flutter_app/core/error/failure.dart';
+import 'package:sport_flutter_app/core/error/repository_handler.dart';
 import 'package:sport_flutter_app/core/extension/paginated_extensions.dart';
 import 'package:sport_flutter_app/core/utils/result.dart';
 import 'package:sport_flutter_app/features/class/data/datasource/class_remote_datasource.dart';
@@ -8,19 +8,17 @@ import 'package:sport_flutter_app/features/class/data/model/class_model.dart';
 import 'package:sport_flutter_app/features/class/domain/entity/class.dart';
 import 'package:sport_flutter_app/features/class/domain/repository/class_repository.dart';
 
-class ClassRepositoryImpl implements ClassRepository {
+class ClassRepositoryImpl with RepositoryHandler implements ClassRepository {
   final ClassRemoteDatasource _datasource;
 
   const ClassRepositoryImpl(this._datasource);
 
   @override
   Future<Result<Class>> getClass(int id) async {
-    try {
-      final ClassModel result = await _datasource.getClass(id);
-      return Success(result.toEntity());
-    } catch (e) {
-      return Error(ServerFailure());
-    }
+    return execute(() async {
+      final ClassModel model = await _datasource.getClass(id);
+      return model.toEntity();
+    });
   }
 
   @override
@@ -28,14 +26,12 @@ class ClassRepositoryImpl implements ClassRepository {
     required int page,
     required int pageSize,
   }) async {
-    try {
-      final result = await _datasource.getClasses(
+    return execute(() async {
+      final paginated = await _datasource.getClasses(
         page: page,
         pageSize: pageSize,
       );
-      return Success(result.map<Class>(mapper: (model) => model.toEntity()));
-    } catch (e) {
-      return Error(ServerFailure());
-    }
+      return paginated.map<Class>(mapper: (model) => model.toEntity());
+    });
   }
 }
